@@ -4,6 +4,9 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>音乐工厂作品集</title>
+  <link rel="icon" href="data:," />
+  <link rel="preload" as="image" href="assets/optimized/mobile-banner.webp" media="(max-width: 719px)" />
+  <link rel="preload" as="image" href="assets/optimized/desktop-banner.webp" media="(min-width: 720px)" />
   <style>
     :root {
       --bg: #f4f4f4;
@@ -35,7 +38,7 @@
       color: #fff;
       background:
         linear-gradient(90deg, rgba(0,0,0,.68) 0%, rgba(0,0,0,.38) 45%, rgba(0,0,0,.12) 100%),
-        url("assets/网页版banner位背景图.png") center / cover no-repeat;
+        url("assets/optimized/desktop-banner.webp") center / cover no-repeat;
     }
 
     .topbar {
@@ -655,7 +658,7 @@
         min-height: 640px;
         background:
           linear-gradient(180deg, rgba(0,0,0,.68) 0%, rgba(0,0,0,.3) 46%, rgba(0,0,0,.78) 100%),
-          url("assets/手机版banner位背景图.png") center top / cover no-repeat;
+          url("assets/optimized/mobile-banner.webp") center top / cover no-repeat;
       }
 
       .hero {
@@ -798,8 +801,8 @@
     const artistProfiles = {
       "十里音": {
         symbol: "十",
-        avatar: "assets/artists/shiliyin-avatar.png",
-        poster: "assets/artists/shiliyin-poster.png",
+        avatar: "assets/optimized/shiliyin-avatar.webp",
+        poster: "assets/optimized/shiliyin-poster.webp",
         page: "artists/shiliyin.html",
         tagline: "东方概念系 · 哲学流行 · 东方未来主义",
         style: ["东方概念系", "哲学流行", "东方未来主义", "词曲唱一体"],
@@ -808,8 +811,8 @@
       },
       "观无界": {
         symbol: "观",
-        avatar: "assets/artists/guanwujie-avatar.png",
-        poster: "assets/artists/guanwujie-poster.png",
+        avatar: "assets/optimized/guanwujie-avatar.webp",
+        poster: "assets/optimized/guanwujie-poster.webp",
         page: "artists/guanwujie.html",
         en: "GUAN WUJIE",
         identity: "东方精神文明艺术家",
@@ -837,8 +840,8 @@
       },
       "梦梦": {
         symbol: "梦",
-        avatar: "assets/mengmeng-avatar.png",
-        poster: "assets/mengmeng-poster.png",
+        avatar: "assets/optimized/mengmeng-avatar.webp",
+        poster: "assets/optimized/mengmeng-poster.webp",
         page: "artists/mengmeng.html",
         tagline: "一路歌唱，一路寻找，把遇见的人和山河写成歌。",
         style: ["旅行音乐", "世界音乐", "吟游诗人", "山河民谣"],
