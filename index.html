@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>音乐工厂作品集</title>
+  <title>音乐工厂声音世界</title>
   <link rel="icon" href="data:," />
   <link rel="preload" as="image" href="assets/optimized/mobile-banner.webp" media="(max-width: 719px)" />
   <link rel="preload" as="image" href="assets/optimized/desktop-banner.webp" media="(min-width: 720px)" />
@@ -34,11 +34,30 @@
     .wrap { width: min(1180px, calc(100% - 32px)); margin: 0 auto; }
 
     .site-header {
-      min-height: 520px;
+      min-height: 620px;
       color: #fff;
       background:
-        linear-gradient(90deg, rgba(0,0,0,.68) 0%, rgba(0,0,0,.38) 45%, rgba(0,0,0,.12) 100%),
+        radial-gradient(circle at 76% 22%, rgba(211,58,49,.34), transparent 26%),
+        linear-gradient(90deg, rgba(0,0,0,.74) 0%, rgba(0,0,0,.48) 44%, rgba(0,0,0,.16) 100%),
         url("assets/optimized/desktop-banner.webp") center / cover no-repeat;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .site-header::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 120px;
+      background: linear-gradient(180deg, transparent, var(--bg));
+      pointer-events: none;
+    }
+
+    .site-header .wrap {
+      position: relative;
+      z-index: 1;
     }
 
     .topbar {
@@ -96,7 +115,7 @@
       grid-template-columns: 1fr;
       gap: 24px;
       align-items: end;
-      padding: 58px 0 44px;
+      padding: 68px 0 56px;
     }
 
     .eyebrow {
@@ -141,7 +160,7 @@
     .btn.ghost { background: rgba(255,255,255,.12); color: #fff; border: 1px solid rgba(255,255,255,.18); }
 
     .hero-panel {
-      background: rgba(255,255,255,.1);
+      background: rgba(255,255,255,.12);
       border: 1px solid rgba(255,255,255,.16);
       border-radius: 8px;
       padding: 18px;
@@ -171,6 +190,35 @@
       font-size: 12px;
     }
 
+    .route-panel {
+      margin-top: 16px;
+      display: grid;
+      gap: 10px;
+    }
+
+    .route-card {
+      border: 1px solid rgba(255,255,255,.16);
+      background: rgba(0,0,0,.2);
+      color: #fff;
+      border-radius: 8px;
+      padding: 13px;
+      text-align: left;
+      cursor: pointer;
+      display: grid;
+      gap: 4px;
+      transition: transform .18s ease, border-color .18s ease, background .18s ease;
+    }
+
+    .route-card:hover,
+    .route-card.active {
+      transform: translateY(-2px);
+      border-color: rgba(255,255,255,.42);
+      background: rgba(211,58,49,.34);
+    }
+
+    .route-card strong { font-size: 16px; }
+    .route-card span { color: rgba(255,255,255,.66); font-size: 12px; line-height: 1.5; }
+
     main { padding: 28px 0 70px; }
     .view { display: none; }
     .view.active { display: block; }
@@ -195,6 +243,222 @@
     }
 
     .subtle { color: var(--muted); font-size: 13px; }
+
+    .land-stage {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+      margin-top: -58px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .world-console {
+      border-radius: 8px;
+      overflow: hidden;
+      background:
+        linear-gradient(135deg, rgba(19,20,23,.96), rgba(57,22,20,.94)),
+        #151515;
+      color: #fff;
+      box-shadow: var(--shadow);
+    }
+
+    .world-shell {
+      display: grid;
+      grid-template-columns: 1fr;
+      min-height: 480px;
+    }
+
+    .guide-panel {
+      padding: 20px;
+      border-bottom: 1px solid rgba(255,255,255,.1);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.06), transparent),
+        rgba(0,0,0,.18);
+    }
+
+    .guide-portrait {
+      width: 92px;
+      aspect-ratio: 1;
+      border-radius: 8px;
+      overflow: hidden;
+      background: rgba(255,255,255,.08);
+      margin-bottom: 14px;
+    }
+
+    .guide-portrait img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .guide-panel h2 {
+      margin: 0;
+      font-size: clamp(26px, 6vw, 44px);
+      line-height: 1.08;
+    }
+
+    .guide-line {
+      color: rgba(255,255,255,.7);
+      line-height: 1.8;
+      margin: 12px 0 0;
+    }
+
+    .world-tabs {
+      display: grid;
+      gap: 8px;
+      margin-top: 18px;
+    }
+
+    .world-tab {
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.07);
+      color: #fff;
+      border-radius: 8px;
+      padding: 12px;
+      text-align: left;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      min-height: 56px;
+    }
+
+    .world-tab.active {
+      background: #fff;
+      color: var(--ink);
+      border-color: #fff;
+    }
+
+    .sound-map {
+      position: relative;
+      min-height: 430px;
+      padding: 18px;
+      background:
+        radial-gradient(circle at 20% 28%, rgba(255,255,255,.18), transparent 18%),
+        radial-gradient(circle at 78% 36%, rgba(211,58,49,.3), transparent 20%),
+        linear-gradient(145deg, rgba(255,255,255,.04), rgba(0,0,0,.28));
+      overflow: hidden;
+    }
+
+    .map-skyline {
+      position: absolute;
+      inset: auto 0 0;
+      height: 42%;
+      opacity: .32;
+      background:
+        linear-gradient(to top, rgba(0,0,0,.82), transparent 72%),
+        repeating-linear-gradient(90deg, rgba(255,255,255,.2) 0 2px, transparent 2px 56px);
+      clip-path: polygon(0 72%, 6% 42%, 12% 60%, 19% 30%, 26% 64%, 35% 36%, 46% 58%, 56% 24%, 67% 66%, 78% 34%, 87% 60%, 100% 42%, 100% 100%, 0 100%);
+    }
+
+    .map-node {
+      position: absolute;
+      width: 158px;
+      min-height: 84px;
+      border: 1px solid rgba(255,255,255,.22);
+      background: rgba(0,0,0,.42);
+      color: #fff;
+      border-radius: 8px;
+      padding: 12px;
+      text-align: left;
+      cursor: pointer;
+      box-shadow: 0 12px 30px rgba(0,0,0,.22);
+      backdrop-filter: blur(10px);
+      transition: transform .18s ease, background .18s ease, border-color .18s ease;
+    }
+
+    .map-node:hover,
+    .map-node.active {
+      transform: translateY(-4px);
+      background: rgba(211,58,49,.72);
+      border-color: rgba(255,255,255,.68);
+    }
+
+    .map-node strong {
+      display: block;
+      font-size: 16px;
+      margin-bottom: 4px;
+    }
+
+    .map-node span {
+      display: block;
+      color: rgba(255,255,255,.72);
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    .map-node small {
+      display: block;
+      margin-top: 8px;
+      color: rgba(255,255,255,.58);
+      font-size: 11px;
+    }
+
+    .space-player {
+      display: grid;
+      grid-template-columns: 84px 1fr;
+      gap: 14px;
+      align-items: center;
+      padding: 14px;
+      border-top: 1px solid rgba(255,255,255,.1);
+      background: rgba(0,0,0,.34);
+    }
+
+    .space-cover {
+      width: 84px;
+      aspect-ratio: 1;
+      border-radius: 8px;
+      object-fit: cover;
+      background: rgba(255,255,255,.12);
+    }
+
+    .space-player h3 {
+      margin: 0 0 4px;
+      font-size: 20px;
+    }
+
+    .space-player p {
+      margin: 0 0 12px;
+      color: rgba(255,255,255,.68);
+      line-height: 1.65;
+      font-size: 13px;
+    }
+
+    .space-actions {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .space-actions audio {
+      max-width: 320px;
+      min-width: 220px;
+    }
+
+    .world-console[data-world="spirit"] .sound-map {
+      background:
+        radial-gradient(circle at 28% 22%, rgba(255,255,255,.2), transparent 16%),
+        radial-gradient(circle at 72% 66%, rgba(211,58,49,.28), transparent 24%),
+        linear-gradient(145deg, #11191b, #3a1816);
+    }
+
+    .world-console[data-world="city"] .sound-map {
+      background:
+        radial-gradient(circle at 24% 34%, rgba(255,218,120,.18), transparent 18%),
+        radial-gradient(circle at 80% 24%, rgba(211,58,49,.34), transparent 22%),
+        linear-gradient(145deg, #111, #34222c);
+    }
+
+    .world-console[data-world="travel"] .sound-map {
+      background:
+        radial-gradient(circle at 22% 22%, rgba(255,255,255,.22), transparent 17%),
+        radial-gradient(circle at 76% 72%, rgba(72,126,140,.34), transparent 24%),
+        linear-gradient(145deg, #172426, #4a2520);
+    }
 
     .artist-grid {
       display: grid;
@@ -693,7 +957,8 @@
       .site-header {
         min-height: 640px;
         background:
-          linear-gradient(180deg, rgba(0,0,0,.68) 0%, rgba(0,0,0,.3) 46%, rgba(0,0,0,.78) 100%),
+          radial-gradient(circle at 76% 18%, rgba(211,58,49,.28), transparent 30%),
+          linear-gradient(180deg, rgba(0,0,0,.72) 0%, rgba(0,0,0,.34) 46%, rgba(0,0,0,.82) 100%),
           url("assets/optimized/mobile-banner.webp") center top / cover no-repeat;
       }
 
@@ -702,10 +967,19 @@
         align-items: end;
         padding: 34px 0 34px;
       }
+
+      .space-player { grid-template-columns: 68px 1fr; }
+      .space-cover { width: 68px; }
+      .map-node { width: 142px; min-height: 78px; padding: 10px; }
+      .map-node strong { font-size: 14px; }
     }
 
     @media (min-width: 720px) {
       .hero { grid-template-columns: 1fr 360px; }
+      .land-stage { margin-top: -70px; }
+      .world-shell { grid-template-columns: 330px 1fr; }
+      .guide-panel { border-right: 1px solid rgba(255,255,255,.1); border-bottom: 0; }
+      .sound-map { min-height: 560px; }
       .artist-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
       .artist-card { grid-template-columns: 1fr; }
       .artist-photo { width: 100%; }
@@ -727,7 +1001,7 @@
   <header class="site-header">
     <div class="wrap">
       <div class="topbar">
-        <div class="brand"><span class="brand-mark">♪</span><span>音乐工厂作品集</span></div>
+        <div class="brand"><span class="brand-mark">♪</span><span>音乐工厂</span></div>
         <nav class="nav" id="nav">
           <button class="active" data-view="home">首页</button>
           <button data-view="artists">AI歌手</button>
@@ -737,12 +1011,12 @@
       </div>
       <section class="hero">
         <div>
-          <p class="eyebrow">AI Music Portfolio</p>
-          <h1>音乐工厂<br>作品集</h1>
-          <p class="hero-copy">收录 AI 歌手、原创歌曲、专辑企划与配乐作品。这里先搭好作品官网框架，歌手资料、形象照片和剪辑内容可以逐步补充。</p>
+          <p class="eyebrow">Music Factory Land</p>
+          <h1>音乐工厂<br>声音世界</h1>
+          <p class="hero-copy">由三位 AI 歌手带路，进入不同的音乐空间。每一个节点都是一首歌、一段情绪或一片风景。</p>
           <div class="hero-actions">
-            <button class="btn primary" data-jump="works">浏览作品</button>
-            <button class="btn ghost" data-jump="artists">认识AI歌手</button>
+            <button class="btn primary" data-jump="home">进入声音地图</button>
+            <button class="btn ghost" data-jump="works">打开作品库</button>
           </div>
         </div>
         <div class="hero-panel">
@@ -751,6 +1025,7 @@
             <div class="stat"><strong id="statVersions">0</strong><span>版本</span></div>
             <div class="stat"><strong id="statArtists">0</strong><span>歌手/分类</span></div>
           </div>
+          <div class="route-panel" id="heroRoutes"></div>
         </div>
       </section>
     </div>
@@ -759,18 +1034,38 @@
   <main>
     <section class="view active" id="view-home">
       <div class="wrap">
+        <div class="land-stage">
+          <div class="world-console" id="worldConsole" data-world="spirit">
+            <div class="world-shell">
+              <aside class="guide-panel">
+                <div class="guide-portrait" id="guidePortrait"></div>
+                <p class="eyebrow" id="guideEyebrow">Guide</p>
+                <h2 id="guideTitle">观无界带你进入精神宇宙</h2>
+                <p class="guide-line" id="guideLine">从苦的识别、执的松动，到心的归位，每个声音节点都是一次向内走。</p>
+                <div class="world-tabs" id="worldTabs"></div>
+              </aside>
+              <div>
+                <div class="sound-map" id="soundMap">
+                  <div class="map-skyline"></div>
+                </div>
+                <div class="space-player" id="spacePlayer"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div class="section-head">
           <div>
-            <h2>AI歌手</h2>
-            <p>三位主要 AI 歌手先占位展示，后续你给我照片、歌手剪辑和人设文案，我直接填进去。</p>
+            <h2>三条进入路线</h2>
+            <p>歌手不只是资料卡，而是进入不同声音世界的向导。</p>
           </div>
         </div>
         <div class="artist-grid" id="homeArtists"></div>
 
         <div class="section-head">
           <div>
-            <h2>最新作品</h2>
-            <p>从当前歌曲档案中自动抽取，点击卡片可以查看介绍、歌词和所有版本。</p>
+            <h2>可被发现的作品</h2>
+            <p>保留完整作品库，同时让重点歌曲先以空间节点被看见。</p>
           </div>
           <button class="btn primary" data-jump="works">全部作品</button>
         </div>
@@ -831,7 +1126,7 @@
   </dialog>
 
   <footer>
-    <div class="wrap">当前版本为音乐工厂作品集框架版。数据同步自飞书 Base「歌曲档案」，未标注歌手的歌曲在前端统一归类为配乐。</div>
+    <div class="wrap">当前版本为 Music Factory Land 入口版。数据同步自飞书 Base「歌曲档案」，作品库继续保留完整检索与试听入口。</div>
   </footer>
 
   <script src="songs-data.js"></script>
@@ -892,6 +1187,49 @@
     };
 
     const mainArtists = ["十里音", "观无界", "梦梦"];
+    const worlds = {
+      spirit: {
+        artist: "观无界",
+        title: "观无界带你进入精神宇宙",
+        eyebrow: "Spirit World",
+        line: "从苦的识别、执的松动，到心的归位，每个声音节点都是一次向内走。",
+        route: "静室、光廊、愿门",
+        nodes: [
+          { label: "愿门", work: "念佛去", scene: "六个字打开一条路。", x: 18, y: 18 },
+          { label: "渡口", work: "渡", scene: "执念松开时，水面开始发光。", x: 62, y: 24 },
+          { label: "光室", work: "无量寿", scene: "声音像一盏灯，照向更安稳的地方。", x: 42, y: 58 },
+          { label: "尘路", work: "愚秃", scene: "凡人的粗粝人生，也可以被接住。", x: 72, y: 70 }
+        ]
+      },
+      city: {
+        artist: "十里音",
+        title: "十里音带你进入城市工业宇宙",
+        eyebrow: "City Rhythm",
+        line: "东方哲思、复古节拍和城市钢骨叠在一起，像夜里亮起的节奏线路。",
+        route: "霓虹、车间、高架",
+        nodes: [
+          { label: "霓虹街口", work: "霓虹金", scene: "复古光牌亮起，鼓点从街角推过来。", x: 16, y: 20 },
+          { label: "回声舞台", work: "晃", scene: "人群散去以后，身体还记得节拍。", x: 58, y: 18 },
+          { label: "高架桥", work: "醒", scene: "风切开城市，夜色忽然清醒。", x: 34, y: 56 },
+          { label: "铁色车间", work: "铿锵", scene: "敲击声变成旋律，金属也有表情。", x: 72, y: 66 }
+        ]
+      },
+      travel: {
+        artist: "梦梦",
+        title: "梦梦带你进入地理文明宇宙",
+        eyebrow: "Travel Ballad",
+        line: "一路走，一路唱，把山河、远方、遇见的人收进旋律里。",
+        route: "山河、海岸、远行",
+        nodes: [
+          { label: "归途车站", work: "归", scene: "风从站台穿过，远方开始回头。", x: 14, y: 24 },
+          { label: "山河线", work: "山河志", scene: "地图摊开，山脊像一行歌词。", x: 56, y: 18 },
+          { label: "无界海岸", work: "无界", scene: "潮声往外推，边界慢慢变薄。", x: 34, y: 60 },
+          { label: "吟游广场", work: "诵", scene: "人声升起，像旧文明留下的回音。", x: 72, y: 68 }
+        ]
+      }
+    };
+    let activeWorld = "spirit";
+    let activeNodeIndex = 0;
     let activeChip = "全部";
     let visibleWorks = 24;
     const worksPageSize = 24;
@@ -960,6 +1298,88 @@
       if (cover) work.cover = cover;
     });
 
+    function findWork(artist, title) {
+      return works.find(work => work.artist === artist && work.title === title)
+        || works.find(work => work.artist === artist && work.title.includes(title))
+        || works.find(work => work.title === title);
+    }
+
+    function worldButtonMarkup(key, compact = false) {
+      const world = worlds[key];
+      const isActive = activeWorld === key;
+      if (compact) {
+        return `
+          <button class="route-card ${isActive ? "active" : ""}" data-world="${escapeHtml(key)}" type="button">
+            <strong>${escapeHtml(world.artist)}</strong>
+            <span>${escapeHtml(world.route)}</span>
+          </button>
+        `;
+      }
+      return `
+        <button class="world-tab ${isActive ? "active" : ""}" data-world="${escapeHtml(key)}" type="button">
+          <span>${escapeHtml(world.artist)} · ${escapeHtml(world.route)}</span>
+          <strong>${world.nodes.length}</strong>
+        </button>
+      `;
+    }
+
+    function nodeWork(node) {
+      const world = worlds[activeWorld];
+      return findWork(world.artist, node.work);
+    }
+
+    function renderWorldRoutes() {
+      const keys = Object.keys(worlds);
+      document.getElementById("heroRoutes").innerHTML = keys.map(key => worldButtonMarkup(key, true)).join("");
+      document.getElementById("worldTabs").innerHTML = keys.map(key => worldButtonMarkup(key)).join("");
+    }
+
+    function renderSoundMap() {
+      const world = worlds[activeWorld];
+      const profile = artistProfiles[world.artist];
+      const portrait = profile.avatar
+        ? `<img src="${escapeHtml(profile.avatar)}" alt="${escapeHtml(world.artist)}头像" loading="lazy" decoding="async">`
+        : escapeHtml(profile.symbol);
+      document.getElementById("worldConsole").dataset.world = activeWorld;
+      document.getElementById("guidePortrait").innerHTML = portrait;
+      document.getElementById("guideEyebrow").textContent = world.eyebrow;
+      document.getElementById("guideTitle").textContent = world.title;
+      document.getElementById("guideLine").textContent = world.line;
+      renderWorldRoutes();
+      const nodes = world.nodes.map((node, index) => {
+        const work = findWork(world.artist, node.work);
+        const count = work ? work.versions.length : 0;
+        return `
+          <button class="map-node ${index === activeNodeIndex ? "active" : ""}" data-node="${index}" style="left:clamp(8px, ${node.x}%, calc(100% - 166px));top:${node.y}%;" type="button">
+            <strong>${escapeHtml(node.label)}</strong>
+            <span>${escapeHtml(node.scene)}</span>
+            <small>${escapeHtml(node.work)}${count ? ` · ${count} 个版本` : ""}</small>
+          </button>
+        `;
+      }).join("");
+      document.getElementById("soundMap").innerHTML = `<div class="map-skyline"></div>${nodes}`;
+      renderSpacePlayer();
+    }
+
+    function renderSpacePlayer() {
+      const world = worlds[activeWorld];
+      const node = world.nodes[activeNodeIndex] || world.nodes[0];
+      const work = nodeWork(node);
+      const audioVersion = work?.versions.find(version => version.audioUrl);
+      const cover = work?.cover ? (coverThumbs[work.cover] || work.cover) : "";
+      document.getElementById("spacePlayer").innerHTML = `
+        ${cover ? `<img class="space-cover" src="${escapeHtml(cover)}" alt="${escapeHtml(work.title)}封面" loading="lazy" decoding="async">` : `<div class="space-cover"></div>`}
+        <div>
+          <h3>${escapeHtml(node.label)} · ${escapeHtml(work?.title || node.work)}</h3>
+          <p>${escapeHtml(node.scene)}</p>
+          <div class="space-actions">
+            ${audioVersion ? `<audio controls preload="metadata" src="${escapeHtml(audioVersion.audioUrl)}"></audio>` : `<span class="audio-note">试听音频整理中</span>`}
+            ${work ? `<button class="btn primary" data-open-work="${escapeHtml(work.key)}" type="button">进入作品</button>` : ""}
+          </div>
+        </div>
+      `;
+    }
+
     function coverImage(work, className, loading = "lazy") {
       if (!work.cover) return `<div class="${className}"></div>`;
       const src = coverThumbs[work.cover] || work.cover;
@@ -1022,6 +1442,7 @@
       document.getElementById("statWorks").textContent = works.length;
       document.getElementById("statVersions").textContent = songs.length;
       document.getElementById("statArtists").textContent = new Set(works.map(work => work.artist)).size;
+      renderSoundMap();
       document.getElementById("homeArtists").innerHTML = mainArtists.map(renderArtistCard).join("");
       document.getElementById("homeWorks").innerHTML = works.slice(0, 10).map(workCard).join("");
     }
@@ -1082,6 +1503,19 @@
       document.body.addEventListener("click", event => {
         const card = event.target.closest(".work-card");
         if (card) openDetail(card.dataset.key);
+        const worldButton = event.target.closest("[data-world]");
+        if (worldButton) {
+          activeWorld = worldButton.dataset.world;
+          activeNodeIndex = 0;
+          renderSoundMap();
+        }
+        const nodeButton = event.target.closest("[data-node]");
+        if (nodeButton) {
+          activeNodeIndex = Number(nodeButton.dataset.node) || 0;
+          renderSoundMap();
+        }
+        const openWork = event.target.closest("[data-open-work]");
+        if (openWork) openDetail(openWork.dataset.openWork);
         const jump = event.target.closest("[data-jump]");
         if (jump) switchView(jump.dataset.jump);
       });
