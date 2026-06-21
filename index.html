@@ -1,0 +1,1093 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>音乐工厂作品集</title>
+  <style>
+    :root {
+      --bg: #f4f4f4;
+      --panel: #fff;
+      --ink: #1f2023;
+      --muted: #72767d;
+      --line: #e7e7e7;
+      --red: #d33a31;
+      --red-dark: #a92c25;
+      --black: #151515;
+      --soft: #f8f0ef;
+      --shadow: 0 18px 48px rgba(0,0,0,.12);
+      font-family: "Microsoft YaHei", "PingFang SC", "Noto Sans SC", system-ui, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+    }
+
+    button, input { font: inherit; }
+    .wrap { width: min(1180px, calc(100% - 32px)); margin: 0 auto; }
+
+    .site-header {
+      min-height: 520px;
+      color: #fff;
+      background:
+        linear-gradient(90deg, rgba(0,0,0,.68) 0%, rgba(0,0,0,.38) 45%, rgba(0,0,0,.12) 100%),
+        url("assets/网页版banner位背景图.png") center / cover no-repeat;
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 14px;
+      padding: 18px 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+
+    .brand-mark {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--red);
+      display: grid;
+      place-items: center;
+      box-shadow: 0 8px 24px rgba(211,58,49,.42);
+    }
+
+    .nav {
+      display: flex;
+      gap: 6px;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+
+    .nav::-webkit-scrollbar { display: none; }
+
+    .nav button {
+      border: 1px solid rgba(255,255,255,.16);
+      background: rgba(255,255,255,.08);
+      color: rgba(255,255,255,.78);
+      border-radius: 999px;
+      padding: 9px 13px;
+      white-space: nowrap;
+      cursor: pointer;
+    }
+
+    .nav button.active {
+      background: #fff;
+      color: var(--ink);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+      align-items: end;
+      padding: 58px 0 44px;
+    }
+
+    .eyebrow {
+      color: rgba(255,255,255,.64);
+      font-weight: 900;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      margin: 0 0 12px;
+      font-size: 12px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(42px, 10vw, 88px);
+      line-height: .95;
+      letter-spacing: 0;
+    }
+
+    .hero-copy {
+      margin: 18px 0 0;
+      color: rgba(255,255,255,.72);
+      line-height: 1.85;
+      max-width: 740px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 24px;
+    }
+
+    .btn {
+      border: 0;
+      border-radius: 999px;
+      padding: 12px 18px;
+      cursor: pointer;
+      font-weight: 900;
+    }
+
+    .btn.primary { background: var(--red); color: #fff; }
+    .btn.ghost { background: rgba(255,255,255,.12); color: #fff; border: 1px solid rgba(255,255,255,.18); }
+
+    .hero-panel {
+      background: rgba(255,255,255,.1);
+      border: 1px solid rgba(255,255,255,.16);
+      border-radius: 8px;
+      padding: 18px;
+      backdrop-filter: blur(14px);
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+
+    .stat {
+      padding: 12px;
+      border-radius: 8px;
+      background: rgba(0,0,0,.18);
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 28px;
+      line-height: 1;
+    }
+
+    .stat span {
+      color: rgba(255,255,255,.62);
+      font-size: 12px;
+    }
+
+    main { padding: 28px 0 70px; }
+    .view { display: none; }
+    .view.active { display: block; }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 16px;
+      margin: 28px 0 16px;
+    }
+
+    .section-head h2 {
+      margin: 0;
+      font-size: clamp(24px, 5vw, 38px);
+    }
+
+    .section-head p {
+      margin: 8px 0 0;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .subtle { color: var(--muted); font-size: 13px; }
+
+    .artist-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    .artist-card {
+      display: grid;
+      grid-template-columns: 118px 1fr;
+      gap: 14px;
+      align-items: stretch;
+      border: 0;
+      text-align: left;
+      background: var(--panel);
+      border-radius: 8px;
+      padding: 12px;
+      box-shadow: 0 10px 28px rgba(0,0,0,.07);
+      cursor: pointer;
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .artist-photo {
+      width: 118px;
+      aspect-ratio: 1;
+      border-radius: 8px;
+      overflow: hidden;
+      background: linear-gradient(135deg, #252525, #741f1a);
+      color: #fff;
+      display: grid;
+      place-items: center;
+      font-size: 32px;
+      font-weight: 900;
+    }
+
+    .artist-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .artist-poster {
+      width: 100%;
+      margin-top: 14px;
+      border-radius: 8px;
+      overflow: hidden;
+      background: #111;
+      box-shadow: 0 12px 30px rgba(0,0,0,.12);
+    }
+
+    .artist-poster img {
+      width: 100%;
+      display: block;
+    }
+
+    .artist-card h3, .panel h3 {
+      margin: 0 0 8px;
+      font-size: 22px;
+    }
+
+    .tags {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      margin: 10px 0;
+    }
+
+    .tag {
+      border-radius: 999px;
+      padding: 5px 8px;
+      background: #f0f0f0;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .tag.red {
+      background: var(--soft);
+      color: var(--red-dark);
+    }
+
+    .panel {
+      background: var(--panel);
+      border-radius: 8px;
+      padding: 18px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.06);
+      margin-bottom: 16px;
+    }
+
+    .artist-detail {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    .artist-hero {
+      display: grid;
+      grid-template-columns: 150px 1fr;
+      gap: 16px;
+      align-items: end;
+    }
+
+    .artist-hero .artist-photo {
+      width: 150px;
+      font-size: 42px;
+    }
+
+    .clip-box {
+      border: 1px dashed var(--line);
+      border-radius: 8px;
+      padding: 14px;
+      color: var(--muted);
+      background: #fbfbfb;
+      line-height: 1.7;
+    }
+
+    .artist-kicker {
+      color: var(--red-dark);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .artist-name-line {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 6px;
+    }
+
+    .artist-name-line h3 { margin: 0; }
+
+    .artist-en {
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: .08em;
+    }
+
+    .artist-bio {
+      display: grid;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .artist-bio p {
+      margin: 0;
+      color: #4f5359;
+      line-height: 1.9;
+    }
+
+    .artist-block-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .mini-card {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 12px;
+      background: #fff;
+    }
+
+    .mini-card strong {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 15px;
+    }
+
+    .mini-card span {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.65;
+    }
+
+    .artist-feature {
+      background:
+        linear-gradient(135deg, rgba(211,58,49,.08), transparent 34%),
+        var(--panel);
+    }
+
+    .toolbar {
+      position: sticky;
+      top: 0;
+      z-index: 5;
+      background: rgba(244,244,244,.95);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(14px);
+      padding: 12px 0;
+      margin: 0 0 18px;
+    }
+
+    .tools {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
+
+    .search {
+      width: 100%;
+      border: 1px solid var(--line);
+      background: var(--panel);
+      border-radius: 999px;
+      padding: 12px 16px;
+      outline: none;
+    }
+
+    .chips {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+
+    .chips::-webkit-scrollbar { display: none; }
+
+    .chip {
+      border: 1px solid var(--line);
+      background: var(--panel);
+      color: var(--muted);
+      border-radius: 999px;
+      padding: 9px 13px;
+      white-space: nowrap;
+      cursor: pointer;
+      font-weight: 800;
+    }
+
+    .chip.active {
+      background: var(--red);
+      color: #fff;
+      border-color: var(--red);
+    }
+
+    .work-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .work-card {
+      border: 0;
+      background: transparent;
+      padding: 0;
+      text-align: left;
+      cursor: pointer;
+      min-width: 0;
+    }
+
+    .cover-wrap {
+      position: relative;
+      border-radius: 8px;
+      overflow: hidden;
+      background: #e7e7e7;
+      aspect-ratio: 1;
+      box-shadow: 0 8px 22px rgba(0,0,0,.08);
+    }
+
+    .cover {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform .2s ease;
+    }
+
+    .work-card:hover .cover { transform: scale(1.04); }
+
+    .play-dot {
+      position: absolute;
+      right: 10px;
+      bottom: 10px;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: rgba(211,58,49,.94);
+      display: grid;
+      place-items: center;
+      box-shadow: 0 6px 18px rgba(0,0,0,.2);
+    }
+
+    .play-dot::before {
+      content: "";
+      margin-left: 3px;
+      border-left: 12px solid #fff;
+      border-top: 8px solid transparent;
+      border-bottom: 8px solid transparent;
+    }
+
+    .work-title {
+      margin: 9px 0 4px;
+      font-weight: 900;
+      line-height: 1.35;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .work-meta {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.55;
+    }
+
+    .empty {
+      display: none;
+      padding: 42px 18px;
+      text-align: center;
+      color: var(--muted);
+      background: var(--panel);
+      border: 1px dashed var(--line);
+      border-radius: 8px;
+    }
+
+    dialog {
+      width: min(980px, calc(100vw - 24px));
+      max-height: calc(100vh - 24px);
+      border: 0;
+      border-radius: 10px;
+      padding: 0;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    dialog::backdrop { background: rgba(0,0,0,.52); }
+
+    .close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      width: 34px;
+      height: 34px;
+      border: 0;
+      border-radius: 50%;
+      background: rgba(255,255,255,.16);
+      color: #fff;
+      font-size: 20px;
+      cursor: pointer;
+      z-index: 2;
+    }
+
+    .detail {
+      max-height: calc(100vh - 24px);
+      overflow: auto;
+      background: var(--panel);
+    }
+
+    .detail-hero {
+      display: grid;
+      grid-template-columns: 112px 1fr;
+      gap: 14px;
+      align-items: end;
+      color: #fff;
+      padding: 18px;
+      background: linear-gradient(135deg, #272727, #151515 70%, #421815);
+    }
+
+    .detail-cover {
+      width: 112px;
+      aspect-ratio: 1;
+      object-fit: cover;
+      border-radius: 8px;
+      background: #333;
+    }
+
+    .detail h3 {
+      margin: 0 0 8px;
+      font-size: 28px;
+      line-height: 1.1;
+    }
+
+    .detail-meta {
+      color: rgba(255,255,255,.72);
+      line-height: 1.7;
+      font-size: 13px;
+    }
+
+    .detail-body {
+      padding: 18px;
+      display: grid;
+      gap: 18px;
+    }
+
+    .versions {
+      display: grid;
+      gap: 10px;
+    }
+
+    .version {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 12px;
+      background: #fbfbfb;
+    }
+
+    .version-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 8px;
+      font-weight: 900;
+    }
+
+    .version-head span {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    audio { width: 100%; height: 36px; display: block; }
+
+    .audio-note { border: 1px dashed var(--line); border-radius: 8px; padding: 12px; color: var(--muted); background: #fbfbfb; line-height: 1.6; }
+
+    .platform-links { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0 8px; }
+    .platform-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 36px;
+      border-radius: 999px;
+      padding: 8px 13px;
+      background: var(--red);
+      color: #fff;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .text-block {
+      border-top: 1px solid var(--line);
+      padding-top: 14px;
+    }
+
+    .text-block h4 { margin: 0 0 8px; font-size: 16px; }
+    pre {
+      margin: 0;
+      white-space: pre-wrap;
+      word-break: break-word;
+      line-height: 1.75;
+      font-family: inherit;
+      color: #3d3d3d;
+      font-size: 14px;
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      padding: 20px 0 36px;
+      line-height: 1.7;
+      font-size: 13px;
+    }
+
+    @media (max-width: 719px) {
+      .site-header {
+        min-height: 640px;
+        background:
+          linear-gradient(180deg, rgba(0,0,0,.68) 0%, rgba(0,0,0,.3) 46%, rgba(0,0,0,.78) 100%),
+          url("assets/手机版banner位背景图.png") center top / cover no-repeat;
+      }
+
+      .hero {
+        min-height: 520px;
+        align-items: end;
+        padding: 34px 0 34px;
+      }
+    }
+
+    @media (min-width: 720px) {
+      .hero { grid-template-columns: 1fr 360px; }
+      .artist-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .artist-card { grid-template-columns: 1fr; }
+      .artist-photo { width: 100%; }
+      .artist-detail { grid-template-columns: 340px 1fr; }
+      .tools { grid-template-columns: minmax(260px, 360px) 1fr; align-items: center; }
+      .work-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; }
+      .detail-hero { grid-template-columns: 180px 1fr; padding: 26px; }
+      .detail-cover { width: 180px; }
+      .detail h3 { font-size: 40px; }
+      .detail-body { padding: 24px 26px 30px; }
+    }
+
+    @media (min-width: 1080px) {
+      .work-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <div class="topbar">
+        <div class="brand"><span class="brand-mark">♪</span><span>音乐工厂作品集</span></div>
+        <nav class="nav" id="nav">
+          <button class="active" data-view="home">首页</button>
+          <button data-view="artists">AI歌手</button>
+          <button data-view="works">作品库</button>
+          <button data-view="score">配乐</button>
+        </nav>
+      </div>
+      <section class="hero">
+        <div>
+          <p class="eyebrow">AI Music Portfolio</p>
+          <h1>音乐工厂<br>作品集</h1>
+          <p class="hero-copy">收录 AI 歌手、原创歌曲、专辑企划与配乐作品。这里先搭好作品官网框架，歌手资料、形象照片和剪辑内容可以逐步补充。</p>
+          <div class="hero-actions">
+            <button class="btn primary" data-jump="works">浏览作品</button>
+            <button class="btn ghost" data-jump="artists">认识AI歌手</button>
+          </div>
+        </div>
+        <div class="hero-panel">
+          <div class="stats">
+            <div class="stat"><strong id="statWorks">0</strong><span>作品</span></div>
+            <div class="stat"><strong id="statVersions">0</strong><span>版本</span></div>
+            <div class="stat"><strong id="statArtists">0</strong><span>歌手/分类</span></div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </header>
+
+  <main>
+    <section class="view active" id="view-home">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <h2>AI歌手</h2>
+            <p>三位主要 AI 歌手先占位展示，后续你给我照片、歌手剪辑和人设文案，我直接填进去。</p>
+          </div>
+        </div>
+        <div class="artist-grid" id="homeArtists"></div>
+
+        <div class="section-head">
+          <div>
+            <h2>最新作品</h2>
+            <p>从当前歌曲档案中自动抽取，点击卡片可以查看介绍、歌词和所有版本。</p>
+          </div>
+          <button class="btn primary" data-jump="works">全部作品</button>
+        </div>
+        <div class="work-grid" id="homeWorks"></div>
+      </div>
+    </section>
+
+    <section class="view" id="view-artists">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <h2>AI歌手介绍</h2>
+            <p>每位歌手都有独立主页，可持续扩展形象照片、宣传海报、歌手剪辑、视频素材和作品集。</p>
+          </div>
+        </div>
+        <div id="artistDetails"></div>
+      </div>
+    </section>
+
+    <section class="view" id="view-works">
+      <div class="toolbar">
+        <div class="wrap tools">
+          <input class="search" id="search" type="search" placeholder="搜索歌曲、歌手、专辑、版本..." />
+          <div class="chips" id="chips"></div>
+        </div>
+      </div>
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <h2 id="worksTitle">作品库</h2>
+            <p id="shownCount">0 个作品</p>
+          </div>
+        </div>
+        <div class="work-grid" id="workGrid"></div>
+        <div class="empty" id="empty">没有找到匹配的作品。</div>
+      </div>
+    </section>
+
+    <section class="view" id="view-score">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <h2>配乐专区</h2>
+            <p>所有未标注歌手的作品统一展示为「配乐」。后续可以再细分为 BGM、纯音乐、剪辑版、项目配乐。</p>
+          </div>
+        </div>
+        <div class="work-grid" id="scoreGrid"></div>
+      </div>
+    </section>
+  </main>
+
+  <dialog id="detailDialog">
+    <button class="close" id="closeDialog" aria-label="关闭">×</button>
+    <div class="detail" id="detail"></div>
+  </dialog>
+
+  <footer>
+    <div class="wrap">当前版本为音乐工厂作品集框架版。数据同步自飞书 Base「歌曲档案」，未标注歌手的歌曲在前端统一归类为配乐。</div>
+  </footer>
+
+  <script src="songs-data.js"></script>
+  <script>
+    const rawSongs = window.MUSIC_FACTORY_SONGS || [];
+    const artistProfiles = {
+      "十里音": {
+        symbol: "十",
+        avatar: "assets/artists/shiliyin-avatar.png",
+        poster: "assets/artists/shiliyin-poster.png",
+        page: "artists/shiliyin.html",
+        tagline: "东方概念系 · 哲学流行 · 东方未来主义",
+        style: ["东方概念系", "哲学流行", "东方未来主义", "词曲唱一体"],
+        bio: "十里音是 AI 原创音乐人，以东方经典、哲学命题和现代流行音乐语言构建作品。",
+        clip: "代表方向：《无相》专辑、复古 Disco 女性表达、东方哲学流行。"
+      },
+      "观无界": {
+        symbol: "观",
+        avatar: "assets/artists/guanwujie-avatar.png",
+        poster: "assets/artists/guanwujie-poster.png",
+        page: "artists/guanwujie.html",
+        en: "GUAN WUJIE",
+        identity: "东方精神文明艺术家",
+        tagline: "东方精神文明艺术家。",
+        style: ["净土思想", "东方哲学", "精神表达", "仪式感音乐"],
+        bio: [
+          "观无界（GUAN WUJIE）是一位以音乐与影像为载体的东方精神文明表达者。他的创作并不属于传统意义上的音乐作品，而是一种将东方哲学、宗教思想与当代流行音乐语言重新编码后的精神表达系统。",
+          "他以净土思想为核心精神源流，从人类对苦、执、放下与觉醒的根本问题出发，将古典智慧转译为现代人可以感知与理解的声音结构与叙事方式。他的作品不是为了提供答案，而是引导听者重新进入自身内在的觉知状态。",
+          "观无界的创作思想源自东方文明中关于心性与觉悟的系统性思考，尤其以净土思想为核心结构，同时吸收东方宗教文化中关于念、心、光、愿的表达体系。在他的作品中，音乐不再是娱乐形式，而是一种心的训练方式。",
+          "他的核心创作命题包括三层结构：苦的识别、执的松动、心的归位。观无界并不属于某一宗教体系，他所表达的是东方文明中关于心如何安住的普遍性问题。",
+          "他的存在不是为了传播信仰，而是为了让现代人在高速变化的世界中，重新体验内在稳定的可能性。一个以音乐为媒介的东方精神结构重建者。"
+        ],
+        concepts: [
+          ["苦的识别", "痛苦的根源不是外界，而是内在执取。"],
+          ["执的松动", "当执念被看见，它便开始松动。"],
+          ["心的归位", "当执念停止主导意识，心自然回到安住状态。"]
+        ],
+        representativeWorks: [
+          ["渡", "关于执与放下，探讨苦从何而生，又如何消散。"],
+          ["无量寿", "关于慈悲与光明，表达一种无条件存在的照耀状态。"],
+          ["愚秃", "关于凡人与觉醒，以真实人生经历表达被接纳的可能性。"],
+          ["专复专", "关于散乱与回归，强调心念不断归一的过程。"]
+        ],
+        clip: "代表作品体系：《渡》《无量寿》《愚秃》《专复专》。"
+      },
+      "梦梦": {
+        symbol: "梦",
+        avatar: "assets/mengmeng-avatar.png",
+        poster: "assets/mengmeng-poster.png",
+        page: "artists/mengmeng.html",
+        tagline: "一路歌唱，一路寻找，把遇见的人和山河写成歌。",
+        style: ["旅行音乐", "世界音乐", "吟游诗人", "山河民谣"],
+        bio: "梦梦是 AI 原创音乐人，一位一直在路上的吟游诗人。",
+        clip: "代表方向：《山河》专辑、旅行音乐、世界音乐、治愈表达。"
+      }
+    };
+
+    const mainArtists = ["十里音", "观无界", "梦梦"];
+    let activeChip = "全部";
+
+    function displayArtist(artist) {
+      return !artist || artist === "未标注" ? "配乐" : artist;
+    }
+
+    function normalizeSong(song) {
+      const artist = displayArtist(song.artist);
+      const category = artist === "配乐" ? "配乐" : (song.category || "歌手演唱");
+      return { ...song, artist, category };
+    }
+
+    const songs = rawSongs.map(normalizeSong);
+
+    function escapeHtml(text) {
+      return String(text || "").replace(/[&<>"']/g, char => ({
+        "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"
+      }[char]));
+    }
+
+    function groupSongs() {
+      const map = new Map();
+      songs.forEach(song => {
+        const key = `${song.artist}::${song.mainTitle || song.title}`;
+        if (!map.has(key)) {
+          map.set(key, {
+            key,
+            title: song.mainTitle || song.title,
+            artist: song.artist,
+            categories: new Set(),
+            collections: new Set(),
+            cover: song.cover,
+            intro: song.intro,
+            fullIntro: song.fullIntro,
+            lyrics: song.lyrics,
+            updated: song.updated,
+            versions: []
+          });
+        }
+        const work = map.get(key);
+        work.categories.add(song.category || "未分类");
+        work.collections.add(song.collection);
+        if (!work.cover && song.cover) work.cover = song.cover;
+        if ((!work.fullIntro || work.fullIntro.length < 30) && song.fullIntro) work.fullIntro = song.fullIntro;
+        if ((!work.lyrics || work.lyrics.length < 30) && song.lyrics) work.lyrics = song.lyrics;
+        work.versions.push(song);
+      });
+      return [...map.values()].map(work => {
+        work.categories = [...work.categories].filter(Boolean);
+        work.collections = [...work.collections].filter(Boolean);
+        work.category = work.artist === "配乐" ? "配乐" : (work.categories.includes("歌手演唱") ? "歌手演唱" : work.categories[0] || "未分类");
+        work.versions.sort((a, b) => String(a.variant).localeCompare(String(b.variant), "zh-CN"));
+        return work;
+      }).sort((a, b) => String(a.artist + a.title).localeCompare(String(b.artist + b.title), "zh-CN"));
+    }
+
+    const works = groupSongs();
+    const coverOverrides = {
+      "梦梦::归": "assets/mengmeng-gui-cover.jpg",
+      "梦梦::诵": "assets/mengmeng-song-cover.webp"
+    };
+    works.forEach(work => {
+      const cover = coverOverrides[work.key];
+      if (cover) work.cover = cover;
+    });
+
+    function worksForArtist(artist) {
+      return works.filter(work => work.artist === artist);
+    }
+
+    function artistPhoto(profile, name) {
+      return `<div class="artist-photo">${profile.avatar ? `<img src="${escapeHtml(profile.avatar)}" alt="${escapeHtml(name)}头像" loading="lazy">` : escapeHtml(profile.symbol)}</div>`;
+    }
+
+    function artistBio(profile) {
+      const bio = Array.isArray(profile.bio) ? profile.bio : [profile.bio];
+      return `<div class="artist-bio">${bio.filter(Boolean).map(text => `<p>${escapeHtml(text)}</p>`).join("")}</div>`;
+    }
+
+    function miniCards(items) {
+      return items && items.length ? `<div class="artist-block-grid">${items.map(item => `<div class="mini-card"><strong>${escapeHtml(item[0])}</strong><span>${escapeHtml(item[1])}</span></div>`).join("")}</div>` : "";
+    }
+
+    function renderArtistCard(name) {
+      const profile = artistProfiles[name];
+      const count = worksForArtist(name).length;
+      return `
+        <a class="artist-card" href="${escapeHtml(profile.page)}" aria-label="查看${escapeHtml(name)}独立主页">
+          ${artistPhoto(profile, name)}
+          <div>
+            <h3>${escapeHtml(name)}</h3>
+            <div class="work-meta">${escapeHtml(profile.tagline)}</div>
+            <div class="tags">${profile.style.map(tag => `<span class="tag red">${escapeHtml(tag)}</span>`).join("")}</div>
+            <div class="subtle">${count} 个作品 · 进入独立主页</div>
+          </div>
+        </a>
+      `;
+    }
+
+    function workCard(work) {
+      return `
+        <button class="work-card" data-key="${escapeHtml(work.key)}">
+          <div class="cover-wrap">
+            ${work.cover ? `<img class="cover" src="${escapeHtml(work.cover)}" alt="${escapeHtml(work.title)}封面" loading="lazy">` : `<div class="cover"></div>`}
+            <span class="play-dot"></span>
+          </div>
+          <div class="work-title">${escapeHtml(work.title)}</div>
+          <div class="work-meta">${escapeHtml(work.artist)} · ${escapeHtml(work.collections.join(" / ") || work.category)}</div>
+          <div class="tags">
+            <span class="tag red">${escapeHtml(work.categories.join(" / "))}</span>
+            <span class="tag">${work.versions.length} 个版本</span>
+          </div>
+        </button>
+      `;
+    }
+
+    function renderHome() {
+      document.getElementById("statWorks").textContent = works.length;
+      document.getElementById("statVersions").textContent = songs.length;
+      document.getElementById("statArtists").textContent = new Set(works.map(work => work.artist)).size;
+      document.getElementById("homeArtists").innerHTML = mainArtists.map(renderArtistCard).join("");
+      document.getElementById("homeWorks").innerHTML = works.slice(0, 10).map(workCard).join("");
+    }
+
+    function renderArtistDetails() {
+      document.getElementById("artistDetails").innerHTML = `
+        <div class="artist-grid">
+          ${mainArtists.map(renderArtistCard).join("")}
+        </div>
+      `;
+    }
+
+    function chipList() {
+      return ["全部", "十里音", "观无界", "梦梦", "配乐", "歌手演唱"];
+    }
+
+    function filteredWorks() {
+      const keyword = document.getElementById("search")?.value.trim().toLowerCase() || "";
+      return works.filter(work => {
+        const inChip = activeChip === "全部" || work.artist === activeChip || work.categories.includes(activeChip) || work.category === activeChip;
+        const hay = [
+          work.title, work.artist, work.category, work.categories.join(" "), work.collections.join(" "),
+          work.intro, work.fullIntro, work.lyrics,
+          ...work.versions.flatMap(v => [v.title, v.version, v.variant, v.audioFile, v.type])
+        ].join(" ").toLowerCase();
+        return inChip && (!keyword || hay.includes(keyword));
+      });
+    }
+
+    function renderChips() {
+      document.getElementById("chips").innerHTML = chipList().map(name =>
+        `<button class="chip ${activeChip === name ? "active" : ""}" data-chip="${escapeHtml(name)}">${escapeHtml(name)}</button>`
+      ).join("");
+      document.querySelectorAll(".chip").forEach(button => button.addEventListener("click", () => {
+        activeChip = button.dataset.chip;
+        renderWorks();
+      }));
+    }
+
+    function renderWorks() {
+      renderChips();
+      const list = filteredWorks();
+      document.getElementById("worksTitle").textContent = activeChip === "全部" ? "作品库" : activeChip;
+      document.getElementById("shownCount").textContent = `${list.length} 个作品`;
+      document.getElementById("empty").style.display = list.length ? "none" : "block";
+      document.getElementById("workGrid").innerHTML = list.map(workCard).join("");
+    }
+
+    function renderScore() {
+      const list = works.filter(work => work.artist === "配乐" || work.category === "配乐");
+      document.getElementById("scoreGrid").innerHTML = list.map(workCard).join("") || `<div class="empty" style="display:block">暂无配乐作品</div>`;
+    }
+
+    function bindCards() {
+      document.body.addEventListener("click", event => {
+        const card = event.target.closest(".work-card");
+        if (card) openDetail(card.dataset.key);
+        const jump = event.target.closest("[data-jump]");
+        if (jump) switchView(jump.dataset.jump);
+      });
+    }
+
+    function switchView(view) {
+      document.querySelectorAll(".view").forEach(el => el.classList.toggle("active", el.id === `view-${view}`));
+      document.querySelectorAll(".nav button").forEach(btn => btn.classList.toggle("active", btn.dataset.view === view));
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    function openDetail(key) {
+      const work = works.find(item => item.key === key);
+      if (!work) return;
+      const intro = work.fullIntro || work.intro || "暂无完整介绍。";
+      const lyrics = work.lyrics || "暂无歌词。";
+      const renderPlatformLinks = version => (version.platformLinks || []).map(link =>
+        `<a class="platform-link" href="${escapeHtml(link.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(link.label || "平台播放")}</a>`
+      ).join("");
+      document.getElementById("detail").innerHTML = `
+        <section class="detail-hero">
+          ${work.cover ? `<img class="detail-cover" src="${escapeHtml(work.cover)}" alt="${escapeHtml(work.title)}封面">` : `<div class="detail-cover"></div>`}
+          <div>
+            <h3>${escapeHtml(work.title)}</h3>
+            <div class="detail-meta">${escapeHtml(work.artist)} · ${escapeHtml(work.categories.join(" / "))}<br>${escapeHtml(work.collections.join(" / "))} · ${work.versions.length} 个版本</div>
+          </div>
+        </section>
+        <section class="detail-body">
+          <div>
+            <h4>版本与音频</h4>
+            <div class="versions">
+              ${work.versions.map(version => `
+                <div class="version">
+                  <div class="version-head"><div>${escapeHtml(version.variant || version.version || version.title)}</div><span>${escapeHtml(version.type)} · ${escapeHtml(version.size || "")}MB</span></div>
+                  ${version.audioUrl ? `<audio controls preload="metadata" src="${escapeHtml(version.audioUrl)}"></audio>` : ""}
+                  ${version.platformLinks && version.platformLinks.length ? `<div class="platform-links">${renderPlatformLinks(version)}</div>` : ""}
+                  <div class="work-meta">${escapeHtml(version.audioFile || "")}</div>
+                </div>
+              `).join("")}
+            </div>
+          </div>
+          <div class="text-block"><h4>歌曲介绍</h4><pre>${escapeHtml(intro)}</pre></div>
+          <div class="text-block"><h4>歌词</h4><pre>${escapeHtml(lyrics)}</pre></div>
+        </section>
+      `;
+      document.getElementById("detailDialog").showModal();
+    }
+
+    document.getElementById("nav").addEventListener("click", event => {
+      const button = event.target.closest("button[data-view]");
+      if (button) switchView(button.dataset.view);
+    });
+    document.getElementById("search").addEventListener("input", renderWorks);
+    document.getElementById("closeDialog").addEventListener("click", () => document.getElementById("detailDialog").close());
+    document.getElementById("detailDialog").addEventListener("click", event => {
+      if (event.target.id === "detailDialog") event.target.close();
+    });
+
+    renderHome();
+    renderArtistDetails();
+    renderWorks();
+    renderScore();
+    bindCards();
+  </script>
+</body>
+</html>
