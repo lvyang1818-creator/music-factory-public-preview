@@ -515,6 +515,26 @@
       border-radius: 8px;
     }
 
+    .load-more-wrap {
+      display: none;
+      justify-content: center;
+      margin-top: 22px;
+    }
+
+    .load-more-wrap.active {
+      display: flex;
+    }
+
+    .load-more {
+      border: 1px solid var(--line);
+      background: var(--panel);
+      color: var(--ink);
+      border-radius: 999px;
+      padding: 11px 18px;
+      font-weight: 900;
+      cursor: pointer;
+    }
+
     dialog {
       width: min(980px, calc(100vw - 24px));
       max-height: calc(100vh - 24px);
@@ -769,6 +789,9 @@
           </div>
         </div>
         <div class="work-grid" id="workGrid"></div>
+        <div class="load-more-wrap" id="loadMoreWrap">
+          <button class="load-more" id="loadMore" type="button">加载更多作品</button>
+        </div>
         <div class="empty" id="empty">没有找到匹配的作品。</div>
       </div>
     </section>
@@ -796,8 +819,10 @@
   </footer>
 
   <script src="songs-data.js"></script>
+  <script src="cover-thumbs.js"></script>
   <script>
     const rawSongs = window.MUSIC_FACTORY_SONGS || [];
+    const coverThumbs = window.MUSIC_FACTORY_COVER_THUMBS || {};
     const artistProfiles = {
       "十里音": {
         symbol: "十",
@@ -852,6 +877,8 @@
 
     const mainArtists = ["十里音", "观无界", "梦梦"];
     let activeChip = "全部";
+    let visibleWorks = 24;
+    const worksPageSize = 24;
 
     function displayArtist(artist) {
       return !artist || artist === "未标注" ? "配乐" : artist;
@@ -917,6 +944,12 @@
       if (cover) work.cover = cover;
     });
 
+    function coverImage(work, className, loading = "lazy") {
+      if (!work.cover) return `<div class="${className}"></div>`;
+      const src = coverThumbs[work.cover] || work.cover;
+      return `<img class="${className}" src="${escapeHtml(src)}" alt="${escapeHtml(work.title)}封面" loading="${loading}" decoding="async" fetchpriority="low">`;
+    }
+
     function worksForArtist(artist) {
       return works.filter(work => work.artist === artist);
     }
@@ -954,7 +987,7 @@
       return `
         <button class="work-card" data-key="${escapeHtml(work.key)}">
           <div class="cover-wrap">
-            ${work.cover ? `<img class="cover" src="${escapeHtml(work.cover)}" alt="${escapeHtml(work.title)}封面" loading="lazy">` : `<div class="cover"></div>`}
+            ${coverImage(work, "cover")}
             <span class="play-dot"></span>
           </div>
           <div class="work-title">${escapeHtml(work.title)}</div>
@@ -1006,6 +1039,7 @@
       ).join("");
       document.querySelectorAll(".chip").forEach(button => button.addEventListener("click", () => {
         activeChip = button.dataset.chip;
+        visibleWorks = worksPageSize;
         renderWorks();
       }));
     }
@@ -1013,10 +1047,12 @@
     function renderWorks() {
       renderChips();
       const list = filteredWorks();
+      const visibleList = list.slice(0, visibleWorks);
       document.getElementById("worksTitle").textContent = activeChip === "全部" ? "作品库" : activeChip;
-      document.getElementById("shownCount").textContent = `${list.length} 个作品`;
+      document.getElementById("shownCount").textContent = list.length > visibleList.length ? `已显示 ${visibleList.length} / ${list.length} 个作品` : `${list.length} 个作品`;
       document.getElementById("empty").style.display = list.length ? "none" : "block";
-      document.getElementById("workGrid").innerHTML = list.map(workCard).join("");
+      document.getElementById("workGrid").innerHTML = visibleList.map(workCard).join("");
+      document.getElementById("loadMoreWrap").classList.toggle("active", visibleWorks < list.length);
     }
 
     function renderScore() {
@@ -1080,7 +1116,14 @@
       const button = event.target.closest("button[data-view]");
       if (button) switchView(button.dataset.view);
     });
-    document.getElementById("search").addEventListener("input", renderWorks);
+    document.getElementById("search").addEventListener("input", () => {
+      visibleWorks = worksPageSize;
+      renderWorks();
+    });
+    document.getElementById("loadMore").addEventListener("click", () => {
+      visibleWorks += worksPageSize;
+      renderWorks();
+    });
     document.getElementById("closeDialog").addEventListener("click", () => document.getElementById("detailDialog").close());
     document.getElementById("detailDialog").addEventListener("click", event => {
       if (event.target.id === "detailDialog") event.target.close();
