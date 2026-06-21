@@ -490,6 +490,22 @@
       border-bottom: 8px solid transparent;
     }
 
+    .listen-badge {
+      position: absolute;
+      left: 9px;
+      bottom: 10px;
+      min-height: 28px;
+      display: inline-flex;
+      align-items: center;
+      border-radius: 999px;
+      padding: 6px 10px;
+      background: rgba(255,255,255,.94);
+      color: var(--red);
+      font-size: 12px;
+      font-weight: 900;
+      box-shadow: 0 6px 18px rgba(0,0,0,.12);
+    }
+
     .work-title {
       margin: 9px 0 4px;
       font-weight: 900;
@@ -984,11 +1000,13 @@
     }
 
     function workCard(work) {
+      const hasAudio = work.versions.some(version => version.audioUrl);
       return `
         <button class="work-card" data-key="${escapeHtml(work.key)}">
           <div class="cover-wrap">
             ${coverImage(work, "cover")}
             <span class="play-dot"></span>
+            ${hasAudio ? `<span class="listen-badge">可试听</span>` : ""}
           </div>
           <div class="work-title">${escapeHtml(work.title)}</div>
           <div class="work-meta">${escapeHtml(work.artist)} · ${escapeHtml(work.collections.join(" / ") || work.category)}</div>
@@ -1098,7 +1116,7 @@
               ${work.versions.map(version => `
                 <div class="version">
                   <div class="version-head"><div>${escapeHtml(version.variant || version.version || version.title)}</div><span>${escapeHtml(version.type)} · ${escapeHtml(version.size || "")}MB</span></div>
-                  ${version.audioUrl ? `<audio controls preload="metadata" src="${escapeHtml(version.audioUrl)}"></audio>` : ""}
+                  ${version.audioUrl ? `<audio controls preload="metadata" src="${escapeHtml(version.audioUrl)}"></audio>` : `<div class="audio-note">试听音频整理中</div>`}
                   ${version.platformLinks && version.platformLinks.length ? `<div class="platform-links">${renderPlatformLinks(version)}</div>` : ""}
                   <div class="work-meta">${escapeHtml(version.audioFile || "")}</div>
                 </div>
