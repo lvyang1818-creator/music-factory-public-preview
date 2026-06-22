@@ -2009,10 +2009,10 @@
       const world = worlds[activeWorld];
       const node = world.nodes[activeNodeIndex] || world.nodes[0];
       const work = nodeWork(node);
-      const audioVersion = work?.versions.find(version => version.neteaseEmbedUrl || version.audioUrl);
+      const audioVersion = work?.versions.find(version => version.neteasePlaybackUrl || version.neteaseEmbedUrl || version.audioUrl);
       const cover = work?.cover ? (coverThumbs[work.cover] || work.cover) : "";
       const neteaseUrl = audioVersion ? neteaseAlbumUrl(audioVersion) : "";
-      const player = audioVersion?.neteaseEmbedUrl
+      const player = (audioVersion?.neteasePlaybackUrl || audioVersion?.neteaseEmbedUrl)
         ? `<a class="btn primary external-player-link" href="${escapeHtml(neteaseUrl)}" target="_blank" rel="noopener noreferrer">网易云播放</a>`
         : audioVersion
           ? `<audio controls preload="metadata" src="${escapeHtml(audioVersion.audioUrl)}"></audio>`
@@ -2078,7 +2078,7 @@
     }
 
     function workCard(work) {
-      const hasAudio = work.versions.some(version => version.neteaseEmbedUrl || version.audioUrl);
+      const hasAudio = work.versions.some(version => version.neteasePlaybackUrl || version.neteaseEmbedUrl || version.audioUrl);
       return `
         <button class="work-card" data-key="${escapeHtml(work.key)}">
           <div class="cover-wrap">
@@ -2205,7 +2205,7 @@
         `<a class="platform-link" href="${escapeHtml(link.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(link.label || "平台播放")}</a>`
       ).join("");
       const renderVersionAudio = version => {
-        if (version.neteaseEmbedUrl) return `<a class="platform-link external-player-link" href="${escapeHtml(neteaseAlbumUrl(version))}" target="_blank" rel="noopener noreferrer">网易云播放</a>`;
+        if (version.neteasePlaybackUrl || version.neteaseEmbedUrl) return `<a class="platform-link external-player-link" href="${escapeHtml(neteaseAlbumUrl(version))}" target="_blank" rel="noopener noreferrer">网易云播放</a>`;
         if (version.audioUrl) return `<audio controls preload="metadata" src="${escapeHtml(version.audioUrl)}"></audio>`;
         return `<div class="audio-note">试听音频整理中</div>`;
       };

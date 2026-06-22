@@ -1537,7 +1537,7 @@ window.MUSIC_FACTORY_SONGS = [
         "url": "https://qishui.douyin.com/search?keyword=%E5%B1%B1%E6%B2%B3%E6%95%85%E6%A2%A6%20%E6%A2%A6%E6%A2%A6"
       }
     ],
-    "neteaseEmbedUrl": "https://music.163.com/outchain/player?type=1&id=275831011&auto=1&height=430"
+    "neteasePlaybackUrl": "https://music.163.com/#/album?id=275831011"
   },
   {
     "recordId": "recvn1OVwPcNZj",
