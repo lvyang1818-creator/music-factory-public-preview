@@ -727,7 +727,7 @@ window.MUSIC_FACTORY_SONGS = [
     "remark": "公网预览版已隐藏本地路径",
     "platformLinks": [
       {
-        "label": "??????",
+        "label": "汽水音乐播放",
         "url": "https://qishui.douyin.com/s/iQvk8ut2/"
       }
     ]
@@ -758,7 +758,7 @@ window.MUSIC_FACTORY_SONGS = [
     "remark": "公网预览版已隐藏本地路径",
     "platformLinks": [
       {
-        "label": "??????",
+        "label": "汽水音乐播放",
         "url": "https://qishui.douyin.com/s/iQvk8ut2/"
       }
     ]
@@ -782,7 +782,7 @@ window.MUSIC_FACTORY_SONGS = [
     "audioUrl": "assets/audio/guanwujie-yutu-full.mp3",
     "platformLinks": [
       {
-        "label": "??????",
+        "label": "汽水音乐播放",
         "url": "https://qishui.douyin.com/s/iQvk8ut2/"
       }
     ],
@@ -1531,7 +1531,6 @@ window.MUSIC_FACTORY_SONGS = [
         "label": "网易云专辑页",
         "url": "https://music.163.com/#/album?id=275831011"
       },
-
       {
         "label": "汽水音乐搜索",
         "url": "https://qishui.douyin.com/search?keyword=%E5%B1%B1%E6%B2%B3%E6%95%85%E6%A2%A6%20%E6%A2%A6%E6%A2%A6"
@@ -2230,20 +2229,20 @@ window.MUSIC_FACTORY_SONGS = [
     "category": "歌手演唱",
     "collection": "南无阿弥陀佛",
     "type": "歌手演唱",
-    "intro": "《南无阿弥陀佛-歌剧版》是观无界围绕圣号展开的歌剧化表达。音频暂未找到，当前先补入观无界作品页并提供汽水音乐入口。",
-    "fullIntro": "《南无阿弥陀佛-歌剧版》是观无界围绕圣号展开的歌剧化表达。音频暂未找到，当前先补入观无界作品页并提供汽水音乐入口。",
+    "intro": "《南无阿弥陀佛-歌剧版》已接入站内试听音频，并保留汽水音乐入口。",
+    "fullIntro": "《南无阿弥陀佛-歌剧版》已接入站内试听音频，并保留汽水音乐入口。",
     "lyrics": "歌词整理中。",
     "lyricsPreview": "歌词整理中。",
-    "audioFile": "",
+    "audioFile": "南无阿弥陀佛   歌剧版.mp3",
     "audioPath": "",
-    "audioUrl": "",
+    "audioUrl": "assets/audio/guanwujie-namo-opera.mp3",
     "coverPath": "",
     "cover": "assets/guanwujie-namo-opera-cover.jpg",
-    "size": 0,
-    "updated": "2026-06-22",
+    "size": 2.62,
+    "updated": "2026-06-23",
     "lyricSource": "",
     "introSource": "用户补充，公网预览版",
-    "remark": "音频暂未接入，已先提供汽水音乐入口",
+    "remark": "已接入站内试听音频，保留汽水音乐入口",
     "platformLinks": [
       {
         "label": "汽水音乐播放",
@@ -2261,20 +2260,20 @@ window.MUSIC_FACTORY_SONGS = [
     "category": "歌手演唱",
     "collection": "南无阿弥陀佛",
     "type": "歌手演唱",
-    "intro": "《南无阿弥陀佛 乱入版》是观无界围绕圣号展开的实验版本。音频暂未找到，当前先补入观无界作品页并提供汽水音乐入口。",
-    "fullIntro": "《南无阿弥陀佛 乱入版》是观无界围绕圣号展开的实验版本。音频暂未找到，当前先补入观无界作品页并提供汽水音乐入口。",
+    "intro": "《南无阿弥陀佛 乱入版》已接入站内试听音频，并保留汽水音乐入口。",
+    "fullIntro": "《南无阿弥陀佛 乱入版》已接入站内试听音频，并保留汽水音乐入口。",
     "lyrics": "歌词整理中。",
     "lyricsPreview": "歌词整理中。",
-    "audioFile": "",
+    "audioFile": "南无阿弥陀佛 乱入版.mp3",
     "audioPath": "",
-    "audioUrl": "",
+    "audioUrl": "assets/audio/guanwujie-namo-luanru.mp3",
     "coverPath": "",
     "cover": "assets/guanwujie-namo-luanru-cover.jpg",
-    "size": 0,
-    "updated": "2026-06-22",
+    "size": 5.53,
+    "updated": "2026-06-23",
     "lyricSource": "",
     "introSource": "用户补充，公网预览版",
-    "remark": "音频暂未接入，已先提供汽水音乐入口",
+    "remark": "已接入站内试听音频，保留汽水音乐入口",
     "platformLinks": [
       {
         "label": "汽水音乐播放",
