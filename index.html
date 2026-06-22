@@ -154,6 +154,10 @@
       padding: 12px 18px;
       cursor: pointer;
       font-weight: 900;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
     }
 
     .btn.primary { background: var(--red); color: #fff; }
@@ -912,17 +916,8 @@
 
     audio { width: 100%; height: 36px; display: block; }
 
-    .netease-player {
-      width: min(100%, 330px);
-      height: 450px;
-      border: 0;
-      display: block;
-      background: #f3f0eb;
-    }
-
-    .space-actions .netease-player {
-      height: 90px;
-      max-width: 330px;
+    .external-player-link {
+      box-shadow: 0 12px 28px rgba(211,58,49,.22);
     }
 
     .audio-note { border: 1px dashed var(--line); border-radius: 8px; padding: 12px; color: var(--muted); background: #fbfbfb; line-height: 1.6; }
@@ -2016,8 +2011,9 @@
       const work = nodeWork(node);
       const audioVersion = work?.versions.find(version => version.neteaseEmbedUrl || version.audioUrl);
       const cover = work?.cover ? (coverThumbs[work.cover] || work.cover) : "";
+      const neteaseUrl = audioVersion ? neteaseAlbumUrl(audioVersion) : "";
       const player = audioVersion?.neteaseEmbedUrl
-        ? `<iframe class="netease-player" src="${escapeHtml(audioVersion.neteaseEmbedUrl.replace("height=430", "height=66"))}" loading="lazy"></iframe>`
+        ? `<a class="btn primary external-player-link" href="${escapeHtml(neteaseUrl)}" target="_blank" rel="noopener noreferrer">网易云播放</a>`
         : audioVersion
           ? `<audio controls preload="metadata" src="${escapeHtml(audioVersion.audioUrl)}"></audio>`
           : `<span class="audio-note">试听音频整理中</span>`;
@@ -2032,6 +2028,13 @@
           </div>
         </div>
       `;
+    }
+
+    function neteaseAlbumUrl(version) {
+      const links = version?.platformLinks || [];
+      return links.find(link => link.url.includes("music.163.com/#/album"))?.url
+        || links.find(link => link.url.includes("music.163.com"))?.url
+        || "https://music.163.com/#/album?id=275831011";
     }
 
     function coverImage(work, className, loading = "lazy") {
@@ -2202,7 +2205,7 @@
         `<a class="platform-link" href="${escapeHtml(link.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(link.label || "平台播放")}</a>`
       ).join("");
       const renderVersionAudio = version => {
-        if (version.neteaseEmbedUrl) return `<iframe class="netease-player" src="${escapeHtml(version.neteaseEmbedUrl)}" loading="lazy"></iframe>`;
+        if (version.neteaseEmbedUrl) return `<a class="platform-link external-player-link" href="${escapeHtml(neteaseAlbumUrl(version))}" target="_blank" rel="noopener noreferrer">网易云播放</a>`;
         if (version.audioUrl) return `<audio controls preload="metadata" src="${escapeHtml(version.audioUrl)}"></audio>`;
         return `<div class="audio-note">试听音频整理中</div>`;
       };
