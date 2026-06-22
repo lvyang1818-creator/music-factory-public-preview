@@ -19,9 +19,40 @@
     footer{border-top:1px solid var(--line);color:var(--muted);padding:20px 0 36px;font-size:13px}
     @media(min-width:720px){.artist-hero{grid-template-columns:190px 1fr}.portrait{width:190px}.layout{grid-template-columns:340px 1fr}.mini-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.album-panel{grid-template-columns:240px 1fr;align-items:start}.work-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}.detail-hero{grid-template-columns:180px 1fr;padding:26px}.detail-cover{width:180px}}
     @media(min-width:1080px){.work-grid{grid-template-columns:repeat(5,minmax(0,1fr))}}
+
+    body.artist-cosmic,body.artist-cyber,body.artist-wanderer{background:#0b0d11;overflow-x:hidden}
+    body.artist-cosmic::before,body.artist-cyber::before,body.artist-wanderer::before{content:"";position:fixed;inset:0;z-index:-2;pointer-events:none}
+    body.artist-cosmic::before{background:radial-gradient(circle at 18% 20%,rgba(118,215,255,.28),transparent 24%),radial-gradient(circle at 80% 68%,rgba(151,104,255,.2),transparent 30%),#050814;animation:artistDrift 18s ease-in-out infinite alternate}
+    body.artist-cyber::before{background:repeating-linear-gradient(90deg,rgba(41,227,255,.1) 0 1px,transparent 1px 46px),repeating-linear-gradient(0deg,rgba(255,57,124,.09) 0 1px,transparent 1px 38px),linear-gradient(135deg,#07070b,#241020 62%,#350e19);animation:artistScan 9s ease-in-out infinite alternate}
+    body.artist-wanderer::before{background:radial-gradient(ellipse at 22% 18%,rgba(255,255,241,.72),transparent 20%),linear-gradient(180deg,#b8d8dd 0%,#e7d6aa 48%,#617b63 100%);animation:artistDrift 20s ease-in-out infinite alternate}
+    .hero{position:relative;overflow:hidden;min-height:430px}
+    .hero .wrap{position:relative;z-index:2}
+    .hero::before,.hero::after{content:"";position:absolute;inset:0;pointer-events:none}
+    body.artist-cosmic .hero{background:linear-gradient(135deg,rgba(4,7,18,.94),rgba(14,18,45,.86)),radial-gradient(circle at 78% 28%,rgba(142,111,255,.34),transparent 24rem)}
+    body.artist-cosmic .hero::before{opacity:.7;background-image:radial-gradient(circle,rgba(255,255,255,.88) 0 1px,transparent 1.7px),radial-gradient(circle,rgba(139,218,255,.58) 0 1px,transparent 1.6px);background-size:86px 86px,142px 142px;animation:starDrift 28s linear infinite}
+    body.artist-cosmic .hero::after{background:linear-gradient(120deg,transparent 0 28%,rgba(88,206,255,.2) 34%,transparent 48%),linear-gradient(38deg,transparent 0 58%,rgba(229,199,255,.18) 64%,transparent 76%);filter:blur(1px);animation:artistDrift 13s ease-in-out infinite alternate}
+    body.artist-cyber .hero{background:linear-gradient(135deg,rgba(3,3,8,.95),rgba(18,10,31,.9)),radial-gradient(circle at 80% 22%,rgba(255,55,118,.44),transparent 22rem)}
+    body.artist-cyber .hero::before{background:repeating-linear-gradient(90deg,rgba(38,230,255,.28) 0 2px,transparent 2px 44px),repeating-linear-gradient(0deg,transparent 0 32px,rgba(255,255,255,.12) 33px 34px);transform:perspective(600px) rotateX(58deg) translateY(16%);transform-origin:bottom;animation:artistScan 8s ease-in-out infinite alternate}
+    body.artist-cyber .hero::after{background:linear-gradient(112deg,transparent 0 22%,rgba(255,214,88,.42) 23%,transparent 24%),linear-gradient(67deg,transparent 0 72%,rgba(38,230,255,.36) 73%,transparent 75%);animation:artistDrift 7s ease-in-out infinite alternate}
+    body.artist-wanderer .hero{background:linear-gradient(180deg,rgba(28,52,55,.58),rgba(59,87,67,.38)),linear-gradient(135deg,#94bfc8,#e6d3a1 50%,#647d62)}
+    body.artist-wanderer .hero::before{background:radial-gradient(ellipse at 18% 26%,rgba(255,255,255,.8),transparent 16%),radial-gradient(ellipse at 70% 20%,rgba(255,255,255,.44),transparent 22%);animation:cloudWalk 18s ease-in-out infinite alternate}
+    body.artist-wanderer .hero::after{inset:auto 0 0;height:42%;background:linear-gradient(to top,rgba(25,71,53,.82),rgba(66,116,90,.22),transparent);clip-path:polygon(0 78%,12% 58%,24% 68%,36% 46%,49% 64%,61% 42%,75% 62%,88% 48%,100% 58%,100% 100%,0 100%)}
+    .world-statement{margin-top:22px;display:grid;grid-template-columns:1fr;gap:10px;max-width:920px}
+    .world-statement div{border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.09);border-radius:8px;padding:12px 14px;backdrop-filter:blur(10px)}
+    .world-statement strong{display:block;margin-bottom:4px;color:#fff}.world-statement span{color:rgba(255,255,255,.72);font-size:13px;line-height:1.6}
+    body.artist-cosmic .panel,body.artist-cyber .panel,body.artist-wanderer .panel{background:rgba(255,255,255,.94)}
+    body.artist-cosmic .detail-hero{background:linear-gradient(135deg,#050814,#211942)}
+    body.artist-cyber .detail-hero{background:linear-gradient(135deg,#07070b,#381024)}
+    body.artist-wanderer .detail-hero{background:linear-gradient(135deg,#284a43,#90764a)}
+    @keyframes artistDrift{from{transform:translate3d(-2%,-1%,0) scale(1)}to{transform:translate3d(2%,2%,0) scale(1.06)}}
+    @keyframes artistScan{from{background-position:0 0,0 0,0 0}to{background-position:60px 0,0 54px,0 0}}
+    @keyframes starDrift{from{background-position:0 0,0 0}to{background-position:120px 90px,-90px 140px}}
+    @keyframes cloudWalk{from{transform:translateX(-4%)}to{transform:translateX(5%)}}
+    @media(min-width:720px){.world-statement{grid-template-columns:repeat(3,minmax(0,1fr))}}
+
   </style>
 </head>
-<body>
+<body class="artist-cyber">
   <header class="hero">
     <div class="wrap">
       <div class="topbar"><a class="brand" href="../index.html">♪ 音乐工厂作品集</a><a class="back" href="../index.html">返回首页</a></div>

@@ -953,7 +953,387 @@
       font-size: 13px;
     }
 
+
+    .site-header::before {
+      content: "";
+      position: absolute;
+      inset: -18%;
+      background:
+        radial-gradient(circle at 14% 72%, rgba(55, 198, 255, .2), transparent 23%),
+        radial-gradient(circle at 86% 18%, rgba(255, 211, 109, .22), transparent 22%),
+        conic-gradient(from 180deg at 50% 50%, rgba(104, 207, 255, .12), rgba(211,58,49,.28), rgba(132, 236, 170, .12), rgba(104, 207, 255, .12));
+      opacity: .72;
+      filter: blur(14px);
+      animation: headerDrift 18s ease-in-out infinite alternate;
+      pointer-events: none;
+    }
+
+    @keyframes headerDrift {
+      from { transform: translate3d(-2%, -1%, 0) scale(1); }
+      to { transform: translate3d(2%, 2%, 0) scale(1.08) rotate(5deg); }
+    }
+
+    .world-console {
+      position: relative;
+      isolation: isolate;
+    }
+
+    .world-console::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      opacity: .65;
+      background:
+        radial-gradient(circle at 30% 20%, rgba(255,255,255,.16), transparent 20%),
+        radial-gradient(circle at 78% 80%, rgba(211,58,49,.22), transparent 28%);
+      animation: consoleBreath 7s ease-in-out infinite alternate;
+    }
+
+    @keyframes consoleBreath {
+      from { opacity: .45; transform: scale(1); }
+      to { opacity: .86; transform: scale(1.018); }
+    }
+
+    .sound-map::before,
+    .sound-map::after,
+    .map-field,
+    .map-orbit,
+    .map-particles,
+    .map-horizon {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+    }
+
+    .sound-map::before,
+    .sound-map::after {
+      content: "";
+    }
+
+    .sound-map::before {
+      opacity: .64;
+      background-image:
+        radial-gradient(circle, rgba(255,255,255,.82) 0 1px, transparent 1.7px),
+        radial-gradient(circle, rgba(255,255,255,.5) 0 1px, transparent 1.5px);
+      background-size: 92px 92px, 138px 138px;
+      animation: starDrift 30s linear infinite;
+    }
+
+    .sound-map::after {
+      opacity: .46;
+      background: radial-gradient(circle at var(--pulse-x, 42%) var(--pulse-y, 42%), rgba(255,255,255,.35), transparent 18%);
+      transform: scale(.9);
+      transition: transform .7s ease, opacity .7s ease;
+    }
+
+    .sound-map.pulse::after {
+      opacity: .75;
+      transform: scale(1.14);
+    }
+
+    @keyframes starDrift {
+      from { background-position: 0 0, 0 0; }
+      to { background-position: 120px 90px, -90px 140px; }
+    }
+
+    .map-orbit {
+      width: 64%;
+      height: 64%;
+      left: 18%;
+      top: 15%;
+      border: 1px solid rgba(255,255,255,.18);
+      border-radius: 50%;
+      transform: rotate(-16deg);
+      animation: orbitSlow 18s linear infinite;
+    }
+
+    .map-orbit::before,
+    .map-orbit::after {
+      content: "";
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: rgba(255,255,255,.86);
+      box-shadow: 0 0 18px rgba(255,255,255,.9);
+    }
+
+    .map-orbit::before { left: 11%; top: 18%; }
+    .map-orbit::after { right: 14%; bottom: 21%; }
+
+    @keyframes orbitSlow {
+      to { transform: rotate(344deg); }
+    }
+
+    .map-particles {
+      opacity: .72;
+      background:
+        linear-gradient(115deg, transparent 0 36%, rgba(255,255,255,.24) 37%, transparent 39%),
+        linear-gradient(75deg, transparent 0 64%, rgba(255,255,255,.2) 65%, transparent 67%);
+      animation: scanFloat 9s ease-in-out infinite alternate;
+    }
+
+    @keyframes scanFloat {
+      from { transform: translateY(-2%); }
+      to { transform: translateY(3%); }
+    }
+
+    .map-horizon {
+      inset: auto 0 0;
+      height: 46%;
+      opacity: .82;
+    }
+
+    .world-console[data-world="spirit"] .sound-map {
+      background:
+        radial-gradient(circle at 20% 18%, rgba(210,245,255,.28), transparent 18%),
+        radial-gradient(circle at 80% 62%, rgba(135,92,255,.26), transparent 26%),
+        linear-gradient(145deg, #050814, #141a32 58%, #2a1438);
+    }
+
+    .world-console[data-world="spirit"] .map-particles {
+      background:
+        linear-gradient(120deg, transparent 0 18%, rgba(115,207,255,.26) 19%, transparent 28%),
+        linear-gradient(25deg, transparent 0 56%, rgba(233,208,255,.22) 57%, transparent 68%);
+      filter: blur(1px);
+    }
+
+    .world-console[data-world="spirit"] .map-horizon {
+      display: none;
+    }
+
+    .world-console[data-world="city"] .sound-map {
+      background:
+        radial-gradient(circle at 18% 26%, rgba(255,214,88,.25), transparent 16%),
+        radial-gradient(circle at 78% 22%, rgba(34,221,255,.24), transparent 22%),
+        linear-gradient(145deg, #09080d, #17111f 52%, #3a1026);
+    }
+
+    .world-console[data-world="city"] .map-orbit {
+      border-radius: 0;
+      width: 74%;
+      height: 52%;
+      left: 13%;
+      top: 20%;
+      border-color: rgba(49,232,255,.28);
+      box-shadow: 0 0 42px rgba(49,232,255,.12);
+    }
+
+    .world-console[data-world="city"] .map-particles {
+      opacity: .85;
+      background:
+        repeating-linear-gradient(90deg, rgba(49,232,255,.18) 0 1px, transparent 1px 42px),
+        repeating-linear-gradient(0deg, transparent 0 18px, rgba(255,80,122,.14) 19px 20px);
+    }
+
+    .world-console[data-world="city"] .map-horizon {
+      background:
+        linear-gradient(to top, rgba(0,0,0,.78), transparent 72%),
+        repeating-linear-gradient(90deg, rgba(49,232,255,.46) 0 3px, transparent 3px 38px);
+      clip-path: polygon(0 78%, 7% 40%, 13% 62%, 21% 24%, 30% 68%, 42% 31%, 52% 58%, 63% 18%, 73% 72%, 84% 36%, 92% 64%, 100% 44%, 100% 100%, 0 100%);
+    }
+
+    .world-console[data-world="travel"] .sound-map {
+      background:
+        radial-gradient(circle at 28% 18%, rgba(255,255,238,.42), transparent 16%),
+        radial-gradient(circle at 75% 72%, rgba(89,151,139,.25), transparent 25%),
+        linear-gradient(145deg, #b9d8db 0%, #e7d8ac 46%, #647f67 100%);
+    }
+
+    .world-console[data-world="travel"] .map-orbit {
+      display: none;
+    }
+
+    .world-console[data-world="travel"] .map-particles {
+      background:
+        radial-gradient(ellipse at 18% 32%, rgba(255,255,255,.56), transparent 16%),
+        radial-gradient(ellipse at 66% 20%, rgba(255,255,255,.46), transparent 18%),
+        linear-gradient(100deg, transparent 0 35%, rgba(255,255,255,.24) 36%, transparent 48%);
+      animation: cloudWalk 18s ease-in-out infinite alternate;
+    }
+
+    @keyframes cloudWalk {
+      from { transform: translateX(-4%); }
+      to { transform: translateX(5%); }
+    }
+
+    .world-console[data-world="travel"] .map-horizon {
+      background:
+        linear-gradient(to top, rgba(27,63,48,.76), rgba(62,111,91,.24), transparent 72%);
+      clip-path: polygon(0 74%, 10% 62%, 19% 67%, 31% 49%, 42% 64%, 55% 40%, 68% 62%, 80% 45%, 92% 58%, 100% 48%, 100% 100%, 0 100%);
+    }
+
+    .artist-card {
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+
+    .artist-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 42px rgba(0,0,0,.12);
+    }
+
+    .artist-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      opacity: .78;
+      background: linear-gradient(135deg, rgba(255,255,255,.9), rgba(255,255,255,.64));
+    }
+
+    .artist-card[data-world="spirit"]::after,
+    .artist-card[data-world="city"]::after,
+    .artist-card[data-world="travel"]::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      opacity: .42;
+      animation: cardMotion 9s ease-in-out infinite alternate;
+    }
+
+    .artist-card[data-world="spirit"]::after {
+      background: radial-gradient(circle at 22% 30%, rgba(83,190,255,.36), transparent 24%), radial-gradient(circle at 78% 64%, rgba(155,111,255,.26), transparent 30%);
+    }
+
+    .artist-card[data-world="city"]::after {
+      background: repeating-linear-gradient(90deg, rgba(23,198,255,.22) 0 2px, transparent 2px 30px), radial-gradient(circle at 78% 26%, rgba(255,62,120,.34), transparent 24%);
+    }
+
+    .artist-card[data-world="travel"]::after {
+      background: radial-gradient(ellipse at 20% 20%, rgba(255,255,255,.8), transparent 20%), linear-gradient(145deg, rgba(143,184,142,.26), rgba(232,206,132,.28));
+    }
+
+    @keyframes cardMotion {
+      from { transform: translate3d(-2%, -1%, 0) scale(1); }
+      to { transform: translate3d(2%, 2%, 0) scale(1.08); }
+    }
+
+    .artist-orbit {
+      height: 72px;
+      margin: 10px 0 0;
+      border-radius: 8px;
+      position: relative;
+      overflow: hidden;
+      background: rgba(0,0,0,.06);
+    }
+
+    .artist-orbit span {
+      position: absolute;
+      inset: 14px;
+      border: 1px solid rgba(0,0,0,.14);
+      border-radius: 50%;
+      animation: orbitSlow 16s linear infinite;
+    }
+
+    .artist-orbit span:nth-child(2) {
+      inset: 25px 34px;
+      animation-duration: 11s;
+      animation-direction: reverse;
+    }
+
+    .artist-card[data-world="city"] .artist-orbit span {
+      border-radius: 0;
+      box-shadow: 0 0 18px rgba(211,58,49,.18);
+    }
+
+    .artist-card[data-world="travel"] .artist-orbit span {
+      border-radius: 70% 45% 52% 38%;
+    }
+
+    .contact-gateway {
+      margin-top: 38px;
+      padding: 28px;
+      border-radius: 8px;
+      background:
+        radial-gradient(circle at 80% 18%, rgba(211,58,49,.18), transparent 25%),
+        linear-gradient(135deg, #161719, #2b2020);
+      color: #fff;
+      display: grid;
+      gap: 22px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .contact-gateway::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      opacity: .18;
+      background-image: linear-gradient(90deg, #fff 1px, transparent 1px), linear-gradient(#fff 1px, transparent 1px);
+      background-size: 34px 34px;
+      animation: scanFloat 8s ease-in-out infinite alternate;
+      pointer-events: none;
+    }
+
+    .contact-gateway > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .contact-gateway h2 {
+      margin: 0;
+      font-size: clamp(26px, 5vw, 42px);
+    }
+
+    .contact-gateway p {
+      margin: 10px 0 0;
+      color: rgba(255,255,255,.72);
+      line-height: 1.75;
+      max-width: 720px;
+    }
+
+    .qr-slots {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+
+    .qr-slot {
+      min-height: 168px;
+      border: 1px dashed rgba(255,255,255,.34);
+      border-radius: 8px;
+      padding: 16px;
+      background: rgba(255,255,255,.08);
+      display: grid;
+      align-content: center;
+      justify-items: center;
+      text-align: center;
+      gap: 8px;
+    }
+
+    .qr-box {
+      width: 108px;
+      aspect-ratio: 1;
+      border-radius: 8px;
+      background:
+        linear-gradient(90deg, rgba(255,255,255,.22) 50%, transparent 0) 0 0 / 18px 18px,
+        linear-gradient(rgba(255,255,255,.18) 50%, transparent 0) 0 0 / 18px 18px,
+        rgba(255,255,255,.1);
+      border: 1px solid rgba(255,255,255,.3);
+    }
+
+    .qr-slot strong {
+      font-size: 16px;
+    }
+
+    .qr-slot span {
+      color: rgba(255,255,255,.64);
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
     @media (max-width: 719px) {
+      html,
+      body {
+        max-width: 100%;
+        overflow-x: hidden;
+      }
+
       .site-header {
         min-height: 640px;
         background:
@@ -970,6 +1350,27 @@
 
       .space-player { grid-template-columns: 68px 1fr; }
       .space-cover { width: 68px; }
+      .space-actions audio {
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+      }
+      .hero-panel,
+      .world-console,
+      .sound-map,
+      .contact-gateway {
+        max-width: 100%;
+        overflow: hidden;
+      }
+      .stat {
+        min-width: 0;
+      }
+      .stat strong {
+        font-size: 26px;
+      }
+      .contact-gateway {
+        padding: 20px;
+      }
       .map-node { width: 142px; min-height: 78px; padding: 10px; }
       .map-node strong { font-size: 14px; }
     }
@@ -984,6 +1385,9 @@
       .artist-card { grid-template-columns: 1fr; }
       .artist-photo { width: 100%; }
       .artist-detail { grid-template-columns: 340px 1fr; }
+
+      .qr-slots { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .contact-gateway { grid-template-columns: 1fr 480px; align-items: center; }
       .tools { grid-template-columns: minmax(260px, 360px) 1fr; align-items: center; }
       .work-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; }
       .detail-hero { grid-template-columns: 180px 1fr; padding: 26px; }
@@ -1040,8 +1444,8 @@
               <aside class="guide-panel">
                 <div class="guide-portrait" id="guidePortrait"></div>
                 <p class="eyebrow" id="guideEyebrow">Guide</p>
-                <h2 id="guideTitle">观无界带你进入精神宇宙</h2>
-                <p class="guide-line" id="guideLine">从苦的识别、执的松动，到心的归位，每个声音节点都是一次向内走。</p>
+                <h2 id="guideTitle">观无界带你进入无限宇宙</h2>
+                <p class="guide-line" id="guideLine">宇宙本身就是音乐。星云、光子与意识缓慢漂浮，听见的是无边空间的呼吸。</p>
                 <div class="world-tabs" id="worldTabs"></div>
               </aside>
               <div>
@@ -1125,6 +1529,19 @@
     <div class="detail" id="detail"></div>
   </dialog>
 
+  <section class="wrap contact-gateway" id="contactGateway">
+    <div>
+      <p class="eyebrow">Stay Connected</p>
+      <h2>把入口留在这里</h2>
+      <p>这里预留给公众号、微信、商务合作或作品投稿二维码。正式二维码到位后，只需要替换占位图，不影响现有作品库和试听功能。</p>
+    </div>
+    <div class="qr-slots" aria-label="二维码预留入口">
+      <div class="qr-slot"><div class="qr-box" aria-hidden="true"></div><strong>官方二维码</strong><span>公众号 / 视频号 / 小程序</span></div>
+      <div class="qr-slot"><div class="qr-box" aria-hidden="true"></div><strong>商务合作</strong><span>音乐定制、AI歌手合作、版权沟通</span></div>
+      <div class="qr-slot"><div class="qr-box" aria-hidden="true"></div><strong>作品投稿</strong><span>歌手孵化、作品收录、项目联络</span></div>
+    </div>
+  </section>
+
   <footer>
     <div class="wrap">当前版本为 Music Factory Land 入口版。数据同步自飞书 Base「歌曲档案」，作品库继续保留完整检索与试听入口。</div>
   </footer>
@@ -1190,10 +1607,10 @@
     const worlds = {
       spirit: {
         artist: "观无界",
-        title: "观无界带你进入精神宇宙",
+        title: "观无界带你进入无限宇宙",
         eyebrow: "Spirit World",
-        line: "从苦的识别、执的松动，到心的归位，每个声音节点都是一次向内走。",
-        route: "静室、光廊、愿门",
+        line: "宇宙本身就是音乐。星云、光子与意识缓慢漂浮，听见的是无边空间的呼吸。",
+        route: "星云、量子、裂隙",
         nodes: [
           { label: "愿门", work: "念佛去", scene: "六个字打开一条路。", x: 18, y: 18 },
           { label: "渡口", work: "渡", scene: "执念松开时，水面开始发光。", x: 62, y: 24 },
@@ -1203,10 +1620,10 @@
       },
       city: {
         artist: "十里音",
-        title: "十里音带你进入城市工业宇宙",
+        title: "十里音带你进入赛博未来舞台",
         eyebrow: "City Rhythm",
-        line: "东方哲思、复古节拍和城市钢骨叠在一起，像夜里亮起的节奏线路。",
-        route: "霓虹、车间、高架",
+        line: "声音被具象化为舞台，能量环、激光束和数据城市一起被节奏点亮。",
+        route: "舞台、能量环、数据城",
         nodes: [
           { label: "霓虹街口", work: "霓虹金", scene: "复古光牌亮起，鼓点从街角推过来。", x: 16, y: 20 },
           { label: "回声舞台", work: "晃", scene: "人群散去以后，身体还记得节拍。", x: 58, y: 18 },
@@ -1216,10 +1633,10 @@
       },
       travel: {
         artist: "梦梦",
-        title: "梦梦带你进入地理文明宇宙",
+        title: "梦梦带你进入天地行吟",
         eyebrow: "Travel Ballad",
-        line: "一路走，一路唱，把山河、远方、遇见的人收进旋律里。",
-        route: "山河、海岸、远行",
+        line: "人在天地之间行走，风、云、水、山和诗句一起成为音乐的呼吸。",
+        route: "风、云、水、远行",
         nodes: [
           { label: "归途车站", work: "归", scene: "风从站台穿过，远方开始回头。", x: 14, y: 24 },
           { label: "山河线", work: "山河志", scene: "地图摊开，山脊像一行歌词。", x: 56, y: 18 },
@@ -1357,7 +1774,7 @@
           </button>
         `;
       }).join("");
-      document.getElementById("soundMap").innerHTML = `<div class="map-skyline"></div>${nodes}`;
+      document.getElementById("soundMap").innerHTML = `<div class="map-field"><div class="map-orbit"></div><div class="map-particles"></div><div class="map-horizon"></div></div><div class="map-skyline"></div>${nodes}`;
       renderSpacePlayer();
     }
 
@@ -1406,12 +1823,14 @@
     function renderArtistCard(name) {
       const profile = artistProfiles[name];
       const count = worksForArtist(name).length;
+      const worldKey = Object.entries(worlds).find(([, world]) => world.artist === name)?.[0] || "";
       return `
-        <a class="artist-card" href="${escapeHtml(profile.page)}" aria-label="查看${escapeHtml(name)}独立主页">
+        <a class="artist-card" data-world="${escapeHtml(worldKey)}" href="${escapeHtml(profile.page)}" aria-label="查看${escapeHtml(name)}独立主页">
           ${artistPhoto(profile, name)}
           <div>
             <h3>${escapeHtml(name)}</h3>
             <div class="work-meta">${escapeHtml(profile.tagline)}</div>
+            <div class="artist-orbit" aria-hidden="true"><span></span><span></span></div>
             <div class="tags">${profile.style.map(tag => `<span class="tag red">${escapeHtml(tag)}</span>`).join("")}</div>
             <div class="subtle">${count} 个作品 · 进入独立主页</div>
           </div>
@@ -1508,11 +1927,22 @@
           activeWorld = worldButton.dataset.world;
           activeNodeIndex = 0;
           renderSoundMap();
+          requestAnimationFrame(() => document.getElementById("soundMap")?.classList.add("pulse"));
         }
         const nodeButton = event.target.closest("[data-node]");
         if (nodeButton) {
           activeNodeIndex = Number(nodeButton.dataset.node) || 0;
+          const node = worlds[activeWorld].nodes[activeNodeIndex];
+          const map = document.getElementById("soundMap");
+          if (node && map) {
+            map.style.setProperty("--pulse-x", `${node.x}%`);
+            map.style.setProperty("--pulse-y", `${node.y}%`);
+          }
           renderSoundMap();
+          requestAnimationFrame(() => {
+            const nextMap = document.getElementById("soundMap");
+            if (nextMap) nextMap.classList.add("pulse");
+          });
         }
         const openWork = event.target.closest("[data-open-work]");
         if (openWork) openDetail(openWork.dataset.openWork);
