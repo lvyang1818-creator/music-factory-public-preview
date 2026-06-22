@@ -1458,66 +1458,6 @@
       background: linear-gradient(135deg, rgba(255,255,255,.9), rgba(255,255,255,.64));
     }
 
-    .artist-card[data-world="spirit"]::after,
-    .artist-card[data-world="city"]::after,
-    .artist-card[data-world="travel"]::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      z-index: -1;
-      opacity: .42;
-      animation: cardMotion 9s ease-in-out infinite alternate;
-    }
-
-    .artist-card[data-world="spirit"]::after {
-      background: radial-gradient(circle at 22% 30%, rgba(83,190,255,.36), transparent 24%), radial-gradient(circle at 78% 64%, rgba(155,111,255,.26), transparent 30%);
-    }
-
-    .artist-card[data-world="city"]::after {
-      background: repeating-linear-gradient(90deg, rgba(23,198,255,.22) 0 2px, transparent 2px 30px), radial-gradient(circle at 78% 26%, rgba(255,62,120,.34), transparent 24%);
-    }
-
-    .artist-card[data-world="travel"]::after {
-      background: radial-gradient(ellipse at 20% 20%, rgba(255,255,255,.8), transparent 20%), linear-gradient(145deg, rgba(143,184,142,.26), rgba(232,206,132,.28));
-    }
-
-    @keyframes cardMotion {
-      from { transform: translate3d(-2%, -1%, 0) scale(1); }
-      to { transform: translate3d(2%, 2%, 0) scale(1.08); }
-    }
-
-    .artist-orbit {
-      height: 72px;
-      margin: 10px 0 0;
-      border-radius: 8px;
-      position: relative;
-      overflow: hidden;
-      background: rgba(0,0,0,.06);
-    }
-
-    .artist-orbit span {
-      position: absolute;
-      inset: 14px;
-      border: 1px solid rgba(0,0,0,.14);
-      border-radius: 50%;
-      animation: orbitSlow 16s linear infinite;
-    }
-
-    .artist-orbit span:nth-child(2) {
-      inset: 25px 34px;
-      animation-duration: 11s;
-      animation-direction: reverse;
-    }
-
-    .artist-card[data-world="city"] .artist-orbit span {
-      border-radius: 0;
-      box-shadow: 0 0 18px rgba(211,58,49,.18);
-    }
-
-    .artist-card[data-world="travel"] .artist-orbit span {
-      border-radius: 70% 45% 52% 38%;
-    }
-
     .contact-gateway {
       margin-top: 38px;
       padding: 28px;
@@ -2109,7 +2049,6 @@
           <div>
             <h3>${escapeHtml(name)}</h3>
             <div class="work-meta">${escapeHtml(profile.tagline)}</div>
-            <div class="artist-orbit" aria-hidden="true"><span></span><span></span></div>
             <div class="tags">${profile.style.map(tag => `<span class="tag red">${escapeHtml(tag)}</span>`).join("")}</div>
             <div class="subtle">${count} 个作品 · 进入独立主页</div>
           </div>
