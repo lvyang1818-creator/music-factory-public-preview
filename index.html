@@ -1164,6 +1164,185 @@
       clip-path: polygon(0 74%, 10% 62%, 19% 67%, 31% 49%, 42% 64%, 55% 40%, 68% 62%, 80% 45%, 92% 58%, 100% 48%, 100% 100%, 0 100%);
     }
 
+    .world-console.map-cinematic {
+      border-radius: 8px;
+      background: #06070a;
+      box-shadow: 0 30px 80px rgba(0,0,0,.28);
+    }
+
+    .world-console.map-cinematic .world-shell {
+      min-height: 680px;
+      background: #07080b;
+    }
+
+    .world-console.map-cinematic .guide-panel {
+      position: relative;
+      z-index: 3;
+      background:
+        linear-gradient(90deg, rgba(7, 10, 12, .86), rgba(7, 10, 12, .52) 72%, transparent),
+        rgba(0,0,0,.28);
+      border: 0;
+      backdrop-filter: blur(18px);
+      box-shadow: 18px 0 50px rgba(0,0,0,.28);
+    }
+
+    .world-console.map-cinematic .guide-portrait {
+      width: 118px;
+      border-radius: 8px;
+      box-shadow: 0 18px 36px rgba(0,0,0,.3);
+    }
+
+    .world-console.map-cinematic .guide-line {
+      max-width: 280px;
+    }
+
+    .world-console.map-cinematic .sound-map {
+      min-height: 680px;
+      padding: 20px;
+      background-size: cover;
+      background-position: center;
+      isolation: isolate;
+    }
+
+    .world-console.map-cinematic .sound-map::before {
+      z-index: 1;
+      opacity: .35;
+      mix-blend-mode: screen;
+    }
+
+    .world-console.map-cinematic .sound-map::after {
+      z-index: 2;
+      background:
+        radial-gradient(circle at var(--pulse-x, 50%) var(--pulse-y, 50%), rgba(255,255,255,.32), transparent 14%),
+        linear-gradient(90deg, rgba(0,0,0,.35), transparent 34%),
+        linear-gradient(0deg, rgba(0,0,0,.48), transparent 28%);
+    }
+
+    .world-console.map-cinematic .map-field {
+      z-index: 2;
+    }
+
+    .world-console.map-cinematic .map-skyline,
+    .world-console.map-cinematic .map-horizon {
+      display: none;
+    }
+
+    .world-console.map-cinematic .map-orbit,
+    .world-console.map-cinematic .map-particles {
+      z-index: 2;
+    }
+
+    .world-console.map-cinematic[data-world="spirit"] .sound-map {
+      background-image:
+        linear-gradient(90deg, rgba(7, 8, 18, .28), rgba(7, 8, 18, .02) 44%),
+        url("assets/generated/music-map-guanwujie.webp");
+    }
+
+    .world-console.map-cinematic[data-world="city"] .sound-map {
+      background-image:
+        linear-gradient(90deg, rgba(5, 4, 14, .32), rgba(5, 4, 14, .03) 44%),
+        url("assets/generated/music-map-shiliyin.webp");
+    }
+
+    .world-console.map-cinematic[data-world="travel"] .sound-map {
+      background-image:
+        linear-gradient(90deg, rgba(18, 37, 34, .34), rgba(18, 37, 34, .02) 44%),
+        url("assets/generated/music-map-mengmeng.webp");
+    }
+
+    .world-console.map-cinematic[data-world="spirit"] .map-orbit {
+      width: 44%;
+      height: 44%;
+      left: 37%;
+      top: 27%;
+      border-color: rgba(255, 205, 102, .28);
+      box-shadow: 0 0 58px rgba(255, 195, 89, .18);
+    }
+
+    .world-console.map-cinematic[data-world="city"] .map-orbit {
+      width: 36%;
+      height: 36%;
+      left: 34%;
+      top: 14%;
+      border-radius: 50%;
+      border-color: rgba(83, 227, 255, .42);
+      box-shadow: 0 0 80px rgba(171, 49, 255, .22);
+    }
+
+    .world-console.map-cinematic .map-node {
+      z-index: 4;
+      width: 198px;
+      min-height: 72px;
+      display: grid;
+      grid-template-columns: 44px 1fr;
+      gap: 10px;
+      align-items: center;
+      border: 1px solid rgba(255,255,255,.16);
+      background: rgba(8, 10, 14, .4);
+      box-shadow: 0 18px 36px rgba(0,0,0,.25);
+    }
+
+    .world-console.map-cinematic .map-node::before {
+      content: "";
+      width: 44px;
+      aspect-ratio: 1;
+      grid-row: 1 / span 3;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,.34);
+      background:
+        radial-gradient(circle, rgba(255,255,255,.95) 0 2px, transparent 3px),
+        conic-gradient(from 45deg, rgba(255,255,255,.75), transparent, rgba(255,255,255,.6));
+      box-shadow: 0 0 22px rgba(255,255,255,.34);
+    }
+
+    .world-console.map-cinematic[data-world="spirit"] .map-node::before {
+      background:
+        radial-gradient(circle, rgba(255,255,255,.95) 0 2px, transparent 3px),
+        conic-gradient(from 45deg, rgba(255,215,126,.9), transparent, rgba(255,244,191,.62));
+      box-shadow: 0 0 26px rgba(255,196,79,.56);
+    }
+
+    .world-console.map-cinematic[data-world="city"] .map-node::before {
+      background:
+        radial-gradient(circle, rgba(255,255,255,.95) 0 2px, transparent 3px),
+        conic-gradient(from 45deg, rgba(252,64,255,.9), rgba(44,222,255,.35), rgba(255,134,38,.72));
+      box-shadow: 0 0 28px rgba(197,55,255,.62);
+    }
+
+    .world-console.map-cinematic[data-world="travel"] .map-node::before {
+      background:
+        radial-gradient(circle, rgba(255,255,255,.95) 0 2px, transparent 3px),
+        conic-gradient(from 45deg, rgba(234,246,226,.9), rgba(116,163,143,.45), rgba(255,244,205,.68));
+      box-shadow: 0 0 24px rgba(233,248,222,.48);
+    }
+
+    .world-console.map-cinematic .map-node strong,
+    .world-console.map-cinematic .map-node span,
+    .world-console.map-cinematic .map-node small {
+      grid-column: 2;
+    }
+
+    .world-console.map-cinematic .map-node:hover,
+    .world-console.map-cinematic .map-node.active {
+      transform: translateY(-6px) scale(1.02);
+      border-color: rgba(255,255,255,.58);
+      background: rgba(255,255,255,.16);
+      box-shadow: 0 22px 46px rgba(0,0,0,.3), 0 0 34px rgba(255,255,255,.18);
+    }
+
+    .world-console.map-cinematic .space-player {
+      position: relative;
+      z-index: 4;
+      margin-top: -126px;
+      width: min(600px, calc(100% - 36px));
+      margin-left: 18px;
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 8px;
+      background: rgba(5, 7, 10, .58);
+      backdrop-filter: blur(18px);
+      box-shadow: 0 24px 48px rgba(0,0,0,.28);
+    }
+
     .artist-card {
       position: relative;
       overflow: hidden;
@@ -1439,7 +1618,7 @@
     <section class="view active" id="view-home">
       <div class="wrap">
         <div class="land-stage">
-          <div class="world-console" id="worldConsole" data-world="spirit">
+          <div class="world-console map-cinematic" id="worldConsole" data-world="spirit">
             <div class="world-shell">
               <aside class="guide-panel">
                 <div class="guide-portrait" id="guidePortrait"></div>
@@ -1612,10 +1791,12 @@
         line: "宇宙本身就是音乐。星云、光子与意识缓慢漂浮，听见的是无边空间的呼吸。",
         route: "星云、量子、裂隙",
         nodes: [
-          { label: "愿门", work: "念佛去", scene: "六个字打开一条路。", x: 18, y: 18 },
-          { label: "渡口", work: "渡", scene: "执念松开时，水面开始发光。", x: 62, y: 24 },
-          { label: "光室", work: "无量寿", scene: "声音像一盏灯，照向更安稳的地方。", x: 42, y: 58 },
-          { label: "尘路", work: "愚秃", scene: "凡人的粗粝人生，也可以被接住。", x: 72, y: 70 }
+          { label: "净莲之境", work: "念佛去", scene: "心灵的第一层净土。", x: 16, y: 12 },
+          { label: "莲华映月", work: "渡", scene: "水中月华，照见本心。", x: 21, y: 36 },
+          { label: "逍遥极乐", work: "极乐", scene: "无声无眠，净念回响。", x: 45, y: 48 },
+          { label: "光明塔", work: "无量寿", scene: "光之引路，念之归处。", x: 70, y: 16 },
+          { label: "无尽之门", work: "专复专", scene: "通往无量的远方。", x: 79, y: 38 },
+          { label: "光生桥", work: "愚秃", scene: "穿越轮回，抵达彼岸。", x: 72, y: 66 }
         ]
       },
       city: {
@@ -1625,10 +1806,12 @@
         line: "声音被具象化为舞台，能量环、激光束和数据城市一起被节奏点亮。",
         route: "舞台、能量环、数据城",
         nodes: [
-          { label: "霓虹街口", work: "霓虹金", scene: "复古光牌亮起，鼓点从街角推过来。", x: 16, y: 20 },
-          { label: "回声舞台", work: "晃", scene: "人群散去以后，身体还记得节拍。", x: 58, y: 18 },
-          { label: "高架桥", work: "醒", scene: "风切开城市，夜色忽然清醒。", x: 34, y: 56 },
-          { label: "铁色车间", work: "铿锵", scene: "敲击声变成旋律，金属也有表情。", x: 72, y: 66 }
+          { label: "幻域穹顶", work: "霓虹金", scene: "AI幻象投影空间。", x: 14, y: 14 },
+          { label: "光束阵列", work: "铿锵", scene: "音频共能矩阵。", x: 17, y: 36 },
+          { label: "主舞台", work: "晃", scene: "声音能量核心。", x: 47, y: 47 },
+          { label: "炫彩瀑布", work: "醒", scene: "恒号浪潮布的瞬间。", x: 72, y: 20 },
+          { label: "回响之城", work: "无名", scene: "回音共鸣的未来之域。", x: 80, y: 42 },
+          { label: "能量环", work: "渊", scene: "声波共振环场。", x: 72, y: 66 }
         ]
       },
       travel: {
@@ -1638,10 +1821,12 @@
         line: "人在天地之间行走，风、云、水、山和诗句一起成为音乐的呼吸。",
         route: "风、云、水、远行",
         nodes: [
-          { label: "归途车站", work: "归", scene: "风从站台穿过，远方开始回头。", x: 14, y: 24 },
-          { label: "山河线", work: "山河志", scene: "地图摊开，山脊像一行歌词。", x: 56, y: 18 },
-          { label: "无界海岸", work: "无界", scene: "潮声往外推，边界慢慢变薄。", x: 34, y: 60 },
-          { label: "吟游广场", work: "诵", scene: "人声升起，像旧文明留下的回音。", x: 72, y: 68 }
+          { label: "云梦泽", work: "山河志", scene: "云雾缭绕之地。", x: 18, y: 18 },
+          { label: "诗意岸", work: "诵", scene: "停与远方的彼岸。", x: 72, y: 18 },
+          { label: "山水之间", work: "无界", scene: "行走天地的路上。", x: 48, y: 40 },
+          { label: "风吟谷", work: "归", scene: "风穿山谷的低语。", x: 18, y: 54 },
+          { label: "流水间", work: "等爱", scene: "水流不尽，心自清明。", x: 36, y: 70 },
+          { label: "浮云渡", work: "山河故梦", scene: "浮舟自在之处。", x: 78, y: 62 }
         ]
       }
     };
@@ -1767,7 +1952,7 @@
         const work = findWork(world.artist, node.work);
         const count = work ? work.versions.length : 0;
         return `
-          <button class="map-node ${index === activeNodeIndex ? "active" : ""}" data-node="${index}" style="left:clamp(8px, ${node.x}%, calc(100% - 166px));top:${node.y}%;" type="button">
+          <button class="map-node ${index === activeNodeIndex ? "active" : ""}" data-node="${index}" style="left:clamp(8px, ${node.x}%, calc(100% - 210px));top:${node.y}%;" type="button">
             <strong>${escapeHtml(node.label)}</strong>
             <span>${escapeHtml(node.scene)}</span>
             <small>${escapeHtml(node.work)}${count ? ` · ${count} 个版本` : ""}</small>
