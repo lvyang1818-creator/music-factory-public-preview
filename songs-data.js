@@ -2126,5 +2126,98 @@ window.MUSIC_FACTORY_SONGS = [
     "lyricSource": "",
     "introSource": "未找到歌词文件",
     "remark": "公网预览版已隐藏本地路径"
+  },
+  {
+    "recordId": "local-score-baijin-kouxiangtang-20260622",
+    "title": "白金口香糖",
+    "mainTitle": "白金口香糖",
+    "version": "白金口香糖",
+    "variant": "正式版",
+    "artist": "未标注",
+    "category": "配乐",
+    "collection": "配乐",
+    "type": "配乐",
+    "intro": "《白金口香糖》已按用户确认归入配乐作品，当前先接入汽水音乐播放入口，后续找到本地音频后再补充在线试听。",
+    "fullIntro": "《白金口香糖》已按用户确认归入配乐作品，当前先接入汽水音乐播放入口，后续找到本地音频后再补充在线试听。",
+    "lyrics": "歌词整理中。",
+    "lyricsPreview": "歌词整理中。",
+    "audioFile": "",
+    "audioPath": "",
+    "audioUrl": "",
+    "coverPath": "",
+    "cover": "",
+    "size": 0,
+    "updated": "2026-06-22",
+    "lyricSource": "",
+    "introSource": "用户补充，公网预览版",
+    "remark": "音频暂未接入，已先提供汽水音乐入口",
+    "platformLinks": [
+      {
+        "label": "汽水音乐播放",
+        "url": "https://qishui.douyin.com/s/iQcmaPN3/"
+      }
+    ]
+  },
+  {
+    "recordId": "local-guanwujie-namo-opera-20260622",
+    "title": "南无阿弥陀佛-歌剧版",
+    "mainTitle": "南无阿弥陀佛",
+    "version": "南无阿弥陀佛-歌剧版",
+    "variant": "正式版",
+    "artist": "观无界",
+    "category": "歌手演唱",
+    "collection": "南无阿弥陀佛",
+    "type": "歌手演唱",
+    "intro": "《南无阿弥陀佛-歌剧版》是观无界围绕圣号展开的歌剧化表达。音频暂未找到，当前先补入观无界作品页并提供汽水音乐入口。",
+    "fullIntro": "《南无阿弥陀佛-歌剧版》是观无界围绕圣号展开的歌剧化表达。音频暂未找到，当前先补入观无界作品页并提供汽水音乐入口。",
+    "lyrics": "歌词整理中。",
+    "lyricsPreview": "歌词整理中。",
+    "audioFile": "",
+    "audioPath": "",
+    "audioUrl": "",
+    "coverPath": "",
+    "cover": "assets/guanwujie-namo-opera-cover.jpg",
+    "size": 0,
+    "updated": "2026-06-22",
+    "lyricSource": "",
+    "introSource": "用户补充，公网预览版",
+    "remark": "音频暂未接入，已先提供汽水音乐入口",
+    "platformLinks": [
+      {
+        "label": "汽水音乐播放",
+        "url": "https://qishui.douyin.com/s/iQcuk6CJ/"
+      }
+    ]
+  },
+  {
+    "recordId": "local-guanwujie-namo-luanru-20260622",
+    "title": "南无阿弥陀佛 乱入版",
+    "mainTitle": "南无阿弥陀佛",
+    "version": "南无阿弥陀佛 乱入版",
+    "variant": "正式版",
+    "artist": "观无界",
+    "category": "歌手演唱",
+    "collection": "南无阿弥陀佛",
+    "type": "歌手演唱",
+    "intro": "《南无阿弥陀佛 乱入版》是观无界围绕圣号展开的实验版本。音频暂未找到，当前先补入观无界作品页并提供汽水音乐入口。",
+    "fullIntro": "《南无阿弥陀佛 乱入版》是观无界围绕圣号展开的实验版本。音频暂未找到，当前先补入观无界作品页并提供汽水音乐入口。",
+    "lyrics": "歌词整理中。",
+    "lyricsPreview": "歌词整理中。",
+    "audioFile": "",
+    "audioPath": "",
+    "audioUrl": "",
+    "coverPath": "",
+    "cover": "assets/guanwujie-namo-luanru-cover.jpg",
+    "size": 0,
+    "updated": "2026-06-22",
+    "lyricSource": "",
+    "introSource": "用户补充，公网预览版",
+    "remark": "音频暂未接入，已先提供汽水音乐入口",
+    "platformLinks": [
+      {
+        "label": "汽水音乐播放",
+        "url": "https://qishui.douyin.com/s/iQcuR2PX/"
+      }
+    ]
   }
 ];
