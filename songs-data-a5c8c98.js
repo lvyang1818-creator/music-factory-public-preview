@@ -1529,7 +1529,7 @@ window.MUSIC_FACTORY_SONGS = [
     "platformLinks": [
       {
         "label": "网易云音乐播放",
-        "url": "https://music.163.com/#/song?id=2717620986"
+        "url": "https://music.163.com/#/album?id=275831011"
       },
       {
         "label": "汽水音乐搜索",
