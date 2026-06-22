@@ -1,4 +1,4 @@
-window.MUSIC_FACTORY_SONGS = [
+﻿window.MUSIC_FACTORY_SONGS = [
   {
     "recordId": "recvlRBr7ojout",
     "title": "晃",
@@ -1516,26 +1516,31 @@ window.MUSIC_FACTORY_SONGS = [
     "fullIntro": "《山河故梦》是梦梦早期发行的古风叙事作品。歌曲以青石巷、旧窗、烽火、长枪、残棋与泛黄诗行为意象，在家国离乱与儿女深情之间展开，像一页被风翻开的旧史，也像一次隔世回望。",
     "lyrics": "山河故梦\n演唱：梦梦\n作词：悠然\n作曲：悠然\n\n青石板巷 月色洗旧窗\n你绣的梅 仍枕着时光\n那年烽火 折半枝柳杨\n说归来时 共酿春醅香\n\n红绳绕指 结发成霜\n铜镜里 故人泪 烫穿肠\n\n山河裂 血染旌旗扬！\n我执长枪 守你炊烟长！\n纵马踏碎 关山月苍茫\n魂归处 仍是少年模样\n\n老茶馆外 雨打残棋响\n你留的谱 缺角泛黄\n说书人叹 兴亡皆寻常\n唯小儿女 情字最难放\n\n三更鼓歇 灯影摇晃\n谁还在 唱离合 唱未央\n\n故国秋 落叶堆成殇！\n你剪烛火 照我铁衣凉\n若轮回 再逢太平巷\n定把 这人间 从头讲\n\n啊~ 啊~\n云外雁 驮着旧夕阳\n啊~ 啊~\n墓碑旁 野花轻轻晃\n\n这一世 豪杰痴缠皆散场\n只剩风 翻着 泛黄诗行……",
     "lyricsPreview": "山河故梦\n演唱：梦梦\n作词：悠然\n作曲：悠然\n\n青石板巷 月色洗旧窗\n你绣的梅 仍枕着时光\n那年烽火 折半枝柳杨\n说归来时 共酿春醅香\n\n红绳绕指 结发成霜\n铜镜里 故人泪 烫穿肠\n\n山河裂 血染旌旗扬！",
-    "audioFile": "《山河故梦》 (Remix).mp3",
+    "audioFile": "网易云外链播放器",
     "audioPath": "",
-    "audioUrl": "https://github.com/lvyang1818-creator/music-factory-public-preview/releases/download/audio-phase-2026-06-22/041-mengmeng-shanhegumeng.mp3",
+    "audioUrl": "",
     "coverPath": "",
     "cover": "assets/mengmeng-shanhegumeng-cover.jpg",
-    "size": 5.43,
+    "size": "",
     "updated": "2026-06-22",
     "lyricSource": "用户提供",
     "introSource": "用户补充，公网预览版",
-    "remark": "梦梦早期发行歌曲；封面为根据网易云截图气质重新生成的原创封面",
+    "remark": "使用网易云外链播放器；不要再使用旧的 GitHub mp3 试听",
     "platformLinks": [
       {
-        "label": "网易云音乐播放",
+        "label": "网易云专辑页",
         "url": "https://music.163.com/#/album?id=275831011"
+      },
+      {
+        "label": "网易云外链播放器",
+        "url": "https://music.163.com/outchain/player?type=1&id=275831011&auto=1&height=430"
       },
       {
         "label": "汽水音乐搜索",
         "url": "https://qishui.douyin.com/search?keyword=%E5%B1%B1%E6%B2%B3%E6%95%85%E6%A2%A6%20%E6%A2%A6%E6%A2%A6"
       }
-    ]
+    ],
+    "neteaseEmbedUrl": "https://music.163.com/outchain/player?type=1&id=275831011&auto=1&height=430"
   },
   {
     "recordId": "recvn1OVwPcNZj",

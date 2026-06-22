@@ -912,6 +912,19 @@
 
     audio { width: 100%; height: 36px; display: block; }
 
+    .netease-player {
+      width: min(100%, 330px);
+      height: 450px;
+      border: 0;
+      display: block;
+      background: #f3f0eb;
+    }
+
+    .space-actions .netease-player {
+      height: 90px;
+      max-width: 330px;
+    }
+
     .audio-note { border: 1px dashed var(--line); border-radius: 8px; padding: 12px; color: var(--muted); background: #fbfbfb; line-height: 1.6; }
 
     .platform-links { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0 8px; }
@@ -2001,15 +2014,20 @@
       const world = worlds[activeWorld];
       const node = world.nodes[activeNodeIndex] || world.nodes[0];
       const work = nodeWork(node);
-      const audioVersion = work?.versions.find(version => version.audioUrl);
+      const audioVersion = work?.versions.find(version => version.neteaseEmbedUrl || version.audioUrl);
       const cover = work?.cover ? (coverThumbs[work.cover] || work.cover) : "";
+      const player = audioVersion?.neteaseEmbedUrl
+        ? `<iframe class="netease-player" src="${escapeHtml(audioVersion.neteaseEmbedUrl.replace("height=430", "height=66"))}" loading="lazy"></iframe>`
+        : audioVersion
+          ? `<audio controls preload="metadata" src="${escapeHtml(audioVersion.audioUrl)}"></audio>`
+          : `<span class="audio-note">试听音频整理中</span>`;
       document.getElementById("spacePlayer").innerHTML = `
         ${cover ? `<img class="space-cover" src="${escapeHtml(cover)}" alt="${escapeHtml(work.title)}封面" loading="lazy" decoding="async">` : `<div class="space-cover"></div>`}
         <div>
           <h3>${escapeHtml(node.label)} · ${escapeHtml(work?.title || node.work)}</h3>
           <p>${escapeHtml(node.scene)}</p>
           <div class="space-actions">
-            ${audioVersion ? `<audio controls preload="metadata" src="${escapeHtml(audioVersion.audioUrl)}"></audio>` : `<span class="audio-note">试听音频整理中</span>`}
+            ${player}
             ${work ? `<button class="btn primary" data-open-work="${escapeHtml(work.key)}" type="button">进入作品</button>` : ""}
           </div>
         </div>
@@ -2057,7 +2075,7 @@
     }
 
     function workCard(work) {
-      const hasAudio = work.versions.some(version => version.audioUrl);
+      const hasAudio = work.versions.some(version => version.neteaseEmbedUrl || version.audioUrl);
       return `
         <button class="work-card" data-key="${escapeHtml(work.key)}">
           <div class="cover-wrap">
@@ -2183,6 +2201,11 @@
       const renderPlatformLinks = version => (version.platformLinks || []).map(link =>
         `<a class="platform-link" href="${escapeHtml(link.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(link.label || "平台播放")}</a>`
       ).join("");
+      const renderVersionAudio = version => {
+        if (version.neteaseEmbedUrl) return `<iframe class="netease-player" src="${escapeHtml(version.neteaseEmbedUrl)}" loading="lazy"></iframe>`;
+        if (version.audioUrl) return `<audio controls preload="metadata" src="${escapeHtml(version.audioUrl)}"></audio>`;
+        return `<div class="audio-note">试听音频整理中</div>`;
+      };
       document.getElementById("detail").innerHTML = `
         <section class="detail-hero">
           ${work.cover ? `<img class="detail-cover" src="${escapeHtml(work.cover)}" alt="${escapeHtml(work.title)}封面">` : `<div class="detail-cover"></div>`}
@@ -2198,7 +2221,7 @@
               ${work.versions.map(version => `
                 <div class="version">
                   <div class="version-head"><div>${escapeHtml(version.variant || version.version || version.title)}</div><span>${escapeHtml(version.type)} · ${escapeHtml(version.size || "")}MB</span></div>
-                  ${version.audioUrl ? `<audio controls preload="metadata" src="${escapeHtml(version.audioUrl)}"></audio>` : `<div class="audio-note">试听音频整理中</div>`}
+                  ${renderVersionAudio(version)}
                   ${version.platformLinks && version.platformLinks.length ? `<div class="platform-links">${renderPlatformLinks(version)}</div>` : ""}
                   <div class="work-meta">${escapeHtml(version.audioFile || "")}</div>
                 </div>
