@@ -1003,7 +1003,13 @@ window.MUSIC_FACTORY_SONGS = [
     "updated": "2026-06-19 20:43:24",
     "lyricSource": "",
     "introSource": "根据本地歌词文件自动整理",
-    "remark": "公网预览版已隐藏本地路径"
+    "remark": "公网预览版已隐藏本地路径",
+    "platformLinks": [
+      {
+        "label": "汽水音乐搜索",
+        "url": "https://qishui.douyin.com/search?keyword=%E5%A7%90%E5%A7%90%E7%9A%84KPI"
+      }
+    ]
   },
   {
     "recordId": "recvn1OVwPoaL6",
@@ -1059,7 +1065,13 @@ window.MUSIC_FACTORY_SONGS = [
     "updated": "2026-06-19 20:43:28",
     "lyricSource": "",
     "introSource": "根据本地歌词文件自动整理",
-    "remark": "公网预览版已隐藏本地路径"
+    "remark": "公网预览版已隐藏本地路径",
+    "platformLinks": [
+      {
+        "label": "汽水音乐搜索",
+        "url": "https://qishui.douyin.com/search?keyword=%E5%A7%90%E5%B0%B1%E6%98%AF%E9%A1%B6%E6%B5%81"
+      }
+    ]
   },
   {
     "recordId": "recvn1OVwPgJXC",
@@ -1146,7 +1158,13 @@ window.MUSIC_FACTORY_SONGS = [
     "updated": "2026-06-19 20:43:30",
     "lyricSource": "",
     "introSource": "根据本地歌词文件自动整理",
-    "remark": "公网预览版已隐藏本地路径"
+    "remark": "公网预览版已隐藏本地路径",
+    "platformLinks": [
+      {
+        "label": "汽水音乐搜索",
+        "url": "https://qishui.douyin.com/search?keyword=%E6%88%91%E8%A6%81%E5%9C%A8%E6%88%91%E7%9A%84%E5%B7%A5%E4%BD%8D%E9%97%AA%E9%97%AA%E5%8F%91%E4%BA%AE"
+      }
+    ]
   },
   {
     "recordId": "recvn1OVwP5fPy",
@@ -1258,7 +1276,13 @@ window.MUSIC_FACTORY_SONGS = [
     "updated": "2026-06-19 20:43:32",
     "lyricSource": "",
     "introSource": "根据本地歌词文件自动整理",
-    "remark": "公网预览版已隐藏本地路径"
+    "remark": "公网预览版已隐藏本地路径",
+    "platformLinks": [
+      {
+        "label": "汽水音乐搜索",
+        "url": "https://qishui.douyin.com/search?keyword=%E6%BD%87%E6%B4%92%E5%B0%8F%E5%A7%90"
+      }
+    ]
   },
   {
     "recordId": "recvn1OVwPLBKw",
@@ -1345,7 +1369,13 @@ window.MUSIC_FACTORY_SONGS = [
     "updated": "2026-06-19 20:43:28",
     "lyricSource": "",
     "introSource": "根据本地歌词文件自动整理",
-    "remark": "公网预览版已隐藏本地路径"
+    "remark": "公网预览版已隐藏本地路径",
+    "platformLinks": [
+      {
+        "label": "汽水音乐搜索",
+        "url": "https://qishui.douyin.com/search?keyword=%E8%AE%A9%E6%88%91%E8%BD%BB%E8%BD%BB%E7%9A%84%E5%91%8A%E8%AF%89%E4%BD%A0"
+      }
+    ]
   },
   {
     "recordId": "recvn1OVwPHPgB",
@@ -1500,6 +1530,10 @@ window.MUSIC_FACTORY_SONGS = [
       {
         "label": "网易云音乐播放",
         "url": "https://music.163.com/#/song?id=2717620986"
+      },
+      {
+        "label": "汽水音乐搜索",
+        "url": "https://qishui.douyin.com/search?keyword=%E5%B1%B1%E6%B2%B3%E6%95%85%E6%A2%A6%20%E6%A2%A6%E6%A2%A6"
       }
     ]
   },
