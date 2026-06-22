@@ -1,4 +1,5 @@
 window.MUSIC_FACTORY_COVER_THUMBS = {
+  "assets/mengmeng-shanhegumeng-cover.jpg": "assets/optimized/covers/mengmeng-shanhegumeng-cover.webp",
   "assets/11_极乐_极乐.jpg": "assets/optimized/covers/cover-001.webp",
   "assets/12_劫_劫.jpg": "assets/optimized/covers/cover-002.webp",
   "assets/13_念_念.jpg": "assets/optimized/covers/cover-003.webp",

@@ -27,6 +27,10 @@ window.MUSIC_FACTORY_SONGS = [
       {
         "label": "汽水音乐播放",
         "url": "https://qishui.douyin.com/s/iQcubfpA/"
+      },
+      {
+        "label": "网易云音乐播放",
+        "url": "https://music.163.com/#/song?id=3379870293"
       }
     ]
   },
@@ -58,6 +62,10 @@ window.MUSIC_FACTORY_SONGS = [
       {
         "label": "汽水音乐播放",
         "url": "https://qishui.douyin.com/s/iQcuk6uA/"
+      },
+      {
+        "label": "网易云音乐播放",
+        "url": "https://music.163.com/#/song?id=3379870294"
       }
     ]
   },
@@ -89,6 +97,10 @@ window.MUSIC_FACTORY_SONGS = [
       {
         "label": "汽水音乐播放",
         "url": "https://qishui.douyin.com/s/iQcudBwp/"
+      },
+      {
+        "label": "网易云音乐专辑",
+        "url": "https://music.163.com/#/album?id=375325778"
       }
     ]
   },
@@ -244,6 +256,10 @@ window.MUSIC_FACTORY_SONGS = [
       {
         "label": "汽水音乐播放",
         "url": "https://qishui.douyin.com/s/iQcumygk/"
+      },
+      {
+        "label": "网易云音乐播放",
+        "url": "https://music.163.com/#/song?id=3379871287"
       }
     ]
   },
@@ -337,6 +353,10 @@ window.MUSIC_FACTORY_SONGS = [
       {
         "label": "汽水音乐播放",
         "url": "https://qishui.douyin.com/s/iQcuBFHe/"
+      },
+      {
+        "label": "网易云音乐播放",
+        "url": "https://music.163.com/#/song?id=3383170252"
       }
     ]
   },
@@ -1456,26 +1476,32 @@ window.MUSIC_FACTORY_SONGS = [
     "recordId": "recvn1OVwPZHVU",
     "title": "山河故梦",
     "mainTitle": "山河故梦",
-    "version": "山河故梦 (Remix)",
-    "variant": "山河故梦 (Remix)",
-    "artist": "未标注",
+    "version": "山河故梦",
+    "variant": "早期发行版",
+    "artist": "梦梦",
     "category": "歌手演唱",
-    "collection": "AI创作",
-    "type": "正式版",
-    "intro": "根据歌词整理：《山河故梦》归入「AI创作」，当前版本类型为正式版。开篇意象为“青石板巷 月色洗旧窗”，可后续补充正式发行介绍。",
-    "fullIntro": "根据歌词整理：《山河故梦》归入「AI创作」，当前版本类型为正式版。开篇意象为“青石板巷 月色洗旧窗”，可后续补充正式发行介绍。",
-    "lyrics": "青石板巷 月色洗旧窗\n你绣的梅 仍枕着时光\n那年烽火 折半枝柳杨\n说归来时 共酿春醅香\n\n\n红绳绕指 结发成霜\n铜镜里 故人泪 烫穿肠\n\n\n山河裂 血染旌旗扬！\n我执长枪 守你炊烟长！\n纵马踏碎 关山月苍茫\n魂归处 仍是少年模样\n\n老茶馆外 雨打残棋响\n你留的谱 缺角泛黄\n说书人叹 兴亡皆寻常\n唯小儿女 情字最难放\n\n三更鼓歇 灯影摇晃\n谁还在 唱离合 唱未央\n\n\n故国秋 落叶堆成殇！\n你剪烛火 照我铁衣凉\n若轮回 再逢太平巷\n定把 这人间 从头讲\n\n\n啊~ 啊~\n云外雁 驮着旧夕阳\n啊~ 啊~\n墓碑旁 野花轻轻晃\n\n\n这一世 豪杰痴缠皆散场\n只剩风 翻着 泛黄诗行……\n\n老茶馆外 雨打残棋响\n你留的谱 缺角泛黄\n说书人叹 兴亡皆寻常\n唯小儿女 情字最难放\n\n三更鼓歇 灯影摇晃\n谁还在 唱离合 唱未央",
-    "lyricsPreview": "青石板巷 月色洗旧窗\n你绣的梅 仍枕着时光\n那年烽火 折半枝柳杨\n说归来时 共酿春醅香\n红绳绕指 结发成霜\n铜镜里 故人泪 烫穿肠\n山河裂 血染旌旗扬！\n我执长枪 守你炊烟长！\n纵马踏碎 关山月苍茫\n魂归处 仍是少年模样\n老茶馆外 雨打残棋响\n你留的谱 缺角泛黄",
+    "collection": "早期发行",
+    "type": "歌手演唱",
+    "intro": "《山河故梦》是梦梦早期发行的古风叙事作品，以青石巷、烽火、故国与旧情为线索，把山河兴亡写进一场未完的重逢。",
+    "fullIntro": "《山河故梦》是梦梦早期发行的古风叙事作品。歌曲以青石巷、旧窗、烽火、长枪、残棋与泛黄诗行为意象，在家国离乱与儿女深情之间展开，像一页被风翻开的旧史，也像一次隔世回望。",
+    "lyrics": "山河故梦\n演唱：梦梦\n作词：悠然\n作曲：悠然\n\n青石板巷 月色洗旧窗\n你绣的梅 仍枕着时光\n那年烽火 折半枝柳杨\n说归来时 共酿春醅香\n\n红绳绕指 结发成霜\n铜镜里 故人泪 烫穿肠\n\n山河裂 血染旌旗扬！\n我执长枪 守你炊烟长！\n纵马踏碎 关山月苍茫\n魂归处 仍是少年模样\n\n老茶馆外 雨打残棋响\n你留的谱 缺角泛黄\n说书人叹 兴亡皆寻常\n唯小儿女 情字最难放\n\n三更鼓歇 灯影摇晃\n谁还在 唱离合 唱未央\n\n故国秋 落叶堆成殇！\n你剪烛火 照我铁衣凉\n若轮回 再逢太平巷\n定把 这人间 从头讲\n\n啊~ 啊~\n云外雁 驮着旧夕阳\n啊~ 啊~\n墓碑旁 野花轻轻晃\n\n这一世 豪杰痴缠皆散场\n只剩风 翻着 泛黄诗行……",
+    "lyricsPreview": "山河故梦\n演唱：梦梦\n作词：悠然\n作曲：悠然\n\n青石板巷 月色洗旧窗\n你绣的梅 仍枕着时光\n那年烽火 折半枝柳杨\n说归来时 共酿春醅香\n\n红绳绕指 结发成霜\n铜镜里 故人泪 烫穿肠\n\n山河裂 血染旌旗扬！",
     "audioFile": "《山河故梦》 (Remix).mp3",
     "audioPath": "",
     "audioUrl": "",
     "coverPath": "",
-    "cover": "",
+    "cover": "assets/mengmeng-shanhegumeng-cover.jpg",
     "size": 5.43,
-    "updated": "2026-06-19 20:43:46",
-    "lyricSource": "",
-    "introSource": "根据本地歌词文件自动整理",
-    "remark": "公网预览版已隐藏本地路径"
+    "updated": "2026-06-22",
+    "lyricSource": "用户提供",
+    "introSource": "用户补充，公网预览版",
+    "remark": "梦梦早期发行歌曲；封面为根据网易云截图气质重新生成的原创封面",
+    "platformLinks": [
+      {
+        "label": "网易云音乐播放",
+        "url": "https://music.163.com/#/song?id=2717620986"
+      }
+    ]
   },
   {
     "recordId": "recvn1OVwPcNZj",
