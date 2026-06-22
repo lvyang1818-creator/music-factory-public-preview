@@ -1488,7 +1488,7 @@ window.MUSIC_FACTORY_SONGS = [
     "lyricsPreview": "山河故梦\n演唱：梦梦\n作词：悠然\n作曲：悠然\n\n青石板巷 月色洗旧窗\n你绣的梅 仍枕着时光\n那年烽火 折半枝柳杨\n说归来时 共酿春醅香\n\n红绳绕指 结发成霜\n铜镜里 故人泪 烫穿肠\n\n山河裂 血染旌旗扬！",
     "audioFile": "《山河故梦》 (Remix).mp3",
     "audioPath": "",
-    "audioUrl": "",
+    "audioUrl": "https://github.com/lvyang1818-creator/music-factory-public-preview/releases/download/audio-phase-2026-06-22/041-mengmeng-shanhegumeng.mp3",
     "coverPath": "",
     "cover": "assets/mengmeng-shanhegumeng-cover.jpg",
     "size": 5.43,
