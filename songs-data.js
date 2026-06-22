@@ -15,14 +15,20 @@ window.MUSIC_FACTORY_SONGS = [
     "lyricsPreview": "《晃》\n演唱：十里音\n作词：十里音\n作曲：十里音\n这里没有方向。\n没有上，没有下。\n只有——晃。\n灯光不知道往哪里照\n照了四面 哪面都是我\n家具在头顶慢慢转\n我在家具下面 忘了落\n脚下是什么我没低头看",
     "audioFile": "晃.wav",
     "audioPath": "",
-    "audioUrl": "",
+    "audioUrl": "https://github.com/lvyang1818-creator/music-factory-public-preview/releases/download/audio-phase-2026-06-22/001-shiliyin-huang.mp3",
     "coverPath": "",
     "cover": "assets/album-nihongjin.jpeg",
-    "size": 53.67,
+    "size": 5.59,
     "updated": "2026-05-08 13:18:02",
     "lyricSource": "",
     "introSource": "公网预览版",
-    "remark": "公网预览版已隐藏本地路径"
+    "remark": "公网预览版已隐藏本地路径",
+    "platformLinks": [
+      {
+        "label": "汽水音乐播放",
+        "url": "https://qishui.douyin.com/s/iQcubfpA/"
+      }
+    ]
   },
   {
     "recordId": "recvlRBr7o7hfm",
@@ -40,14 +46,20 @@ window.MUSIC_FACTORY_SONGS = [
     "lyricsPreview": "《铿锵》\n演唱：十里音\n作词：十里音\n作曲：十里音\n幻境的门，今晚关。\n带走的，是二十厘米。\n留下的，是——\n铿锵。\n脚踩回地面第一声响\n不是落地 是宣告\n二十厘米带回来的不是记忆\n是骨头里新长的一截硬",
     "audioFile": "铿锵.wav",
     "audioPath": "",
-    "audioUrl": "",
+    "audioUrl": "https://github.com/lvyang1818-creator/music-factory-public-preview/releases/download/audio-phase-2026-06-22/002-shiliyin-kengqiang.mp3",
     "coverPath": "",
     "cover": "assets/album-nihongjin.jpeg",
-    "size": 56.61,
+    "size": 5.9,
     "updated": "2026-05-08 14:55:18",
     "lyricSource": "",
     "introSource": "公网预览版",
-    "remark": "公网预览版已隐藏本地路径"
+    "remark": "公网预览版已隐藏本地路径",
+    "platformLinks": [
+      {
+        "label": "汽水音乐播放",
+        "url": "https://qishui.douyin.com/s/iQcuk6uA/"
+      }
+    ]
   },
   {
     "recordId": "recvlRBr7o3AG3",
@@ -65,14 +77,20 @@ window.MUSIC_FACTORY_SONGS = [
     "lyricsPreview": "《霓虹金》\n演唱：十里音\n作词：十里音\n作曲：十里音\n霓虹缝隙，准时开门。\n第三层，不问来路。\n重力——自今夜起，作废。\n霓虹灯转了七圈才开门\n门里头的规矩人间不适用\n巨型镜面把你照成一粒尘\n尘也有尘的逍遥 不必问\n喇叭裤摆动的弧度是经文",
     "audioFile": "霓虹金.wav",
     "audioPath": "",
-    "audioUrl": "",
+    "audioUrl": "https://github.com/lvyang1818-creator/music-factory-public-preview/releases/download/audio-phase-2026-06-22/003-shiliyin-nihongjin.mp3",
     "coverPath": "",
     "cover": "assets/album-nihongjin.jpeg",
-    "size": 56.66,
+    "size": 5.9,
     "updated": "2026-05-08 12:57:25",
     "lyricSource": "",
     "introSource": "公网预览版",
-    "remark": "公网预览版已隐藏本地路径"
+    "remark": "公网预览版已隐藏本地路径",
+    "platformLinks": [
+      {
+        "label": "汽水音乐播放",
+        "url": "https://qishui.douyin.com/s/iQcudBwp/"
+      }
+    ]
   },
   {
     "recordId": "recvlRBr7oyoSY",
@@ -90,14 +108,20 @@ window.MUSIC_FACTORY_SONGS = [
     "lyricsPreview": "《镜》\n演唱：十里音\n作词：十里音\n作曲：十里音\n渊底有一面镜。\n没有边框。\n没有人放在这里。\n它一直在。\n镜面不收光\n只收你没给任何人看过的那些\n悬在黑暗里不问你来不来\n来了也不问你准备好了没有",
     "audioFile": "镜.wav",
     "audioPath": "",
-    "audioUrl": "",
+    "audioUrl": "https://github.com/lvyang1818-creator/music-factory-public-preview/releases/download/audio-phase-2026-06-22/004-shiliyin-jing.mp3",
     "coverPath": "",
     "cover": "assets/album-wuxiang.jpg",
-    "size": 58.44,
+    "size": 6.09,
     "updated": "2026-05-11 02:44:29",
     "lyricSource": "",
     "introSource": "根据歌词自动整理",
-    "remark": "公网预览版已隐藏本地路径"
+    "remark": "公网预览版已隐藏本地路径",
+    "platformLinks": [
+      {
+        "label": "汽水音乐播放",
+        "url": "https://qishui.douyin.com/s/iQcuVaSD/"
+      }
+    ]
   },
   {
     "recordId": "recvlRBr7oWZni",
@@ -115,14 +139,20 @@ window.MUSIC_FACTORY_SONGS = [
     "lyricsPreview": "《散》\n演唱：十里音\n作词：十里音\n作曲：十里音\n花散了不知道自己走\n风吹了不知道往哪走\n我站在渊底松开手\n手里什么都没有\n散吧散吧散成风\n风不知道自己去哪方\n散吧散吧散成光\n光不记得曾经何方",
     "audioFile": "散 (Remastered).wav",
     "audioPath": "",
-    "audioUrl": "",
+    "audioUrl": "https://github.com/lvyang1818-creator/music-factory-public-preview/releases/download/audio-phase-2026-06-22/005-shiliyin-san-remastered.mp3",
     "coverPath": "",
     "cover": "assets/album-wuxiang.jpg",
-    "size": 36.28,
+    "size": 3.78,
     "updated": "2026-05-11 04:03:35",
     "lyricSource": "",
     "introSource": "根据歌词自动整理",
-    "remark": "公网预览版已隐藏本地路径"
+    "remark": "公网预览版已隐藏本地路径",
+    "platformLinks": [
+      {
+        "label": "汽水音乐播放",
+        "url": "https://qishui.douyin.com/s/iQcuVeds/"
+      }
+    ]
   },
   {
     "recordId": "recvlRBr7o9M5x",
@@ -140,14 +170,20 @@ window.MUSIC_FACTORY_SONGS = [
     "lyricsPreview": "《无名》\n演唱：十里音\n作词：十里音\n作曲：十里音\n名字\n是最后一件脱下来的\n光还的时候没有疼\n重力还的时候没有疼\n连这副皮囊\n还的时候\n也没有疼\n只有名字",
     "audioFile": "无名.wav",
     "audioPath": "",
-    "audioUrl": "",
+    "audioUrl": "https://github.com/lvyang1818-creator/music-factory-public-preview/releases/download/audio-phase-2026-06-22/006-shiliyin-wuming.mp3",
     "coverPath": "",
     "cover": "assets/album-wuxiang.jpg",
-    "size": 49.89,
+    "size": 5.2,
     "updated": "2026-05-11 05:12:06",
     "lyricSource": "",
     "introSource": "根据歌词自动整理",
-    "remark": "公网预览版已隐藏本地路径"
+    "remark": "公网预览版已隐藏本地路径",
+    "platformLinks": [
+      {
+        "label": "汽水音乐播放",
+        "url": "https://qishui.douyin.com/s/iQcu5xAs/"
+      }
+    ]
   },
   {
     "recordId": "recvlRBr7ogfxr",
@@ -165,14 +201,20 @@ window.MUSIC_FACTORY_SONGS = [
     "lyricsPreview": "《渊》\n演唱：十里音\n作词：十里音\n作曲：十里音\n在有光之前\n有一种黑\n不是光熄灭之后的黑\n是光还没有想到要来\n之前的那种在\n那里\n叫渊。\n第三层的地",
     "audioFile": "渊.wav",
     "audioPath": "",
-    "audioUrl": "",
+    "audioUrl": "https://github.com/lvyang1818-creator/music-factory-public-preview/releases/download/audio-phase-2026-06-22/007-shiliyin-yuan.mp3",
     "coverPath": "",
     "cover": "assets/album-wuxiang.jpg",
-    "size": 60.02,
+    "size": 6.25,
     "updated": "2026-05-11 03:45:14",
     "lyricSource": "",
     "introSource": "根据歌词自动整理",
-    "remark": "公网预览版已隐藏本地路径"
+    "remark": "公网预览版已隐藏本地路径",
+    "platformLinks": [
+      {
+        "label": "汽水音乐播放",
+        "url": "https://qishui.douyin.com/s/iQcuA3cy/"
+      }
+    ]
   },
   {
     "recordId": "recvlRBr7ov40G",
@@ -190,14 +232,20 @@ window.MUSIC_FACTORY_SONGS = [
     "lyricsPreview": "《醒》\n演唱：十里音\n作词：十里音\n作曲：十里音\n混沌之初，有一声\n不是雷鸣\n是——醒\n眼皮是最后一道门\n门里头住着另一个昨晚的人\n她还不知道今天会是什么形容\n她只知道骨缝里有什么在松动\n骨缝里有光在往外涌",
     "audioFile": "醒.wav",
     "audioPath": "",
-    "audioUrl": "",
+    "audioUrl": "https://github.com/lvyang1818-creator/music-factory-public-preview/releases/download/audio-phase-2026-06-22/008-shiliyin-xing.mp3",
     "coverPath": "",
     "cover": "assets/album-nihongjin.jpeg",
-    "size": 53.22,
+    "size": 5.55,
     "updated": "2026-05-08 14:22:28",
     "lyricSource": "",
     "introSource": "公网预览版",
-    "remark": "公网预览版已隐藏本地路径"
+    "remark": "公网预览版已隐藏本地路径",
+    "platformLinks": [
+      {
+        "label": "汽水音乐播放",
+        "url": "https://qishui.douyin.com/s/iQcumygk/"
+      }
+    ]
   },
   {
     "recordId": "recvlRBr7oj23R",
@@ -215,14 +263,20 @@ window.MUSIC_FACTORY_SONGS = [
     "lyricsPreview": "演唱：梦梦\n作词：专复专佛诃\n作曲：专复专佛诃\n河西走廊走到了头\n前面还是沙 还是丘\n我以为归在走廊的那头\n原来归就在 脚下这片秋\n月牙泉还在那里\n我走了三千里 它没移\n不是泉在等我\n是我转了一圈 才看见它的河\n哦——归哟",
     "audioFile": "归-剪辑版.wav",
     "audioPath": "",
-    "audioUrl": "",
+    "audioUrl": "https://github.com/lvyang1818-creator/music-factory-public-preview/releases/download/audio-phase-2026-06-22/009-mengmeng-gui-.mp3",
     "coverPath": "",
     "cover": "",
-    "size": 4.45,
+    "size": 0.51,
     "updated": "2026-05-15 13:12:52",
     "lyricSource": "",
     "introSource": "根据歌词自动整理",
-    "remark": "公网预览版已隐藏本地路径"
+    "remark": "公网预览版已隐藏本地路径",
+    "platformLinks": [
+      {
+        "label": "汽水音乐播放",
+        "url": "https://qishui.douyin.com/s/iQcuBMnk/"
+      }
+    ]
   },
   {
     "recordId": "recvlRBr7oM2pI",
@@ -240,14 +294,20 @@ window.MUSIC_FACTORY_SONGS = [
     "lyricsPreview": "演唱：梦梦\n作词：专复专佛诃\n作曲：专复专佛诃\n河西走廊走到了头\n前面还是沙 还是丘\n我以为归在走廊的那头\n原来归就在 脚下这片秋\n月牙泉还在那里\n我走了三千里 它没移\n不是泉在等我\n是我转了一圈 才看见它的河\n哦——归哟",
     "audioFile": "归.wav",
     "audioPath": "",
-    "audioUrl": "",
+    "audioUrl": "https://github.com/lvyang1818-creator/music-factory-public-preview/releases/download/audio-phase-2026-06-22/010-mengmeng-gui.mp3",
     "coverPath": "",
     "cover": "",
-    "size": 53.84,
+    "size": 5.61,
     "updated": "2026-05-15 13:08:42",
     "lyricSource": "",
     "introSource": "根据歌词自动整理",
-    "remark": "公网预览版已隐藏本地路径"
+    "remark": "公网预览版已隐藏本地路径",
+    "platformLinks": [
+      {
+        "label": "汽水音乐播放",
+        "url": "https://qishui.douyin.com/s/iQcuBMnk/"
+      }
+    ]
   },
   {
     "recordId": "recvlRBr7oBxuK",
@@ -265,14 +325,20 @@ window.MUSIC_FACTORY_SONGS = [
     "lyricsPreview": "极乐\n作词：观无界\n作曲：观无界\n演唱：观无界\n没有昼\n没有夜\n没有苦——\n只有光\n只有光——\n脚踩黄金 眼见宝光\n宝光——\n风来树说法 声声清响",
     "audioFile": "极乐.wav",
     "audioPath": "",
-    "audioUrl": "",
+    "audioUrl": "https://github.com/lvyang1818-creator/music-factory-public-preview/releases/download/audio-phase-2026-06-22/011-guanwujie-jile.mp3",
     "coverPath": "",
     "cover": "assets/11_极乐_极乐.jpg",
-    "size": 40.16,
+    "size": 4.18,
     "updated": "2026-05-18 01:55:57",
     "lyricSource": "",
     "introSource": "根据歌词自动整理",
-    "remark": "公网预览版已隐藏本地路径"
+    "remark": "公网预览版已隐藏本地路径",
+    "platformLinks": [
+      {
+        "label": "汽水音乐播放",
+        "url": "https://qishui.douyin.com/s/iQcuBFHe/"
+      }
+    ]
   },
   {
     "recordId": "recvlRBr7oL7Rp",
@@ -290,14 +356,20 @@ window.MUSIC_FACTORY_SONGS = [
     "lyricsPreview": "",
     "audioFile": "劫.wav",
     "audioPath": "",
-    "audioUrl": "",
+    "audioUrl": "https://github.com/lvyang1818-creator/music-factory-public-preview/releases/download/audio-phase-2026-06-22/012-mengmeng-jie.mp3",
     "coverPath": "",
     "cover": "assets/12_劫_劫.jpg",
-    "size": 52.68,
+    "size": 5.49,
     "updated": "2026-05-15 10:22:07",
     "lyricSource": "本地未找到歌词文件",
     "introSource": "根据歌词自动整理",
-    "remark": "公网预览版已隐藏本地路径"
+    "remark": "公网预览版已隐藏本地路径",
+    "platformLinks": [
+      {
+        "label": "汽水音乐播放",
+        "url": "https://qishui.douyin.com/s/iQcuJoSj/"
+      }
+    ]
   },
   {
     "recordId": "recvlRBr7oEyQ4",
@@ -315,14 +387,20 @@ window.MUSIC_FACTORY_SONGS = [
     "lyricsPreview": "演唱：梦梦\n作词：专复专佛诃\n作曲：专复专佛诃\n沙从哪里来 风不说\n心从哪里起 人不知\n有一个字\n一个今 一个心\n叫做——念\n祁连山雪 化了又结\n我的念 比雪更白 比冰更烈\n走过七十二道沙梁\n才晓得 所有的执 都是自己垒的墙",
     "audioFile": "念.wav",
     "audioPath": "",
-    "audioUrl": "",
+    "audioUrl": "https://github.com/lvyang1818-creator/music-factory-public-preview/releases/download/audio-phase-2026-06-22/013-mengmeng-nian.mp3",
     "coverPath": "",
     "cover": "assets/13_念_念.jpg",
-    "size": 53,
+    "size": 5.52,
     "updated": "2026-05-15 07:54:46",
     "lyricSource": "",
     "introSource": "根据歌词自动整理",
-    "remark": "公网预览版已隐藏本地路径"
+    "remark": "公网预览版已隐藏本地路径",
+    "platformLinks": [
+      {
+        "label": "汽水音乐播放",
+        "url": "https://qishui.douyin.com/s/iQcmoEW8/"
+      }
+    ]
   },
   {
     "recordId": "recvlRBr7oEjI4",
@@ -402,14 +480,20 @@ window.MUSIC_FACTORY_SONGS = [
     "lyricsPreview": "沙从哪里来 风不说\n心从哪里起 人不知\n有一个字\n一个今 一个心\n叫做——念\n祁连山雪 化了又结\n我的念 比雪更白 比冰更烈\n走过七十二道沙梁\n才晓得 所有的执 都是自己垒的墙\n戈壁的石头 一块一块\n哪一块 不是风的前世\n我抱着你的名字跪下去",
     "audioFile": "诵-剪辑版.wav",
     "audioPath": "",
-    "audioUrl": "",
+    "audioUrl": "https://github.com/lvyang1818-creator/music-factory-public-preview/releases/download/audio-phase-2026-06-22/014-mengmeng-song-.mp3",
     "coverPath": "",
     "cover": "",
-    "size": 3.65,
+    "size": 0.42,
     "updated": "2026-05-15 10:46:10",
     "lyricSource": "",
     "introSource": "根据歌词自动整理",
-    "remark": "公网预览版已隐藏本地路径"
+    "remark": "公网预览版已隐藏本地路径",
+    "platformLinks": [
+      {
+        "label": "汽水音乐播放",
+        "url": "https://qishui.douyin.com/s/iQcu6uV2/"
+      }
+    ]
   },
   {
     "recordId": "recvlRBr7ozntr",
@@ -427,14 +511,20 @@ window.MUSIC_FACTORY_SONGS = [
     "lyricsPreview": "沙从哪里来 风不说\n心从哪里起 人不知\n有一个字\n一个今 一个心\n叫做——念\n祁连山雪 化了又结\n我的念 比雪更白 比冰更烈\n走过七十二道沙梁\n才晓得 所有的执 都是自己垒的墙\n戈壁的石头 一块一块\n哪一块 不是风的前世\n我抱着你的名字跪下去",
     "audioFile": "诵.wav",
     "audioPath": "",
-    "audioUrl": "",
+    "audioUrl": "https://github.com/lvyang1818-creator/music-factory-public-preview/releases/download/audio-phase-2026-06-22/015-mengmeng-song.mp3",
     "coverPath": "",
     "cover": "",
-    "size": 50,
+    "size": 5.21,
     "updated": "2026-05-15 09:10:36",
     "lyricSource": "",
     "introSource": "根据歌词自动整理",
-    "remark": "公网预览版已隐藏本地路径"
+    "remark": "公网预览版已隐藏本地路径",
+    "platformLinks": [
+      {
+        "label": "汽水音乐播放",
+        "url": "https://qishui.douyin.com/s/iQcu6uV2/"
+      }
+    ]
   },
   {
     "recordId": "recvlRBr7oo89C",
@@ -452,14 +542,20 @@ window.MUSIC_FACTORY_SONGS = [
     "lyricsPreview": "《无量寿》\n作词：观无界\n作曲：观无界\n演唱：观无界\n有一种光\n日月照不到的地方\n他照得到\n有一种寿\n三界轮回数不尽的劫\n他在劫外\n他不是更长的时间\n他是时间升起来之前",
     "audioFile": "无量寿 -纯音乐.wav",
     "audioPath": "",
-    "audioUrl": "",
+    "audioUrl": "https://github.com/lvyang1818-creator/music-factory-public-preview/releases/download/audio-phase-2026-06-22/016-guanwujie-wuliangshou-.mp3",
     "coverPath": "",
     "cover": "assets/18_无量寿_无量寿.jpg",
-    "size": 27.27,
+    "size": 2.84,
     "updated": "2026-05-17 06:05:55",
     "lyricSource": "",
     "introSource": "根据歌词自动整理",
-    "remark": "公网预览版已隐藏本地路径"
+    "remark": "公网预览版已隐藏本地路径",
+    "platformLinks": [
+      {
+        "label": "汽水音乐播放",
+        "url": "https://qishui.douyin.com/s/iQcurNPH/"
+      }
+    ]
   },
   {
     "recordId": "recvlRBr7olrfJ",
@@ -477,14 +573,20 @@ window.MUSIC_FACTORY_SONGS = [
     "lyricsPreview": "《无量寿》\n作词：观无界\n作曲：观无界\n演唱：观无界\n有一种光\n日月照不到的地方\n他照得到\n有一种寿\n三界轮回数不尽的劫\n他在劫外\n他不是更长的时间\n他是时间升起来之前",
     "audioFile": "无量寿-剪辑版.wav",
     "audioPath": "",
-    "audioUrl": "",
+    "audioUrl": "https://github.com/lvyang1818-creator/music-factory-public-preview/releases/download/audio-phase-2026-06-22/017-guanwujie-wuliangshou-.mp3",
     "coverPath": "",
     "cover": "assets/19_无量寿_无量寿.jpg",
-    "size": 6.37,
+    "size": 0.72,
     "updated": "2026-05-17 06:33:11",
     "lyricSource": "",
     "introSource": "根据歌词自动整理",
-    "remark": "公网预览版已隐藏本地路径"
+    "remark": "公网预览版已隐藏本地路径",
+    "platformLinks": [
+      {
+        "label": "汽水音乐播放",
+        "url": "https://qishui.douyin.com/s/iQcurNPH/"
+      }
+    ]
   },
   {
     "recordId": "recvlRBr7oepJg",
@@ -502,14 +604,20 @@ window.MUSIC_FACTORY_SONGS = [
     "lyricsPreview": "《无量寿》\n作词：观无界\n作曲：观无界\n演唱：观无界\n有一种光\n日月照不到的地方\n他照得到\n有一种寿\n三界轮回数不尽的劫\n他在劫外\n他不是更长的时间\n他是时间升起来之前",
     "audioFile": "无量寿-停留版.wav",
     "audioPath": "",
-    "audioUrl": "",
+    "audioUrl": "https://github.com/lvyang1818-creator/music-factory-public-preview/releases/download/audio-phase-2026-06-22/018-guanwujie-wuliangshou-.mp3",
     "coverPath": "",
     "cover": "assets/20_无量寿_无量寿.jpg",
-    "size": 65.53,
+    "size": 6.83,
     "updated": "2026-05-17 06:24:01",
     "lyricSource": "",
     "introSource": "根据歌词自动整理",
-    "remark": "公网预览版已隐藏本地路径"
+    "remark": "公网预览版已隐藏本地路径",
+    "platformLinks": [
+      {
+        "label": "汽水音乐播放",
+        "url": "https://qishui.douyin.com/s/iQcuSYxL/"
+      }
+    ]
   },
   {
     "recordId": "recvlRBr7omSAT",
@@ -527,14 +635,20 @@ window.MUSIC_FACTORY_SONGS = [
     "lyricsPreview": "《无量寿》\n作词：观无界\n作曲：观无界\n演唱：观无界\n有一种光\n日月照不到的地方\n他照得到\n有一种寿\n三界轮回数不尽的劫\n他在劫外\n他不是更长的时间\n他是时间升起来之前",
     "audioFile": "无量寿-停留版片段.wav",
     "audioPath": "",
-    "audioUrl": "",
+    "audioUrl": "https://github.com/lvyang1818-creator/music-factory-public-preview/releases/download/audio-phase-2026-06-22/019-guanwujie-wuliangshou-.mp3",
     "coverPath": "",
     "cover": "assets/21_无量寿_无量寿.jpg",
-    "size": 6.32,
+    "size": 0.72,
     "updated": "2026-05-17 06:37:38",
     "lyricSource": "",
     "introSource": "根据歌词自动整理",
-    "remark": "公网预览版已隐藏本地路径"
+    "remark": "公网预览版已隐藏本地路径",
+    "platformLinks": [
+      {
+        "label": "汽水音乐播放",
+        "url": "https://qishui.douyin.com/s/iQcurNPH/"
+      }
+    ]
   },
   {
     "recordId": "recvlRBr7ovQnt",
@@ -552,14 +666,20 @@ window.MUSIC_FACTORY_SONGS = [
     "lyricsPreview": "《无量寿》\n作词：观无界\n作曲：观无界\n演唱：观无界\n有一种光\n日月照不到的地方\n他照得到\n有一种寿\n三界轮回数不尽的劫\n他在劫外\n他不是更长的时间\n他是时间升起来之前",
     "audioFile": "无量寿.wav",
     "audioPath": "",
-    "audioUrl": "",
+    "audioUrl": "https://github.com/lvyang1818-creator/music-factory-public-preview/releases/download/audio-phase-2026-06-22/020-guanwujie-wuliangshou.mp3",
     "coverPath": "",
     "cover": "assets/22_无量寿_无量寿.jpg",
-    "size": 64.09,
+    "size": 6.68,
     "updated": "2026-05-17 06:21:40",
     "lyricSource": "",
     "introSource": "根据歌词自动整理",
-    "remark": "公网预览版已隐藏本地路径"
+    "remark": "公网预览版已隐藏本地路径",
+    "platformLinks": [
+      {
+        "label": "汽水音乐播放",
+        "url": "https://qishui.douyin.com/s/iQcurNPH/"
+      }
+    ]
   },
   {
     "recordId": "recvlRBr7oGXPW",
@@ -577,14 +697,20 @@ window.MUSIC_FACTORY_SONGS = [
     "lyricsPreview": "《愚秃》\n作词：观无界\n作曲：观无界\n演唱：观无界\n四岁没了爹，八岁没了娘\n九岁剃了头，就为一件事\n——人死了去哪儿，有没有方向\n比睿山上住了二十年长\n经念了遍遍，还是一片茫\n下山那年，二十九，不甘心\n在六角堂里，闭关坐了百日深\n第九十五个夜，梦里有人",
     "audioFile": "愚秃-剪辑版1.wav",
     "audioPath": "",
-    "audioUrl": "",
+    "audioUrl": "https://github.com/lvyang1818-creator/music-factory-public-preview/releases/download/audio-phase-2026-06-22/021-guanwujie-yutu-1.mp3",
     "coverPath": "",
     "cover": "assets/23_愚秃_愚秃.jpg",
-    "size": 3.19,
+    "size": 0.36,
     "updated": "2026-05-16 03:55:22",
     "lyricSource": "",
     "introSource": "根据歌词自动整理",
-    "remark": "公网预览版已隐藏本地路径"
+    "remark": "公网预览版已隐藏本地路径",
+    "platformLinks": [
+      {
+        "label": "??????",
+        "url": "https://qishui.douyin.com/s/iQvk8ut2/"
+      }
+    ]
   },
   {
     "recordId": "recvlRBr7okB8u",
@@ -602,14 +728,20 @@ window.MUSIC_FACTORY_SONGS = [
     "lyricsPreview": "《愚秃》\n作词：观无界\n作曲：观无界\n演唱：观无界\n四岁没了爹，八岁没了娘\n九岁剃了头，就为一件事\n——人死了去哪儿，有没有方向\n比睿山上住了二十年长\n经念了遍遍，还是一片茫\n下山那年，二十九，不甘心\n在六角堂里，闭关坐了百日深\n第九十五个夜，梦里有人",
     "audioFile": "愚秃-剪辑版2.wav",
     "audioPath": "",
-    "audioUrl": "",
+    "audioUrl": "https://github.com/lvyang1818-creator/music-factory-public-preview/releases/download/audio-phase-2026-06-22/022-guanwujie-yutu-2.mp3",
     "coverPath": "",
     "cover": "assets/24_愚秃_愚秃.jpg",
-    "size": 3.43,
+    "size": 0.39,
     "updated": "2026-05-16 03:55:48",
     "lyricSource": "",
     "introSource": "根据歌词自动整理",
-    "remark": "公网预览版已隐藏本地路径"
+    "remark": "公网预览版已隐藏本地路径",
+    "platformLinks": [
+      {
+        "label": "??????",
+        "url": "https://qishui.douyin.com/s/iQvk8ut2/"
+      }
+    ]
   },
   {
     "recordId": "recvlRBr7orcS7",
@@ -630,7 +762,7 @@ window.MUSIC_FACTORY_SONGS = [
     "audioUrl": "assets/audio/guanwujie-yutu-full.mp3",
     "platformLinks": [
       {
-        "label": "汽水音乐播放",
+        "label": "??????",
         "url": "https://qishui.douyin.com/s/iQvk8ut2/"
       }
     ],
@@ -658,14 +790,20 @@ window.MUSIC_FACTORY_SONGS = [
     "lyricsPreview": "《专复专》\n作词：观无界\n作曲：观无界\n演唱：观无界\n一件事\n一遍又一遍\n散了，回来\n这就够了\n不问来路，不问终点站\n只管当下，这一念\n散了不要烦\n散了，再回来，就是岸",
     "audioFile": "专复专-穿越版.wav",
     "audioPath": "",
-    "audioUrl": "",
+    "audioUrl": "https://github.com/lvyang1818-creator/music-factory-public-preview/releases/download/audio-phase-2026-06-22/023-guanwujie-zhuanfuzhuan-.mp3",
     "coverPath": "",
     "cover": "assets/26_专复专_专复专.jpg",
-    "size": 55.57,
+    "size": 5.79,
     "updated": "2026-05-17 07:48:14",
     "lyricSource": "",
     "introSource": "根据歌词自动整理",
-    "remark": "公网预览版已隐藏本地路径"
+    "remark": "公网预览版已隐藏本地路径",
+    "platformLinks": [
+      {
+        "label": "汽水音乐播放",
+        "url": "https://qishui.douyin.com/s/iQcmTV4e/"
+      }
+    ]
   },
   {
     "recordId": "recvlRBr7oDCVc",
@@ -683,14 +821,20 @@ window.MUSIC_FACTORY_SONGS = [
     "lyricsPreview": "《专复专》\n作词：观无界\n作曲：观无界\n演唱：观无界\n一件事\n一遍又一遍\n散了，回来\n这就够了\n不问来路，不问终点站\n只管当下，这一念\n散了不要烦\n散了，再回来，就是岸",
     "audioFile": "专复专-纯音乐.wav",
     "audioPath": "",
-    "audioUrl": "",
+    "audioUrl": "https://github.com/lvyang1818-creator/music-factory-public-preview/releases/download/audio-phase-2026-06-22/024-guanwujie-zhuanfuzhuan-.mp3",
     "coverPath": "",
     "cover": "assets/27_专复专_专复专.jpg",
-    "size": 36.04,
+    "size": 3.76,
     "updated": "2026-05-17 08:08:04",
     "lyricSource": "",
     "introSource": "根据歌词自动整理",
-    "remark": "公网预览版已隐藏本地路径"
+    "remark": "公网预览版已隐藏本地路径",
+    "platformLinks": [
+      {
+        "label": "汽水音乐播放",
+        "url": "https://qishui.douyin.com/s/iQcuJUth/"
+      }
+    ]
   },
   {
     "recordId": "recvlRBr7oa9L7",
@@ -708,14 +852,20 @@ window.MUSIC_FACTORY_SONGS = [
     "lyricsPreview": "《专复专》\n作词：观无界\n作曲：观无界\n演唱：观无界\n一件事\n一遍又一遍\n散了，回来\n这就够了\n不问来路，不问终点站\n只管当下，这一念\n散了不要烦\n散了，再回来，就是岸",
     "audioFile": "专复专-专注版.wav",
     "audioPath": "",
-    "audioUrl": "",
+    "audioUrl": "https://github.com/lvyang1818-creator/music-factory-public-preview/releases/download/audio-phase-2026-06-22/025-guanwujie-zhuanfuzhuan-.mp3",
     "coverPath": "",
     "cover": "assets/28_专复专_专复专.jpg",
-    "size": 51.77,
+    "size": 5.39,
     "updated": "2026-05-17 07:45:33",
     "lyricSource": "",
     "introSource": "根据歌词自动整理",
-    "remark": "公网预览版已隐藏本地路径"
+    "remark": "公网预览版已隐藏本地路径",
+    "platformLinks": [
+      {
+        "label": "汽水音乐播放",
+        "url": "https://qishui.douyin.com/s/iQcmEr66/"
+      }
+    ]
   },
   {
     "recordId": "recvlRBr7oueWa",
@@ -733,14 +883,20 @@ window.MUSIC_FACTORY_SONGS = [
     "lyricsPreview": "《专复专》\n作词：观无界\n作曲：观无界\n演唱：观无界\n一件事\n一遍又一遍\n散了，回来\n这就够了\n不问来路，不问终点站\n只管当下，这一念\n散了不要烦\n散了，再回来，就是岸",
     "audioFile": "专复专.wav",
     "audioPath": "",
-    "audioUrl": "",
+    "audioUrl": "https://github.com/lvyang1818-creator/music-factory-public-preview/releases/download/audio-phase-2026-06-22/026-guanwujie-zhuanfuzhuan.mp3",
     "coverPath": "",
     "cover": "assets/29_专复专_专复专.jpg",
-    "size": 50.71,
+    "size": 5.28,
     "updated": "2026-05-17 07:58:59",
     "lyricSource": "",
     "introSource": "根据歌词自动整理",
-    "remark": "公网预览版已隐藏本地路径"
+    "remark": "公网预览版已隐藏本地路径",
+    "platformLinks": [
+      {
+        "label": "汽水音乐播放",
+        "url": "https://qishui.douyin.com/s/iQcu6MS5/"
+      }
+    ]
   },
   {
     "recordId": "recvn1OVwPXG5o",
@@ -758,14 +914,20 @@ window.MUSIC_FACTORY_SONGS = [
     "lyricsPreview": "凤鸣九天\n演唱：梦梦\n作词：梦梦\n作曲：梦梦\n大漠孤烟直，长河落日圆\n黄沙吞没了多少英雄的名\n烽火台上的烟，向北散入苍\n雁阵南飞不回头\n这片天地，从来不问儿女情长\n铠甲冷，马蹄霜\n一声胡笳，断了多少肠\n但她勒住缰，抬起头",
     "audioFile": "凤鸣九天.wav",
     "audioPath": "",
-    "audioUrl": "",
+    "audioUrl": "https://github.com/lvyang1818-creator/music-factory-public-preview/releases/download/audio-phase-2026-06-22/027-mengmeng-fengmingjiutian.mp3",
     "coverPath": "",
     "cover": "assets/30_凤鸣九天_凤鸣九天.jpg",
-    "size": 53.99,
+    "size": 5.62,
     "updated": "2026-06-19 20:43:25",
     "lyricSource": "",
     "introSource": "根据本地歌词文件自动整理",
-    "remark": "公网预览版已隐藏本地路径"
+    "remark": "公网预览版已隐藏本地路径",
+    "platformLinks": [
+      {
+        "label": "汽水音乐播放",
+        "url": "https://qishui.douyin.com/s/iQcupmwT/"
+      }
+    ]
   },
   {
     "recordId": "recvn1OVwPiMLd",
@@ -783,14 +945,20 @@ window.MUSIC_FACTORY_SONGS = [
     "lyricsPreview": "姐姐出门了\n演唱：十里音\n作词：十里音\n作曲：十里音\n口红一抹，镜子里笑了一下就跑\n高跟鞋踩着地板谁都得让道\n今晚不将就，不凑合，不靠靠\n姐今晚只为自己好\n手机一关，烦恼都不在了\n音乐一响，脚就不听话地跳\n什么叫潇洒，就是走出这扇门\n整个城市都是姐的道",
     "audioFile": "姐姐出门了.wav",
     "audioPath": "",
-    "audioUrl": "",
+    "audioUrl": "https://github.com/lvyang1818-creator/music-factory-public-preview/releases/download/audio-phase-2026-06-22/028-shiliyin-jiejiechumenle.mp3",
     "coverPath": "",
     "cover": "assets/31_姐姐出门了_姐姐出门了.jpg",
-    "size": 42.39,
+    "size": 4.42,
     "updated": "2026-06-19 20:43:24",
     "lyricSource": "",
     "introSource": "根据本地歌词文件自动整理",
-    "remark": "公网预览版已隐藏本地路径"
+    "remark": "公网预览版已隐藏本地路径",
+    "platformLinks": [
+      {
+        "label": "汽水音乐播放",
+        "url": "https://qishui.douyin.com/s/iQcugFq6/"
+      }
+    ]
   },
   {
     "recordId": "recvn1OVwPKCI3",
@@ -808,10 +976,10 @@ window.MUSIC_FACTORY_SONGS = [
     "lyricsPreview": "《姐姐的KPI》\n演唱：十里音\n作词：十里音\n作词：十里音\n朝九晚五天天打卡\n职场牛马满身疲乏\n报表堆起层层落霞\nKPI 追着人放不下\n内卷套路全都见啦\n摸鱼装傻自有章法\n不必天天紧绷挣扎\n稳住心态潇洒自洽",
     "audioFile": "姐姐的KPI.wav",
     "audioPath": "",
-    "audioUrl": "",
+    "audioUrl": "https://github.com/lvyang1818-creator/music-factory-public-preview/releases/download/audio-phase-2026-06-22/029-shiliyin-jiejiedekpi.mp3",
     "coverPath": "",
     "cover": "assets/32_姐姐的KPI_姐姐的KPI.jpg",
-    "size": 39.23,
+    "size": 4.09,
     "updated": "2026-06-19 20:43:24",
     "lyricSource": "",
     "introSource": "根据本地歌词文件自动整理",
@@ -833,14 +1001,20 @@ window.MUSIC_FACTORY_SONGS = [
     "lyricsPreview": "姐姐的爱很金贵\n演唱：十里音\n作词：十里音\n作曲：十里音\n你说你喜欢我，我听见了\n可喜欢要配上行动才算数\n光说不练那叫什么\n那叫白日做梦，没用处！\n姐姐不是等闲货\n从头到脚都是个宝\n想追我你得想清楚\n下头的男人，免开尊口！",
     "audioFile": "姐姐的爱很金贵.wav",
     "audioPath": "",
-    "audioUrl": "",
+    "audioUrl": "https://github.com/lvyang1818-creator/music-factory-public-preview/releases/download/audio-phase-2026-06-22/030-shiliyin-jiejiedeaihenjingui.mp3",
     "coverPath": "",
     "cover": "assets/33_姐姐的爱很金贵_姐姐的爱很金贵.jpg",
-    "size": 45.62,
+    "size": 4.75,
     "updated": "2026-06-19 20:43:24",
     "lyricSource": "",
     "introSource": "根据本地歌词文件自动整理",
-    "remark": "公网预览版已隐藏本地路径"
+    "remark": "公网预览版已隐藏本地路径",
+    "platformLinks": [
+      {
+        "label": "汽水音乐播放",
+        "url": "https://qishui.douyin.com/s/iQcuFxX9/"
+      }
+    ]
   },
   {
     "recordId": "recvn1OVwPSjbH",
@@ -858,10 +1032,10 @@ window.MUSIC_FACTORY_SONGS = [
     "lyricsPreview": "姐就是顶流\n演唱：十里音\n作词：十里音\n作曲：十里音\n姐就是顶流，底气不用求\n闲话一边溜，活得贼拉自由\n日子走四方，咱不慌不忙\n偏见放一旁，姐自带气场\n红尘人来往，何必委屈逞强\n心有大方向，活得自在敞亮\n姐就是顶流，底气不用求\n闲话一边溜，活得贼拉自由",
     "audioFile": "姐就是顶流.wav",
     "audioPath": "",
-    "audioUrl": "",
+    "audioUrl": "https://github.com/lvyang1818-creator/music-factory-public-preview/releases/download/audio-phase-2026-06-22/031-shiliyin-jiejiushidingliu.mp3",
     "coverPath": "",
     "cover": "assets/34_姐就是顶流_姐就是顶流.jpg",
-    "size": 37.84,
+    "size": 3.94,
     "updated": "2026-06-19 20:43:28",
     "lyricSource": "",
     "introSource": "根据本地歌词文件自动整理",
@@ -883,14 +1057,20 @@ window.MUSIC_FACTORY_SONGS = [
     "lyricsPreview": "山河志\n演唱：梦梦\n作词：梦\n作曲：梦梦\n骨笛生了锈\n山河还在鸣\n万物生于有，有生于无\n每一段路，都是前世埋下的因\n纳木错的蓝，比苍穹还高\n格桑花开了又谢，雪山自傲\n以为在丈量世界\n其实世界在量，这颗心有多骄",
     "audioFile": "山河志.wav",
     "audioPath": "",
-    "audioUrl": "",
+    "audioUrl": "https://github.com/lvyang1818-creator/music-factory-public-preview/releases/download/audio-phase-2026-06-22/032-mengmeng-shanhezhi.mp3",
     "coverPath": "",
     "cover": "assets/35_山河志_山河志.jpg",
-    "size": 37.84,
+    "size": 3.94,
     "updated": "2026-06-19 20:43:29",
     "lyricSource": "",
     "introSource": "根据本地歌词文件自动整理",
-    "remark": "公网预览版已隐藏本地路径"
+    "remark": "公网预览版已隐藏本地路径",
+    "platformLinks": [
+      {
+        "label": "汽水音乐播放",
+        "url": "https://qishui.douyin.com/s/iQcuQ3Fs/"
+      }
+    ]
   },
   {
     "recordId": "recvn1OVwPWxfr",
@@ -908,14 +1088,20 @@ window.MUSIC_FACTORY_SONGS = [
     "lyricsPreview": "我的祖国叫中国\n演唱：十里音\n作词：十里音\n作曲：十里音\n北国风光，千里冰封，万里雪飘\n龙脉山河，俯仰之间，气贯云霄\n长江东去浪淘尽\n黄土地上根最牢\n山舞银蛇入画屏\n原驰蜡象踏层涛\n五千年的故事没有散\n刻进每个炎黄子孙的骄傲",
     "audioFile": "我的祖国叫中国.wav",
     "audioPath": "",
-    "audioUrl": "",
+    "audioUrl": "https://github.com/lvyang1818-creator/music-factory-public-preview/releases/download/audio-phase-2026-06-22/033-shiliyin-wodezuguojiaozhongguo.mp3",
     "coverPath": "",
     "cover": "assets/36_我的祖国叫中国_我的祖国叫中国.jpg",
-    "size": 52.8,
+    "size": 5.5,
     "updated": "2026-06-19 20:43:31",
     "lyricSource": "",
     "introSource": "公网预览版",
-    "remark": "公网预览版已隐藏本地路径"
+    "remark": "公网预览版已隐藏本地路径",
+    "platformLinks": [
+      {
+        "label": "汽水音乐播放",
+        "url": "https://qishui.douyin.com/s/iQcmT1cb/"
+      }
+    ]
   },
   {
     "recordId": "recvn1OVwPxuth",
@@ -933,10 +1119,10 @@ window.MUSIC_FACTORY_SONGS = [
     "lyricsPreview": "《我要在我的工位里闪闪发光》\n作词：十里音\n作曲：十里音\n我要在我的工位里闪闪发光，\n不需要别人给我方向。\n用智慧和力量，打破一切框框，\n这是我的舞台，谁也不能挡。\n我要在我的工位里闪闪发光，\n每个决定都让我更勇敢。\n用自信与梦想，闯出自己的天地，\n这是我的时刻，闪耀在眼前。\n清晨的阳光洒在我的桌上，",
     "audioFile": "我要在我的工位闪闪发光.wav",
     "audioPath": "",
-    "audioUrl": "",
+    "audioUrl": "https://github.com/lvyang1818-creator/music-factory-public-preview/releases/download/audio-phase-2026-06-22/034-shiliyin-gongweishanshanfaliang-audio.mp3",
     "coverPath": "",
     "cover": "assets/37_我要在我的工位闪闪发亮_我要在我的工位闪闪发亮.jpg",
-    "size": 43.17,
+    "size": 4.5,
     "updated": "2026-06-19 20:43:30",
     "lyricSource": "",
     "introSource": "根据本地歌词文件自动整理",
@@ -958,14 +1144,20 @@ window.MUSIC_FACTORY_SONGS = [
     "lyricsPreview": "无界\n演唱：梦梦\n作词：梦梦\n作曲：梦梦\n云在山之上\n山在水之中\n钟声过了九重\n无人知道它落在何处\n无界\n无界\n三界原是一场\n梦",
     "audioFile": "无界.wav",
     "audioPath": "",
-    "audioUrl": "",
+    "audioUrl": "https://github.com/lvyang1818-creator/music-factory-public-preview/releases/download/audio-phase-2026-06-22/035-mengmeng-wujie.mp3",
     "coverPath": "",
     "cover": "assets/38_无界_无界.jpg",
-    "size": 39.31,
+    "size": 4.1,
     "updated": "2026-06-19 20:43:31",
     "lyricSource": "",
     "introSource": "根据本地歌词文件自动整理",
-    "remark": "公网预览版已隐藏本地路径"
+    "remark": "公网预览版已隐藏本地路径",
+    "platformLinks": [
+      {
+        "label": "汽水音乐播放",
+        "url": "https://qishui.douyin.com/s/iQcuHh5C/"
+      }
+    ]
   },
   {
     "recordId": "recvn1OVwPXE04",
@@ -1008,14 +1200,20 @@ window.MUSIC_FACTORY_SONGS = [
     "lyricsPreview": "渡\n演唱：观无界\n作词：观无界\n作曲：观无界\n三界如火宅\n众生酣睡不觉\n轮回无始无终\n迷于颠倒，忘了来处\n生苦，老苦，病苦，死苦\n爱别离苦，怨憎会苦\n求不得苦，五阴炽盛苦\n此，是为八苦",
     "audioFile": "渡.wav",
     "audioPath": "",
-    "audioUrl": "",
+    "audioUrl": "https://github.com/lvyang1818-creator/music-factory-public-preview/releases/download/audio-phase-2026-06-22/036-guanwujie-du.mp3",
     "coverPath": "",
     "cover": "assets/40_渡_渡.jpg",
-    "size": 44.41,
+    "size": 4.63,
     "updated": "2026-06-19 20:43:22",
     "lyricSource": "",
     "introSource": "根据本地歌词文件自动整理",
-    "remark": "公网预览版已隐藏本地路径"
+    "remark": "公网预览版已隐藏本地路径",
+    "platformLinks": [
+      {
+        "label": "汽水音乐播放",
+        "url": "https://qishui.douyin.com/s/iQcudNLJ/"
+      }
+    ]
   },
   {
     "recordId": "recvn1OVwPH7De",
@@ -1033,10 +1231,10 @@ window.MUSIC_FACTORY_SONGS = [
     "lyricsPreview": "潇洒小姐\n演唱：十里音\n作词：十里音\n作曲：十里音\n我是潇洒小姐 不被世俗捆绑\n不按别人模样 过自己的时光\n我是潇洒小姐 随心自在摇晃\n跟着迪斯科唱响 快乐就在身旁\n大人天天对我讲\n好好学习找工作\n人生规划给我框\n偏偏我有自己主张",
     "audioFile": "潇洒小姐.wav",
     "audioPath": "",
-    "audioUrl": "",
+    "audioUrl": "https://github.com/lvyang1818-creator/music-factory-public-preview/releases/download/audio-phase-2026-06-22/037-shiliyin-xiaosaxiaojie.mp3",
     "coverPath": "",
     "cover": "assets/41_潇洒小姐_潇洒小姐.jpg",
-    "size": 49,
+    "size": 5.11,
     "updated": "2026-06-19 20:43:32",
     "lyricSource": "",
     "introSource": "根据本地歌词文件自动整理",
@@ -1058,14 +1256,20 @@ window.MUSIC_FACTORY_SONGS = [
     "lyricsPreview": "演唱：梦梦\n作词：梦梦\n作曲：梦梦\n山在云端沉默着\n月光铺满了空旷的河\n我站在岁月的渡口\n望着星河，等一个人来过\n风翻过千重叶\n雨落进无名的湖\n而那颗心依然燃着\n等爱，如日等晨曦归路\n天地之间有多宽",
     "audioFile": "等爱 5.5.wav",
     "audioPath": "",
-    "audioUrl": "",
+    "audioUrl": "https://github.com/lvyang1818-creator/music-factory-public-preview/releases/download/audio-phase-2026-06-22/038-mengmeng-dengai-5.5.mp3",
     "coverPath": "",
     "cover": "assets/42_等爱_等爱.jpg",
-    "size": 61.98,
+    "size": 6.46,
     "updated": "2026-06-19 20:43:24",
     "lyricSource": "",
     "introSource": "根据本地歌词文件自动整理",
-    "remark": "公网预览版已隐藏本地路径"
+    "remark": "公网预览版已隐藏本地路径",
+    "platformLinks": [
+      {
+        "label": "汽水音乐播放",
+        "url": "https://qishui.douyin.com/s/iQcuyYUn/"
+      }
+    ]
   },
   {
     "recordId": "recvn1OVwP7rNQ",
@@ -1083,14 +1287,20 @@ window.MUSIC_FACTORY_SONGS = [
     "lyricsPreview": "演唱：梦梦\n作词：梦梦\n作曲：梦梦\n山在云端沉默着\n月光铺满了空旷的河\n我站在岁月的渡口\n望着星河，等一个人来过\n风翻过千重叶\n雨落进无名的湖\n而那颗心依然燃着\n等爱，如日等晨曦归路\n天地之间有多宽",
     "audioFile": "等爱.mp3",
     "audioPath": "",
-    "audioUrl": "",
+    "audioUrl": "https://github.com/lvyang1818-creator/music-factory-public-preview/releases/download/audio-phase-2026-06-22/039-mengmeng-dengai.mp3",
     "coverPath": "",
     "cover": "assets/43_等爱_等爱.jpg",
-    "size": 8.98,
+    "size": 7.71,
     "updated": "2026-06-19 20:43:19",
     "lyricSource": "",
     "introSource": "根据本地歌词文件自动整理",
-    "remark": "公网预览版已隐藏本地路径"
+    "remark": "公网预览版已隐藏本地路径",
+    "platformLinks": [
+      {
+        "label": "汽水音乐播放",
+        "url": "https://qishui.douyin.com/s/iQcuyYUn/"
+      }
+    ]
   },
   {
     "recordId": "recvn1OVwPSww0",
@@ -1108,10 +1318,10 @@ window.MUSIC_FACTORY_SONGS = [
     "lyricsPreview": "《让我轻轻的告诉你》\n演唱：十里音\n作词：十里音\n作曲：十里音\n让我轻轻的告诉你\n不需要你来定义我\n独立的心，闪烁的光\n我走在这条自由路上\n让我的步伐轻盈如风\n每一步都充满力量\n自信的笑，照亮我\n这世界因我更加亮堂",
     "audioFile": "让我轻轻的告诉你.wav",
     "audioPath": "",
-    "audioUrl": "",
+    "audioUrl": "https://github.com/lvyang1818-creator/music-factory-public-preview/releases/download/audio-phase-2026-06-22/040-shiliyin-rangwoqingqingdegaosuni.mp3",
     "coverPath": "",
     "cover": "assets/44_让我轻轻的告诉你_让我轻轻的告诉你.jpg",
-    "size": 40.37,
+    "size": 4.21,
     "updated": "2026-06-19 20:43:28",
     "lyricSource": "",
     "introSource": "根据本地歌词文件自动整理",
