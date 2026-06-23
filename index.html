@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>音乐工厂声音世界</title>
+  <title>音乐工厂 · 品牌体验馆</title>
   <link rel="icon" href="data:," />
   <link rel="preload" as="image" href="assets/optimized/mobile-banner.webp" media="(max-width: 719px)" />
   <link rel="preload" as="image" href="assets/optimized/desktop-banner.webp" media="(min-width: 720px)" />
@@ -35,10 +35,11 @@
 
     .site-header {
       min-height: 620px;
-      color: #fff;
+      color: #171412;
       background:
-        radial-gradient(circle at 76% 22%, rgba(211,58,49,.34), transparent 26%),
-        linear-gradient(90deg, rgba(0,0,0,.74) 0%, rgba(0,0,0,.48) 44%, rgba(0,0,0,.16) 100%),
+        radial-gradient(circle at 84% 12%, rgba(211,58,49,.18), transparent 30%),
+        radial-gradient(circle at 16% 16%, rgba(201,164,93,.22), transparent 34%),
+        linear-gradient(90deg, rgba(255,250,243,.94) 0%, rgba(255,250,243,.86) 46%, rgba(255,250,243,.56) 100%),
         url("assets/optimized/desktop-banner.webp") center / cover no-repeat;
       position: relative;
       overflow: hidden;
@@ -96,9 +97,9 @@
     .nav::-webkit-scrollbar { display: none; }
 
     .nav button {
-      border: 1px solid rgba(255,255,255,.16);
-      background: rgba(255,255,255,.08);
-      color: rgba(255,255,255,.78);
+      border: 1px solid rgba(23,20,18,.12);
+      background: rgba(255,255,255,.56);
+      color: #5b5651;
       border-radius: 999px;
       padding: 9px 13px;
       white-space: nowrap;
@@ -106,8 +107,8 @@
     }
 
     .nav button.active {
-      background: #fff;
-      color: var(--ink);
+      background: var(--ink);
+      color: #fff;
     }
 
     .hero {
@@ -119,7 +120,7 @@
     }
 
     .eyebrow {
-      color: rgba(255,255,255,.64);
+      color: var(--red);
       font-weight: 900;
       letter-spacing: .14em;
       text-transform: uppercase;
@@ -136,7 +137,7 @@
 
     .hero-copy {
       margin: 18px 0 0;
-      color: rgba(255,255,255,.72);
+      color: #4d4640;
       line-height: 1.85;
       max-width: 740px;
     }
@@ -161,11 +162,11 @@
     }
 
     .btn.primary { background: var(--red); color: #fff; }
-    .btn.ghost { background: rgba(255,255,255,.12); color: #fff; border: 1px solid rgba(255,255,255,.18); }
+    .btn.ghost { background: rgba(255,255,255,.72); color: var(--ink); border: 1px solid rgba(23,20,18,.12); }
 
     .hero-panel {
-      background: rgba(255,255,255,.12);
-      border: 1px solid rgba(255,255,255,.16);
+      background: rgba(255,255,255,.68);
+      border: 1px solid rgba(23,20,18,.1);
       border-radius: 8px;
       padding: 18px;
       backdrop-filter: blur(14px);
@@ -180,7 +181,8 @@
     .stat {
       padding: 12px;
       border-radius: 8px;
-      background: rgba(0,0,0,.18);
+      background: rgba(255,255,255,.66);
+      border: 1px solid rgba(23,20,18,.08);
     }
 
     .stat strong {
@@ -190,7 +192,7 @@
     }
 
     .stat span {
-      color: rgba(255,255,255,.62);
+      color: var(--muted);
       font-size: 12px;
     }
 
@@ -201,9 +203,9 @@
     }
 
     .route-card {
-      border: 1px solid rgba(255,255,255,.16);
-      background: rgba(0,0,0,.2);
-      color: #fff;
+      border: 1px solid rgba(23,20,18,.1);
+      background: rgba(255,255,255,.62);
+      color: var(--ink);
       border-radius: 8px;
       padding: 13px;
       text-align: left;
@@ -216,12 +218,12 @@
     .route-card:hover,
     .route-card.active {
       transform: translateY(-2px);
-      border-color: rgba(255,255,255,.42);
-      background: rgba(211,58,49,.34);
+      border-color: rgba(211,58,49,.28);
+      background: rgba(211,58,49,.12);
     }
 
     .route-card strong { font-size: 16px; }
-    .route-card span { color: rgba(255,255,255,.66); font-size: 12px; line-height: 1.5; }
+    .route-card span { color: var(--muted); font-size: 12px; line-height: 1.5; }
 
     main { padding: 28px 0 70px; }
     .view { display: none; }
@@ -943,6 +945,132 @@
     }
 
     .text-block h4 { margin: 0 0 8px; font-size: 16px; }
+
+    .brand-experience {
+      margin-top: 30px;
+      display: grid;
+      gap: 18px;
+    }
+
+    .manifesto {
+      padding: 28px;
+      border-radius: 8px;
+      background:
+        radial-gradient(circle at 82% 10%, rgba(211,58,49,.16), transparent 28%),
+        linear-gradient(135deg, #fff, #fff8f1);
+      border: 1px solid rgba(23,20,18,.08);
+      box-shadow: 0 18px 46px rgba(72,35,20,.08);
+    }
+
+    .manifesto h2 {
+      margin: 0;
+      font-size: clamp(30px, 6vw, 56px);
+      line-height: 1.05;
+    }
+
+    .manifesto p {
+      margin: 16px 0 0;
+      color: #4d4640;
+      line-height: 1.8;
+      max-width: 860px;
+    }
+
+    .brand-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+
+    .brand-card {
+      padding: 20px;
+      border-radius: 8px;
+      background: #fff;
+      border: 1px solid var(--line);
+      box-shadow: 0 12px 30px rgba(0,0,0,.05);
+    }
+
+    .brand-card strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 17px;
+    }
+
+    .brand-card span {
+      color: var(--muted);
+      line-height: 1.75;
+      font-size: 14px;
+    }
+
+    .about-copy {
+      display: grid;
+      gap: 14px;
+      padding: 24px;
+      border-radius: 8px;
+      background: #171412;
+      color: #fff;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .about-copy::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      opacity: .15;
+      background:
+        linear-gradient(90deg, #fff 1px, transparent 1px),
+        linear-gradient(#fff 1px, transparent 1px);
+      background-size: 38px 38px;
+      pointer-events: none;
+    }
+
+    .about-copy > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .about-copy h2 {
+      margin: 0;
+      font-size: clamp(26px, 5vw, 42px);
+    }
+
+    .about-copy p {
+      margin: 0;
+      color: rgba(255,255,255,.76);
+      line-height: 1.85;
+      max-width: 920px;
+    }
+
+    .business-lines {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
+
+    .business-line {
+      padding: 14px 16px;
+      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.07);
+      color: rgba(255,255,255,.86);
+      line-height: 1.65;
+    }
+
+    .archive-note {
+      margin-top: 16px;
+      padding: 18px;
+      border-radius: 8px;
+      border: 1px solid rgba(23,20,18,.08);
+      background: rgba(255,255,255,.72);
+      color: #4d4640;
+      line-height: 1.75;
+    }
+
+    .archive-note strong {
+      display: block;
+      color: var(--ink);
+      margin-bottom: 6px;
+    }
     pre {
       margin: 0;
       white-space: pre-wrap;
@@ -1558,8 +1686,8 @@
       .site-header {
         min-height: 640px;
         background:
-          radial-gradient(circle at 76% 18%, rgba(211,58,49,.28), transparent 30%),
-          linear-gradient(180deg, rgba(0,0,0,.72) 0%, rgba(0,0,0,.34) 46%, rgba(0,0,0,.82) 100%),
+          radial-gradient(circle at 74% 16%, rgba(211,58,49,.18), transparent 30%),
+          linear-gradient(180deg, rgba(255,250,243,.94) 0%, rgba(255,250,243,.78) 48%, rgba(255,250,243,.95) 100%),
           url("assets/optimized/mobile-banner.webp") center top / cover no-repeat;
       }
 
@@ -1611,6 +1739,8 @@
       .contact-gateway { grid-template-columns: 1fr 480px; align-items: center; }
       .tools { grid-template-columns: minmax(260px, 360px) 1fr; align-items: center; }
       .work-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; }
+      .brand-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .business-lines { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .detail-hero { grid-template-columns: 180px 1fr; padding: 26px; }
       .detail-cover { width: 180px; }
       .detail h3 { font-size: 40px; }
@@ -1630,23 +1760,23 @@
         <nav class="nav" id="nav">
           <button class="active" data-view="home">首页</button>
           <button data-view="artists">AI歌手</button>
-          <button data-view="works">作品库</button>
+          <button data-view="works">声音档案</button>
           <button data-view="score">配乐</button>
         </nav>
       </div>
       <section class="hero">
         <div>
-          <p class="eyebrow">Music Factory Land</p>
-          <h1>音乐工厂<br>声音世界</h1>
-          <p class="hero-copy">由三位 AI 歌手带路，进入不同的音乐空间。每一个节点都是一首歌、一段情绪或一片风景。</p>
+          <p class="eyebrow">Music Factory · Brand Experience</p>
+          <h1>每一种声音<br>创造一个世界</h1>
+          <p class="hero-copy">音乐工厂不只是作品展示页，而是一座持续生长的声音世界。由三位 AI 歌手、声音地图、作品档案和品牌理念共同组成。</p>
           <div class="hero-actions">
             <button class="btn primary" data-jump="home">进入声音地图</button>
-            <button class="btn ghost" data-jump="works">打开作品库</button>
+            <button class="btn ghost" data-jump="works">打开声音档案</button>
           </div>
         </div>
         <div class="hero-panel">
           <div class="stats">
-            <div class="stat"><strong id="statWorks">0</strong><span>作品</span></div>
+            <div class="stat"><strong id="statWorks">0</strong><span>声音档案</span></div>
             <div class="stat"><strong id="statVersions">0</strong><span>版本</span></div>
             <div class="stat"><strong id="statArtists">0</strong><span>歌手/分类</span></div>
           </div>
@@ -1689,12 +1819,41 @@
 
         <div class="section-head">
           <div>
-            <h2>可被发现的作品</h2>
-            <p>保留完整作品库，同时让重点歌曲先以空间节点被看见。</p>
+            <h2>Sound Archive 声音档案</h2>
+            <p>每一首歌都有版本、封面、试听和平台入口。这里不是普通列表，而是音乐工厂持续生长的作品档案。</p>
           </div>
-          <button class="btn primary" data-jump="works">全部作品</button>
+          <button class="btn primary" data-jump="works">打开档案</button>
         </div>
         <div class="work-grid" id="homeWorks"></div>
+        <div class="archive-note">
+          <strong>Archive 不是终点，而是声音旅程的索引。</strong>
+          用户可以从歌手世界进入作品，也可以从档案编号、版本、专辑和平台入口反向找到一首歌的来处。
+        </div>
+
+        <section class="brand-experience" id="brandExperience">
+          <div class="manifesto">
+            <p class="eyebrow">Brand Experience</p>
+            <h2>不是浏览网页，而是进入音乐工厂。</h2>
+            <p>网站要让用户第一时间感受到音乐工厂的品牌价值观、视觉气质与持续生产内容的能力。主站保持明亮、克制、清晰；歌手世界负责释放色彩、空间和音乐宇宙。</p>
+          </div>
+          <div class="brand-grid">
+            <div class="brand-card"><strong>白色展厅</strong><span>首页承担品牌介绍、声音地图入口和作品档案索引，避免变成杂乱的歌单堆叠。</span></div>
+            <div class="brand-card"><strong>彩色音乐宇宙</strong><span>观无界、十里音、梦梦分别拥有精神宇宙、未来舞台和山河大漠三套视觉语言。</span></div>
+            <div class="brand-card"><strong>持续生长</strong><span>新增歌手、作品、海报、视频和商务入口都从同一套品牌体验系统中延展。</span></div>
+          </div>
+          <div class="about-copy">
+            <p class="eyebrow">About Music Factory</p>
+            <h2>做音乐，做唱歌的人，做能传得远的声音。</h2>
+            <p>音乐工厂是一家专注音乐内容生产的厂牌，深耕原创音乐制作与内容发行多年，并于近年引入 AI 技术，开辟虚拟歌手 IP 矩阵这条全新赛道。</p>
+            <p>旗下现有三位 AI 虚拟歌手：十里音、观无界、梦梦。每一位都有独立的音乐世界与鲜明的人物性格，在各自的声音坐标里持续创作，发行原创作品。</p>
+            <div class="business-lines">
+              <div class="business-line">AI 虚拟歌手的持续原创生产</div>
+              <div class="business-line">600+ 首授权经典曲目的创意重制</div>
+              <div class="business-line">面向品牌与企业的原创歌曲定制</div>
+              <div class="business-line">从音乐到影像的 MV 全流程制作</div>
+            </div>
+          </div>
+        </section>
       </div>
     </section>
 
@@ -1720,15 +1879,15 @@
       <div class="wrap">
         <div class="section-head">
           <div>
-            <h2 id="worksTitle">作品库</h2>
-            <p id="shownCount">0 个作品</p>
+            <h2 id="worksTitle">声音档案</h2>
+            <p id="shownCount">0 个声音档案</p>
           </div>
         </div>
         <div class="work-grid" id="workGrid"></div>
         <div class="load-more-wrap" id="loadMoreWrap">
-          <button class="load-more" id="loadMore" type="button">加载更多作品</button>
+          <button class="load-more" id="loadMore" type="button">加载更多档案</button>
         </div>
-        <div class="empty" id="empty">没有找到匹配的作品。</div>
+        <div class="empty" id="empty">没有找到匹配的声音档案。</div>
       </div>
     </section>
 
@@ -1752,9 +1911,9 @@
 
   <section class="wrap contact-gateway" id="contactGateway">
     <div>
-      <p class="eyebrow">Stay Connected</p>
-      <h2>把入口留在这里</h2>
-      <p>这里预留给公众号、微信、商务合作或作品投稿二维码。正式二维码到位后，只需要替换占位图，不影响现有作品库和试听功能。</p>
+      <p class="eyebrow">Music Factory Archive</p>
+      <h2>Record Your Musical Journey</h2>
+      <p>这里是网站最后一幕：把公众号、商务合作和作品投稿入口收束成音乐工厂的留存档案。正式二维码到位后，只需要替换占位图。</p>
     </div>
     <div class="qr-slots" aria-label="二维码预留入口">
       <div class="qr-slot"><div class="qr-box" aria-hidden="true"></div><strong>官方二维码</strong><span>公众号 / 视频号 / 小程序</span></div>
@@ -1764,7 +1923,7 @@
   </section>
 
   <footer>
-    <div class="wrap">当前版本为 Music Factory Land 入口版。数据同步自飞书 Base「歌曲档案」，作品库继续保留完整检索与试听入口。</div>
+    <div class="wrap">当前版本为 Music Factory Brand Experience 入口版。数据同步自飞书 Base「歌曲档案」，声音档案继续保留完整检索、试听与平台入口。</div>
   </footer>
 
   <script src="songs-data-netease-20260622-shanhefix.js"></script>
@@ -2024,7 +2183,7 @@
           <p>${escapeHtml(node.scene)}</p>
           <div class="space-actions">
             ${player}
-            ${work ? `<button class="btn primary" data-open-work="${escapeHtml(work.key)}" type="button">进入作品</button>` : ""}
+            ${work ? `<button class="btn primary" data-open-work="${escapeHtml(work.key)}" type="button">打开档案</button>` : ""}
           </div>
         </div>
       `;
@@ -2071,7 +2230,7 @@
             <h3>${escapeHtml(name)}</h3>
             <div class="work-meta">${escapeHtml(profile.tagline)}</div>
             <div class="tags">${profile.style.map(tag => `<span class="tag red">${escapeHtml(tag)}</span>`).join("")}</div>
-            <div class="subtle">${count} 个作品 · 进入独立主页</div>
+            <div class="subtle">${count} 个声音档案 · 进入独立主页</div>
           </div>
         </a>
       `;
@@ -2145,8 +2304,8 @@
       renderChips();
       const list = filteredWorks();
       const visibleList = list.slice(0, visibleWorks);
-      document.getElementById("worksTitle").textContent = activeChip === "全部" ? "作品库" : activeChip;
-      document.getElementById("shownCount").textContent = list.length > visibleList.length ? `已显示 ${visibleList.length} / ${list.length} 个作品` : `${list.length} 个作品`;
+      document.getElementById("worksTitle").textContent = activeChip === "全部" ? "声音档案" : `${activeChip} · 声音档案`;
+      document.getElementById("shownCount").textContent = list.length > visibleList.length ? `已显示 ${visibleList.length} / ${list.length} 个声音档案` : `${list.length} 个声音档案`;
       document.getElementById("empty").style.display = list.length ? "none" : "block";
       document.getElementById("workGrid").innerHTML = visibleList.map(workCard).join("");
       document.getElementById("loadMoreWrap").classList.toggle("active", visibleWorks < list.length);
@@ -2154,7 +2313,7 @@
 
     function renderScore() {
       const list = works.filter(work => work.artist === "配乐" || work.category === "配乐");
-      document.getElementById("scoreGrid").innerHTML = list.map(workCard).join("") || `<div class="empty" style="display:block">暂无配乐作品</div>`;
+      document.getElementById("scoreGrid").innerHTML = list.map(workCard).join("") || `<div class="empty" style="display:block">暂无配乐档案</div>`;
     }
 
     function bindCards() {
