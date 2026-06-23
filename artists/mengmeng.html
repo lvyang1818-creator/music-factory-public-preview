@@ -156,7 +156,7 @@
     function escapeHtml(text){return String(text||"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
     function renderPlatformLinks(v){return (v.platformLinks || []).length ? '<div class="platform-links">'+(v.platformLinks || []).map(link=>'<a class="platform-link" href="'+escapeHtml(link.url)+'" target="_blank" rel="noopener noreferrer">'+escapeHtml(link.label || '平台播放')+'</a>').join('')+'</div>' : '';}
     function neteaseAlbumUrl(v){const links=v.platformLinks||[];const album=links.find(link=>link.url.includes('music.163.com/#/album'))||links.find(link=>link.url.includes('music.163.com'));return album ? album.url : 'https://music.163.com/#/album?id=275831011';}
-    function renderAudio(v){return (v.neteasePlaybackUrl || v.neteaseEmbedUrl) ? '<a class="platform-link external-player-link" href="'+escapeHtml(neteaseAlbumUrl(v))+'" target="_blank" rel="noopener noreferrer">网易云播放</a>' : v.audioUrl ? '<audio controls preload="metadata" src="'+escapeHtml(v.audioUrl)+'"></audio>' : '<div class="audio-note">试听音频整理中</div>';}
+    function renderAudio(v){return (v.neteasePlaybackUrl || v.neteaseEmbedUrl) ? '<a class="platform-link external-player-link" href="'+escapeHtml(neteaseAlbumUrl(v))+'" target="_blank" rel="noopener noreferrer">网易云播放</a>' : v.audioUrl ? '<audio controls preload="metadata" src="'+escapeHtml(v.audioUrl)+'"></audio><div class="platform-links"><a class="platform-link" href="'+escapeHtml(v.audioUrl)+'" target="_blank" rel="noopener noreferrer">打开音频</a></div>' : '<div class="audio-note">试听音频整理中</div>';}
     function openDetail(key){
       const work = works.find(item => item.key === key);
       if(!work) return;
