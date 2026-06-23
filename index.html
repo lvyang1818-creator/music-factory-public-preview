@@ -17,6 +17,9 @@
       --red: #d33a31;
       --red-dark: #a92c25;
       --black: #151515;
+      --gold: #c9a45d;
+      --paper: #fff9f0;
+      --blue: #2f6f9f;
       --soft: #f8f0ef;
       --shadow: 0 18px 48px rgba(0,0,0,.12);
       font-family: "Microsoft YaHei", "PingFang SC", "Noto Sans SC", system-ui, sans-serif;
@@ -1133,13 +1136,16 @@
 
     .about-copy {
       display: grid;
-      gap: 14px;
+      gap: 24px;
       padding: 24px;
       border-radius: 8px;
-      background: #171412;
+      background:
+        linear-gradient(135deg, rgba(23,20,18,.98), rgba(32,26,22,.98));
       color: #fff;
       overflow: hidden;
       position: relative;
+      border: 1px solid rgba(201,164,93,.24);
+      box-shadow: 0 24px 60px rgba(23,20,18,.18);
     }
 
     .about-copy::before {
@@ -1154,6 +1160,19 @@
       pointer-events: none;
     }
 
+    .about-copy::after {
+      content: "MF";
+      position: absolute;
+      right: -18px;
+      top: -24px;
+      color: rgba(201,164,93,.12);
+      font-size: 168px;
+      line-height: 1;
+      font-weight: 900;
+      letter-spacing: 0;
+      pointer-events: none;
+    }
+
     .about-copy > * {
       position: relative;
       z-index: 1;
@@ -1161,7 +1180,8 @@
 
     .about-copy h2 {
       margin: 0;
-      font-size: clamp(26px, 5vw, 42px);
+      font-size: clamp(28px, 5vw, 52px);
+      line-height: 1.08;
     }
 
     .about-copy p {
@@ -1171,6 +1191,139 @@
       max-width: 920px;
     }
 
+    .about-layout {
+      display: grid;
+      gap: 24px;
+    }
+
+    .about-lead {
+      display: grid;
+      gap: 14px;
+    }
+
+    .brand-signal {
+      display: grid;
+      gap: 14px;
+      align-content: start;
+    }
+
+    .signal-disc {
+      aspect-ratio: 1;
+      min-height: 220px;
+      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,.16);
+      background:
+        linear-gradient(135deg, rgba(255,255,255,.12), rgba(255,255,255,.04));
+      display: grid;
+      place-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .signal-disc::before,
+    .signal-disc::after {
+      content: "";
+      position: absolute;
+      inset: 18%;
+      border: 1px solid rgba(255,255,255,.18);
+      border-radius: 50%;
+    }
+
+    .signal-disc::after {
+      inset: 36%;
+      border-color: rgba(201,164,93,.44);
+      background: rgba(211,58,49,.8);
+      box-shadow: 0 18px 40px rgba(211,58,49,.24);
+    }
+
+    .signal-disc span {
+      position: relative;
+      z-index: 1;
+      font-size: 52px;
+      font-weight: 900;
+      color: #fff;
+    }
+
+    .signal-caption {
+      display: grid;
+      gap: 4px;
+      padding: 14px;
+      border-radius: 8px;
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.12);
+    }
+
+    .signal-caption strong {
+      color: #fff;
+      font-size: 16px;
+    }
+
+    .signal-caption span {
+      color: rgba(255,255,255,.66);
+      line-height: 1.6;
+      font-size: 13px;
+    }
+
+    .brand-metrics {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 4px;
+    }
+
+    .brand-metric {
+      min-height: 92px;
+      padding: 14px;
+      border-radius: 8px;
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.12);
+    }
+
+    .brand-metric strong {
+      display: block;
+      font-size: 28px;
+      line-height: 1;
+      color: #fff;
+    }
+
+    .brand-metric span {
+      display: block;
+      margin-top: 8px;
+      color: rgba(255,255,255,.66);
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    .production-path {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 1px;
+      overflow: hidden;
+      border-radius: 8px;
+      border: 1px solid rgba(201,164,93,.22);
+      background: rgba(201,164,93,.22);
+    }
+
+    .path-step {
+      min-height: 110px;
+      padding: 14px;
+      background: rgba(23,20,18,.9);
+      display: grid;
+      align-content: space-between;
+      gap: 12px;
+    }
+
+    .path-step small {
+      color: var(--gold);
+      font-weight: 900;
+      letter-spacing: .12em;
+    }
+
+    .path-step strong {
+      color: #fff;
+      line-height: 1.35;
+    }
+
     .business-lines {
       display: grid;
       grid-template-columns: 1fr;
@@ -1178,12 +1331,24 @@
     }
 
     .business-line {
+      min-height: 84px;
       padding: 14px 16px;
       border-radius: 8px;
       border: 1px solid rgba(255,255,255,.14);
       background: rgba(255,255,255,.07);
       color: rgba(255,255,255,.86);
       line-height: 1.65;
+      display: grid;
+      align-content: space-between;
+      gap: 10px;
+    }
+
+    .business-line::before {
+      content: "";
+      width: 34px;
+      height: 3px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--red), var(--gold));
     }
 
     .archive-note {
@@ -1726,26 +1891,26 @@
 
     .contact-gateway {
       margin-top: 38px;
-      padding: 28px;
+      padding: 0;
       border-radius: 8px;
-      background:
-        radial-gradient(circle at 80% 18%, rgba(211,58,49,.18), transparent 25%),
-        linear-gradient(135deg, #161719, #2b2020);
-      color: #fff;
+      background: var(--paper);
+      color: var(--ink);
       display: grid;
-      gap: 22px;
       overflow: hidden;
       position: relative;
+      border: 1px solid rgba(23,20,18,.08);
+      box-shadow: 0 22px 58px rgba(23,20,18,.11);
     }
 
     .contact-gateway::before {
       content: "";
       position: absolute;
       inset: 0;
-      opacity: .18;
-      background-image: linear-gradient(90deg, #fff 1px, transparent 1px), linear-gradient(#fff 1px, transparent 1px);
-      background-size: 34px 34px;
-      animation: scanFloat 8s ease-in-out infinite alternate;
+      opacity: .65;
+      background:
+        linear-gradient(90deg, rgba(23,20,18,.07) 1px, transparent 1px),
+        linear-gradient(rgba(23,20,18,.06) 1px, transparent 1px);
+      background-size: 42px 42px;
       pointer-events: none;
     }
 
@@ -1756,48 +1921,99 @@
 
     .contact-gateway h2 {
       margin: 0;
-      font-size: clamp(26px, 5vw, 42px);
+      font-size: clamp(30px, 5vw, 56px);
+      line-height: 1.02;
     }
 
     .contact-gateway p {
-      margin: 10px 0 0;
-      color: rgba(255,255,255,.72);
+      margin: 12px 0 0;
+      color: #5f5b55;
       line-height: 1.75;
       max-width: 720px;
+    }
+
+    .archive-copy {
+      padding: 28px;
+      display: grid;
+      align-content: center;
+      gap: 18px;
+    }
+
+    .archive-index {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      max-width: 560px;
+    }
+
+    .archive-index div {
+      min-height: 84px;
+      border-radius: 8px;
+      border: 1px solid rgba(23,20,18,.1);
+      background: rgba(255,255,255,.62);
+      padding: 12px;
+      display: grid;
+      align-content: space-between;
+    }
+
+    .archive-index strong {
+      font-size: 22px;
+      color: var(--red);
+      line-height: 1;
+    }
+
+    .archive-index span {
+      color: #6a625b;
+      font-size: 12px;
+      line-height: 1.45;
     }
 
     .qr-slots {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 14px;
+      gap: 0;
+      background: #171412;
+      padding: 18px;
+      border-left: 1px solid rgba(23,20,18,.08);
     }
 
     .qr-slot {
-      min-height: 168px;
-      border: 1px dashed rgba(255,255,255,.34);
-      border-radius: 8px;
-      padding: 16px;
-      background: rgba(255,255,255,.08);
+      min-height: 136px;
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 0;
+      padding: 18px;
+      background: rgba(255,255,255,.06);
       display: grid;
-      align-content: center;
-      justify-items: center;
-      text-align: center;
-      gap: 8px;
+      grid-template-columns: 54px 1fr;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .qr-slot + .qr-slot {
+      border-top: 0;
+    }
+
+    .qr-slot:first-child {
+      border-radius: 8px 8px 0 0;
+    }
+
+    .qr-slot:last-child {
+      border-radius: 0 0 8px 8px;
     }
 
     .qr-box {
-      width: 108px;
+      width: 54px;
       aspect-ratio: 1;
-      border-radius: 8px;
+      border-radius: 50%;
       background:
-        linear-gradient(90deg, rgba(255,255,255,.22) 50%, transparent 0) 0 0 / 18px 18px,
-        linear-gradient(rgba(255,255,255,.18) 50%, transparent 0) 0 0 / 18px 18px,
-        rgba(255,255,255,.1);
-      border: 1px solid rgba(255,255,255,.3);
+        radial-gradient(circle, #fff 0 12%, transparent 13% 100%),
+        conic-gradient(from 30deg, var(--red), var(--gold), var(--blue), var(--red));
+      border: 1px solid rgba(255,255,255,.22);
     }
 
     .qr-slot strong {
       font-size: 16px;
+      color: #fff;
     }
 
     .qr-slot span {
@@ -1850,6 +2066,28 @@
       .contact-gateway {
         padding: 20px;
       }
+      .about-copy {
+        padding: 20px;
+      }
+      .brand-metrics,
+      .archive-index {
+        grid-template-columns: 1fr;
+      }
+      .production-path {
+        grid-template-columns: 1fr;
+      }
+      .path-step {
+        min-height: 70px;
+        grid-template-columns: 42px 1fr;
+        align-items: center;
+        align-content: center;
+      }
+      .qr-slots {
+        padding: 14px;
+      }
+      .qr-slot {
+        min-height: 112px;
+      }
       .map-node { width: 142px; min-height: 78px; padding: 10px; }
       .map-node strong { font-size: 14px; }
     }
@@ -1866,11 +2104,12 @@
       .artist-photo { width: 100%; }
       .artist-detail { grid-template-columns: 340px 1fr; }
 
-      .qr-slots { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .qr-slots { grid-template-columns: 1fr; }
       .contact-gateway { grid-template-columns: 1fr 480px; align-items: center; }
       .tools { grid-template-columns: minmax(260px, 360px) 1fr; align-items: center; }
       .work-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; }
       .brand-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .about-layout { grid-template-columns: minmax(0, 1fr) 280px; align-items: stretch; }
       .business-lines { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .detail-hero { grid-template-columns: 180px 1fr; padding: 26px; }
       .detail-cover { width: 180px; }
@@ -1985,11 +2224,30 @@
             <div class="brand-card"><strong>不断上新</strong><span>新歌、专辑、海报和视频会陆续汇入这里，让每次回来都有新的声音可听。</span></div>
           </div>
           <div class="about-copy">
-            <p class="eyebrow">About Music Factory</p>
-            <h2>做音乐，做唱歌的人，做能传得远的声音。</h2>
-            <p>音乐工厂是一家专注音乐内容生产的厂牌，深耕原创音乐制作与内容发行，并引入 AI 技术开辟虚拟歌手 IP 矩阵。</p>
-            <p>旗下三位 AI 虚拟歌手：十里音、观无界、梦梦，分别承担东方概念流行、东方精神表达和山河旅行音乐三条声音路线。</p>
-            <p>这里不只做 AI 音乐，也把原创生产、经典曲目重制、品牌歌曲定制和 MV 制作纳入同一个内容工厂。</p>
+            <div class="about-layout">
+              <div class="about-lead">
+                <p class="eyebrow">About Music Factory</p>
+                <h2>做音乐，做唱歌的人，做能传得远的声音。</h2>
+                <p>音乐工厂是一家专注音乐内容生产的厂牌，深耕原创音乐制作与内容发行，并引入 AI 技术开辟虚拟歌手 IP 矩阵。</p>
+                <p>旗下三位 AI 虚拟歌手：十里音、观无界、梦梦，分别承担东方概念流行、东方精神表达和山河旅行音乐三条声音路线。</p>
+              </div>
+              <div class="brand-signal" aria-label="音乐工厂品牌识别">
+                <div class="signal-disc"><span>♪</span></div>
+                <div class="signal-caption"><strong>Music Factory</strong><span>以声音为核心，把歌手、作品、封面、歌词和发布入口组织成可进入的品牌现场。</span></div>
+              </div>
+            </div>
+            <div class="brand-metrics" aria-label="音乐工厂内容规模">
+              <div class="brand-metric"><strong>3</strong><span>位 AI 虚拟歌手</span></div>
+              <div class="brand-metric"><strong>600+</strong><span>首授权经典曲目</span></div>
+              <div class="brand-metric"><strong>MV</strong><span>音乐到影像制作</span></div>
+            </div>
+            <div class="production-path" aria-label="音乐工厂声音生产路径">
+              <div class="path-step"><small>01</small><strong>灵感</strong></div>
+              <div class="path-step"><small>02</small><strong>演唱</strong></div>
+              <div class="path-step"><small>03</small><strong>封面</strong></div>
+              <div class="path-step"><small>04</small><strong>歌词</strong></div>
+              <div class="path-step"><small>05</small><strong>发布</strong></div>
+            </div>
             <div class="business-lines">
               <div class="business-line">AI 虚拟歌手原创作品</div>
               <div class="business-line">600+ 首授权经典曲目创意重制</div>
@@ -2054,15 +2312,20 @@
   </dialog>
 
   <section class="wrap contact-gateway" id="contactGateway">
-    <div>
+    <div class="archive-copy">
       <p class="eyebrow">Music Factory Archive</p>
       <h2>Record Your Musical Journey</h2>
       <p>继续关注音乐工厂，听见新歌发布、歌手动态和更多声音故事。</p>
+      <div class="archive-index" aria-label="音乐工厂档案入口">
+        <div><strong>歌手</strong><span>从人物世界进入作品</span></div>
+        <div><strong>作品</strong><span>从声音档案重新查找</span></div>
+        <div><strong>合作</strong><span>从项目需求开启沟通</span></div>
+      </div>
     </div>
     <div class="qr-slots" aria-label="音乐工厂联系入口">
-      <div class="qr-slot"><div class="qr-box" aria-hidden="true"></div><strong>官方二维码</strong><span>公众号 / 视频号 / 小程序</span></div>
-      <div class="qr-slot"><div class="qr-box" aria-hidden="true"></div><strong>商务合作</strong><span>音乐定制、AI歌手合作、版权沟通</span></div>
-      <div class="qr-slot"><div class="qr-box" aria-hidden="true"></div><strong>作品投稿</strong><span>歌手孵化、作品收录、项目联络</span></div>
+      <div class="qr-slot"><div class="qr-box" aria-hidden="true"></div><div><strong>关注动态</strong><span>新歌发布、歌手故事、影像内容</span></div></div>
+      <div class="qr-slot"><div class="qr-box" aria-hidden="true"></div><div><strong>商务合作</strong><span>音乐定制、AI 歌手合作、版权沟通</span></div></div>
+      <div class="qr-slot"><div class="qr-box" aria-hidden="true"></div><div><strong>作品投稿</strong><span>歌手孵化、作品收录、项目联络</span></div></div>
     </div>
   </section>
 
