@@ -1151,12 +1151,15 @@
     .about-copy::before {
       content: "";
       position: absolute;
-      inset: 0;
-      opacity: .15;
+      right: -140px;
+      bottom: -180px;
+      width: 520px;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      opacity: .34;
       background:
-        linear-gradient(90deg, #fff 1px, transparent 1px),
-        linear-gradient(#fff 1px, transparent 1px);
-      background-size: 38px 38px;
+        radial-gradient(circle, rgba(255,255,255,.42) 0 7%, transparent 8% 34%, rgba(255,255,255,.18) 35% 36%, transparent 37% 48%, rgba(201,164,93,.18) 49% 50%, transparent 51% 100%),
+        conic-gradient(from 42deg, rgba(211,58,49,.38), rgba(201,164,93,.28), rgba(255,255,255,.08), rgba(211,58,49,.32));
       pointer-events: none;
     }
 
@@ -1893,7 +1896,11 @@
       margin-top: 38px;
       padding: 0;
       border-radius: 8px;
-      background: var(--paper);
+      background:
+        radial-gradient(circle at 17% 18%, rgba(255,255,255,.95), transparent 30%),
+        radial-gradient(circle at 92% 16%, rgba(211,58,49,.18), transparent 24%),
+        radial-gradient(circle at 74% 82%, rgba(201,164,93,.18), transparent 28%),
+        linear-gradient(135deg, #fffaf2 0%, #f7efe5 48%, #fffdf7 100%);
       color: var(--ink);
       display: grid;
       overflow: hidden;
@@ -1905,12 +1912,33 @@
     .contact-gateway::before {
       content: "";
       position: absolute;
-      inset: 0;
-      opacity: .65;
+      right: -110px;
+      top: -160px;
+      width: 420px;
+      aspect-ratio: 1;
+      border-radius: 50%;
       background:
-        linear-gradient(90deg, rgba(23,20,18,.07) 1px, transparent 1px),
-        linear-gradient(rgba(23,20,18,.06) 1px, transparent 1px);
-      background-size: 42px 42px;
+        radial-gradient(circle, rgba(255,255,255,.9) 0 8%, rgba(211,58,49,.72) 9% 16%, transparent 17% 29%, rgba(23,20,18,.14) 30% 31%, transparent 32% 42%, rgba(23,20,18,.09) 43% 44%, transparent 45% 100%),
+        conic-gradient(from 38deg, rgba(23,20,18,.14), rgba(255,255,255,.04), rgba(201,164,93,.22), rgba(23,20,18,.12));
+      opacity: .88;
+      pointer-events: none;
+    }
+
+    .contact-gateway::after {
+      content: "";
+      position: absolute;
+      left: 24px;
+      bottom: 22px;
+      width: min(520px, 62%);
+      height: 120px;
+      border-radius: 8px;
+      background:
+        linear-gradient(115deg, rgba(255,255,255,.64), rgba(255,255,255,.18)),
+        linear-gradient(90deg, rgba(211,58,49,.16), transparent 42%),
+        rgba(255,255,255,.38);
+      border: 1px solid rgba(23,20,18,.08);
+      transform: rotate(-2deg);
+      box-shadow: 0 22px 42px rgba(104,74,36,.12);
       pointer-events: none;
     }
 
@@ -1933,7 +1961,7 @@
     }
 
     .archive-copy {
-      padding: 28px;
+      padding: 34px;
       display: grid;
       align-content: center;
       gap: 18px;
@@ -1949,11 +1977,13 @@
     .archive-index div {
       min-height: 84px;
       border-radius: 8px;
-      border: 1px solid rgba(23,20,18,.1);
-      background: rgba(255,255,255,.62);
-      padding: 12px;
+      border: 1px solid rgba(23,20,18,.08);
+      background:
+        linear-gradient(145deg, rgba(255,255,255,.92), rgba(255,255,255,.5));
+      padding: 14px;
       display: grid;
       align-content: space-between;
+      box-shadow: 0 12px 26px rgba(85,57,25,.06);
     }
 
     .archive-index strong {
@@ -1971,55 +2001,73 @@
     .qr-slots {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 0;
-      background: #171412;
-      padding: 18px;
-      border-left: 1px solid rgba(23,20,18,.08);
+      gap: 12px;
+      background:
+        radial-gradient(circle at 18% 18%, rgba(255,255,255,.12), transparent 28%),
+        linear-gradient(145deg, #171412, #241d18);
+      padding: 22px;
+      border-left: 1px solid rgba(23,20,18,.1);
+      box-shadow: inset 1px 0 0 rgba(255,255,255,.05);
     }
 
     .qr-slot {
-      min-height: 136px;
+      min-height: 118px;
       border: 1px solid rgba(255,255,255,.12);
-      border-radius: 0;
+      border-radius: 8px;
       padding: 18px;
-      background: rgba(255,255,255,.06);
+      background:
+        linear-gradient(135deg, rgba(255,255,255,.12), rgba(255,255,255,.04));
       display: grid;
-      grid-template-columns: 54px 1fr;
+      grid-template-columns: 64px 1fr;
       align-items: center;
       gap: 14px;
+      position: relative;
+      overflow: hidden;
     }
 
-    .qr-slot + .qr-slot {
-      border-top: 0;
-    }
-
-    .qr-slot:first-child {
-      border-radius: 8px 8px 0 0;
-    }
-
-    .qr-slot:last-child {
-      border-radius: 0 0 8px 8px;
+    .qr-slot::after {
+      content: "";
+      position: absolute;
+      right: -42px;
+      top: 50%;
+      width: 120px;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      transform: translateY(-50%);
+      background:
+        radial-gradient(circle, rgba(255,255,255,.18) 0 8%, transparent 9% 36%, rgba(255,255,255,.08) 37% 38%, transparent 39% 100%),
+        conic-gradient(from 22deg, rgba(211,58,49,.5), rgba(201,164,93,.42), rgba(47,111,159,.36), rgba(211,58,49,.5));
+      opacity: .42;
     }
 
     .qr-box {
-      width: 54px;
+      width: 64px;
       aspect-ratio: 1;
       border-radius: 50%;
       background:
         radial-gradient(circle, #fff 0 12%, transparent 13% 100%),
         conic-gradient(from 30deg, var(--red), var(--gold), var(--blue), var(--red));
       border: 1px solid rgba(255,255,255,.22);
+      box-shadow: 0 16px 28px rgba(0,0,0,.22);
+      position: relative;
+      z-index: 1;
     }
 
     .qr-slot strong {
+      display: block;
+      margin-bottom: 6px;
       font-size: 16px;
       color: #fff;
+      position: relative;
+      z-index: 1;
     }
 
     .qr-slot span {
       color: rgba(255,255,255,.64);
       font-size: 12px;
       line-height: 1.5;
+      position: relative;
+      z-index: 1;
     }
 
     @media (max-width: 719px) {
@@ -2066,6 +2114,20 @@
       .contact-gateway {
         padding: 20px;
       }
+      .contact-gateway::before {
+        right: -180px;
+        top: -130px;
+        width: 320px;
+        opacity: .52;
+      }
+      .contact-gateway::after {
+        left: 18px;
+        bottom: auto;
+        top: 210px;
+        width: 72%;
+        height: 96px;
+        opacity: .45;
+      }
       .about-copy {
         padding: 20px;
       }
@@ -2086,8 +2148,10 @@
         padding: 14px;
       }
       .qr-slot {
-        min-height: 112px;
+        min-height: 108px;
+        grid-template-columns: 56px 1fr;
       }
+      .qr-box { width: 56px; }
       .map-node { width: 142px; min-height: 78px; padding: 10px; }
       .map-node strong { font-size: 14px; }
     }
