@@ -34,7 +34,7 @@
     .wrap { width: min(1180px, calc(100% - 32px)); margin: 0 auto; }
 
     .site-header {
-      min-height: 620px;
+      min-height: 700px;
       color: #171412;
       background:
         radial-gradient(circle at 84% 12%, rgba(211,58,49,.18), transparent 30%),
@@ -115,8 +115,8 @@
       display: grid;
       grid-template-columns: 1fr;
       gap: 24px;
-      align-items: end;
-      padding: 68px 0 56px;
+      align-items: center;
+      padding: 76px 0 70px;
     }
 
     .eyebrow {
@@ -140,6 +140,55 @@
       color: #4d4640;
       line-height: 1.85;
       max-width: 740px;
+      font-size: 17px;
+    }
+
+    .hero-statement {
+      margin: 16px 0 0;
+      max-width: 760px;
+      font-size: clamp(22px, 3vw, 34px);
+      line-height: 1.22;
+      font-weight: 900;
+      color: #171412;
+    }
+
+    .hero-proof {
+      display: grid;
+      gap: 10px;
+      margin-top: 24px;
+      max-width: 760px;
+    }
+
+    .proof-item {
+      display: grid;
+      grid-template-columns: 88px 1fr;
+      gap: 12px;
+      align-items: center;
+      padding: 11px 14px;
+      border-radius: 8px;
+      background: rgba(255,255,255,.62);
+      border: 1px solid rgba(23,20,18,.08);
+      color: #4d4640;
+    }
+
+    .proof-item strong {
+      color: var(--ink);
+      font-size: 13px;
+    }
+
+    .proof-line {
+      position: relative;
+      height: 6px;
+      overflow: hidden;
+      border-radius: 999px;
+      background: rgba(23,20,18,.08);
+    }
+
+    .proof-line span {
+      display: block;
+      height: 100%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, var(--red), #c9a45d);
     }
 
     .hero-actions {
@@ -170,6 +219,24 @@
       border-radius: 8px;
       padding: 18px;
       backdrop-filter: blur(14px);
+    }
+
+    .panel-title {
+      margin: 0 0 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      color: #4d4640;
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .panel-title span {
+      color: var(--red);
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      font-size: 11px;
     }
 
     .stats {
@@ -224,6 +291,49 @@
 
     .route-card strong { font-size: 16px; }
     .route-card span { color: var(--muted); font-size: 12px; line-height: 1.5; }
+
+    .experience-flow {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      margin: 0 0 22px;
+    }
+
+    .flow-card {
+      display: grid;
+      grid-template-columns: 46px 1fr;
+      gap: 14px;
+      align-items: start;
+      min-height: 116px;
+      padding: 18px;
+      border-radius: 8px;
+      background: #fff;
+      border: 1px solid var(--line);
+      box-shadow: 0 12px 32px rgba(0,0,0,.05);
+    }
+
+    .flow-index {
+      display: grid;
+      place-items: center;
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      background: #171412;
+      color: #fff;
+      font-weight: 900;
+    }
+
+    .flow-card strong {
+      display: block;
+      margin-bottom: 7px;
+      font-size: 17px;
+    }
+
+    .flow-card span {
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 14px;
+    }
 
     main { padding: 28px 0 70px; }
     .view { display: none; }
@@ -1747,6 +1857,7 @@
     @media (min-width: 720px) {
       .hero { grid-template-columns: 1fr 360px; }
       .land-stage { margin-top: -70px; }
+      .experience-flow { grid-template-columns: repeat(3, minmax(0, 1fr)); }
       .world-shell { grid-template-columns: 330px 1fr; }
       .guide-panel { border-right: 1px solid rgba(255,255,255,.1); border-bottom: 0; }
       .sound-map { min-height: 560px; }
@@ -1787,14 +1898,21 @@
       <section class="hero">
         <div>
           <p class="eyebrow">Music Factory · Brand Experience</p>
-          <h1>每一种声音<br>创造一个世界</h1>
-          <p class="hero-copy">音乐工厂不只是作品展示页，而是一座持续生长的声音世界。由三位 AI 歌手、声音地图、作品档案和品牌理念共同组成。</p>
+          <h1>Every Sound<br>Creates A World</h1>
+          <p class="hero-statement">别停在页面上，走进一座正在运转的音乐工厂。</p>
+          <p class="hero-copy">这里把 AI 歌手、原创音乐、经典重制、声音档案和品牌合作组织成一套可持续生长的声音系统。主站保持明亮、克制、清晰；歌手世界负责释放色彩、空间和音乐宇宙。</p>
+          <div class="hero-proof" aria-label="音乐工厂内容生产能力">
+            <div class="proof-item"><strong>原创生产</strong><div class="proof-line"><span style="width: 88%"></span></div></div>
+            <div class="proof-item"><strong>经典重制</strong><div class="proof-line"><span style="width: 78%"></span></div></div>
+            <div class="proof-item"><strong>品牌定制</strong><div class="proof-line"><span style="width: 64%"></span></div></div>
+          </div>
           <div class="hero-actions">
-            <button class="btn primary" data-jump="home">进入声音地图</button>
+            <button class="btn primary" data-scroll="soundMapSection">进入声音地图</button>
             <button class="btn ghost" data-jump="works">打开声音档案</button>
           </div>
         </div>
         <div class="hero-panel">
+          <div class="panel-title"><span>Live Archive</span><strong>当前工厂状态</strong></div>
           <div class="stats">
             <div class="stat"><strong id="statWorks">0</strong><span>声音档案</span></div>
             <div class="stat"><strong id="statVersions">0</strong><span>版本</span></div>
@@ -1809,7 +1927,12 @@
   <main>
     <section class="view active" id="view-home">
       <div class="wrap">
-        <div class="land-stage">
+        <div class="experience-flow" aria-label="音乐工厂进入路径">
+          <div class="flow-card"><div class="flow-index">01</div><div><strong>先进入声音地图</strong><span>从观无界、十里音、梦梦三条路线开始，不再面对一堆静态歌单。</span></div></div>
+          <div class="flow-card"><div class="flow-index">02</div><div><strong>再选择歌手世界</strong><span>每位歌手都有自己的空间气质、作品节点和人物语言，进入后应该明显换了一个世界。</span></div></div>
+          <div class="flow-card"><div class="flow-index">03</div><div><strong>最后打开声音档案</strong><span>作品以版本、封面、试听、平台入口和档案线索组织，方便继续扩展专辑、海报和视频。</span></div></div>
+        </div>
+        <div class="land-stage" id="soundMapSection">
           <div class="world-console map-cinematic" id="worldConsole" data-world="spirit">
             <div class="world-shell">
               <aside class="guide-panel">
@@ -1853,19 +1976,20 @@
         <section class="brand-experience" id="brandExperience">
           <div class="manifesto">
             <p class="eyebrow">Brand Experience</p>
-            <h2>不是浏览网页，而是进入音乐工厂。</h2>
-            <p>网站要让用户第一时间感受到音乐工厂的品牌价值观、视觉气质与持续生产内容的能力。主站保持明亮、克制、清晰；歌手世界负责释放色彩、空间和音乐宇宙。</p>
+            <h2>从第一屏开始，用户应该知道这里能生产声音、歌手和世界。</h2>
+            <p>音乐工厂的首页不是一张宣传海报，也不是一个歌单目录。它负责把品牌价值、三位 AI 歌手、作品档案、试听入口和合作能力组织成一条清晰的进入路线。</p>
           </div>
           <div class="brand-grid">
-            <div class="brand-card"><strong>白色展厅</strong><span>首页承担品牌介绍、声音地图入口和作品档案索引，避免变成杂乱的歌单堆叠。</span></div>
-            <div class="brand-card"><strong>彩色音乐宇宙</strong><span>观无界、十里音、梦梦分别拥有精神宇宙、未来舞台和山河大漠三套视觉语言。</span></div>
-            <div class="brand-card"><strong>持续生长</strong><span>新增歌手、作品、海报、视频和商务入口都从同一套品牌体验系统中延展。</span></div>
+            <div class="brand-card"><strong>白色展厅</strong><span>主站负责秩序、留白和检索，让用户快速理解音乐工厂是什么、有哪些歌手、作品如何进入。</span></div>
+            <div class="brand-card"><strong>彩色音乐宇宙</strong><span>观无界、十里音、梦梦分别承载精神宇宙、未来舞台和山河大漠，不再使用同一种人物卡模板。</span></div>
+            <div class="brand-card"><strong>持续生长</strong><span>新歌、专辑、海报、视频、商务合作和作品投稿都能从现有结构继续扩展，而不是每次重新搭页面。</span></div>
           </div>
           <div class="about-copy">
             <p class="eyebrow">About Music Factory</p>
             <h2>做音乐，做唱歌的人，做能传得远的声音。</h2>
-            <p>音乐工厂是一家专注音乐内容生产的厂牌，深耕原创音乐制作与内容发行多年，并于近年引入 AI 技术，开辟虚拟歌手 IP 矩阵这条全新赛道。</p>
-            <p>旗下现有三位 AI 虚拟歌手：十里音、观无界、梦梦。每一位都有独立的音乐世界与鲜明的人物性格，在各自的声音坐标里持续创作，发行原创作品。</p>
+            <p>音乐工厂是一家专注音乐内容生产的厂牌，深耕原创音乐制作与内容发行，并引入 AI 技术开辟虚拟歌手 IP 矩阵。</p>
+            <p>旗下三位 AI 虚拟歌手：十里音、观无界、梦梦，分别承担东方概念流行、东方精神表达和山河旅行音乐三条声音路线。</p>
+            <p>这里不只做 AI 音乐，也把原创生产、经典曲目重制、品牌歌曲定制和 MV 制作纳入同一个内容工厂。</p>
             <div class="business-lines">
               <div class="business-line">AI 虚拟歌手的持续原创生产</div>
               <div class="business-line">600+ 首授权经典曲目的创意重制</div>
@@ -2364,15 +2488,20 @@
         }
         const openWork = event.target.closest("[data-open-work]");
         if (openWork) openDetail(openWork.dataset.openWork);
+        const scrollTarget = event.target.closest("[data-scroll]");
+        if (scrollTarget) {
+          switchView("home", false);
+          document.getElementById(scrollTarget.dataset.scroll)?.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
         const jump = event.target.closest("[data-jump]");
         if (jump) switchView(jump.dataset.jump);
       });
     }
 
-    function switchView(view) {
+    function switchView(view, scrollToTop = true) {
       document.querySelectorAll(".view").forEach(el => el.classList.toggle("active", el.id === `view-${view}`));
       document.querySelectorAll(".nav button").forEach(btn => btn.classList.toggle("active", btn.dataset.view === view));
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      if (scrollToTop) window.scrollTo({ top: 0, behavior: "smooth" });
     }
 
     function openDetail(key) {
