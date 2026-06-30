@@ -3,568 +3,2908 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Music Factory | Cinematic Portal</title>
+  <title>音乐工厂 · 品牌体验馆</title>
   <link rel="icon" href="data:," />
-  <link rel="preload" as="image" href="assets/generated/music-map-guanwujie.webp" fetchpriority="high" />
+  <link rel="preload" as="image" href="assets/optimized/mobile-banner.webp" media="(max-width: 719px)" />
+  <link rel="preload" as="image" href="assets/optimized/desktop-banner.webp" media="(min-width: 720px)" />
   <style>
     :root {
-      --font-display: "Didot", "Bodoni 72", "Songti SC", "STSong", Georgia, serif;
-      --font-body: "Inter", "SF Pro Text", "Helvetica Neue", "Microsoft YaHei", system-ui, sans-serif;
-      --font-caption: "SF Pro Text", "Helvetica Neue", "Microsoft YaHei", system-ui, sans-serif;
-      --font-quote: "Times New Roman", "Songti SC", Georgia, serif;
-
-      --warm-white: #f7f3ea;
-      --paper: #fffdf8;
-      --charcoal: #14120f;
-      --record-black: #080706;
-      --warm-gray: #80786b;
-      --dark-gold: #a58a56;
-      --soft-gold: #d8c08a;
-      --line: rgba(255, 253, 248, .16);
-
-      --space-1: 8px;
-      --space-2: 16px;
-      --space-3: 24px;
-      --space-4: 32px;
-      --space-5: 40px;
-      --space-6: 48px;
-      --space-8: 64px;
-      --space-10: 80px;
-      --space-12: 96px;
-      --space-16: 128px;
-
-      --motion-fast: 320ms cubic-bezier(.2, .8, .2, 1);
-      --motion-base: 720ms cubic-bezier(.2, .8, .2, 1);
-      --motion-slow: 1600ms cubic-bezier(.19, 1, .22, 1);
-      --motion-cinematic: 8600ms cubic-bezier(.19, 1, .22, 1);
-
-      --spirit: url("assets/generated/music-map-guanwujie.webp");
-      --future: url("assets/generated/music-map-shiliyin.webp");
-      --nature: url("assets/generated/music-map-mengmeng.webp");
-      font-family: var(--font-body);
+      --bg: #f4f4f4;
+      --panel: #fff;
+      --ink: #1f2023;
+      --muted: #72767d;
+      --line: #e7e7e7;
+      --red: #d33a31;
+      --red-dark: #a92c25;
+      --black: #151515;
+      --gold: #c9a45d;
+      --paper: #fff9f0;
+      --blue: #2f6f9f;
+      --soft: #f8f0ef;
+      --shadow: 0 18px 48px rgba(0,0,0,.12);
+      font-family: "Microsoft YaHei", "PingFang SC", "Noto Sans SC", system-ui, sans-serif;
     }
 
     * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; background: var(--record-black); }
+    html { scroll-behavior: smooth; }
     body {
       margin: 0;
-      min-height: 100vh;
-      color: var(--paper);
-      background:
-        radial-gradient(circle at 50% 12%, rgba(216,192,138,.16), transparent 34%),
-        linear-gradient(180deg, #050403 0%, #0d0b09 42%, #f3ecdf 100%);
-      overflow-x: hidden;
-      font-family: var(--font-body);
-      animation: pageArrival 900ms cubic-bezier(.19, 1, .22, 1) both;
+      background: var(--bg);
+      color: var(--ink);
     }
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      z-index: -2;
-      pointer-events: none;
-      background:
-        radial-gradient(circle, rgba(255,253,248,.12) .48px, transparent .9px),
-        linear-gradient(90deg, rgba(255,253,248,.035) 1px, transparent 1px),
-        linear-gradient(180deg, rgba(255,253,248,.028) 1px, transparent 1px);
-      background-size: 7px 7px, 180px 180px, 180px 180px;
-      opacity: .28;
-      mask-image: linear-gradient(180deg, rgba(0,0,0,.82), transparent 72%);
-    }
-    a { color: inherit; text-decoration: none; }
-    h1, h2, h3, p { margin-top: 0; }
-    .wrap { width: min(1240px, calc(100% - var(--space-4))); margin: 0 auto; }
 
-    .cinematic-entrance {
-      min-height: 100svh;
+    button, input { font: inherit; }
+    .wrap { width: min(1180px, calc(100% - 32px)); margin: 0 auto; }
+
+    .site-header {
+      min-height: 700px;
+      color: #171412;
+      background:
+        radial-gradient(circle at 84% 12%, rgba(211,58,49,.18), transparent 30%),
+        radial-gradient(circle at 16% 16%, rgba(201,164,93,.22), transparent 34%),
+        linear-gradient(90deg, rgba(255,250,243,.94) 0%, rgba(255,250,243,.86) 46%, rgba(255,250,243,.56) 100%),
+        url("assets/optimized/desktop-banner.webp") center / cover no-repeat;
       position: relative;
-      display: grid;
-      place-items: center;
       overflow: hidden;
-      isolation: isolate;
-      background:
-        linear-gradient(90deg, rgba(5,4,3,.92), rgba(5,4,3,.44) 48%, rgba(5,4,3,.92)),
-        linear-gradient(180deg, rgba(5,4,3,.28), rgba(5,4,3,.86)),
-        var(--spirit) center / cover no-repeat;
     }
-    .cinematic-entrance::before {
+
+    .site-header::after {
       content: "";
       position: absolute;
-      inset: -8%;
-      z-index: -1;
-      background:
-        radial-gradient(ellipse at 50% 42%, rgba(255,253,248,.24), transparent 20%),
-        radial-gradient(ellipse at 50% 54%, rgba(216,192,138,.26), transparent 35%),
-        radial-gradient(ellipse at 20% 78%, rgba(255,253,248,.08), transparent 28%);
-      animation: breathingLight 9000ms ease-in-out infinite alternate;
-      filter: blur(1px) saturate(.62);
-    }
-    .cinematic-entrance::after {
-      content: "";
-      position: absolute;
-      inset: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 120px;
+      background: linear-gradient(180deg, transparent, var(--bg));
       pointer-events: none;
-      background:
-        linear-gradient(90deg, rgba(5,4,3,.86), transparent 30%, transparent 70%, rgba(5,4,3,.88)),
-        linear-gradient(180deg, rgba(5,4,3,.62), transparent 32%, rgba(5,4,3,.94));
     }
-    .entrance-inner {
+
+    .site-header .wrap {
       position: relative;
       z-index: 1;
-      width: min(920px, calc(100% - var(--space-4)));
-      text-align: center;
-      transform: translateY(var(--cinematic-y, 0)) scale(1.01);
-      animation: softOpeningZoom var(--motion-cinematic) both;
-    }
-    .cinematic-mark {
-      margin: 0 0 var(--space-4);
-      color: rgba(255,253,248,.72);
-      font: 900 11px/1 var(--font-caption);
-      letter-spacing: .2em;
-      text-transform: uppercase;
-      animation: fadeInSlow 1800ms ease 800ms both;
-    }
-    .cinematic-title {
-      margin: 0 0 var(--space-4);
-      font: 500 clamp(72px, 11vw, 164px)/.82 var(--font-display);
-      letter-spacing: 0;
-      text-wrap: balance;
-      clip-path: inset(0);
-      text-shadow: 0 18px 60px rgba(0,0,0,.46);
-      animation: titleFloat 6600ms ease-in-out 900ms both;
-    }
-    .cinematic-subtitle {
-      max-width: 780px;
-      margin: 0 auto var(--space-8);
-      color: rgba(255,253,248,.88);
-      font: 400 clamp(30px, 4.6vw, 68px)/1.02 var(--font-quote);
-      letter-spacing: 0;
-      text-wrap: balance;
-      opacity: .96;
-      transform: translateY(0);
-      animation: subtitleFloat 7600ms ease-in-out 1800ms both;
-    }
-    .enter-civilization {
-      display: inline-block;
-      padding-bottom: 8px;
-      color: var(--paper);
-      border-bottom: 1px solid rgba(255,253,248,.78);
-      font: 900 12px/1 var(--font-caption);
-      letter-spacing: .18em;
-      text-transform: uppercase;
-      opacity: .92;
-      transform: translateY(0);
-      animation: ctaPulse 7200ms ease-in-out 3200ms both;
-      transition: color var(--motion-fast), transform var(--motion-fast), border-color var(--motion-fast);
-    }
-    .enter-civilization:hover { color: var(--soft-gold); border-color: currentColor; transform: translateY(12px); }
-    .entrance-silence {
-      position: absolute;
-      left: 50%;
-      bottom: var(--space-5);
-      z-index: 2;
-      width: 1px;
-      height: 64px;
-      opacity: 0;
-      transform: translateX(-50%);
-      animation: fadeInSlow 2200ms ease 7200ms both;
-      background: linear-gradient(180deg, transparent, rgba(255,253,248,.54), transparent);
     }
 
-    .section {
-      position: relative;
-      padding: clamp(112px, 14vw, 208px) 0;
-      color: var(--charcoal);
-      background: var(--warm-white);
-      overflow: hidden;
-      content-visibility: auto;
-      contain-intrinsic-size: 900px;
-    }
-    .section.dark {
-      color: var(--paper);
-      background:
-        radial-gradient(circle at 68% 18%, rgba(165,138,86,.18), transparent 30%),
-        linear-gradient(180deg, #0c0a08 0%, #17130f 100%);
-    }
-    .eyebrow {
-      margin: 0 0 var(--space-3);
-      color: var(--dark-gold);
-      font: 900 11px/1 var(--font-caption);
-      letter-spacing: .18em;
-      text-transform: uppercase;
-    }
-    .section-title {
-      max-width: 940px;
-      margin: 0 0 var(--space-8);
-      font: 500 clamp(50px, 8vw, 120px)/.86 var(--font-display);
-      letter-spacing: 0;
-      text-wrap: balance;
-    }
-
-    .civilization-emergence {
-      min-height: 1120px;
-      padding-bottom: clamp(160px, 18vw, 260px);
-    }
-    .node-field {
-      position: relative;
-      min-height: 680px;
-    }
-    .civilization-node {
-      position: absolute;
-      width: min(420px, 34vw);
-      min-height: 440px;
+    .topbar {
       display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      padding: var(--space-4);
-      color: var(--paper);
-      overflow: hidden;
-      isolation: isolate;
-      background: #17130f;
-      box-shadow: 0 32px 90px rgba(20,18,15,.18);
-      transform: translate3d(0, var(--float-y, 0), 0);
-      animation: nodeBreath 7600ms ease-in-out infinite alternate;
-      transition: transform var(--motion-slow), clip-path var(--motion-slow), color var(--motion-base);
+      justify-content: space-between;
+      align-items: center;
+      gap: 14px;
+      padding: 18px 0;
     }
-    .civilization-node::before {
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+
+    .brand-mark {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--red);
+      display: grid;
+      place-items: center;
+      box-shadow: 0 8px 24px rgba(211,58,49,.42);
+    }
+
+    .nav {
+      display: flex;
+      gap: 6px;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+
+    .nav::-webkit-scrollbar { display: none; }
+
+    .nav button {
+      border: 1px solid rgba(23,20,18,.12);
+      background: rgba(255,255,255,.56);
+      color: #5b5651;
+      border-radius: 999px;
+      padding: 9px 13px;
+      white-space: nowrap;
+      cursor: pointer;
+    }
+
+    .nav button.active {
+      background: var(--ink);
+      color: #fff;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+      align-items: center;
+      padding: 76px 0 70px;
+    }
+
+    .eyebrow {
+      color: var(--red);
+      font-weight: 900;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      margin: 0 0 12px;
+      font-size: 12px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(42px, 10vw, 88px);
+      line-height: .95;
+      letter-spacing: 0;
+    }
+
+    .hero-copy {
+      margin: 18px 0 0;
+      color: #4d4640;
+      line-height: 1.85;
+      max-width: 740px;
+      font-size: 17px;
+    }
+
+    .hero-statement {
+      margin: 16px 0 0;
+      max-width: 760px;
+      font-size: clamp(22px, 3vw, 34px);
+      line-height: 1.22;
+      font-weight: 900;
+      color: #171412;
+    }
+
+    .hero-proof {
+      display: grid;
+      gap: 10px;
+      margin-top: 24px;
+      max-width: 760px;
+    }
+
+    .proof-item {
+      display: grid;
+      grid-template-columns: 88px 1fr;
+      gap: 12px;
+      align-items: center;
+      padding: 11px 14px;
+      border-radius: 8px;
+      background: rgba(255,255,255,.62);
+      border: 1px solid rgba(23,20,18,.08);
+      color: #4d4640;
+    }
+
+    .proof-item strong {
+      color: var(--ink);
+      font-size: 13px;
+    }
+
+    .proof-line {
+      position: relative;
+      height: 6px;
+      overflow: hidden;
+      border-radius: 999px;
+      background: rgba(23,20,18,.08);
+    }
+
+    .proof-line span {
+      display: block;
+      height: 100%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, var(--red), #c9a45d);
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 24px;
+    }
+
+    .btn {
+      border: 0;
+      border-radius: 999px;
+      padding: 12px 18px;
+      cursor: pointer;
+      font-weight: 900;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+    }
+
+    .btn.primary { background: var(--red); color: #fff; }
+    .btn.ghost { background: rgba(255,255,255,.72); color: var(--ink); border: 1px solid rgba(23,20,18,.12); }
+
+    .hero-panel {
+      background: rgba(255,255,255,.68);
+      border: 1px solid rgba(23,20,18,.1);
+      border-radius: 8px;
+      padding: 18px;
+      backdrop-filter: blur(14px);
+    }
+
+    .panel-title {
+      margin: 0 0 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      color: #4d4640;
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .panel-title span {
+      color: var(--red);
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      font-size: 11px;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+
+    .stat {
+      padding: 12px;
+      border-radius: 8px;
+      background: rgba(255,255,255,.66);
+      border: 1px solid rgba(23,20,18,.08);
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 28px;
+      line-height: 1;
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .route-panel {
+      margin-top: 16px;
+      display: grid;
+      gap: 10px;
+    }
+
+    .route-card {
+      border: 1px solid rgba(23,20,18,.1);
+      background: rgba(255,255,255,.62);
+      color: var(--ink);
+      border-radius: 8px;
+      padding: 13px;
+      text-align: left;
+      cursor: pointer;
+      display: grid;
+      gap: 4px;
+      transition: transform .18s ease, border-color .18s ease, background .18s ease;
+    }
+
+    .route-card:hover,
+    .route-card.active {
+      transform: translateY(-2px);
+      border-color: rgba(211,58,49,.28);
+      background: rgba(211,58,49,.12);
+    }
+
+    .route-card strong { font-size: 16px; }
+    .route-card span { color: var(--muted); font-size: 12px; line-height: 1.5; }
+
+    .experience-flow {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      margin: 0 0 22px;
+    }
+
+    .flow-card {
+      display: grid;
+      grid-template-columns: 46px 1fr;
+      gap: 14px;
+      align-items: start;
+      min-height: 116px;
+      padding: 18px;
+      border-radius: 8px;
+      background: #fff;
+      border: 1px solid var(--line);
+      box-shadow: 0 12px 32px rgba(0,0,0,.05);
+    }
+
+    .flow-index {
+      display: grid;
+      place-items: center;
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      background: #171412;
+      color: #fff;
+      font-weight: 900;
+    }
+
+    .flow-card strong {
+      display: block;
+      margin-bottom: 7px;
+      font-size: 17px;
+    }
+
+    .flow-card span {
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 14px;
+    }
+
+    main { padding: 28px 0 70px; }
+    .view { display: none; }
+    .view.active { display: block; }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 16px;
+      margin: 28px 0 16px;
+    }
+
+    .section-head h2 {
+      margin: 0;
+      font-size: clamp(24px, 5vw, 38px);
+    }
+
+    .section-head p {
+      margin: 8px 0 0;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .subtle { color: var(--muted); font-size: 13px; }
+
+    .land-stage {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+      margin-top: -58px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .world-console {
+      border-radius: 8px;
+      overflow: hidden;
+      background:
+        linear-gradient(135deg, rgba(19,20,23,.96), rgba(57,22,20,.94)),
+        #151515;
+      color: #fff;
+      box-shadow: var(--shadow);
+    }
+
+    .world-shell {
+      display: grid;
+      grid-template-columns: 1fr;
+      min-height: 480px;
+    }
+
+    .guide-panel {
+      padding: 20px;
+      border-bottom: 1px solid rgba(255,255,255,.1);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.06), transparent),
+        rgba(0,0,0,.18);
+    }
+
+    .guide-portrait {
+      width: 92px;
+      aspect-ratio: 1;
+      border-radius: 8px;
+      overflow: hidden;
+      background: rgba(255,255,255,.08);
+      margin-bottom: 14px;
+    }
+
+    .guide-portrait img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .guide-panel h2 {
+      margin: 0;
+      font-size: clamp(26px, 6vw, 44px);
+      line-height: 1.08;
+    }
+
+    .guide-line {
+      color: rgba(255,255,255,.7);
+      line-height: 1.8;
+      margin: 12px 0 0;
+    }
+
+    .world-tabs {
+      display: grid;
+      gap: 8px;
+      margin-top: 18px;
+    }
+
+    .world-tab {
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.07);
+      color: #fff;
+      border-radius: 8px;
+      padding: 12px;
+      text-align: left;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      min-height: 56px;
+    }
+
+    .world-tab.active {
+      background: #fff;
+      color: var(--ink);
+      border-color: #fff;
+    }
+
+    .sound-map {
+      position: relative;
+      min-height: 430px;
+      padding: 18px;
+      background:
+        radial-gradient(circle at 20% 28%, rgba(255,255,255,.18), transparent 18%),
+        radial-gradient(circle at 78% 36%, rgba(211,58,49,.3), transparent 20%),
+        linear-gradient(145deg, rgba(255,255,255,.04), rgba(0,0,0,.28));
+      overflow: hidden;
+    }
+
+    .map-skyline {
+      position: absolute;
+      inset: auto 0 0;
+      height: 42%;
+      opacity: .32;
+      background:
+        linear-gradient(to top, rgba(0,0,0,.82), transparent 72%),
+        repeating-linear-gradient(90deg, rgba(255,255,255,.2) 0 2px, transparent 2px 56px);
+      clip-path: polygon(0 72%, 6% 42%, 12% 60%, 19% 30%, 26% 64%, 35% 36%, 46% 58%, 56% 24%, 67% 66%, 78% 34%, 87% 60%, 100% 42%, 100% 100%, 0 100%);
+    }
+
+    .map-node {
+      position: absolute;
+      width: 158px;
+      min-height: 84px;
+      border: 1px solid rgba(255,255,255,.22);
+      background: rgba(0,0,0,.42);
+      color: #fff;
+      border-radius: 8px;
+      padding: 12px;
+      text-align: left;
+      cursor: pointer;
+      box-shadow: 0 12px 30px rgba(0,0,0,.22);
+      backdrop-filter: blur(10px);
+      transition: transform .18s ease, background .18s ease, border-color .18s ease;
+    }
+
+    .map-node:hover,
+    .map-node.active {
+      transform: translateY(-4px);
+      background: rgba(211,58,49,.72);
+      border-color: rgba(255,255,255,.68);
+    }
+
+    .map-node strong {
+      display: block;
+      font-size: 16px;
+      margin-bottom: 4px;
+    }
+
+    .map-node span {
+      display: block;
+      color: rgba(255,255,255,.72);
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    .map-node small {
+      display: block;
+      margin-top: 8px;
+      color: rgba(255,255,255,.58);
+      font-size: 11px;
+    }
+
+    .space-player {
+      display: grid;
+      grid-template-columns: 84px 1fr;
+      gap: 14px;
+      align-items: center;
+      padding: 14px;
+      border-top: 1px solid rgba(255,255,255,.1);
+      background: rgba(0,0,0,.34);
+    }
+
+    .space-cover {
+      width: 84px;
+      aspect-ratio: 1;
+      border-radius: 8px;
+      object-fit: cover;
+      background: rgba(255,255,255,.12);
+    }
+
+    .space-player h3 {
+      margin: 0 0 4px;
+      font-size: 20px;
+    }
+
+    .space-player p {
+      margin: 0 0 12px;
+      color: rgba(255,255,255,.68);
+      line-height: 1.65;
+      font-size: 13px;
+    }
+
+    .space-actions {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .space-actions audio {
+      max-width: 320px;
+      min-width: 220px;
+    }
+
+    .world-console[data-world="spirit"] .sound-map {
+      background:
+        radial-gradient(circle at 28% 22%, rgba(255,255,255,.2), transparent 16%),
+        radial-gradient(circle at 72% 66%, rgba(211,58,49,.28), transparent 24%),
+        linear-gradient(145deg, #11191b, #3a1816);
+    }
+
+    .world-console[data-world="city"] .sound-map {
+      background:
+        radial-gradient(circle at 24% 34%, rgba(255,218,120,.18), transparent 18%),
+        radial-gradient(circle at 80% 24%, rgba(211,58,49,.34), transparent 22%),
+        linear-gradient(145deg, #111, #34222c);
+    }
+
+    .world-console[data-world="travel"] .sound-map {
+      background:
+        radial-gradient(circle at 22% 22%, rgba(255,255,255,.22), transparent 17%),
+        radial-gradient(circle at 76% 72%, rgba(72,126,140,.34), transparent 24%),
+        linear-gradient(145deg, #172426, #4a2520);
+    }
+
+    .artist-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    .artist-card {
+      display: grid;
+      grid-template-columns: 118px 1fr;
+      gap: 14px;
+      align-items: stretch;
+      border: 0;
+      text-align: left;
+      background: var(--panel);
+      border-radius: 8px;
+      padding: 12px;
+      box-shadow: 0 10px 28px rgba(0,0,0,.07);
+      cursor: pointer;
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .artist-photo {
+      width: 118px;
+      aspect-ratio: 1;
+      border-radius: 8px;
+      overflow: hidden;
+      background: linear-gradient(135deg, #252525, #741f1a);
+      color: #fff;
+      display: grid;
+      place-items: center;
+      font-size: 32px;
+      font-weight: 900;
+    }
+
+    .artist-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .artist-poster {
+      width: 100%;
+      margin-top: 14px;
+      border-radius: 8px;
+      overflow: hidden;
+      background: #111;
+      box-shadow: 0 12px 30px rgba(0,0,0,.12);
+    }
+
+    .artist-poster img {
+      width: 100%;
+      display: block;
+    }
+
+    .artist-card h3, .panel h3 {
+      margin: 0 0 8px;
+      font-size: 22px;
+    }
+
+    .tags {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      margin: 10px 0;
+    }
+
+    .tag {
+      border-radius: 999px;
+      padding: 5px 8px;
+      background: #f0f0f0;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .tag.red {
+      background: var(--soft);
+      color: var(--red-dark);
+    }
+
+    .panel {
+      background: var(--panel);
+      border-radius: 8px;
+      padding: 18px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.06);
+      margin-bottom: 16px;
+    }
+
+    .artist-detail {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    .artist-hero {
+      display: grid;
+      grid-template-columns: 150px 1fr;
+      gap: 16px;
+      align-items: end;
+    }
+
+    .artist-hero .artist-photo {
+      width: 150px;
+      font-size: 42px;
+    }
+
+    .clip-box {
+      border: 1px dashed var(--line);
+      border-radius: 8px;
+      padding: 14px;
+      color: var(--muted);
+      background: #fbfbfb;
+      line-height: 1.7;
+    }
+
+    .artist-kicker {
+      color: var(--red-dark);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .artist-name-line {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 6px;
+    }
+
+    .artist-name-line h3 { margin: 0; }
+
+    .artist-en {
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: .08em;
+    }
+
+    .artist-bio {
+      display: grid;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .artist-bio p {
+      margin: 0;
+      color: #4f5359;
+      line-height: 1.9;
+    }
+
+    .artist-block-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .mini-card {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 12px;
+      background: #fff;
+    }
+
+    .mini-card strong {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 15px;
+    }
+
+    .mini-card span {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.65;
+    }
+
+    .artist-feature {
+      background:
+        linear-gradient(135deg, rgba(211,58,49,.08), transparent 34%),
+        var(--panel);
+    }
+
+    .toolbar {
+      position: sticky;
+      top: 0;
+      z-index: 5;
+      background: rgba(244,244,244,.95);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(14px);
+      padding: 12px 0;
+      margin: 0 0 18px;
+    }
+
+    .tools {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
+
+    .search {
+      width: 100%;
+      border: 1px solid var(--line);
+      background: var(--panel);
+      border-radius: 999px;
+      padding: 12px 16px;
+      outline: none;
+    }
+
+    .chips {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+
+    .chips::-webkit-scrollbar { display: none; }
+
+    .chip {
+      border: 1px solid var(--line);
+      background: var(--panel);
+      color: var(--muted);
+      border-radius: 999px;
+      padding: 9px 13px;
+      white-space: nowrap;
+      cursor: pointer;
+      font-weight: 800;
+    }
+
+    .chip.active {
+      background: var(--red);
+      color: #fff;
+      border-color: var(--red);
+    }
+
+    .work-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .work-card {
+      border: 0;
+      background: transparent;
+      padding: 0;
+      text-align: left;
+      cursor: pointer;
+      min-width: 0;
+    }
+
+    .cover-wrap {
+      position: relative;
+      border-radius: 8px;
+      overflow: hidden;
+      background: #e7e7e7;
+      aspect-ratio: 1;
+      box-shadow: 0 8px 22px rgba(0,0,0,.08);
+    }
+
+    .cover {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform .2s ease;
+    }
+
+    .work-card:hover .cover { transform: scale(1.04); }
+
+    .play-dot {
+      position: absolute;
+      right: 10px;
+      bottom: 10px;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: rgba(211,58,49,.94);
+      display: grid;
+      place-items: center;
+      box-shadow: 0 6px 18px rgba(0,0,0,.2);
+    }
+
+    .play-dot::before {
+      content: "";
+      margin-left: 3px;
+      border-left: 12px solid #fff;
+      border-top: 8px solid transparent;
+      border-bottom: 8px solid transparent;
+    }
+
+    .listen-badge {
+      position: absolute;
+      left: 9px;
+      bottom: 10px;
+      min-height: 28px;
+      display: inline-flex;
+      align-items: center;
+      border-radius: 999px;
+      padding: 6px 10px;
+      background: rgba(255,255,255,.94);
+      color: var(--red);
+      font-size: 12px;
+      font-weight: 900;
+      box-shadow: 0 6px 18px rgba(0,0,0,.12);
+    }
+
+    .work-title {
+      margin: 9px 0 4px;
+      font-weight: 900;
+      line-height: 1.35;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .work-meta {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.55;
+    }
+
+    .empty {
+      display: none;
+      padding: 42px 18px;
+      text-align: center;
+      color: var(--muted);
+      background: var(--panel);
+      border: 1px dashed var(--line);
+      border-radius: 8px;
+    }
+
+    .load-more-wrap {
+      display: none;
+      justify-content: center;
+      margin-top: 22px;
+    }
+
+    .load-more-wrap.active {
+      display: flex;
+    }
+
+    .load-more {
+      border: 1px solid var(--line);
+      background: var(--panel);
+      color: var(--ink);
+      border-radius: 999px;
+      padding: 11px 18px;
+      font-weight: 900;
+      cursor: pointer;
+    }
+
+    dialog {
+      width: min(980px, calc(100vw - 24px));
+      max-height: calc(100vh - 24px);
+      border: 0;
+      border-radius: 10px;
+      padding: 0;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    dialog::backdrop { background: rgba(0,0,0,.52); }
+
+    .close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      width: 34px;
+      height: 34px;
+      border: 0;
+      border-radius: 50%;
+      background: rgba(255,255,255,.16);
+      color: #fff;
+      font-size: 20px;
+      cursor: pointer;
+      z-index: 2;
+    }
+
+    .detail {
+      max-height: calc(100vh - 24px);
+      overflow: auto;
+      background: var(--panel);
+    }
+
+    .detail-hero {
+      display: grid;
+      grid-template-columns: 112px 1fr;
+      gap: 14px;
+      align-items: end;
+      color: #fff;
+      padding: 18px;
+      background: linear-gradient(135deg, #272727, #151515 70%, #421815);
+    }
+
+    .detail-cover {
+      width: 112px;
+      aspect-ratio: 1;
+      object-fit: cover;
+      border-radius: 8px;
+      background: #333;
+    }
+
+    .detail h3 {
+      margin: 0 0 8px;
+      font-size: 28px;
+      line-height: 1.1;
+    }
+
+    .detail-meta {
+      color: rgba(255,255,255,.72);
+      line-height: 1.7;
+      font-size: 13px;
+    }
+
+    .detail-body {
+      padding: 18px;
+      display: grid;
+      gap: 18px;
+    }
+
+    .versions {
+      display: grid;
+      gap: 10px;
+    }
+
+    .version {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 12px;
+      background: #fbfbfb;
+    }
+
+    .version-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 8px;
+      font-weight: 900;
+    }
+
+    .version-head span {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    audio { width: 100%; height: 36px; display: block; }
+
+    .audio-stack {
+      display: grid;
+      gap: 8px;
+    }
+
+    .audio-open-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 34px;
+      width: fit-content;
+      border-radius: 999px;
+      padding: 7px 12px;
+      background: var(--red);
+      color: #fff;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .external-player-link {
+      box-shadow: 0 12px 28px rgba(211,58,49,.22);
+    }
+
+    .audio-note { border: 1px dashed var(--line); border-radius: 8px; padding: 12px; color: var(--muted); background: #fbfbfb; line-height: 1.6; }
+
+    .platform-links { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0 8px; }
+    .platform-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 36px;
+      border-radius: 999px;
+      padding: 8px 13px;
+      background: var(--red);
+      color: #fff;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .text-block {
+      border-top: 1px solid var(--line);
+      padding-top: 14px;
+    }
+
+    .text-block h4 { margin: 0 0 8px; font-size: 16px; }
+
+    .brand-experience {
+      margin-top: 30px;
+      display: grid;
+      gap: 18px;
+    }
+
+    .manifesto {
+      padding: 28px;
+      border-radius: 8px;
+      background:
+        radial-gradient(circle at 82% 10%, rgba(211,58,49,.16), transparent 28%),
+        linear-gradient(135deg, #fff, #fff8f1);
+      border: 1px solid rgba(23,20,18,.08);
+      box-shadow: 0 18px 46px rgba(72,35,20,.08);
+    }
+
+    .manifesto h2 {
+      margin: 0;
+      font-size: clamp(30px, 6vw, 56px);
+      line-height: 1.05;
+    }
+
+    .manifesto p {
+      margin: 16px 0 0;
+      color: #4d4640;
+      line-height: 1.8;
+      max-width: 860px;
+    }
+
+    .brand-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+
+    .brand-card {
+      padding: 20px;
+      border-radius: 8px;
+      background: #fff;
+      border: 1px solid var(--line);
+      box-shadow: 0 12px 30px rgba(0,0,0,.05);
+    }
+
+    .brand-card strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 17px;
+    }
+
+    .brand-card span {
+      color: var(--muted);
+      line-height: 1.75;
+      font-size: 14px;
+    }
+
+    .about-copy {
+      display: grid;
+      gap: 24px;
+      padding: 24px;
+      border-radius: 8px;
+      background:
+        linear-gradient(135deg, rgba(23,20,18,.98), rgba(32,26,22,.98));
+      color: #fff;
+      overflow: hidden;
+      position: relative;
+      border: 1px solid rgba(201,164,93,.24);
+      box-shadow: 0 24px 60px rgba(23,20,18,.18);
+    }
+
+    .about-copy::before {
       content: "";
       position: absolute;
-      inset: 0;
-      z-index: -2;
-      background: var(--node-image) center / cover no-repeat;
-      transform: scale(1.04);
-      transition: transform var(--motion-slow), filter var(--motion-slow);
-      filter: saturate(.86);
+      right: -140px;
+      bottom: -180px;
+      width: 520px;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      opacity: .34;
+      background:
+        radial-gradient(circle, rgba(255,255,255,.42) 0 7%, transparent 8% 34%, rgba(255,255,255,.18) 35% 36%, transparent 37% 48%, rgba(201,164,93,.18) 49% 50%, transparent 51% 100%),
+        conic-gradient(from 42deg, rgba(211,58,49,.38), rgba(201,164,93,.28), rgba(255,255,255,.08), rgba(211,58,49,.32));
+      pointer-events: none;
     }
-    .civilization-node::after {
+
+    .about-copy::after {
+      content: "MF";
+      position: absolute;
+      right: -18px;
+      top: -24px;
+      color: rgba(201,164,93,.12);
+      font-size: 168px;
+      line-height: 1;
+      font-weight: 900;
+      letter-spacing: 0;
+      pointer-events: none;
+    }
+
+    .about-copy > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .about-copy h2 {
+      margin: 0;
+      font-size: clamp(28px, 5vw, 52px);
+      line-height: 1.08;
+    }
+
+    .about-copy p {
+      margin: 0;
+      color: rgba(255,255,255,.76);
+      line-height: 1.85;
+      max-width: 920px;
+    }
+
+    .about-layout {
+      display: grid;
+      gap: 24px;
+    }
+
+    .about-lead {
+      display: grid;
+      gap: 14px;
+    }
+
+    .brand-signal {
+      display: grid;
+      gap: 14px;
+      align-content: start;
+    }
+
+    .signal-disc {
+      aspect-ratio: 1;
+      min-height: 220px;
+      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,.16);
+      background:
+        linear-gradient(135deg, rgba(255,255,255,.12), rgba(255,255,255,.04));
+      display: grid;
+      place-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .signal-disc::before,
+    .signal-disc::after {
+      content: "";
+      position: absolute;
+      inset: 18%;
+      border: 1px solid rgba(255,255,255,.18);
+      border-radius: 50%;
+    }
+
+    .signal-disc::after {
+      inset: 36%;
+      border-color: rgba(201,164,93,.44);
+      background: rgba(211,58,49,.8);
+      box-shadow: 0 18px 40px rgba(211,58,49,.24);
+    }
+
+    .signal-disc span {
+      position: relative;
+      z-index: 1;
+      font-size: 52px;
+      font-weight: 900;
+      color: #fff;
+    }
+
+    .signal-caption {
+      display: grid;
+      gap: 4px;
+      padding: 14px;
+      border-radius: 8px;
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.12);
+    }
+
+    .signal-caption strong {
+      color: #fff;
+      font-size: 16px;
+    }
+
+    .signal-caption span {
+      color: rgba(255,255,255,.66);
+      line-height: 1.6;
+      font-size: 13px;
+    }
+
+    .brand-metrics {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 4px;
+    }
+
+    .brand-metric {
+      min-height: 92px;
+      padding: 14px;
+      border-radius: 8px;
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.12);
+    }
+
+    .brand-metric strong {
+      display: block;
+      font-size: 28px;
+      line-height: 1;
+      color: #fff;
+    }
+
+    .brand-metric span {
+      display: block;
+      margin-top: 8px;
+      color: rgba(255,255,255,.66);
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    .production-path {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 1px;
+      overflow: hidden;
+      border-radius: 8px;
+      border: 1px solid rgba(201,164,93,.22);
+      background: rgba(201,164,93,.22);
+    }
+
+    .path-step {
+      min-height: 110px;
+      padding: 14px;
+      background: rgba(23,20,18,.9);
+      display: grid;
+      align-content: space-between;
+      gap: 12px;
+    }
+
+    .path-step small {
+      color: var(--gold);
+      font-weight: 900;
+      letter-spacing: .12em;
+    }
+
+    .path-step strong {
+      color: #fff;
+      line-height: 1.35;
+    }
+
+    .business-lines {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
+
+    .business-line {
+      min-height: 84px;
+      padding: 14px 16px;
+      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.07);
+      color: rgba(255,255,255,.86);
+      line-height: 1.65;
+      display: grid;
+      align-content: space-between;
+      gap: 10px;
+    }
+
+    .business-line::before {
+      content: "";
+      width: 34px;
+      height: 3px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--red), var(--gold));
+    }
+
+    .archive-note {
+      margin-top: 16px;
+      padding: 18px;
+      border-radius: 8px;
+      border: 1px solid rgba(23,20,18,.08);
+      background: rgba(255,255,255,.72);
+      color: #4d4640;
+      line-height: 1.75;
+    }
+
+    .archive-note strong {
+      display: block;
+      color: var(--ink);
+      margin-bottom: 6px;
+    }
+    pre {
+      margin: 0;
+      white-space: pre-wrap;
+      word-break: break-word;
+      line-height: 1.75;
+      font-family: inherit;
+      color: #3d3d3d;
+      font-size: 14px;
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      padding: 20px 0 36px;
+      line-height: 1.7;
+      font-size: 13px;
+    }
+
+
+    .site-header::before {
+      content: "";
+      position: absolute;
+      inset: -18%;
+      background:
+        radial-gradient(circle at 14% 72%, rgba(55, 198, 255, .2), transparent 23%),
+        radial-gradient(circle at 86% 18%, rgba(255, 211, 109, .22), transparent 22%),
+        conic-gradient(from 180deg at 50% 50%, rgba(104, 207, 255, .12), rgba(211,58,49,.28), rgba(132, 236, 170, .12), rgba(104, 207, 255, .12));
+      opacity: .72;
+      filter: blur(14px);
+      animation: headerDrift 18s ease-in-out infinite alternate;
+      pointer-events: none;
+    }
+
+    @keyframes headerDrift {
+      from { transform: translate3d(-2%, -1%, 0) scale(1); }
+      to { transform: translate3d(2%, 2%, 0) scale(1.08) rotate(5deg); }
+    }
+
+    .world-console {
+      position: relative;
+      isolation: isolate;
+    }
+
+    .world-console::before {
       content: "";
       position: absolute;
       inset: 0;
       z-index: -1;
+      opacity: .65;
       background:
-        radial-gradient(ellipse at 28% 18%, rgba(255,253,248,.18), transparent 28%),
-        linear-gradient(180deg, rgba(5,4,3,.14), rgba(5,4,3,.84));
+        radial-gradient(circle at 30% 20%, rgba(255,255,255,.16), transparent 20%),
+        radial-gradient(circle at 78% 80%, rgba(211,58,49,.22), transparent 28%);
+      animation: consoleBreath 7s ease-in-out infinite alternate;
     }
-    .civilization-node:hover { transform: translate3d(0, calc(var(--float-y, 0) - 10px), 0) scale(1.018); }
-    .civilization-node:hover::before { transform: scale(1.085); filter: saturate(.94); }
-    .node-artists {
-      --node-image: var(--spirit);
-      left: 0;
-      top: 26px;
-      clip-path: inset(0 7% 10% 0);
-      animation-delay: 0ms;
+
+    @keyframes consoleBreath {
+      from { opacity: .45; transform: scale(1); }
+      to { opacity: .86; transform: scale(1.018); }
     }
-    .node-map {
-      --node-image: var(--future);
-      right: 3%;
-      top: 156px;
-      clip-path: inset(8% 0 0 12%);
-      animation-delay: 900ms;
+
+    .sound-map::before,
+    .sound-map::after,
+    .map-field,
+    .map-orbit,
+    .map-particles,
+    .map-horizon {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
     }
-    .node-archive {
-      --node-image: var(--nature);
-      left: 27%;
-      top: 430px;
-      clip-path: inset(0 0 8% 8%);
-      animation-delay: 1700ms;
+
+    .sound-map::before,
+    .sound-map::after {
+      content: "";
     }
-    .node-kicker {
-      color: rgba(255,253,248,.66);
-      font: 900 11px/1 var(--font-caption);
-      letter-spacing: .16em;
-      text-transform: uppercase;
+
+    .sound-map::before {
+      opacity: .64;
+      background-image:
+        radial-gradient(circle, rgba(255,255,255,.82) 0 1px, transparent 1.7px),
+        radial-gradient(circle, rgba(255,255,255,.5) 0 1px, transparent 1.5px);
+      background-size: 92px 92px, 138px 138px;
+      animation: starDrift 30s linear infinite;
     }
-    .node-title {
-      margin: var(--space-2) 0 var(--space-2);
-      font: 500 clamp(34px, 4.6vw, 64px)/.9 var(--font-display);
-      letter-spacing: 0;
+
+    .sound-map::after {
+      opacity: .46;
+      background: radial-gradient(circle at var(--pulse-x, 42%) var(--pulse-y, 42%), rgba(255,255,255,.35), transparent 18%);
+      transform: scale(.9);
+      transition: transform .7s ease, opacity .7s ease;
     }
-    .node-copy {
-      max-width: 320px;
-      margin: 0 0 var(--space-4);
-      color: rgba(255,253,248,.76);
-      font: 400 15px/1.72 var(--font-body);
+
+    .sound-map.pulse::after {
+      opacity: .75;
+      transform: scale(1.14);
+    }
+
+    @keyframes starDrift {
+      from { background-position: 0 0, 0 0; }
+      to { background-position: 120px 90px, -90px 140px; }
+    }
+
+    .map-orbit {
+      width: 64%;
+      height: 64%;
+      left: 18%;
+      top: 15%;
+      border: 1px solid rgba(255,255,255,.18);
+      border-radius: 50%;
+      transform: rotate(-16deg);
+      animation: orbitSlow 18s linear infinite;
+    }
+
+    .map-orbit::before,
+    .map-orbit::after {
+      content: "";
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: rgba(255,255,255,.86);
+      box-shadow: 0 0 18px rgba(255,255,255,.9);
+    }
+
+    .map-orbit::before { left: 11%; top: 18%; }
+    .map-orbit::after { right: 14%; bottom: 21%; }
+
+    @keyframes orbitSlow {
+      to { transform: rotate(344deg); }
+    }
+
+    .map-particles {
+      opacity: .72;
+      background:
+        linear-gradient(115deg, transparent 0 36%, rgba(255,255,255,.24) 37%, transparent 39%),
+        linear-gradient(75deg, transparent 0 64%, rgba(255,255,255,.2) 65%, transparent 67%);
+      animation: scanFloat 9s ease-in-out infinite alternate;
+    }
+
+    @keyframes scanFloat {
+      from { transform: translateY(-2%); }
+      to { transform: translateY(3%); }
+    }
+
+    .map-horizon {
+      inset: auto 0 0;
+      height: 46%;
+      opacity: .82;
+    }
+
+    .world-console[data-world="spirit"] .sound-map {
+      background:
+        radial-gradient(circle at 20% 18%, rgba(210,245,255,.28), transparent 18%),
+        radial-gradient(circle at 80% 62%, rgba(135,92,255,.26), transparent 26%),
+        linear-gradient(145deg, #050814, #141a32 58%, #2a1438);
+    }
+
+    .world-console[data-world="spirit"] .map-particles {
+      background:
+        linear-gradient(120deg, transparent 0 18%, rgba(115,207,255,.26) 19%, transparent 28%),
+        linear-gradient(25deg, transparent 0 56%, rgba(233,208,255,.22) 57%, transparent 68%);
+      filter: blur(1px);
+    }
+
+    .world-console[data-world="spirit"] .map-horizon {
+      display: none;
+    }
+
+    .world-console[data-world="city"] .sound-map {
+      background:
+        radial-gradient(circle at 18% 26%, rgba(255,214,88,.25), transparent 16%),
+        radial-gradient(circle at 78% 22%, rgba(34,221,255,.24), transparent 22%),
+        linear-gradient(145deg, #09080d, #17111f 52%, #3a1026);
+    }
+
+    .world-console[data-world="city"] .map-orbit {
+      border-radius: 0;
+      width: 74%;
+      height: 52%;
+      left: 13%;
+      top: 20%;
+      border-color: rgba(49,232,255,.28);
+      box-shadow: 0 0 42px rgba(49,232,255,.12);
+    }
+
+    .world-console[data-world="city"] .map-particles {
+      opacity: .85;
+      background:
+        repeating-linear-gradient(90deg, rgba(49,232,255,.18) 0 1px, transparent 1px 42px),
+        repeating-linear-gradient(0deg, transparent 0 18px, rgba(255,80,122,.14) 19px 20px);
+    }
+
+    .world-console[data-world="city"] .map-horizon {
+      background:
+        linear-gradient(to top, rgba(0,0,0,.78), transparent 72%),
+        repeating-linear-gradient(90deg, rgba(49,232,255,.46) 0 3px, transparent 3px 38px);
+      clip-path: polygon(0 78%, 7% 40%, 13% 62%, 21% 24%, 30% 68%, 42% 31%, 52% 58%, 63% 18%, 73% 72%, 84% 36%, 92% 64%, 100% 44%, 100% 100%, 0 100%);
+    }
+
+    .world-console[data-world="travel"] .sound-map {
+      background:
+        radial-gradient(circle at 28% 18%, rgba(255,255,238,.42), transparent 16%),
+        radial-gradient(circle at 75% 72%, rgba(89,151,139,.25), transparent 25%),
+        linear-gradient(145deg, #b9d8db 0%, #e7d8ac 46%, #647f67 100%);
+    }
+
+    .world-console[data-world="travel"] .map-orbit {
+      display: none;
+    }
+
+    .world-console[data-world="travel"] .map-particles {
+      background:
+        radial-gradient(ellipse at 18% 32%, rgba(255,255,255,.56), transparent 16%),
+        radial-gradient(ellipse at 66% 20%, rgba(255,255,255,.46), transparent 18%),
+        linear-gradient(100deg, transparent 0 35%, rgba(255,255,255,.24) 36%, transparent 48%);
+      animation: cloudWalk 18s ease-in-out infinite alternate;
+    }
+
+    @keyframes cloudWalk {
+      from { transform: translateX(-4%); }
+      to { transform: translateX(5%); }
+    }
+
+    .world-console[data-world="travel"] .map-horizon {
+      background:
+        linear-gradient(to top, rgba(27,63,48,.76), rgba(62,111,91,.24), transparent 72%);
+      clip-path: polygon(0 74%, 10% 62%, 19% 67%, 31% 49%, 42% 64%, 55% 40%, 68% 62%, 80% 45%, 92% 58%, 100% 48%, 100% 100%, 0 100%);
+    }
+
+    .world-console.map-cinematic {
+      border-radius: 8px;
+      background: #06070a;
+      box-shadow: 0 30px 80px rgba(0,0,0,.28);
+    }
+
+    .world-console.map-cinematic .world-shell {
+      min-height: 680px;
+      background: #07080b;
+    }
+
+    .world-console.map-cinematic .guide-panel {
+      position: relative;
+      z-index: 3;
+      background:
+        linear-gradient(90deg, rgba(7, 10, 12, .86), rgba(7, 10, 12, .52) 72%, transparent),
+        rgba(0,0,0,.28);
+      border: 0;
+      backdrop-filter: blur(18px);
+      box-shadow: 18px 0 50px rgba(0,0,0,.28);
+    }
+
+    .world-console.map-cinematic .guide-panel::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: -190px;
+      width: 220px;
+      pointer-events: none;
+      background:
+        linear-gradient(90deg, rgba(5, 7, 9, .7), rgba(5, 7, 9, .26) 54%, transparent),
+        radial-gradient(ellipse at 0 48%, rgba(255,255,255,.08), transparent 62%);
+      filter: blur(.2px);
+    }
+
+    .world-console.map-cinematic .guide-panel > * {
+      position: relative;
+      z-index: 2;
+    }
+
+    .world-console.map-cinematic .guide-portrait {
+      width: 118px;
+      border-radius: 8px;
+      box-shadow: 0 18px 36px rgba(0,0,0,.3);
+    }
+
+    .world-console.map-cinematic .guide-line {
+      max-width: 280px;
+    }
+
+    .world-console.map-cinematic .sound-map {
+      min-height: 680px;
+      padding: 20px;
+      background-size: cover;
+      background-position: center;
+      isolation: isolate;
+    }
+
+    .world-console.map-cinematic .sound-map::before {
+      z-index: 1;
+      opacity: .35;
+      mix-blend-mode: screen;
+    }
+
+    .world-console.map-cinematic .sound-map::after {
+      z-index: 2;
+      background:
+        radial-gradient(circle at var(--pulse-x, 50%) var(--pulse-y, 50%), rgba(255,255,255,.32), transparent 14%),
+        linear-gradient(90deg, rgba(0,0,0,.35), transparent 34%),
+        linear-gradient(0deg, rgba(0,0,0,.48), transparent 28%);
+    }
+
+    .world-console.map-cinematic .map-field {
+      z-index: 2;
+    }
+
+    .world-console.map-cinematic .map-skyline,
+    .world-console.map-cinematic .map-horizon {
+      display: none;
+    }
+
+    .world-console.map-cinematic .map-orbit,
+    .world-console.map-cinematic .map-particles {
+      z-index: 2;
+    }
+
+    .world-console.map-cinematic[data-world="spirit"] .sound-map {
+      background-image:
+        linear-gradient(90deg, rgba(7, 8, 18, .28), rgba(7, 8, 18, .02) 44%),
+        url("assets/generated/music-map-guanwujie.webp");
+    }
+
+    .world-console.map-cinematic[data-world="city"] .sound-map {
+      background-image:
+        linear-gradient(90deg, rgba(5, 4, 14, .32), rgba(5, 4, 14, .03) 44%),
+        url("assets/generated/music-map-shiliyin.webp");
+    }
+
+    .world-console.map-cinematic[data-world="travel"] .sound-map {
+      background-image:
+        radial-gradient(ellipse at 48% 21%, rgba(255, 244, 205, .26), transparent 18%),
+        linear-gradient(90deg, rgba(7, 9, 8, .58) 0%, rgba(31, 27, 20, .18) 23%, rgba(31, 27, 20, .02) 52%),
+        linear-gradient(0deg, rgba(12, 10, 8, .56) 0%, transparent 34%),
+        url("assets/generated/music-map-mengmeng-desert.webp");
+      background-position: center;
+    }
+
+    .world-console.map-cinematic[data-world="travel"] .guide-panel {
+      background:
+        linear-gradient(90deg, rgba(3, 5, 5, .94) 0%, rgba(9, 10, 8, .84) 66%, rgba(9, 10, 8, .08) 100%),
+        radial-gradient(ellipse at 78% 28%, rgba(221, 186, 123, .13), transparent 54%),
+        rgba(0,0,0,.38);
+      box-shadow: 34px 0 78px rgba(0,0,0,.4);
+    }
+
+    .world-console.map-cinematic[data-world="travel"] .guide-panel::after {
+      right: -230px;
+      width: 270px;
+      background:
+        linear-gradient(90deg, rgba(3,5,5,.78), rgba(36,31,22,.34) 46%, transparent),
+        radial-gradient(ellipse at 20% 38%, rgba(227, 207, 160, .16), transparent 60%);
+    }
+
+    .world-console.map-cinematic[data-world="travel"] .guide-portrait {
+      box-shadow: 0 18px 40px rgba(0,0,0,.36), 0 0 0 1px rgba(255,255,255,.16);
+    }
+
+    .world-console.map-cinematic[data-world="travel"] .guide-line {
+      color: rgba(243, 232, 206, .76);
+    }
+
+    .world-console.map-cinematic[data-world="travel"] .world-tab {
+      border-color: rgba(231, 216, 179, .18);
+      background: rgba(255,255,255,.07);
+    }
+
+    .world-console.map-cinematic[data-world="travel"] .world-tab.active {
+      background: rgba(245, 240, 225, .94);
+      color: #17130d;
+      border-color: rgba(245, 240, 225, .94);
+    }
+
+    .world-console.map-cinematic[data-world="spirit"] .map-orbit {
+      width: 44%;
+      height: 44%;
+      left: 37%;
+      top: 27%;
+      border-color: rgba(255, 205, 102, .28);
+      box-shadow: 0 0 58px rgba(255, 195, 89, .18);
+    }
+
+    .world-console.map-cinematic[data-world="city"] .map-orbit {
+      width: 36%;
+      height: 36%;
+      left: 34%;
+      top: 14%;
+      border-radius: 50%;
+      border-color: rgba(83, 227, 255, .42);
+      box-shadow: 0 0 80px rgba(171, 49, 255, .22);
+    }
+
+    .world-console.map-cinematic .map-node {
+      z-index: 4;
+      width: 198px;
+      min-height: 72px;
+      display: grid;
+      grid-template-columns: 44px 1fr;
+      gap: 10px;
+      align-items: center;
+      border: 1px solid rgba(255,255,255,.16);
+      background: rgba(8, 10, 14, .4);
+      box-shadow: 0 18px 36px rgba(0,0,0,.25);
+    }
+
+    .world-console.map-cinematic .map-node::before {
+      content: "";
+      width: 44px;
+      aspect-ratio: 1;
+      grid-row: 1 / span 3;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,.34);
+      background:
+        radial-gradient(circle, rgba(255,255,255,.95) 0 2px, transparent 3px),
+        conic-gradient(from 45deg, rgba(255,255,255,.75), transparent, rgba(255,255,255,.6));
+      box-shadow: 0 0 22px rgba(255,255,255,.34);
+    }
+
+    .world-console.map-cinematic[data-world="spirit"] .map-node::before {
+      background:
+        radial-gradient(circle, rgba(255,255,255,.95) 0 2px, transparent 3px),
+        conic-gradient(from 45deg, rgba(255,215,126,.9), transparent, rgba(255,244,191,.62));
+      box-shadow: 0 0 26px rgba(255,196,79,.56);
+    }
+
+    .world-console.map-cinematic[data-world="city"] .map-node::before {
+      background:
+        radial-gradient(circle, rgba(255,255,255,.95) 0 2px, transparent 3px),
+        conic-gradient(from 45deg, rgba(252,64,255,.9), rgba(44,222,255,.35), rgba(255,134,38,.72));
+      box-shadow: 0 0 28px rgba(197,55,255,.62);
+    }
+
+    .world-console.map-cinematic[data-world="travel"] .map-node::before {
+      background:
+        radial-gradient(circle, rgba(255,255,255,.95) 0 2px, transparent 3px),
+        conic-gradient(from 44deg, rgba(252,244,216,.95), rgba(132,119,88,.48), rgba(248,230,181,.7));
+      box-shadow: 0 0 28px rgba(245,224,177,.55);
+    }
+
+    .world-console.map-cinematic[data-world="travel"] .map-node {
+      border-color: rgba(255, 244, 218, .22);
+      background: linear-gradient(135deg, rgba(61, 55, 43, .48), rgba(20, 24, 22, .4));
+      box-shadow: 0 18px 42px rgba(0,0,0,.28), inset 0 1px 0 rgba(255,255,255,.08);
+    }
+
+    .world-console.map-cinematic[data-world="travel"] .map-node strong {
+      color: rgba(255, 250, 238, .96);
+    }
+
+    .world-console.map-cinematic[data-world="travel"] .map-node span,
+    .world-console.map-cinematic[data-world="travel"] .map-node small {
+      color: rgba(244, 235, 216, .68);
+    }
+
+    .world-console.map-cinematic[data-world="travel"] .map-node:hover,
+    .world-console.map-cinematic[data-world="travel"] .map-node.active {
+      background: linear-gradient(135deg, rgba(121, 104, 72, .62), rgba(51, 45, 35, .5));
+      border-color: rgba(255, 244, 218, .68);
+      box-shadow: 0 22px 48px rgba(0,0,0,.34), 0 0 34px rgba(242, 214, 162, .22);
+    }
+
+    .world-console.map-cinematic[data-world="travel"] .map-particles {
+      opacity: .72;
+      background:
+        radial-gradient(ellipse at 24% 18%, rgba(255,255,255,.42), transparent 16%),
+        radial-gradient(ellipse at 64% 12%, rgba(255,235,182,.36), transparent 20%),
+        linear-gradient(108deg, transparent 0 36%, rgba(255,255,255,.2) 37%, transparent 52%);
+      animation: cloudWalk 19s ease-in-out infinite alternate;
+    }
+
+    .world-console.map-cinematic[data-world="travel"] .space-player {
+      background: linear-gradient(90deg, rgba(9, 11, 10, .82), rgba(50, 43, 31, .72));
+      border-color: rgba(255, 244, 218, .14);
+      box-shadow: 0 24px 54px rgba(0,0,0,.34);
+    }
+
+    .world-console.map-cinematic .map-node strong,
+    .world-console.map-cinematic .map-node span,
+    .world-console.map-cinematic .map-node small {
+      grid-column: 2;
+    }
+
+    .world-console.map-cinematic .map-node:hover,
+    .world-console.map-cinematic .map-node.active {
+      transform: translateY(-6px) scale(1.02);
+      border-color: rgba(255,255,255,.58);
+      background: rgba(255,255,255,.16);
+      box-shadow: 0 22px 46px rgba(0,0,0,.3), 0 0 34px rgba(255,255,255,.18);
+    }
+
+    .world-console.map-cinematic .space-player {
+      position: relative;
+      z-index: 4;
+      margin-top: -126px;
+      width: min(600px, calc(100% - 36px));
+      margin-left: 18px;
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 8px;
+      background: rgba(5, 7, 10, .58);
+      backdrop-filter: blur(18px);
+      box-shadow: 0 24px 48px rgba(0,0,0,.28);
+    }
+
+    .artist-card {
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+
+    .artist-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 42px rgba(0,0,0,.12);
+    }
+
+    .artist-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
       opacity: .78;
-      transform: translateY(10px);
-      transition: opacity var(--motion-base), transform var(--motion-base);
-    }
-    .civilization-node:hover .node-copy { opacity: 1; transform: translateY(0); }
-    .node-link {
-      align-self: flex-start;
-      padding-bottom: 7px;
-      border-bottom: 1px solid currentColor;
-      font: 900 11px/1 var(--font-caption);
-      letter-spacing: .16em;
-      text-transform: uppercase;
+      background: linear-gradient(135deg, rgba(255,255,255,.9), rgba(255,255,255,.64));
     }
 
-    .narrative-layer {
-      min-height: 100svh;
-      display: grid;
-      align-items: center;
-    }
-    .narrative-lines {
-      max-width: 980px;
-      display: grid;
-      gap: clamp(18px, 3vw, 34px);
-    }
-    .narrative-line {
-      margin: 0;
-      font: 500 clamp(42px, 7.8vw, 118px)/.9 var(--font-display);
-      letter-spacing: 0;
-      text-wrap: balance;
-    }
-    .narrative-line.quiet {
-      color: rgba(255,253,248,.62);
-      font-family: var(--font-quote);
-      font-weight: 400;
-    }
-
-    .entry-flow {
+    .contact-gateway {
+      margin-top: 38px;
+      padding: 0;
+      border-radius: 8px;
       background:
-        linear-gradient(180deg, #f7f3ea 0%, #eee4d4 100%);
-    }
-    .flow-list {
+        radial-gradient(circle at 17% 18%, rgba(255,255,255,.95), transparent 30%),
+        radial-gradient(circle at 92% 16%, rgba(211,58,49,.18), transparent 24%),
+        radial-gradient(circle at 74% 82%, rgba(201,164,93,.18), transparent 28%),
+        linear-gradient(135deg, #fffaf2 0%, #f7efe5 48%, #fffdf7 100%);
+      color: var(--ink);
       display: grid;
-      margin-top: var(--space-8);
-      border-top: 1px solid rgba(20,18,15,.14);
+      overflow: hidden;
+      position: relative;
+      border: 1px solid rgba(23,20,18,.08);
+      box-shadow: 0 22px 58px rgba(23,20,18,.11);
     }
-    .flow-step {
+
+    .contact-gateway::before {
+      content: "";
+      position: absolute;
+      right: -110px;
+      top: -160px;
+      width: 420px;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle, rgba(255,255,255,.9) 0 8%, rgba(211,58,49,.72) 9% 16%, transparent 17% 29%, rgba(23,20,18,.14) 30% 31%, transparent 32% 42%, rgba(23,20,18,.09) 43% 44%, transparent 45% 100%),
+        conic-gradient(from 38deg, rgba(23,20,18,.14), rgba(255,255,255,.04), rgba(201,164,93,.22), rgba(23,20,18,.12));
+      opacity: .88;
+      pointer-events: none;
+    }
+
+    .contact-gateway::after {
+      content: "";
+      position: absolute;
+      left: 24px;
+      bottom: 22px;
+      width: min(520px, 62%);
+      height: 120px;
+      border-radius: 8px;
+      background:
+        linear-gradient(115deg, rgba(255,255,255,.64), rgba(255,255,255,.18)),
+        linear-gradient(90deg, rgba(211,58,49,.16), transparent 42%),
+        rgba(255,255,255,.38);
+      border: 1px solid rgba(23,20,18,.08);
+      transform: rotate(-2deg);
+      box-shadow: 0 22px 42px rgba(104,74,36,.12);
+      pointer-events: none;
+    }
+
+    .contact-gateway > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .contact-gateway h2 {
+      margin: 0;
+      font-size: clamp(30px, 5vw, 56px);
+      line-height: 1.02;
+    }
+
+    .contact-gateway p {
+      margin: 12px 0 0;
+      color: #5f5b55;
+      line-height: 1.75;
+      max-width: 720px;
+    }
+
+    .archive-copy {
+      padding: 34px;
       display: grid;
-      grid-template-columns: 120px minmax(0, 1fr) auto;
-      gap: var(--space-4);
+      align-content: center;
+      gap: 18px;
+    }
+
+    .archive-index {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      max-width: 560px;
+    }
+
+    .archive-index div {
+      min-height: 84px;
+      border-radius: 8px;
+      border: 1px solid rgba(23,20,18,.08);
+      background:
+        linear-gradient(145deg, rgba(255,255,255,.92), rgba(255,255,255,.5));
+      padding: 14px;
+      display: grid;
+      align-content: space-between;
+      box-shadow: 0 12px 26px rgba(85,57,25,.06);
+    }
+
+    .archive-index strong {
+      font-size: 22px;
+      color: var(--red);
+      line-height: 1;
+    }
+
+    .archive-index span {
+      color: #6a625b;
+      font-size: 12px;
+      line-height: 1.45;
+    }
+
+    .qr-slots {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      background:
+        radial-gradient(circle at 18% 18%, rgba(255,255,255,.12), transparent 28%),
+        linear-gradient(145deg, #171412, #241d18);
+      padding: 22px;
+      border-left: 1px solid rgba(23,20,18,.1);
+      box-shadow: inset 1px 0 0 rgba(255,255,255,.05);
+    }
+
+    .qr-slot {
+      min-height: 118px;
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 8px;
+      padding: 18px;
+      background:
+        linear-gradient(135deg, rgba(255,255,255,.12), rgba(255,255,255,.04));
+      display: grid;
+      grid-template-columns: 64px 1fr;
       align-items: center;
-      min-height: 168px;
-      padding: var(--space-4) 0;
-      border-bottom: 1px solid rgba(20,18,15,.14);
-      transition: padding var(--motion-base), color var(--motion-base);
+      gap: 14px;
+      position: relative;
+      overflow: hidden;
     }
-    .flow-step:hover { padding-left: var(--space-3); color: var(--dark-gold); }
-    .flow-index {
-      color: var(--dark-gold);
-      font: 900 11px/1 var(--font-caption);
-      letter-spacing: .18em;
-      text-transform: uppercase;
+
+    .qr-slot::after {
+      content: "";
+      position: absolute;
+      right: -42px;
+      top: 50%;
+      width: 120px;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      transform: translateY(-50%);
+      background:
+        radial-gradient(circle, rgba(255,255,255,.18) 0 8%, transparent 9% 36%, rgba(255,255,255,.08) 37% 38%, transparent 39% 100%),
+        conic-gradient(from 22deg, rgba(211,58,49,.5), rgba(201,164,93,.42), rgba(47,111,159,.36), rgba(211,58,49,.5));
+      opacity: .42;
     }
-    .flow-title {
+
+    .qr-box {
+      width: 64px;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle, #fff 0 12%, transparent 13% 100%),
+        conic-gradient(from 30deg, var(--red), var(--gold), var(--blue), var(--red));
+      border: 1px solid rgba(255,255,255,.22);
+      box-shadow: 0 16px 28px rgba(0,0,0,.22);
+      position: relative;
+      z-index: 1;
+    }
+
+    .qr-slot strong {
       display: block;
-      font: 500 clamp(36px, 6vw, 86px)/.9 var(--font-display);
-      letter-spacing: 0;
-    }
-    .flow-note {
-      display: block;
-      max-width: 540px;
-      margin-top: var(--space-2);
-      color: var(--warm-gray);
-      font: 400 15px/1.72 var(--font-body);
-    }
-    .flow-action {
-      white-space: nowrap;
-      border-bottom: 1px solid currentColor;
-      padding-bottom: 7px;
-      font: 900 11px/1 var(--font-caption);
-      letter-spacing: .16em;
-      text-transform: uppercase;
+      margin-bottom: 6px;
+      font-size: 16px;
+      color: #fff;
+      position: relative;
+      z-index: 1;
     }
 
-    .portal-footer {
-      padding: var(--space-10) 0;
-      color: rgba(255,253,248,.72);
-      background: var(--record-black);
-    }
-    .footer-inner {
-      display: flex;
-      justify-content: space-between;
-      gap: var(--space-4);
-      flex-wrap: wrap;
-      font: 900 11px/1.6 var(--font-caption);
-      letter-spacing: .16em;
-      text-transform: uppercase;
+    .qr-slot span {
+      color: rgba(255,255,255,.64);
+      font-size: 12px;
+      line-height: 1.5;
+      position: relative;
+      z-index: 1;
     }
 
-    .reveal {
-      opacity: 0;
-      transform: translateY(48px);
-      filter: blur(12px);
-      transition: opacity 1200ms var(--motion-slow), transform 1200ms var(--motion-slow), filter 1200ms var(--motion-slow);
-    }
-    .reveal.is-visible { opacity: 1; transform: translateY(0); filter: blur(0); }
-
-    @keyframes fadeInSlow { from { opacity: 0; } to { opacity: 1; } }
-    @keyframes fadeRise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
-    @keyframes maskReveal { from { clip-path: inset(0 0 100% 0); filter: blur(8px); } to { clip-path: inset(0); filter: blur(0); } }
-    @keyframes titleFloat { from { opacity: .82; transform: translateY(10px); clip-path: inset(0 0 9% 0); } to { opacity: 1; transform: translateY(0); clip-path: inset(0); } }
-    @keyframes subtitleFloat { from { opacity: .58; transform: translateY(14px); } to { opacity: .96; transform: translateY(0); } }
-    @keyframes ctaPulse { from { opacity: .62; } to { opacity: .96; } }
-    @keyframes breathingLight { from { opacity: .48; transform: scale(.985); } to { opacity: .86; transform: scale(1.035); } }
-    @keyframes softOpeningZoom { from { opacity: .82; transform: translateY(16px) scale(.975); } to { opacity: 1; transform: translateY(0) scale(1.018); } }
-    @keyframes nodeBreath { from { --float-y: -6px; } to { --float-y: 10px; } }
-    @keyframes pageArrival { from { opacity: 0; filter: blur(8px); } to { opacity: 1; filter: blur(0); } }
-
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
-        animation-duration: .001ms !important;
-        animation-delay: 0ms !important;
-        animation-iteration-count: 1 !important;
-        scroll-behavior: auto !important;
-        transition-duration: .001ms !important;
+    @media (max-width: 719px) {
+      html,
+      body {
+        max-width: 100%;
+        overflow-x: hidden;
       }
-    }
 
-    @media (max-width: 920px) {
-      .civilization-emergence { min-height: auto; }
-      .node-field { min-height: 0; display: grid; gap: var(--space-4); }
-      .civilization-node {
-        position: relative;
-        inset: auto;
+      .site-header {
+        min-height: 640px;
+        background:
+          radial-gradient(circle at 74% 16%, rgba(211,58,49,.18), transparent 30%),
+          linear-gradient(180deg, rgba(255,250,243,.94) 0%, rgba(255,250,243,.78) 48%, rgba(255,250,243,.95) 100%),
+          url("assets/optimized/mobile-banner.webp") center top / cover no-repeat;
+      }
+
+      .hero {
+        min-height: 520px;
+        align-items: end;
+        padding: 34px 0 34px;
+      }
+
+      .space-player { grid-template-columns: 68px 1fr; }
+      .space-cover { width: 68px; }
+      .space-actions audio {
         width: 100%;
-        min-height: 420px;
-        clip-path: inset(0);
+        min-width: 0;
+        max-width: 100%;
       }
-      .flow-step { grid-template-columns: 1fr; align-items: start; }
-      .flow-action { justify-self: start; }
+      .hero-panel,
+      .world-console,
+      .sound-map,
+      .contact-gateway {
+        max-width: 100%;
+        overflow: hidden;
+      }
+      .stat {
+        min-width: 0;
+      }
+      .stat strong {
+        font-size: 26px;
+      }
+      .contact-gateway {
+        padding: 20px;
+      }
+      .contact-gateway::before {
+        right: -180px;
+        top: -130px;
+        width: 320px;
+        opacity: .52;
+      }
+      .contact-gateway::after {
+        left: 18px;
+        bottom: auto;
+        top: 210px;
+        width: 72%;
+        height: 96px;
+        opacity: .45;
+      }
+      .about-copy {
+        padding: 20px;
+      }
+      .brand-metrics,
+      .archive-index {
+        grid-template-columns: 1fr;
+      }
+      .production-path {
+        grid-template-columns: 1fr;
+      }
+      .path-step {
+        min-height: 70px;
+        grid-template-columns: 42px 1fr;
+        align-items: center;
+        align-content: center;
+      }
+      .qr-slots {
+        padding: 14px;
+      }
+      .qr-slot {
+        min-height: 108px;
+        grid-template-columns: 56px 1fr;
+      }
+      .qr-box { width: 56px; }
+      .map-node { width: 142px; min-height: 78px; padding: 10px; }
+      .map-node strong { font-size: 14px; }
     }
-    @media (max-width: 760px) {
-      .wrap { width: min(100% - 32px, 1240px); }
-      .cinematic-entrance { background-position: 58% center; }
-      .cinematic-entrance::before { animation-duration: 1ms; opacity: .56; transform: none; }
-      body { animation-duration: 520ms; }
-      .entrance-inner { text-align: left; }
-      .cinematic-title { font-size: clamp(58px, 18vw, 88px); }
-      .cinematic-subtitle { max-width: 320px; font-size: clamp(28px, 8vw, 40px); margin-left: 0; margin-right: 0; }
-      .section { padding: 92px 0; }
-      .section-title { font-size: clamp(44px, 14vw, 72px); }
-      .civilization-node { min-height: 360px; padding: var(--space-3); }
-      .narrative-line { font-size: clamp(40px, 13vw, 68px); }
-      .flow-step { min-height: 144px; gap: var(--space-2); }
-      .flow-title { font-size: clamp(36px, 12vw, 60px); }
+
+    @media (min-width: 720px) {
+      .hero { grid-template-columns: 1fr 360px; }
+      .land-stage { margin-top: -70px; }
+      .experience-flow { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .world-shell { grid-template-columns: 330px 1fr; }
+      .guide-panel { border-right: 1px solid rgba(255,255,255,.1); border-bottom: 0; }
+      .sound-map { min-height: 560px; }
+      .artist-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .artist-card { grid-template-columns: 1fr; }
+      .artist-photo { width: 100%; }
+      .artist-detail { grid-template-columns: 340px 1fr; }
+
+      .qr-slots { grid-template-columns: 1fr; }
+      .contact-gateway { grid-template-columns: 1fr 480px; align-items: center; }
+      .tools { grid-template-columns: minmax(260px, 360px) 1fr; align-items: center; }
+      .work-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; }
+      .brand-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .about-layout { grid-template-columns: minmax(0, 1fr) 280px; align-items: stretch; }
+      .business-lines { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .detail-hero { grid-template-columns: 180px 1fr; padding: 26px; }
+      .detail-cover { width: 180px; }
+      .detail h3 { font-size: 40px; }
+      .detail-body { padding: 24px 26px 30px; }
+    }
+
+    @media (min-width: 1080px) {
+      .work-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); }
     }
   </style>
-  <link rel="stylesheet" href="assets/visual-system-v3.css" />
 </head>
 <body>
-  <header class="cinematic-entrance" id="top" data-knowledge-section="homepage-v3.entrance">
-    <div class="entrance-inner">
-      <p class="cinematic-mark">Music Factory</p>
-      <h1 class="cinematic-title">Music Factory</h1>
-      <p class="cinematic-subtitle">A Civilization of Voices</p>
-      <a class="enter-civilization" href="#emergence">Enter Civilization</a>
+  <header class="site-header">
+    <div class="wrap">
+      <div class="topbar">
+        <div class="brand"><span class="brand-mark">♪</span><span>音乐工厂</span></div>
+        <nav class="nav" id="nav">
+          <button class="active" data-view="home">首页</button>
+          <button data-view="artists">AI歌手</button>
+          <button data-view="works">声音档案</button>
+          <button data-view="score">配乐</button>
+        </nav>
+      </div>
+      <section class="hero">
+        <div>
+          <p class="eyebrow">Music Factory · Brand Experience</p>
+          <h1>Every Sound<br>Creates A World</h1>
+          <p class="hero-statement">别停在页面上，走进一座正在运转的音乐工厂。</p>
+          <p class="hero-copy">在这里，你可以认识三位 AI 歌手，听见她们各自的作品，顺着声音地图找到不同的音乐世界，也可以直接打开一首歌的封面、歌词和试听。</p>
+          <div class="hero-proof" aria-label="音乐工厂声音内容">
+            <div class="proof-item"><strong>原创音乐</strong><div class="proof-line"><span style="width: 88%"></span></div></div>
+            <div class="proof-item"><strong>经典新唱</strong><div class="proof-line"><span style="width: 78%"></span></div></div>
+            <div class="proof-item"><strong>定制合作</strong><div class="proof-line"><span style="width: 64%"></span></div></div>
+          </div>
+          <div class="hero-actions">
+            <button class="btn primary" data-scroll="soundMapSection">进入声音地图</button>
+            <button class="btn ghost" data-jump="works">打开声音档案</button>
+          </div>
+        </div>
+        <div class="hero-panel">
+          <div class="panel-title"><span>Live Archive</span><strong>正在更新的声音</strong></div>
+          <div class="stats">
+            <div class="stat"><strong id="statWorks">0</strong><span>声音档案</span></div>
+            <div class="stat"><strong id="statVersions">0</strong><span>版本</span></div>
+            <div class="stat"><strong id="statArtists">0</strong><span>歌手/分类</span></div>
+          </div>
+          <div class="route-panel" id="heroRoutes"></div>
+        </div>
+      </section>
     </div>
-    <a class="entrance-silence" href="#emergence" aria-label="Enter Music Civilization"></a>
   </header>
 
   <main>
-    <section class="section civilization-emergence" id="emergence" data-knowledge-section="homepage-v3.civilization-emergence">
-      <div class="wrap reveal">
-        <p class="eyebrow">Civilization Emergence</p>
-        <h2 class="section-title">Three presences begin to surface.</h2>
-        <div class="node-field" aria-label="Music Factory civilization entry nodes">
-          <a class="civilization-node node-artists" href="spirit-realm.html">
-            <span class="node-kicker">01 / Personality Worlds</span>
-            <span class="node-title">Artists Universe</span>
-            <span class="node-copy">Enter the origin of voices. Each artist is a civilization with identity, worldview, memory, and sound.</span>
-            <span class="node-link">Enter Artists</span>
-          </a>
-          <a class="civilization-node node-map" href="sound-civilization-map.html">
-            <span class="node-kicker">02 / Living Atlas</span>
-            <span class="node-title">Sound Civilization Map</span>
-            <span class="node-copy">Move through emotional, cultural, philosophical, and narrative connections between voices.</span>
-            <span class="node-link">Explore Sound Map</span>
-          </a>
-          <a class="civilization-node node-archive" href="works/index.html">
-            <span class="node-kicker">03 / Memory and Works</span>
-            <span class="node-title">Archive / Works</span>
-            <span class="node-copy">Follow works as chapters, albums as memory collections, and archive records as traces of time.</span>
-            <span class="node-link">Discover Works</span>
-          </a>
+    <section class="view active" id="view-home">
+      <div class="wrap">
+        <div class="experience-flow" aria-label="音乐工厂进入路径">
+          <div class="flow-card"><div class="flow-index">01</div><div><strong>进入声音地图</strong><span>从观无界、十里音、梦梦三条路线开始，选择你想先抵达的声音世界。</span></div></div>
+          <div class="flow-card"><div class="flow-index">02</div><div><strong>认识一位歌手</strong><span>听她的代表作品，看她的创作气质，在不同的音乐空间里停留一会儿。</span></div></div>
+          <div class="flow-card"><div class="flow-index">03</div><div><strong>收藏一首歌</strong><span>打开封面、歌词、试听和平台链接，把喜欢的声音带走。</span></div></div>
         </div>
+        <div class="land-stage" id="soundMapSection">
+          <div class="world-console map-cinematic" id="worldConsole" data-world="spirit">
+            <div class="world-shell">
+              <aside class="guide-panel">
+                <div class="guide-portrait" id="guidePortrait"></div>
+                <p class="eyebrow" id="guideEyebrow">Guide</p>
+                <h2 id="guideTitle">观无界带你进入无限宇宙</h2>
+                <p class="guide-line" id="guideLine">宇宙本身就是音乐。星云、光子与意识缓慢漂浮，听见的是无边空间的呼吸。</p>
+                <div class="world-tabs" id="worldTabs"></div>
+              </aside>
+              <div>
+                <div class="sound-map" id="soundMap">
+                  <div class="map-skyline"></div>
+                </div>
+                <div class="space-player" id="spacePlayer"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section-head">
+          <div>
+            <h2>三条进入路线</h2>
+            <p>歌手不只是资料卡，而是进入不同声音世界的向导。</p>
+          </div>
+        </div>
+        <div class="artist-grid" id="homeArtists"></div>
+
+        <div class="section-head">
+          <div>
+            <h2>Sound Archive 声音档案</h2>
+            <p>每一首歌都可以继续展开：封面、歌词、试听、版本和平台链接，都在这里汇合。</p>
+          </div>
+          <button class="btn primary" data-jump="works">打开档案</button>
+        </div>
+        <div class="work-grid" id="homeWorks"></div>
+        <div class="archive-note">
+          <strong>把喜欢的声音留下来。</strong>
+          你可以从歌手世界进入一首歌，也可以从声音档案里重新找到它。
+        </div>
+
+        <section class="brand-experience" id="brandExperience">
+          <div class="manifesto">
+            <p class="eyebrow">Brand Experience</p>
+            <h2>这里有歌手，有作品，也有正在成形的声音世界。</h2>
+            <p>音乐工厂把一首歌从灵感、演唱、封面、歌词到发布的过程，整理成你可以慢慢进入的音乐现场。</p>
+          </div>
+          <div class="brand-grid">
+            <div class="brand-card"><strong>白色展厅</strong><span>清爽的主站让你快速找到歌手、作品和试听，不被复杂信息打断。</span></div>
+            <div class="brand-card"><strong>彩色音乐宇宙</strong><span>观无界、十里音、梦梦各自拥有不同的色彩、场景和声音气质。</span></div>
+            <div class="brand-card"><strong>不断上新</strong><span>新歌、专辑、海报和视频会陆续汇入这里，让每次回来都有新的声音可听。</span></div>
+          </div>
+          <div class="about-copy">
+            <div class="about-layout">
+              <div class="about-lead">
+                <p class="eyebrow">About Music Factory</p>
+                <h2>做音乐，做唱歌的人，做能传得远的声音。</h2>
+                <p>音乐工厂是一家专注音乐内容生产的厂牌，深耕原创音乐制作与内容发行，并引入 AI 技术开辟虚拟歌手 IP 矩阵。</p>
+                <p>旗下三位 AI 虚拟歌手：十里音、观无界、梦梦，分别承担东方概念流行、东方精神表达和山河旅行音乐三条声音路线。</p>
+              </div>
+              <div class="brand-signal" aria-label="音乐工厂品牌识别">
+                <div class="signal-disc"><span>♪</span></div>
+                <div class="signal-caption"><strong>Music Factory</strong><span>以声音为核心，把歌手、作品、封面、歌词和发布入口组织成可进入的品牌现场。</span></div>
+              </div>
+            </div>
+            <div class="brand-metrics" aria-label="音乐工厂内容规模">
+              <div class="brand-metric"><strong>3</strong><span>位 AI 虚拟歌手</span></div>
+              <div class="brand-metric"><strong>600+</strong><span>首授权经典曲目</span></div>
+              <div class="brand-metric"><strong>MV</strong><span>音乐到影像制作</span></div>
+            </div>
+            <div class="production-path" aria-label="音乐工厂声音生产路径">
+              <div class="path-step"><small>01</small><strong>灵感</strong></div>
+              <div class="path-step"><small>02</small><strong>演唱</strong></div>
+              <div class="path-step"><small>03</small><strong>封面</strong></div>
+              <div class="path-step"><small>04</small><strong>歌词</strong></div>
+              <div class="path-step"><small>05</small><strong>发布</strong></div>
+            </div>
+            <div class="business-lines">
+              <div class="business-line">AI 虚拟歌手原创作品</div>
+              <div class="business-line">600+ 首授权经典曲目创意重制</div>
+              <div class="business-line">面向品牌与企业的原创歌曲定制</div>
+              <div class="business-line">从音乐到影像的 MV 全流程制作</div>
+            </div>
+          </div>
+        </section>
       </div>
     </section>
 
-    <section class="section dark narrative-layer" id="narrative" data-knowledge-section="homepage-v3.narrative">
-      <div class="wrap reveal">
-        <div class="narrative-lines">
-          <p class="narrative-line quiet">Music Factory is not a platform.</p>
-          <p class="narrative-line">It is a Civilization of Voices.</p>
-          <p class="narrative-line quiet">Voices become worlds.</p>
-          <p class="narrative-line">Memory becomes archive.</p>
+    <section class="view" id="view-artists">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <h2>AI歌手介绍</h2>
+            <p>进入歌手主页，听她的代表作品，了解她的声音气质和创作故事。</p>
+          </div>
         </div>
+        <div id="artistDetails"></div>
       </div>
     </section>
 
-    <section class="section entry-flow" id="entry-flow" data-knowledge-section="homepage-v3.entry-flow">
-      <div class="wrap reveal">
-        <p class="eyebrow">Entry Flow</p>
-        <h2 class="section-title">Begin with a voice. Leave with a world.</h2>
-        <div class="flow-list" aria-label="Music Factory linear entry flow">
-          <a class="flow-step" href="spirit-realm.html">
-            <span class="flow-index">First</span>
-            <span><span class="flow-title">Enter Artists</span><span class="flow-note">Begin at personality worlds, where identity opens the civilization.</span></span>
-            <span class="flow-action">Enter World</span>
-          </a>
-          <a class="flow-step" href="sound-civilization-map.html">
-            <span class="flow-index">Then</span>
-            <span><span class="flow-title">Explore Sound Map</span><span class="flow-note">Move from one voice into the living atlas of connections.</span></span>
-            <span class="flow-action">Explore Map</span>
-          </a>
-          <a class="flow-step" href="works/index.html">
-            <span class="flow-index">Next</span>
-            <span><span class="flow-title">Discover Works</span><span class="flow-note">Read songs as chapters inside the world system.</span></span>
-            <span class="flow-action">Discover Works</span>
-          </a>
-          <a class="flow-step" href="archive/index.html">
-            <span class="flow-index">Return</span>
-            <span><span class="flow-title">Enter Archive</span><span class="flow-note">Let memory preserve the route and return you to civilization.</span></span>
-            <span class="flow-action">Enter Archive</span>
-          </a>
+    <section class="view" id="view-works">
+      <div class="toolbar">
+        <div class="wrap tools">
+          <input class="search" id="search" type="search" placeholder="搜索歌曲、歌手、专辑、版本..." />
+          <div class="chips" id="chips"></div>
         </div>
+      </div>
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <h2 id="worksTitle">声音档案</h2>
+            <p id="shownCount">0 个声音档案</p>
+          </div>
+        </div>
+        <div class="work-grid" id="workGrid"></div>
+        <div class="load-more-wrap" id="loadMoreWrap">
+          <button class="load-more" id="loadMore" type="button">加载更多档案</button>
+        </div>
+        <div class="empty" id="empty">没有找到匹配的声音档案。</div>
+      </div>
+    </section>
+
+    <section class="view" id="view-score">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <h2>配乐专区</h2>
+            <p>这里收录更适合画面、空间和情绪使用的音乐片段，适合慢慢挑选。</p>
+          </div>
+        </div>
+        <div class="work-grid" id="scoreGrid"></div>
       </div>
     </section>
   </main>
 
-  <footer class="portal-footer">
-    <div class="wrap footer-inner">
-      <a href="#top">Back to Civilization</a>
-      <a href="sound-civilization-map.html">Explore Map</a>
-      <a href="works/index.html">Discover Works</a>
-      <a href="archive/index.html">Enter Archive</a>
+  <dialog id="detailDialog">
+    <button class="close" id="closeDialog" aria-label="关闭">×</button>
+    <div class="detail" id="detail"></div>
+  </dialog>
+
+  <section class="wrap contact-gateway" id="contactGateway">
+    <div class="archive-copy">
+      <p class="eyebrow">Music Factory Archive</p>
+      <h2>Record Your Musical Journey</h2>
+      <p>继续关注音乐工厂，听见新歌发布、歌手动态和更多声音故事。</p>
+      <div class="archive-index" aria-label="音乐工厂档案入口">
+        <div><strong>歌手</strong><span>从人物世界进入作品</span></div>
+        <div><strong>作品</strong><span>从声音档案重新查找</span></div>
+        <div><strong>合作</strong><span>从项目需求开启沟通</span></div>
+      </div>
     </div>
+    <div class="qr-slots" aria-label="音乐工厂联系入口">
+      <div class="qr-slot"><div class="qr-box" aria-hidden="true"></div><div><strong>关注动态</strong><span>新歌发布、歌手故事、影像内容</span></div></div>
+      <div class="qr-slot"><div class="qr-box" aria-hidden="true"></div><div><strong>商务合作</strong><span>音乐定制、AI 歌手合作、版权沟通</span></div></div>
+      <div class="qr-slot"><div class="qr-box" aria-hidden="true"></div><div><strong>作品投稿</strong><span>歌手孵化、作品收录、项目联络</span></div></div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">音乐工厂持续更新 AI 歌手、原创音乐、声音档案与合作作品。欢迎从这里进入下一段声音旅程。</div>
   </footer>
 
+  <script src="songs-data-netease-20260622-shanhefix.js"></script>
+  <script src="cover-thumbs.js"></script>
   <script>
-    const entrance = document.querySelector(".cinematic-entrance");
-    const entranceInner = document.querySelector(".entrance-inner");
-
-    const canUsePointerAtmosphere = entrance && entranceInner && matchMedia("(pointer: fine)").matches && !matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (canUsePointerAtmosphere) {
-      entrance.addEventListener("pointermove", event => {
-        const rect = entrance.getBoundingClientRect();
-        const y = ((event.clientY - rect.top) / rect.height - .5) * 2;
-        entranceInner.style.setProperty("--cinematic-y", `${y * 1.2}%`);
-      }, { passive: true });
-      entrance.addEventListener("pointerleave", () => {
-        entranceInner.style.setProperty("--cinematic-y", "0%");
-      }, { passive: true });
-    }
-
-    const setupReveal = () => {
-      const revealBlocks = document.querySelectorAll(".reveal");
-      if ("IntersectionObserver" in window) {
-        const observer = new IntersectionObserver(entries => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add("is-visible");
-              observer.unobserve(entry.target);
-            }
-          });
-        }, { threshold: .14 });
-        revealBlocks.forEach(block => observer.observe(block));
-      } else {
-        revealBlocks.forEach(block => block.classList.add("is-visible"));
+    const rawSongs = window.MUSIC_FACTORY_SONGS || [];
+    const coverThumbs = window.MUSIC_FACTORY_COVER_THUMBS || {};
+    const artistProfiles = {
+      "十里音": {
+        symbol: "十",
+        avatar: "assets/optimized/shiliyin-avatar.webp",
+        poster: "assets/optimized/shiliyin-poster.webp",
+        page: "artists/shiliyin.html",
+        tagline: "东方概念系 · 哲学流行 · 东方未来主义",
+        style: ["东方概念系", "哲学流行", "东方未来主义", "词曲唱一体"],
+        bio: "十里音是 AI 原创音乐人，以东方经典、哲学命题和现代流行音乐语言构建作品。",
+        clip: "代表方向：《无相》专辑、复古 Disco 女性表达、东方哲学流行。"
+      },
+      "观无界": {
+        symbol: "观",
+        avatar: "assets/optimized/guanwujie-avatar.webp",
+        poster: "assets/optimized/guanwujie-poster.webp",
+        page: "artists/guanwujie.html",
+        en: "GUAN WUJIE",
+        identity: "东方精神文明艺术家",
+        tagline: "东方精神文明艺术家。",
+        style: ["净土思想", "东方哲学", "精神表达", "仪式感音乐"],
+        bio: [
+          "观无界（GUAN WUJIE）是一位以音乐与影像为载体的东方精神文明表达者。他的创作并不属于传统意义上的音乐作品，而是一种将东方哲学、宗教思想与当代流行音乐语言重新编码后的精神表达系统。",
+          "他以净土思想为核心精神源流，从人类对苦、执、放下与觉醒的根本问题出发，将古典智慧转译为现代人可以感知与理解的声音结构与叙事方式。他的作品不是为了提供答案，而是引导听者重新进入自身内在的觉知状态。",
+          "观无界的创作思想源自东方文明中关于心性与觉悟的系统性思考，尤其以净土思想为核心结构，同时吸收东方宗教文化中关于念、心、光、愿的表达体系。在他的作品中，音乐不再是娱乐形式，而是一种心的训练方式。",
+          "他的核心创作命题包括三层结构：苦的识别、执的松动、心的归位。观无界并不属于某一宗教体系，他所表达的是东方文明中关于心如何安住的普遍性问题。",
+          "他的存在不是为了传播信仰，而是为了让现代人在高速变化的世界中，重新体验内在稳定的可能性。一个以音乐为媒介的东方精神结构重建者。"
+        ],
+        concepts: [
+          ["苦的识别", "痛苦的根源不是外界，而是内在执取。"],
+          ["执的松动", "当执念被看见，它便开始松动。"],
+          ["心的归位", "当执念停止主导意识，心自然回到安住状态。"]
+        ],
+        representativeWorks: [
+          ["渡", "关于执与放下，探讨苦从何而生，又如何消散。"],
+          ["无量寿", "关于慈悲与光明，表达一种无条件存在的照耀状态。"],
+          ["愚秃", "关于凡人与觉醒，以真实人生经历表达被接纳的可能性。"],
+          ["专复专", "关于散乱与回归，强调心念不断归一的过程。"]
+        ],
+        clip: "代表作品体系：《渡》《无量寿》《愚秃》《专复专》。"
+      },
+      "梦梦": {
+        symbol: "梦",
+        avatar: "assets/optimized/mengmeng-avatar.webp",
+        poster: "assets/optimized/mengmeng-poster.webp",
+        page: "artists/mengmeng.html",
+        tagline: "一路歌唱，一路寻找，把遇见的人和山河写成歌。",
+        style: ["旅行音乐", "世界音乐", "吟游诗人", "山河民谣"],
+        bio: "梦梦是 AI 原创音乐人，一位一直在路上的吟游诗人。",
+        clip: "代表方向：《山河》专辑、旅行音乐、世界音乐、治愈表达。"
       }
     };
-    if ("requestIdleCallback" in window) requestIdleCallback(setupReveal, { timeout: 1200 });
-    else setTimeout(setupReveal, 1);
+
+    const mainArtists = ["十里音", "观无界", "梦梦"];
+    const worlds = {
+      spirit: {
+        artist: "观无界",
+        title: "观无界带你进入无限宇宙",
+        eyebrow: "Spirit World",
+        line: "宇宙本身就是音乐。星云、光子与意识缓慢漂浮，听见的是无边空间的呼吸。",
+        route: "星云、量子、裂隙",
+        nodes: [
+          { label: "净莲之境", work: "念佛去", scene: "心灵的第一层净土。", x: 16, y: 12 },
+          { label: "莲华映月", work: "渡", scene: "水中月华，照见本心。", x: 21, y: 36 },
+          { label: "逍遥极乐", work: "极乐", scene: "无声无眠，净念回响。", x: 45, y: 48 },
+          { label: "光明塔", work: "无量寿", scene: "光之引路，念之归处。", x: 70, y: 16 },
+          { label: "无尽之门", work: "专复专", scene: "通往无量的远方。", x: 79, y: 38 },
+          { label: "光生桥", work: "愚秃", scene: "穿越轮回，抵达彼岸。", x: 72, y: 66 }
+        ]
+      },
+      city: {
+        artist: "十里音",
+        title: "十里音带你进入赛博未来舞台",
+        eyebrow: "City Rhythm",
+        line: "声音被具象化为舞台，能量环、激光束和数据城市一起被节奏点亮。",
+        route: "舞台、能量环、数据城",
+        nodes: [
+          { label: "幻域穹顶", work: "霓虹金", scene: "AI幻象投影空间。", x: 14, y: 14 },
+          { label: "光束阵列", work: "铿锵", scene: "音频共能矩阵。", x: 17, y: 36 },
+          { label: "主舞台", work: "晃", scene: "声音能量核心。", x: 47, y: 47 },
+          { label: "炫彩瀑布", work: "醒", scene: "恒号浪潮布的瞬间。", x: 72, y: 20 },
+          { label: "回响之城", work: "无名", scene: "回音共鸣的未来之域。", x: 80, y: 42 },
+          { label: "能量环", work: "渊", scene: "声波共振环场。", x: 72, y: 66 }
+        ]
+      },
+      travel: {
+        artist: "梦梦",
+        title: "梦梦带你进入天地行吟",
+        eyebrow: "Travel Ballad",
+        line: "她用声音记录山河，也在旅途中寻找自己。风是她的向导，音乐是她的语言，世界是她的故乡。",
+        route: "国风、诗意、自然、自由",
+        nodes: [
+          { label: "风之大漠", work: "诵", scene: "风沙起落，苍茫无垠。", x: 30, y: 16 },
+          { label: "云之天路", work: "无界", scene: "云卷云舒，自在无边。", x: 76, y: 16 },
+          { label: "光之山河", work: "山河志", scene: "光照山河，万象生辉。", x: 20, y: 40 },
+          { label: "自由之境", work: "等爱", scene: "心之所向，即是远方。", x: 68, y: 42 },
+          { label: "大漠孤烟", work: "凤鸣九天", scene: "一声羌笛，天地悠悠。", x: 22, y: 60 },
+          { label: "行者之路", work: "山河故梦", scene: "步履不停，行者无疆。", x: 70, y: 70 }
+        ]
+      }
+    };
+    let activeWorld = "spirit";
+    let activeNodeIndex = 0;
+    let activeChip = "全部";
+    let visibleWorks = 24;
+    const worksPageSize = 24;
+
+    function displayArtist(artist) {
+      return !artist || artist === "未标注" ? "配乐" : artist;
+    }
+
+    function normalizeSong(song) {
+      const artist = displayArtist(song.artist);
+      const category = artist === "配乐" ? "配乐" : (song.category || "歌手演唱");
+      return { ...song, artist, category };
+    }
+
+    const songs = rawSongs.map(normalizeSong);
+
+    function escapeHtml(text) {
+      return String(text || "").replace(/[&<>"']/g, char => ({
+        "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"
+      }[char]));
+    }
+
+    function cleanPublicCopy(text) {
+      return String(text || "")
+        .replace(/根据歌词整理：/g, "")
+        .replace(/根据歌词自动整理：/g, "")
+        .replace(/当前版本类型为[^。]*。/g, "")
+        .replace(/开篇意象为“[^”]*”，可后续补充正式发行介绍。/g, "")
+        .replace(/可后续补充正式发行介绍。/g, "")
+        .trim();
+    }
+
+    function groupSongs() {
+      const map = new Map();
+      songs.forEach(song => {
+        const key = `${song.artist}::${song.mainTitle || song.title}`;
+        if (!map.has(key)) {
+          map.set(key, {
+            key,
+            title: song.mainTitle || song.title,
+            artist: song.artist,
+            categories: new Set(),
+            collections: new Set(),
+            cover: song.cover,
+            intro: song.intro,
+            fullIntro: song.fullIntro,
+            lyrics: song.lyrics,
+            updated: song.updated,
+            versions: []
+          });
+        }
+        const work = map.get(key);
+        work.categories.add(song.category || "未分类");
+        work.collections.add(song.collection);
+        if (!work.cover && song.cover) work.cover = song.cover;
+        if ((!work.fullIntro || work.fullIntro.length < 30) && song.fullIntro) work.fullIntro = song.fullIntro;
+        if ((!work.lyrics || work.lyrics.length < 30) && song.lyrics) work.lyrics = song.lyrics;
+        work.versions.push(song);
+      });
+      return [...map.values()].map(work => {
+        work.categories = [...work.categories].filter(Boolean);
+        work.collections = [...work.collections].filter(Boolean);
+        work.category = work.artist === "配乐" ? "配乐" : (work.categories.includes("歌手演唱") ? "歌手演唱" : work.categories[0] || "未分类");
+        work.versions.sort((a, b) => String(a.variant).localeCompare(String(b.variant), "zh-CN"));
+        return work;
+      }).sort((a, b) => String(a.artist + a.title).localeCompare(String(b.artist + b.title), "zh-CN"));
+    }
+
+    const works = groupSongs();
+    const coverOverrides = {
+      "梦梦::归": "assets/mengmeng-gui-cover.jpg",
+      "梦梦::诵": "assets/mengmeng-song-cover.webp"
+    };
+    works.forEach(work => {
+      const cover = coverOverrides[work.key];
+      if (cover) work.cover = cover;
+    });
+
+    function findWork(artist, title) {
+      return works.find(work => work.artist === artist && work.title === title)
+        || works.find(work => work.artist === artist && work.title.includes(title))
+        || works.find(work => work.title === title);
+    }
+
+    function worldButtonMarkup(key, compact = false) {
+      const world = worlds[key];
+      const isActive = activeWorld === key;
+      if (compact) {
+        return `
+          <button class="route-card ${isActive ? "active" : ""}" data-world="${escapeHtml(key)}" type="button">
+            <strong>${escapeHtml(world.artist)}</strong>
+            <span>${escapeHtml(world.route)}</span>
+          </button>
+        `;
+      }
+      return `
+        <button class="world-tab ${isActive ? "active" : ""}" data-world="${escapeHtml(key)}" type="button">
+          <span>${escapeHtml(world.artist)} · ${escapeHtml(world.route)}</span>
+          <strong>${world.nodes.length}</strong>
+        </button>
+      `;
+    }
+
+    function nodeWork(node) {
+      const world = worlds[activeWorld];
+      return findWork(world.artist, node.work);
+    }
+
+    function renderWorldRoutes() {
+      const keys = Object.keys(worlds);
+      document.getElementById("heroRoutes").innerHTML = keys.map(key => worldButtonMarkup(key, true)).join("");
+      document.getElementById("worldTabs").innerHTML = keys.map(key => worldButtonMarkup(key)).join("");
+    }
+
+    function renderSoundMap() {
+      const world = worlds[activeWorld];
+      const profile = artistProfiles[world.artist];
+      const portrait = profile.avatar
+        ? `<img src="${escapeHtml(profile.avatar)}" alt="${escapeHtml(world.artist)}头像" loading="lazy" decoding="async">`
+        : escapeHtml(profile.symbol);
+      document.getElementById("worldConsole").dataset.world = activeWorld;
+      document.getElementById("guidePortrait").innerHTML = portrait;
+      document.getElementById("guideEyebrow").textContent = world.eyebrow;
+      document.getElementById("guideTitle").textContent = world.title;
+      document.getElementById("guideLine").textContent = world.line;
+      renderWorldRoutes();
+      const nodes = world.nodes.map((node, index) => {
+        const work = findWork(world.artist, node.work);
+        const count = work ? work.versions.length : 0;
+        return `
+          <button class="map-node ${index === activeNodeIndex ? "active" : ""}" data-node="${index}" style="left:clamp(8px, ${node.x}%, calc(100% - 210px));top:${node.y}%;" type="button">
+            <strong>${escapeHtml(node.label)}</strong>
+            <span>${escapeHtml(node.scene)}</span>
+            <small>${escapeHtml(node.work)}${count ? ` · ${count} 个版本` : ""}</small>
+          </button>
+        `;
+      }).join("");
+      document.getElementById("soundMap").innerHTML = `<div class="map-field"><div class="map-orbit"></div><div class="map-particles"></div><div class="map-horizon"></div></div><div class="map-skyline"></div>${nodes}`;
+      renderSpacePlayer();
+    }
+
+    function renderSpacePlayer() {
+      const world = worlds[activeWorld];
+      const node = world.nodes[activeNodeIndex] || world.nodes[0];
+      const work = nodeWork(node);
+      const audioVersion = work?.versions.find(version => version.neteasePlaybackUrl || version.neteaseEmbedUrl || version.audioUrl);
+      const cover = work?.cover ? (coverThumbs[work.cover] || work.cover) : "";
+      const neteaseUrl = audioVersion ? neteaseAlbumUrl(audioVersion) : "";
+      const player = (audioVersion?.neteasePlaybackUrl || audioVersion?.neteaseEmbedUrl)
+        ? `<a class="btn primary external-player-link" href="${escapeHtml(neteaseUrl)}" target="_blank" rel="noopener noreferrer">网易云播放</a>`
+        : audioVersion
+          ? `<div class="audio-stack"><audio controls preload="metadata" src="${escapeHtml(audioVersion.audioUrl)}"></audio><a class="audio-open-link" href="${escapeHtml(audioVersion.audioUrl)}" target="_blank" rel="noopener noreferrer">打开音频</a></div>`
+          : `<span class="audio-note">试听音频整理中</span>`;
+      document.getElementById("spacePlayer").innerHTML = `
+        ${cover ? `<img class="space-cover" src="${escapeHtml(cover)}" alt="${escapeHtml(work.title)}封面" loading="lazy" decoding="async">` : `<div class="space-cover"></div>`}
+        <div>
+          <h3>${escapeHtml(node.label)} · ${escapeHtml(work?.title || node.work)}</h3>
+          <p>${escapeHtml(node.scene)}</p>
+          <div class="space-actions">
+            ${player}
+            ${work ? `<button class="btn primary" data-open-work="${escapeHtml(work.key)}" type="button">打开档案</button>` : ""}
+          </div>
+        </div>
+      `;
+    }
+
+    function neteaseAlbumUrl(version) {
+      const links = version?.platformLinks || [];
+      return links.find(link => link.url.includes("music.163.com/#/album"))?.url
+        || links.find(link => link.url.includes("music.163.com"))?.url
+        || "https://music.163.com/#/album?id=275831011";
+    }
+
+    function coverImage(work, className, loading = "lazy") {
+      if (!work.cover) return `<div class="${className}"></div>`;
+      const src = coverThumbs[work.cover] || work.cover;
+      return `<img class="${className}" src="${escapeHtml(src)}" alt="${escapeHtml(work.title)}封面" loading="${loading}" decoding="async" fetchpriority="low">`;
+    }
+
+    function worksForArtist(artist) {
+      return works.filter(work => work.artist === artist);
+    }
+
+    function artistPhoto(profile, name) {
+      return `<div class="artist-photo">${profile.avatar ? `<img src="${escapeHtml(profile.avatar)}" alt="${escapeHtml(name)}头像" loading="lazy">` : escapeHtml(profile.symbol)}</div>`;
+    }
+
+    function artistBio(profile) {
+      const bio = Array.isArray(profile.bio) ? profile.bio : [profile.bio];
+      return `<div class="artist-bio">${bio.filter(Boolean).map(text => `<p>${escapeHtml(text)}</p>`).join("")}</div>`;
+    }
+
+    function miniCards(items) {
+      return items && items.length ? `<div class="artist-block-grid">${items.map(item => `<div class="mini-card"><strong>${escapeHtml(item[0])}</strong><span>${escapeHtml(item[1])}</span></div>`).join("")}</div>` : "";
+    }
+
+    function renderArtistCard(name) {
+      const profile = artistProfiles[name];
+      const count = worksForArtist(name).length;
+      const worldKey = Object.entries(worlds).find(([, world]) => world.artist === name)?.[0] || "";
+      return `
+        <a class="artist-card" data-world="${escapeHtml(worldKey)}" href="${escapeHtml(profile.page)}" aria-label="查看${escapeHtml(name)}独立主页">
+          ${artistPhoto(profile, name)}
+          <div>
+            <h3>${escapeHtml(name)}</h3>
+            <div class="work-meta">${escapeHtml(profile.tagline)}</div>
+            <div class="tags">${profile.style.map(tag => `<span class="tag red">${escapeHtml(tag)}</span>`).join("")}</div>
+            <div class="subtle">${count} 个声音档案 · 进入独立主页</div>
+          </div>
+        </a>
+      `;
+    }
+
+    function workCard(work) {
+      const hasAudio = work.versions.some(version => version.neteasePlaybackUrl || version.neteaseEmbedUrl || version.audioUrl);
+      return `
+        <button class="work-card" data-key="${escapeHtml(work.key)}">
+          <div class="cover-wrap">
+            ${coverImage(work, "cover")}
+            <span class="play-dot"></span>
+            ${hasAudio ? `<span class="listen-badge">可试听</span>` : ""}
+          </div>
+          <div class="work-title">${escapeHtml(work.title)}</div>
+          <div class="work-meta">${escapeHtml(work.artist)} · ${escapeHtml(work.collections.join(" / ") || work.category)}</div>
+          <div class="tags">
+            <span class="tag red">${escapeHtml(work.categories.join(" / "))}</span>
+            <span class="tag">${work.versions.length} 个版本</span>
+          </div>
+        </button>
+      `;
+    }
+
+    function renderHome() {
+      document.getElementById("statWorks").textContent = works.length;
+      document.getElementById("statVersions").textContent = songs.length;
+      document.getElementById("statArtists").textContent = new Set(works.map(work => work.artist)).size;
+      renderSoundMap();
+      document.getElementById("homeArtists").innerHTML = mainArtists.map(renderArtistCard).join("");
+      document.getElementById("homeWorks").innerHTML = works.slice(0, 10).map(workCard).join("");
+    }
+
+    function renderArtistDetails() {
+      document.getElementById("artistDetails").innerHTML = `
+        <div class="artist-grid">
+          ${mainArtists.map(renderArtistCard).join("")}
+        </div>
+      `;
+    }
+
+    function chipList() {
+      return ["全部", "十里音", "观无界", "梦梦", "配乐", "歌手演唱"];
+    }
+
+    function filteredWorks() {
+      const keyword = document.getElementById("search")?.value.trim().toLowerCase() || "";
+      return works.filter(work => {
+        const inChip = activeChip === "全部" || work.artist === activeChip || work.categories.includes(activeChip) || work.category === activeChip;
+        const hay = [
+          work.title, work.artist, work.category, work.categories.join(" "), work.collections.join(" "),
+          work.intro, work.fullIntro, work.lyrics,
+          ...work.versions.flatMap(v => [v.title, v.version, v.variant, v.audioFile, v.type])
+        ].join(" ").toLowerCase();
+        return inChip && (!keyword || hay.includes(keyword));
+      });
+    }
+
+    function renderChips() {
+      document.getElementById("chips").innerHTML = chipList().map(name =>
+        `<button class="chip ${activeChip === name ? "active" : ""}" data-chip="${escapeHtml(name)}">${escapeHtml(name)}</button>`
+      ).join("");
+      document.querySelectorAll(".chip").forEach(button => button.addEventListener("click", () => {
+        activeChip = button.dataset.chip;
+        visibleWorks = worksPageSize;
+        renderWorks();
+      }));
+    }
+
+    function renderWorks() {
+      renderChips();
+      const list = filteredWorks();
+      const visibleList = list.slice(0, visibleWorks);
+      document.getElementById("worksTitle").textContent = activeChip === "全部" ? "声音档案" : `${activeChip} · 声音档案`;
+      document.getElementById("shownCount").textContent = list.length > visibleList.length ? `已显示 ${visibleList.length} / ${list.length} 个声音档案` : `${list.length} 个声音档案`;
+      document.getElementById("empty").style.display = list.length ? "none" : "block";
+      document.getElementById("workGrid").innerHTML = visibleList.map(workCard).join("");
+      document.getElementById("loadMoreWrap").classList.toggle("active", visibleWorks < list.length);
+    }
+
+    function renderScore() {
+      const list = works.filter(work => work.artist === "配乐" || work.category === "配乐");
+      document.getElementById("scoreGrid").innerHTML = list.map(workCard).join("") || `<div class="empty" style="display:block">暂无配乐档案</div>`;
+    }
+
+    function bindCards() {
+      document.body.addEventListener("click", event => {
+        const card = event.target.closest(".work-card");
+        if (card) openDetail(card.dataset.key);
+        const worldButton = event.target.closest("[data-world]");
+        if (worldButton) {
+          activeWorld = worldButton.dataset.world;
+          activeNodeIndex = 0;
+          renderSoundMap();
+          requestAnimationFrame(() => document.getElementById("soundMap")?.classList.add("pulse"));
+        }
+        const nodeButton = event.target.closest("[data-node]");
+        if (nodeButton) {
+          activeNodeIndex = Number(nodeButton.dataset.node) || 0;
+          const node = worlds[activeWorld].nodes[activeNodeIndex];
+          const map = document.getElementById("soundMap");
+          if (node && map) {
+            map.style.setProperty("--pulse-x", `${node.x}%`);
+            map.style.setProperty("--pulse-y", `${node.y}%`);
+          }
+          renderSoundMap();
+          requestAnimationFrame(() => {
+            const nextMap = document.getElementById("soundMap");
+            if (nextMap) nextMap.classList.add("pulse");
+          });
+        }
+        const openWork = event.target.closest("[data-open-work]");
+        if (openWork) openDetail(openWork.dataset.openWork);
+        const scrollTarget = event.target.closest("[data-scroll]");
+        if (scrollTarget) {
+          switchView("home", false);
+          document.getElementById(scrollTarget.dataset.scroll)?.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+        const jump = event.target.closest("[data-jump]");
+        if (jump) switchView(jump.dataset.jump);
+      });
+    }
+
+    function switchView(view, scrollToTop = true) {
+      document.querySelectorAll(".view").forEach(el => el.classList.toggle("active", el.id === `view-${view}`));
+      document.querySelectorAll(".nav button").forEach(btn => btn.classList.toggle("active", btn.dataset.view === view));
+      if (scrollToTop) window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    function openDetail(key) {
+      const work = works.find(item => item.key === key);
+      if (!work) return;
+      const intro = cleanPublicCopy(work.fullIntro || work.intro) || "这首歌的故事正在整理中。";
+      const lyrics = work.lyrics || "暂无歌词。";
+      const renderPlatformLinks = version => (version.platformLinks || []).map(link =>
+        `<a class="platform-link" href="${escapeHtml(link.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(link.label || "平台播放")}</a>`
+      ).join("");
+      const renderVersionAudio = version => {
+        if (version.neteasePlaybackUrl || version.neteaseEmbedUrl) return `<a class="platform-link external-player-link" href="${escapeHtml(neteaseAlbumUrl(version))}" target="_blank" rel="noopener noreferrer">网易云播放</a>`;
+        if (version.audioUrl) return `<div class="audio-stack"><audio controls preload="metadata" src="${escapeHtml(version.audioUrl)}"></audio><a class="audio-open-link" href="${escapeHtml(version.audioUrl)}" target="_blank" rel="noopener noreferrer">打开音频</a></div>`;
+        return `<div class="audio-note">试听音频整理中</div>`;
+      };
+      document.getElementById("detail").innerHTML = `
+        <section class="detail-hero">
+          ${work.cover ? `<img class="detail-cover" src="${escapeHtml(work.cover)}" alt="${escapeHtml(work.title)}封面">` : `<div class="detail-cover"></div>`}
+          <div>
+            <h3>${escapeHtml(work.title)}</h3>
+            <div class="detail-meta">${escapeHtml(work.artist)} · ${escapeHtml(work.categories.join(" / "))}<br>${escapeHtml(work.collections.join(" / "))} · ${work.versions.length} 个版本</div>
+          </div>
+        </section>
+        <section class="detail-body">
+          <div>
+            <h4>版本与音频</h4>
+            <div class="versions">
+              ${work.versions.map(version => `
+                <div class="version">
+                  <div class="version-head"><div>${escapeHtml(version.variant || version.version || version.title)}</div><span>${escapeHtml(version.type)} · ${escapeHtml(version.size || "")}MB</span></div>
+                  ${renderVersionAudio(version)}
+                  ${version.platformLinks && version.platformLinks.length ? `<div class="platform-links">${renderPlatformLinks(version)}</div>` : ""}
+                  <div class="work-meta">${escapeHtml(version.audioFile || "")}</div>
+                </div>
+              `).join("")}
+            </div>
+          </div>
+          <div class="text-block"><h4>歌曲介绍</h4><pre>${escapeHtml(intro)}</pre></div>
+          <div class="text-block"><h4>歌词</h4><pre>${escapeHtml(lyrics)}</pre></div>
+        </section>
+      `;
+      document.getElementById("detailDialog").showModal();
+    }
+
+    document.getElementById("nav").addEventListener("click", event => {
+      const button = event.target.closest("button[data-view]");
+      if (button) switchView(button.dataset.view);
+    });
+    document.getElementById("search").addEventListener("input", () => {
+      visibleWorks = worksPageSize;
+      renderWorks();
+    });
+    document.getElementById("loadMore").addEventListener("click", () => {
+      visibleWorks += worksPageSize;
+      renderWorks();
+    });
+    document.getElementById("closeDialog").addEventListener("click", () => document.getElementById("detailDialog").close());
+    document.getElementById("detailDialog").addEventListener("click", event => {
+      if (event.target.id === "detailDialog") event.target.close();
+    });
+
+    renderHome();
+    renderArtistDetails();
+    renderWorks();
+    renderScore();
+    bindCards();
   </script>
 </body>
 </html>

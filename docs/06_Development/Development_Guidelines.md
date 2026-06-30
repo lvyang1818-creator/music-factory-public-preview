@@ -1,7 +1,0 @@
-# Workflow
-
-# Sprint
-
-# Review
-
-# Deployment
