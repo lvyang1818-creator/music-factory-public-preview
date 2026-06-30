@@ -1,31 +1,66 @@
 # PROJECT MANUAL
 
-Milestone 10 Completed.
+## Current Decision
 
-Milestone 15 Completed: Sound Civilization Map.
+The previous Civilization / Cinematic V3 website system is retired.
 
-Milestone 15.5 Completed: Civilization Connection Layer.
+It must not be used as the active website direction.
 
-Milestone 15.6 Completed: Product Experience Layer Unification.
+## Why It Was Retired
 
-Milestone 16 Completed: Albums & Works System.
+The public website became too complex:
 
-Milestone 16.5 Completed: Content Alignment Layer.
+- Too much English.
+- Too many abstract entry layers.
+- Too many clicks before reaching useful content.
+- Artist pages were not clear enough for normal browsing.
+- Song listening and song discovery were not obvious enough.
+- The old practical structure was easier to understand.
 
-Milestone 17 Completed: Final Stabilization - Production Ready.
+## Active Direction
 
-Milestone 18 Completed: Homepage V2.
+Music Factory must be rebuilt as a simple, practical Chinese music website.
 
-Milestone 18.1 Completed: Homepage V3 - Cinematic Portal.
+The new website should prioritize:
 
-Milestone 19 Completed: Sound Civilization Map V2 - Living Civilization Atlas.
+1. Clear Chinese homepage.
+2. Simple navigation.
+3. Three singer entrances.
+4. Direct song display.
+5. Working audio playback.
+6. Clear artist introductions.
+7. Simple albums and archive access.
 
-Milestone 20 Completed: Archive Cinematic System - Living Memory of Music Civilization.
+## Retired Direction
 
-Phase 5 Completed: Performance Optimization - Production Readiness Pass.
+Do not continue the following as the active product direction:
 
-Phase 5 Completed: Experience Polish - Cinematic UX Refinement.
+- Cinematic Civilization Experience.
+- Complex Sound Civilization Map as the main structure.
+- Multi-layer world-system navigation.
+- Abstract Archive / Memory Space as the primary browsing path.
+- English-first copywriting.
+- Overly ceremonial page transitions.
+- Complicated route logic.
 
-Phase 5 Completed: Navigation Audit - Route Integrity Verified.
-Final Launch Checklist Completed: Music Factory - Launch Approved for Public Preview.
-Visual System V3 Completed: Cinematic Civilization Experience visual layer applied.
+## New Website Principle
+
+The website is not a concept exhibition.
+
+The website is a simple music browsing site for:
+
+- Knowing the singers.
+- Listening to songs.
+- Reading short introductions.
+- Browsing albums.
+- Finding archive records only when needed.
+
+## Implementation Rule
+
+Future work must not use the retired V3 architecture as the baseline.
+
+Before rebuilding pages, use this practical structure:
+
+Homepage -> Singer -> Songs -> Song Detail / Album -> Archive
+
+Navigation should stay visible, Chinese, and simple.

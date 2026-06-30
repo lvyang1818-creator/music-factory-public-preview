@@ -3,60 +3,77 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Works | Music Factory</title>
+  <title>全部歌曲 | 音乐工厂</title>
   <link rel="icon" href="data:," />
-  <style>
-    :root{--font-display:"Didot","Bodoni 72","Songti SC","STSong",Georgia,serif;--font-body:"Inter","SF Pro Text","Helvetica Neue","Microsoft YaHei",system-ui,sans-serif;--font-caption:"SF Pro Text","Helvetica Neue","Microsoft YaHei",system-ui,sans-serif;--warm-white:#f7f3ea;--paper:#fffdf8;--charcoal:#14120f;--warm-gray:#766f63;--dark-gold:#a58a56;--line:rgba(20,18,15,.13);--space-2:16px;--space-3:24px;--space-4:32px;--space-6:48px;--space-8:64px;--space-12:96px;font-family:var(--font-body)}
-    *{box-sizing:border-box}html{background:var(--warm-white);scroll-behavior:smooth}body{margin:0;color:var(--charcoal);background:linear-gradient(180deg,#fbf8f1 0%,#f2eadc 100%);animation:pageArrival 760ms cubic-bezier(.19,1,.22,1) both}a{color:inherit;text-decoration:none}.wrap{width:min(1180px,calc(100% - 32px));margin:0 auto}.nav{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:16px;border-bottom:1px solid var(--line)}.brand,.links a,.eyebrow,.meta{font:800 11px/1.4 var(--font-caption);letter-spacing:.14em;text-transform:uppercase}.links{display:flex;gap:16px;flex-wrap:wrap;color:var(--warm-gray)}.hero{padding:104px 0 80px}.eyebrow{color:var(--dark-gold);margin:0 0 16px}h1{font:500 clamp(60px,10vw,128px)/.88 var(--font-display);margin:0 0 24px}.lead{max-width:720px;color:var(--warm-gray);font-size:18px;line-height:1.8}.toolbar{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:40px}.filter{border:1px solid var(--line);background:rgba(255,253,248,.68);padding:10px 12px;font:800 11px/1 var(--font-caption);letter-spacing:.12em;text-transform:uppercase;transition:background .55s ease,color .55s ease,transform .55s ease}.filter:hover{background:var(--charcoal);color:var(--paper);transform:translateY(-2px)}.grid{display:grid;gap:0;border-top:1px solid var(--line)}.work{display:grid;grid-template-columns:minmax(0,.55fr) minmax(0,.35fr) auto;gap:24px;align-items:center;padding:32px 0;border-bottom:1px solid var(--line);transition:padding .75s cubic-bezier(.19,1,.22,1),color .75s cubic-bezier(.19,1,.22,1)}.work:hover{padding-left:18px;color:var(--dark-gold)}.work h2{font:500 clamp(32px,5vw,64px)/.92 var(--font-display);margin:0 0 10px}.work p{margin:0;color:var(--warm-gray);line-height:1.7}.meta{color:var(--dark-gold)}.actions{display:flex;gap:12px;flex-wrap:wrap}.action{border-bottom:1px solid currentColor;padding-bottom:6px;font:800 11px/1 var(--font-caption);letter-spacing:.14em;text-transform:uppercase}.empty{padding:48px 0;color:var(--warm-gray)}footer{padding:72px 0;color:var(--warm-gray)}@keyframes pageArrival{from{opacity:0;filter:blur(7px)}to{opacity:1;filter:blur(0)}}@media(max-width:760px){body{animation-duration:520ms}.nav{align-items:flex-start;flex-direction:column;padding:18px 0}.hero{padding:64px 0}.toolbar{margin-bottom:28px}.work{grid-template-columns:1fr;padding:28px 0}.work:hover{padding-left:0}.actions{margin-top:8px}}
-  </style>
-  <link rel="stylesheet" href="../assets/visual-system-v3.css" />
+  <link rel="stylesheet" href="../assets/simple-site.css" />
 </head>
 <body>
-  <nav class="wrap nav">
-    <a class="brand" href="../index.html">Music Factory</a>
-    <div class="links">
-      <a href="../index.html">Back to Civilization</a>
-      <a href="../sound-civilization-map.html">Explore Map</a>
-      <a href="../albums/index.html">Open Album Memory</a>
-      <a href="../archive/index.html">View Archive</a>
-    </div>
-  </nav>
+  <header class="site-header">
+    <nav class="wrap nav">
+      <a class="brand" href="../index.html">音乐工厂</a>
+      <div class="links">
+        <a href="../index.html">首页</a>
+        <a href="../artists/guanwujie.html">观无界</a>
+        <a href="../artists/shiliyin.html">十里音</a>
+        <a href="../artists/mengmeng.html">梦梦</a>
+        <a href="../albums/index.html">专辑</a>
+        <a href="../archive/index.html">档案</a>
+      </div>
+    </nav>
+  </header>
+
   <main>
-    <header class="wrap hero">
-      <p class="eyebrow">Works System</p>
-      <h1>Works</h1>
-      <p class="lead">Works are civilization chapters. Each entry is bound to artist knowledge, Sound Map routes, album context, and Archive memory.</p>
-    </header>
-    <section class="wrap">
-      <div class="toolbar" data-filters></div>
-      <div class="grid" data-works></div>
+    <section class="hero">
+      <div class="wrap">
+        <p class="eyebrow">歌曲</p>
+        <h1>全部歌曲</h1>
+        <p class="lead">按歌手筛选，直接试听。这里不再隐藏在复杂地图或档案路径里。</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="filters" data-filters></div>
+        <div class="song-grid" data-song-grid></div>
+      </div>
     </section>
   </main>
-  <footer class="wrap">Works -> Archive -> Sound Civilization Map.</footer>
-  <script src="../src/content/music-catalog.js"></script>
+
+  <footer class="footer">
+    <div class="wrap">
+      <span>全部歌曲</span>
+      <span><a href="../index.html">返回首页</a></span>
+    </div>
+  </footer>
+
+  <script src="../songs-data.js"></script>
   <script>
-    const catalog = window.MUSIC_FACTORY_CATALOG;
     const params = new URLSearchParams(location.search);
-    const selectedArtist = params.get("artist") || "all";
-    const filters = [{ id: "all", name: "All Works" }, ...catalog.artists.map(artist => ({ id: artist.id, name: artist.name }))];
-    document.querySelector("[data-filters]").innerHTML = filters.map(filter => `<a class="filter" href="index.html${filter.id === "all" ? "" : `?artist=${filter.id}`}">${filter.name}</a>`).join("");
-    const works = selectedArtist === "all" ? catalog.works : catalog.works.filter(work => work.artistId === selectedArtist);
-    document.querySelector("[data-works]").innerHTML = works.length ? works.map(work => `
-      <article class="work">
-        <div>
-          <h2>${work.title}</h2>
-          <p>${work.description}</p>
-        </div>
-        <div>
-          <div class="meta">${work.artist} / ${work.realm}</div>
-          <p>${work.status}</p>
-        </div>
-        <div class="actions">
-          <a class="action" href="detail.html?id=${work.id}">Follow the Work</a>
-          <a class="action" href="../archive/index.html?work=${work.id}">View Archive</a>
-        </div>
-      </article>
-    `).join("") : `<div class="empty">No works are available for this artist yet.</div>`;
+    const selected = params.get("artist") || "全部";
+    const artists = ["全部", "观无界", "十里音", "梦梦", "未标注"];
+    const fallbackCover = "../assets/generated/music-map-guanwujie.webp";
+    const clean = value => String(value || "").replace(/\s+/g, " ").trim();
+    const allSongs = window.MUSIC_FACTORY_SONGS || [];
+    const songs = selected === "全部" ? allSongs : allSongs.filter(song => (song.artist || "未标注") === selected);
+
+    document.querySelector("[data-filters]").innerHTML = artists.map(name =>
+      `<a class="filter ${name === selected ? "active" : ""}" href="index.html${name === "全部" ? "" : `?artist=${encodeURIComponent(name)}`}">${name}</a>`
+    ).join("");
+
+    document.querySelector("[data-song-grid]").innerHTML = songs.map(song => {
+      const cover = song.cover ? "../" + song.cover.replace(/^\.\.\//, "") : fallbackCover;
+      return `
+        <article class="song-card">
+          <div class="cover" style="background-image:url('${cover.replace(/'/g, "%27")}')"></div>
+          <div class="song-body">
+            <div class="meta">${song.artist || "未标注"} · ${song.collection || "作品"}</div>
+            <div class="song-title">${song.title}</div>
+            <p class="intro">${clean(song.intro || song.lyricsPreview).slice(0, 130) || "作品介绍整理中。"}</p>
+            ${song.audioUrl ? `<audio controls preload="metadata" src="${song.audioUrl}"></audio>` : `<p class="intro">试听音频整理中。</p>`}
+            ${song.audioUrl ? `<a class="small-link" href="${song.audioUrl}" target="_blank" rel="noopener noreferrer">打开音频</a>` : ""}
+          </div>
+        </article>`;
+    }).join("") || `<div class="card"><p>暂无歌曲。</p></div>`;
   </script>
 </body>
 </html>
