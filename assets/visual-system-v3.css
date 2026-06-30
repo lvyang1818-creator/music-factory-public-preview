@@ -1,0 +1,794 @@
+/*
+  Music Factory Visual System V3
+  A cinematic civilization visual layer for the existing static architecture.
+*/
+
+:root {
+  --v3-ink: #100f0d;
+  --v3-ink-2: #1d1a16;
+  --v3-paper: #f7f1e6;
+  --v3-paper-2: #e9ddc9;
+  --v3-smoke: #8b8378;
+  --v3-gold: #b69a62;
+  --v3-clay: #8e5d45;
+  --v3-moss: #59654c;
+  --v3-plum: #443342;
+  --v3-line: rgba(247, 241, 230, .18);
+  --v3-line-dark: rgba(16, 15, 13, .16);
+  --v3-display: "Didot", "Bodoni 72", "Cormorant Garamond", "Songti SC", "STSong", Georgia, serif;
+  --v3-body: "Inter", "SF Pro Text", "Helvetica Neue", "Microsoft YaHei", system-ui, sans-serif;
+  --v3-ease: cubic-bezier(.19, 1, .22, 1);
+  --spirit: url("/assets/generated/music-map-guanwujie.webp");
+  --future: url("/assets/generated/music-map-shiliyin.webp");
+  --nature: url("/assets/generated/music-map-mengmeng.webp");
+}
+
+html {
+  background: var(--v3-ink);
+}
+
+body {
+  font-family: var(--v3-body) !important;
+  background:
+    radial-gradient(circle at 24% 10%, rgba(182, 154, 98, .14), transparent 34%),
+    linear-gradient(180deg, #11100e 0%, #1a1713 42%, #efe4d2 42.2%, #f8f2e8 100%) !important;
+  color: var(--v3-paper) !important;
+  letter-spacing: 0 !important;
+  text-rendering: geometricPrecision;
+}
+
+body::selection {
+  background: rgba(182, 154, 98, .32);
+}
+
+a,
+button {
+  transition: transform .8s var(--v3-ease), opacity .8s var(--v3-ease), color .8s var(--v3-ease), border-color .8s var(--v3-ease), background .8s var(--v3-ease), filter .8s var(--v3-ease) !important;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 1px solid var(--v3-gold);
+  outline-offset: 6px;
+}
+
+.wrap {
+  width: min(1220px, calc(100% - 64px)) !important;
+}
+
+.eyebrow,
+.cinematic-mark,
+.node-kicker,
+.flow-index,
+.brand,
+.links a,
+.nav-links a,
+.top-actions a,
+.back,
+.label,
+.memory-label,
+.route,
+.route-link,
+.action,
+.filter,
+.work-meta,
+.tag,
+.space-index,
+.detail-label {
+  font-family: var(--v3-body) !important;
+  font-weight: 650 !important;
+  letter-spacing: .11em !important;
+  text-transform: uppercase !important;
+}
+
+h1,
+h2,
+h3,
+.cinematic-title,
+.cinematic-subtitle,
+.section-title,
+.node-title,
+.flow-title,
+.title-line h1,
+.space-name,
+.story-title,
+.record-body h3,
+.route-node h3 {
+  font-family: var(--v3-display) !important;
+  font-weight: 400 !important;
+  letter-spacing: 0 !important;
+}
+
+/* Homepage */
+
+.cinematic-entrance {
+  min-height: 100svh !important;
+  background:
+    linear-gradient(rgba(16, 15, 13, .34), rgba(16, 15, 13, .78)),
+    url("generated/music-map-guanwujie.webp") center / cover no-repeat !important;
+  isolation: isolate;
+}
+
+.cinematic-entrance::after {
+  background: linear-gradient(90deg, rgba(16, 15, 13, .88), rgba(16, 15, 13, .14) 58%, rgba(16, 15, 13, .72)) !important;
+}
+
+.entrance-inner {
+  width: min(1120px, calc(100% - 64px)) !important;
+  align-items: flex-start !important;
+  text-align: left !important;
+}
+
+.cinematic-title {
+  font-size: clamp(82px, 14vw, 226px) !important;
+  line-height: .78 !important;
+  max-width: 1100px;
+  animation: v3Breath 8s var(--v3-ease) infinite alternate !important;
+}
+
+.cinematic-subtitle {
+  margin: 24px 0 0 !important;
+  max-width: 760px !important;
+  font-size: clamp(34px, 5vw, 82px) !important;
+  color: rgba(247, 241, 230, .82) !important;
+}
+
+.enter-civilization {
+  margin-top: 56px !important;
+  border: 1px solid rgba(247, 241, 230, .38) !important;
+  border-radius: 0 !important;
+  background: rgba(16, 15, 13, .18) !important;
+  backdrop-filter: blur(14px);
+}
+
+.enter-civilization:hover {
+  background: rgba(182, 154, 98, .16) !important;
+  transform: translateY(-4px) scale(1.02) !important;
+}
+
+.section {
+  padding: clamp(120px, 15vw, 220px) 0 !important;
+}
+
+.civilization-emergence {
+  background: var(--v3-paper) !important;
+  color: var(--v3-ink) !important;
+}
+
+.node-field {
+  display: flex !important;
+  gap: clamp(22px, 4vw, 64px) !important;
+  align-items: stretch !important;
+  margin-top: 80px !important;
+}
+
+.civilization-node {
+  border: 0 !important;
+  border-top: 1px solid var(--v3-line-dark) !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  min-height: 460px !important;
+  padding: 42px 0 !important;
+  color: var(--v3-ink) !important;
+  box-shadow: none !important;
+}
+
+.civilization-node:nth-child(2) {
+  margin-top: 72px;
+}
+
+.civilization-node:nth-child(3) {
+  margin-top: 28px;
+}
+
+.civilization-node:hover {
+  transform: translateY(-18px) scale(1.015) !important;
+}
+
+.node-title {
+  font-size: clamp(48px, 5.5vw, 92px) !important;
+  line-height: .9 !important;
+}
+
+.node-copy {
+  max-width: 28ch;
+  color: #655d52 !important;
+}
+
+.dark,
+.narrative-layer {
+  background: var(--v3-ink) !important;
+  color: var(--v3-paper) !important;
+}
+
+.narrative-line {
+  font-size: clamp(54px, 8vw, 136px) !important;
+}
+
+.entry-flow,
+.portal-footer {
+  background: #f8f2e8 !important;
+  color: var(--v3-ink) !important;
+}
+
+.flow-list {
+  border-top: 1px solid var(--v3-line-dark) !important;
+}
+
+.flow-step {
+  border: 0 !important;
+  border-bottom: 1px solid var(--v3-line-dark) !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  min-height: 176px !important;
+  padding: 34px 0 !important;
+}
+
+.flow-step:hover {
+  transform: translateX(18px) !important;
+}
+
+/* Artists */
+
+body.artist-cosmic,
+body.artist-cyber,
+body.artist-wanderer {
+  background:
+    linear-gradient(90deg, rgba(16, 15, 13, .82), rgba(16, 15, 13, .25)),
+    linear-gradient(180deg, #181512, #f5ecdf 54%, #fbf6ed) !important;
+  color: var(--v3-paper) !important;
+}
+
+.topbar,
+.realm-nav,
+.atlas-nav,
+.site-nav,
+.nav {
+  border-bottom: 1px solid rgba(247, 241, 230, .18) !important;
+  backdrop-filter: blur(18px);
+}
+
+.topbar .brand,
+.topbar .back,
+.realm-nav a,
+.atlas-nav a,
+.site-nav a {
+  color: rgba(247, 241, 230, .78) !important;
+}
+
+.artist-hero {
+  min-height: 84svh !important;
+  grid-template-columns: minmax(320px, .76fr) minmax(0, 1fr) !important;
+  align-items: center !important;
+  gap: clamp(48px, 8vw, 130px) !important;
+}
+
+.portrait {
+  width: min(46vw, 560px) !important;
+  aspect-ratio: 3 / 4 !important;
+  border-radius: 0 !important;
+  overflow: hidden;
+  box-shadow: 0 48px 110px rgba(0, 0, 0, .32) !important;
+}
+
+.portrait img,
+.poster img,
+.cover,
+.detail-cover,
+.album-cover img {
+  filter: saturate(.82) contrast(1.02);
+}
+
+.portrait img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+}
+
+.title-line h1 {
+  font-size: clamp(76px, 12vw, 178px) !important;
+  line-height: .78 !important;
+}
+
+.tagline {
+  max-width: 42ch !important;
+  font-size: clamp(20px, 2vw, 32px) !important;
+  line-height: 1.45 !important;
+  color: rgba(247, 241, 230, .72) !important;
+}
+
+body.artist-cosmic main.wrap,
+body.artist-cyber main.wrap,
+body.artist-wanderer main.wrap {
+  color: var(--v3-ink);
+}
+
+body.artist-cosmic .portrait {
+  background: url("optimized/guanwujie-avatar.webp") center / cover no-repeat !important;
+}
+
+body.artist-cyber .portrait {
+  background: url("optimized/shiliyin-avatar.webp") center / cover no-repeat !important;
+}
+
+body.artist-wanderer .portrait {
+  background: url("optimized/mengmeng-avatar.webp") center / cover no-repeat !important;
+}
+
+.portrait img {
+  opacity: 1 !important;
+  display: block !important;
+  mix-blend-mode: normal !important;
+}
+
+.layout {
+  display: block !important;
+}
+
+.panel,
+.mini-card,
+.album-panel {
+  border: 0 !important;
+  border-top: 1px solid var(--v3-line-dark) !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.poster.panel {
+  width: min(520px, 100%) !important;
+  margin: 0 0 42px auto !important;
+  padding-top: 0 !important;
+}
+
+.clip {
+  margin: 42px 0 100px auto !important;
+  max-width: 460px;
+  color: #6f6659 !important;
+}
+
+.bio {
+  max-width: 920px !important;
+  font-size: clamp(18px, 1.5vw, 23px) !important;
+  line-height: 1.9 !important;
+}
+
+.mini-grid {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 0 !important;
+  border-top: 1px solid var(--v3-line-dark);
+  margin-top: 52px !important;
+}
+
+.mini-card {
+  padding: 30px 32px !important;
+  min-height: 160px !important;
+}
+
+.section-head {
+  margin: clamp(96px, 12vw, 180px) 0 42px !important;
+  border-top: 1px solid var(--v3-line-dark);
+  padding-top: 34px;
+}
+
+.section-head h2 {
+  font-size: clamp(54px, 8vw, 116px) !important;
+}
+
+.work-grid {
+  display: block !important;
+}
+
+.work-card {
+  width: 100% !important;
+  display: grid !important;
+  grid-template-columns: minmax(180px, 260px) minmax(0, 1fr) auto !important;
+  align-items: center !important;
+  gap: clamp(24px, 5vw, 72px) !important;
+  border: 0 !important;
+  border-top: 1px solid var(--v3-line-dark) !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  padding: 36px 0 !important;
+  text-align: left !important;
+  box-shadow: none !important;
+}
+
+.work-card:hover {
+  transform: translateX(18px) !important;
+  background: transparent !important;
+}
+
+.cover-wrap {
+  aspect-ratio: 16 / 10 !important;
+  border-radius: 0 !important;
+}
+
+.work-title {
+  font-family: var(--v3-display) !important;
+  font-size: clamp(36px, 5vw, 76px) !important;
+  line-height: .92 !important;
+}
+
+.work-meta {
+  color: #786f63 !important;
+}
+
+dialog {
+  border-radius: 0 !important;
+  background: #f8f2e8 !important;
+  color: var(--v3-ink) !important;
+  max-height: calc(100svh - 32px) !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+}
+
+/* Spirit Realm entry */
+
+.realm-hero {
+  min-height: 94svh !important;
+}
+
+.realm-name {
+  font-size: clamp(82px, 14vw, 210px) !important;
+}
+
+.guardian-figure,
+.world-visual,
+.philosophy-panel {
+  border-radius: 0 !important;
+  clip-path: none !important;
+}
+
+.works-grid {
+  display: block !important;
+}
+
+/* Sound Map */
+
+.atlas-hero {
+  min-height: 96svh !important;
+  background:
+    linear-gradient(90deg, rgba(16, 15, 13, .86), rgba(16, 15, 13, .24)),
+    url("generated/music-map-mengmeng.webp") center / cover no-repeat !important;
+}
+
+.hero-title {
+  font-size: clamp(76px, 11vw, 180px) !important;
+  line-height: .82 !important;
+}
+
+.space-field {
+  display: flex !important;
+  gap: clamp(18px, 3vw, 44px) !important;
+  min-height: 620px !important;
+  align-items: stretch !important;
+}
+
+.civilization-space {
+  flex: 1 1 0 !important;
+  min-height: 540px !important;
+  border-radius: 0 !important;
+  border: 1px solid rgba(247, 241, 230, .2) !important;
+  background-image:
+    linear-gradient(180deg, rgba(16, 15, 13, .06), rgba(16, 15, 13, .74)),
+    var(--space-image) !important;
+  background-size: cover !important;
+  background-position: center !important;
+}
+
+.civilization-space:hover,
+.civilization-space.is-active {
+  flex: 1.32 1 0 !important;
+  transform: translateY(-12px) scale(1.01) !important;
+}
+
+.space-name {
+  font-size: clamp(48px, 5vw, 90px) !important;
+}
+
+.space-story {
+  background: #f8f2e8 !important;
+  color: var(--v3-ink) !important;
+}
+
+.story-shell {
+  grid-template-columns: minmax(360px, .85fr) minmax(0, 1fr) !important;
+  gap: clamp(40px, 7vw, 96px) !important;
+}
+
+.story-visual {
+  min-height: 560px !important;
+  border-radius: 0 !important;
+}
+
+.detail-grid {
+  border-top: 1px solid var(--v3-line-dark) !important;
+}
+
+.detail-row {
+  border-bottom: 1px solid var(--v3-line-dark) !important;
+}
+
+/* Works and Albums */
+
+body:has([data-works]),
+body:has([data-detail]),
+body:has([data-albums]),
+body:has([data-album]) {
+  background: #f8f2e8 !important;
+  color: var(--v3-ink) !important;
+}
+
+.grid[data-works],
+.grid[data-albums] {
+  display: block !important;
+}
+
+.work,
+.album {
+  display: grid !important;
+  grid-template-columns: minmax(0, .95fr) minmax(240px, .38fr) !important;
+  gap: clamp(28px, 5vw, 84px) !important;
+  border: 0 !important;
+  border-top: 1px solid var(--v3-line-dark) !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  padding: 42px 0 !important;
+  box-shadow: none !important;
+  min-width: 0 !important;
+  overflow: hidden !important;
+}
+
+.albums,
+.grid[data-albums] {
+  min-width: 0 !important;
+  overflow-x: hidden !important;
+}
+
+.work > *,
+.album > *,
+[data-detail] .panel > *,
+[data-album] .panel > * {
+  min-width: 0 !important;
+}
+
+.work h2,
+.album h2,
+.work p,
+.album p,
+.value,
+.summary {
+  overflow-wrap: anywhere;
+}
+
+.work h2,
+.album h2,
+[data-detail] h1,
+[data-album] h1 {
+  font-size: clamp(56px, 8vw, 128px) !important;
+  line-height: .86 !important;
+}
+
+.actions,
+.routes {
+  align-self: end;
+}
+
+.action,
+.route,
+.filter {
+  border-radius: 0 !important;
+  background: transparent !important;
+  border: 0 !important;
+  border-bottom: 1px solid currentColor !important;
+  padding: 0 0 8px !important;
+}
+
+.toolbar {
+  display: flex !important;
+  gap: 24px !important;
+  border-top: 1px solid var(--v3-line-dark);
+  padding-top: 28px;
+}
+
+.cover {
+  border-radius: 0 !important;
+}
+
+[data-detail] .panel,
+[data-album] .panel {
+  grid-template-columns: minmax(180px, .28fr) minmax(0, 1fr) !important;
+}
+
+/* Archive */
+
+.memory-index,
+.timeline-section,
+.memory-routes {
+  background: #f8f2e8 !important;
+  color: var(--v3-ink) !important;
+}
+
+body:has([data-records]) .hero h1,
+body:has([data-records]) .hero-copy h1 {
+  color: rgba(247, 241, 230, .92) !important;
+  text-shadow: 0 18px 54px rgba(0, 0, 0, .42);
+}
+
+body:has([data-records]) .hero-statement,
+body:has([data-records]) .memory-panel,
+body:has([data-records]) .memory-panel p {
+  color: rgba(247, 241, 230, .72) !important;
+}
+
+body:has([data-records]) .memory-panel strong {
+  color: rgba(247, 241, 230, .96) !important;
+}
+
+.index-grid {
+  display: grid !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  border-top: 1px solid var(--v3-line-dark);
+}
+
+.index-item,
+.memory-record,
+.route-node,
+.flow-node {
+  border: 0 !important;
+  border-top: 1px solid var(--v3-line-dark) !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.memory-record {
+  grid-template-columns: minmax(180px, .28fr) minmax(0, 1fr) !important;
+  min-height: 360px !important;
+  padding: 48px 0 !important;
+}
+
+.record-body h3 {
+  font-size: clamp(54px, 8vw, 122px) !important;
+}
+
+.record-meta,
+.record-routes,
+.route-grid,
+.civilization-flow {
+  gap: clamp(18px, 3vw, 42px) !important;
+}
+
+.closing {
+  background: var(--v3-ink) !important;
+  color: var(--v3-paper) !important;
+}
+
+@keyframes v3Breath {
+  from { transform: scale(1); filter: blur(0); }
+  to { transform: scale(1.018); filter: blur(.25px); }
+}
+
+@media (max-width: 860px) {
+  .wrap {
+    width: min(100% - 32px, 1220px) !important;
+  }
+
+  .node-field,
+  .space-field,
+  .story-shell,
+  .artist-hero,
+  .work,
+  .album,
+  .memory-record,
+  [data-detail] .panel,
+  [data-album] .panel {
+    display: block !important;
+  }
+
+  .civilization-node,
+  .civilization-node:nth-child(2),
+  .civilization-node:nth-child(3),
+  .civilization-space,
+  .civilization-space.is-active {
+    margin-top: 0 !important;
+    min-height: 380px !important;
+  }
+
+  .portrait {
+    width: min(78vw, 420px) !important;
+    margin: 48px 0 !important;
+  }
+
+  .mini-grid,
+  .index-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .work-card {
+    grid-template-columns: 112px minmax(0, 1fr) !important;
+    gap: 18px !important;
+  }
+
+  .work-card .tags {
+    grid-column: 2;
+  }
+
+  .cover-wrap {
+    aspect-ratio: 1 !important;
+  }
+
+  dialog {
+    width: calc(100% - 28px) !important;
+    max-height: calc(100svh - 28px) !important;
+  }
+
+  dialog .close {
+    top: 14px !important;
+    right: 14px !important;
+  }
+
+  dialog .detail-hero {
+    padding-top: 88px !important;
+  }
+
+  .section {
+    padding: 96px 0 !important;
+  }
+}
+
+@media (max-width: 560px) {
+  .cinematic-title,
+  .realm-name,
+  .hero-title,
+  .title-line h1 {
+    font-size: clamp(56px, 18vw, 92px) !important;
+  }
+
+  .cinematic-subtitle,
+  .section-title,
+  .node-title,
+  .flow-title,
+  .work h2,
+  .album h2,
+  [data-detail] h1,
+  [data-album] h1,
+  .record-body h3 {
+    font-size: clamp(38px, 13vw, 64px) !important;
+  }
+
+  body:has([data-records]) .hero h1,
+  body:has([data-records]) .hero-copy h1 {
+    font-size: clamp(48px, 15vw, 74px) !important;
+    line-height: .92 !important;
+    overflow-wrap: anywhere;
+  }
+
+  .topbar,
+  .realm-nav,
+  .atlas-nav,
+  .site-nav,
+  .nav {
+    align-items: flex-start !important;
+    flex-direction: column !important;
+    gap: 14px !important;
+  }
+
+  .top-actions,
+  .nav-links,
+  .links {
+    justify-content: flex-start !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 1ms !important;
+    transition-duration: 1ms !important;
+    scroll-behavior: auto !important;
+  }
+}

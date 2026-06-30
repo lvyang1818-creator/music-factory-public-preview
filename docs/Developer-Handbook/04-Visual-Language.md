@@ -1,0 +1,861 @@
+# 04 Visual Language
+
+Status: Handbook V1
+Scope: Project development standards only.
+Rule: Do not treat this file as page UI.
+
+## Foundation
+
+- This file defines color, typography, grid, spacing, image, and cover rules.
+- The visual language must support warm restraint, editorial rhythm, and museum-level calm.
+
+## Permanent Commitments
+
+- Preserve Music Factory as a cultural brand system.
+- Preserve Documentation First.
+- Preserve Knowledge Driven Website architecture.
+- Preserve page boundaries unless the project owner authorizes a change.
+- Preserve calm, editorial, museum-quality execution.
+
+## Color Rules
+
+- Use warm white, charcoal black, warm gray, and restrained dark gold as the primary direction unless a specific realm palette is approved.
+- Avoid technology blue, neon glow, cyber palettes, generic gradients, and cold dashboard colors.
+
+- Rule 01.01: Apply Color Rules with restraint, hierarchy, and brand awareness.
+- Review 01.01: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 01.02: Apply Color Rules with restraint, hierarchy, and brand awareness.
+- Review 01.02: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 01.03: Apply Color Rules with restraint, hierarchy, and brand awareness.
+- Review 01.03: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 01.04: Apply Color Rules with restraint, hierarchy, and brand awareness.
+- Review 01.04: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 01.05: Apply Color Rules with restraint, hierarchy, and brand awareness.
+- Review 01.05: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 01.06: Apply Color Rules with restraint, hierarchy, and brand awareness.
+- Review 01.06: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 01.07: Apply Color Rules with restraint, hierarchy, and brand awareness.
+- Review 01.07: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 01.08: Apply Color Rules with restraint, hierarchy, and brand awareness.
+- Review 01.08: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 01.09: Apply Color Rules with restraint, hierarchy, and brand awareness.
+- Review 01.09: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 01.10: Apply Color Rules with restraint, hierarchy, and brand awareness.
+- Review 01.10: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 01.11: Apply Color Rules with restraint, hierarchy, and brand awareness.
+- Review 01.11: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 01.12: Apply Color Rules with restraint, hierarchy, and brand awareness.
+- Review 01.12: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 01.13: Apply Color Rules with restraint, hierarchy, and brand awareness.
+- Review 01.13: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 01.14: Apply Color Rules with restraint, hierarchy, and brand awareness.
+- Review 01.14: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 01.15: Apply Color Rules with restraint, hierarchy, and brand awareness.
+- Review 01.15: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 01.16: Apply Color Rules with restraint, hierarchy, and brand awareness.
+- Review 01.16: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 01.17: Apply Color Rules with restraint, hierarchy, and brand awareness.
+- Review 01.17: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 01.18: Apply Color Rules with restraint, hierarchy, and brand awareness.
+- Review 01.18: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 01.19: Apply Color Rules with restraint, hierarchy, and brand awareness.
+- Review 01.19: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 01.20: Apply Color Rules with restraint, hierarchy, and brand awareness.
+- Review 01.20: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 01.21: Apply Color Rules with restraint, hierarchy, and brand awareness.
+- Review 01.21: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 01.22: Apply Color Rules with restraint, hierarchy, and brand awareness.
+- Review 01.22: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 01.23: Apply Color Rules with restraint, hierarchy, and brand awareness.
+- Review 01.23: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 01.24: Apply Color Rules with restraint, hierarchy, and brand awareness.
+- Review 01.24: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+
+## Typography Rules
+
+- Display typography carries brand voice; body typography carries clarity.
+- Use scale with restraint, line height with intention, and avoid cramped type.
+
+- Rule 02.01: Apply Typography Rules with restraint, hierarchy, and brand awareness.
+- Review 02.01: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 02.02: Apply Typography Rules with restraint, hierarchy, and brand awareness.
+- Review 02.02: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 02.03: Apply Typography Rules with restraint, hierarchy, and brand awareness.
+- Review 02.03: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 02.04: Apply Typography Rules with restraint, hierarchy, and brand awareness.
+- Review 02.04: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 02.05: Apply Typography Rules with restraint, hierarchy, and brand awareness.
+- Review 02.05: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 02.06: Apply Typography Rules with restraint, hierarchy, and brand awareness.
+- Review 02.06: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 02.07: Apply Typography Rules with restraint, hierarchy, and brand awareness.
+- Review 02.07: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 02.08: Apply Typography Rules with restraint, hierarchy, and brand awareness.
+- Review 02.08: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 02.09: Apply Typography Rules with restraint, hierarchy, and brand awareness.
+- Review 02.09: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 02.10: Apply Typography Rules with restraint, hierarchy, and brand awareness.
+- Review 02.10: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 02.11: Apply Typography Rules with restraint, hierarchy, and brand awareness.
+- Review 02.11: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 02.12: Apply Typography Rules with restraint, hierarchy, and brand awareness.
+- Review 02.12: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 02.13: Apply Typography Rules with restraint, hierarchy, and brand awareness.
+- Review 02.13: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 02.14: Apply Typography Rules with restraint, hierarchy, and brand awareness.
+- Review 02.14: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 02.15: Apply Typography Rules with restraint, hierarchy, and brand awareness.
+- Review 02.15: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 02.16: Apply Typography Rules with restraint, hierarchy, and brand awareness.
+- Review 02.16: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 02.17: Apply Typography Rules with restraint, hierarchy, and brand awareness.
+- Review 02.17: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 02.18: Apply Typography Rules with restraint, hierarchy, and brand awareness.
+- Review 02.18: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 02.19: Apply Typography Rules with restraint, hierarchy, and brand awareness.
+- Review 02.19: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 02.20: Apply Typography Rules with restraint, hierarchy, and brand awareness.
+- Review 02.20: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 02.21: Apply Typography Rules with restraint, hierarchy, and brand awareness.
+- Review 02.21: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 02.22: Apply Typography Rules with restraint, hierarchy, and brand awareness.
+- Review 02.22: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 02.23: Apply Typography Rules with restraint, hierarchy, and brand awareness.
+- Review 02.23: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 02.24: Apply Typography Rules with restraint, hierarchy, and brand awareness.
+- Review 02.24: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+
+## Grid Rules
+
+- Use editorial grids and asymmetry when they support hierarchy.
+- Avoid mechanical card grids as the default answer.
+
+- Rule 03.01: Apply Grid Rules with restraint, hierarchy, and brand awareness.
+- Review 03.01: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 03.02: Apply Grid Rules with restraint, hierarchy, and brand awareness.
+- Review 03.02: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 03.03: Apply Grid Rules with restraint, hierarchy, and brand awareness.
+- Review 03.03: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 03.04: Apply Grid Rules with restraint, hierarchy, and brand awareness.
+- Review 03.04: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 03.05: Apply Grid Rules with restraint, hierarchy, and brand awareness.
+- Review 03.05: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 03.06: Apply Grid Rules with restraint, hierarchy, and brand awareness.
+- Review 03.06: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 03.07: Apply Grid Rules with restraint, hierarchy, and brand awareness.
+- Review 03.07: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 03.08: Apply Grid Rules with restraint, hierarchy, and brand awareness.
+- Review 03.08: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 03.09: Apply Grid Rules with restraint, hierarchy, and brand awareness.
+- Review 03.09: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 03.10: Apply Grid Rules with restraint, hierarchy, and brand awareness.
+- Review 03.10: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 03.11: Apply Grid Rules with restraint, hierarchy, and brand awareness.
+- Review 03.11: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 03.12: Apply Grid Rules with restraint, hierarchy, and brand awareness.
+- Review 03.12: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 03.13: Apply Grid Rules with restraint, hierarchy, and brand awareness.
+- Review 03.13: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 03.14: Apply Grid Rules with restraint, hierarchy, and brand awareness.
+- Review 03.14: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 03.15: Apply Grid Rules with restraint, hierarchy, and brand awareness.
+- Review 03.15: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 03.16: Apply Grid Rules with restraint, hierarchy, and brand awareness.
+- Review 03.16: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 03.17: Apply Grid Rules with restraint, hierarchy, and brand awareness.
+- Review 03.17: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 03.18: Apply Grid Rules with restraint, hierarchy, and brand awareness.
+- Review 03.18: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 03.19: Apply Grid Rules with restraint, hierarchy, and brand awareness.
+- Review 03.19: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 03.20: Apply Grid Rules with restraint, hierarchy, and brand awareness.
+- Review 03.20: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 03.21: Apply Grid Rules with restraint, hierarchy, and brand awareness.
+- Review 03.21: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 03.22: Apply Grid Rules with restraint, hierarchy, and brand awareness.
+- Review 03.22: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 03.23: Apply Grid Rules with restraint, hierarchy, and brand awareness.
+- Review 03.23: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 03.24: Apply Grid Rules with restraint, hierarchy, and brand awareness.
+- Review 03.24: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+
+## Whitespace Rules
+
+- Whitespace must remain generous across desktop, tablet, and mobile.
+- Do not fill empty areas simply because space is available.
+
+- Rule 04.01: Apply Whitespace Rules with restraint, hierarchy, and brand awareness.
+- Review 04.01: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 04.02: Apply Whitespace Rules with restraint, hierarchy, and brand awareness.
+- Review 04.02: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 04.03: Apply Whitespace Rules with restraint, hierarchy, and brand awareness.
+- Review 04.03: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 04.04: Apply Whitespace Rules with restraint, hierarchy, and brand awareness.
+- Review 04.04: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 04.05: Apply Whitespace Rules with restraint, hierarchy, and brand awareness.
+- Review 04.05: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 04.06: Apply Whitespace Rules with restraint, hierarchy, and brand awareness.
+- Review 04.06: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 04.07: Apply Whitespace Rules with restraint, hierarchy, and brand awareness.
+- Review 04.07: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 04.08: Apply Whitespace Rules with restraint, hierarchy, and brand awareness.
+- Review 04.08: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 04.09: Apply Whitespace Rules with restraint, hierarchy, and brand awareness.
+- Review 04.09: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 04.10: Apply Whitespace Rules with restraint, hierarchy, and brand awareness.
+- Review 04.10: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 04.11: Apply Whitespace Rules with restraint, hierarchy, and brand awareness.
+- Review 04.11: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 04.12: Apply Whitespace Rules with restraint, hierarchy, and brand awareness.
+- Review 04.12: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 04.13: Apply Whitespace Rules with restraint, hierarchy, and brand awareness.
+- Review 04.13: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 04.14: Apply Whitespace Rules with restraint, hierarchy, and brand awareness.
+- Review 04.14: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 04.15: Apply Whitespace Rules with restraint, hierarchy, and brand awareness.
+- Review 04.15: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 04.16: Apply Whitespace Rules with restraint, hierarchy, and brand awareness.
+- Review 04.16: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 04.17: Apply Whitespace Rules with restraint, hierarchy, and brand awareness.
+- Review 04.17: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 04.18: Apply Whitespace Rules with restraint, hierarchy, and brand awareness.
+- Review 04.18: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 04.19: Apply Whitespace Rules with restraint, hierarchy, and brand awareness.
+- Review 04.19: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 04.20: Apply Whitespace Rules with restraint, hierarchy, and brand awareness.
+- Review 04.20: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 04.21: Apply Whitespace Rules with restraint, hierarchy, and brand awareness.
+- Review 04.21: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 04.22: Apply Whitespace Rules with restraint, hierarchy, and brand awareness.
+- Review 04.22: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 04.23: Apply Whitespace Rules with restraint, hierarchy, and brand awareness.
+- Review 04.23: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 04.24: Apply Whitespace Rules with restraint, hierarchy, and brand awareness.
+- Review 04.24: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+
+## Image Rules
+
+- Images must show real identity, world, cover, person, place, or archive value.
+- Avoid stock-like atmosphere when the user needs to inspect the subject.
+
+- Rule 05.01: Apply Image Rules with restraint, hierarchy, and brand awareness.
+- Review 05.01: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 05.02: Apply Image Rules with restraint, hierarchy, and brand awareness.
+- Review 05.02: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 05.03: Apply Image Rules with restraint, hierarchy, and brand awareness.
+- Review 05.03: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 05.04: Apply Image Rules with restraint, hierarchy, and brand awareness.
+- Review 05.04: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 05.05: Apply Image Rules with restraint, hierarchy, and brand awareness.
+- Review 05.05: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 05.06: Apply Image Rules with restraint, hierarchy, and brand awareness.
+- Review 05.06: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 05.07: Apply Image Rules with restraint, hierarchy, and brand awareness.
+- Review 05.07: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 05.08: Apply Image Rules with restraint, hierarchy, and brand awareness.
+- Review 05.08: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 05.09: Apply Image Rules with restraint, hierarchy, and brand awareness.
+- Review 05.09: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 05.10: Apply Image Rules with restraint, hierarchy, and brand awareness.
+- Review 05.10: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 05.11: Apply Image Rules with restraint, hierarchy, and brand awareness.
+- Review 05.11: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 05.12: Apply Image Rules with restraint, hierarchy, and brand awareness.
+- Review 05.12: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 05.13: Apply Image Rules with restraint, hierarchy, and brand awareness.
+- Review 05.13: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 05.14: Apply Image Rules with restraint, hierarchy, and brand awareness.
+- Review 05.14: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 05.15: Apply Image Rules with restraint, hierarchy, and brand awareness.
+- Review 05.15: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 05.16: Apply Image Rules with restraint, hierarchy, and brand awareness.
+- Review 05.16: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 05.17: Apply Image Rules with restraint, hierarchy, and brand awareness.
+- Review 05.17: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 05.18: Apply Image Rules with restraint, hierarchy, and brand awareness.
+- Review 05.18: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 05.19: Apply Image Rules with restraint, hierarchy, and brand awareness.
+- Review 05.19: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 05.20: Apply Image Rules with restraint, hierarchy, and brand awareness.
+- Review 05.20: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 05.21: Apply Image Rules with restraint, hierarchy, and brand awareness.
+- Review 05.21: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 05.22: Apply Image Rules with restraint, hierarchy, and brand awareness.
+- Review 05.22: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 05.23: Apply Image Rules with restraint, hierarchy, and brand awareness.
+- Review 05.23: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 05.24: Apply Image Rules with restraint, hierarchy, and brand awareness.
+- Review 05.24: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+
+## Cover Rules
+
+- Album and work covers are cultural objects, not thumbnails only.
+- Give covers enough physical presence without turning every section into a shop grid.
+
+- Rule 06.01: Apply Cover Rules with restraint, hierarchy, and brand awareness.
+- Review 06.01: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 06.02: Apply Cover Rules with restraint, hierarchy, and brand awareness.
+- Review 06.02: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 06.03: Apply Cover Rules with restraint, hierarchy, and brand awareness.
+- Review 06.03: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 06.04: Apply Cover Rules with restraint, hierarchy, and brand awareness.
+- Review 06.04: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 06.05: Apply Cover Rules with restraint, hierarchy, and brand awareness.
+- Review 06.05: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 06.06: Apply Cover Rules with restraint, hierarchy, and brand awareness.
+- Review 06.06: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 06.07: Apply Cover Rules with restraint, hierarchy, and brand awareness.
+- Review 06.07: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 06.08: Apply Cover Rules with restraint, hierarchy, and brand awareness.
+- Review 06.08: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 06.09: Apply Cover Rules with restraint, hierarchy, and brand awareness.
+- Review 06.09: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 06.10: Apply Cover Rules with restraint, hierarchy, and brand awareness.
+- Review 06.10: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 06.11: Apply Cover Rules with restraint, hierarchy, and brand awareness.
+- Review 06.11: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 06.12: Apply Cover Rules with restraint, hierarchy, and brand awareness.
+- Review 06.12: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 06.13: Apply Cover Rules with restraint, hierarchy, and brand awareness.
+- Review 06.13: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 06.14: Apply Cover Rules with restraint, hierarchy, and brand awareness.
+- Review 06.14: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 06.15: Apply Cover Rules with restraint, hierarchy, and brand awareness.
+- Review 06.15: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 06.16: Apply Cover Rules with restraint, hierarchy, and brand awareness.
+- Review 06.16: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 06.17: Apply Cover Rules with restraint, hierarchy, and brand awareness.
+- Review 06.17: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 06.18: Apply Cover Rules with restraint, hierarchy, and brand awareness.
+- Review 06.18: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 06.19: Apply Cover Rules with restraint, hierarchy, and brand awareness.
+- Review 06.19: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 06.20: Apply Cover Rules with restraint, hierarchy, and brand awareness.
+- Review 06.20: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 06.21: Apply Cover Rules with restraint, hierarchy, and brand awareness.
+- Review 06.21: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 06.22: Apply Cover Rules with restraint, hierarchy, and brand awareness.
+- Review 06.22: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 06.23: Apply Cover Rules with restraint, hierarchy, and brand awareness.
+- Review 06.23: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 06.24: Apply Cover Rules with restraint, hierarchy, and brand awareness.
+- Review 06.24: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+
+## Texture Rules
+
+- This section defines texture rules for Music Factory.
+- Every decision in this section must support visual language.
+
+- Rule 07.01: Apply Texture Rules with restraint, hierarchy, and brand awareness.
+- Review 07.01: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 07.02: Apply Texture Rules with restraint, hierarchy, and brand awareness.
+- Review 07.02: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 07.03: Apply Texture Rules with restraint, hierarchy, and brand awareness.
+- Review 07.03: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 07.04: Apply Texture Rules with restraint, hierarchy, and brand awareness.
+- Review 07.04: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 07.05: Apply Texture Rules with restraint, hierarchy, and brand awareness.
+- Review 07.05: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 07.06: Apply Texture Rules with restraint, hierarchy, and brand awareness.
+- Review 07.06: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 07.07: Apply Texture Rules with restraint, hierarchy, and brand awareness.
+- Review 07.07: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 07.08: Apply Texture Rules with restraint, hierarchy, and brand awareness.
+- Review 07.08: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 07.09: Apply Texture Rules with restraint, hierarchy, and brand awareness.
+- Review 07.09: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 07.10: Apply Texture Rules with restraint, hierarchy, and brand awareness.
+- Review 07.10: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 07.11: Apply Texture Rules with restraint, hierarchy, and brand awareness.
+- Review 07.11: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 07.12: Apply Texture Rules with restraint, hierarchy, and brand awareness.
+- Review 07.12: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 07.13: Apply Texture Rules with restraint, hierarchy, and brand awareness.
+- Review 07.13: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 07.14: Apply Texture Rules with restraint, hierarchy, and brand awareness.
+- Review 07.14: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 07.15: Apply Texture Rules with restraint, hierarchy, and brand awareness.
+- Review 07.15: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 07.16: Apply Texture Rules with restraint, hierarchy, and brand awareness.
+- Review 07.16: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 07.17: Apply Texture Rules with restraint, hierarchy, and brand awareness.
+- Review 07.17: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 07.18: Apply Texture Rules with restraint, hierarchy, and brand awareness.
+- Review 07.18: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 07.19: Apply Texture Rules with restraint, hierarchy, and brand awareness.
+- Review 07.19: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 07.20: Apply Texture Rules with restraint, hierarchy, and brand awareness.
+- Review 07.20: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 07.21: Apply Texture Rules with restraint, hierarchy, and brand awareness.
+- Review 07.21: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 07.22: Apply Texture Rules with restraint, hierarchy, and brand awareness.
+- Review 07.22: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 07.23: Apply Texture Rules with restraint, hierarchy, and brand awareness.
+- Review 07.23: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 07.24: Apply Texture Rules with restraint, hierarchy, and brand awareness.
+- Review 07.24: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+
+## Contrast Rules
+
+- This section defines contrast rules for Music Factory.
+- Every decision in this section must support visual language.
+
+- Rule 08.01: Apply Contrast Rules with restraint, hierarchy, and brand awareness.
+- Review 08.01: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 08.02: Apply Contrast Rules with restraint, hierarchy, and brand awareness.
+- Review 08.02: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 08.03: Apply Contrast Rules with restraint, hierarchy, and brand awareness.
+- Review 08.03: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 08.04: Apply Contrast Rules with restraint, hierarchy, and brand awareness.
+- Review 08.04: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 08.05: Apply Contrast Rules with restraint, hierarchy, and brand awareness.
+- Review 08.05: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 08.06: Apply Contrast Rules with restraint, hierarchy, and brand awareness.
+- Review 08.06: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 08.07: Apply Contrast Rules with restraint, hierarchy, and brand awareness.
+- Review 08.07: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 08.08: Apply Contrast Rules with restraint, hierarchy, and brand awareness.
+- Review 08.08: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 08.09: Apply Contrast Rules with restraint, hierarchy, and brand awareness.
+- Review 08.09: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 08.10: Apply Contrast Rules with restraint, hierarchy, and brand awareness.
+- Review 08.10: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 08.11: Apply Contrast Rules with restraint, hierarchy, and brand awareness.
+- Review 08.11: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 08.12: Apply Contrast Rules with restraint, hierarchy, and brand awareness.
+- Review 08.12: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 08.13: Apply Contrast Rules with restraint, hierarchy, and brand awareness.
+- Review 08.13: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 08.14: Apply Contrast Rules with restraint, hierarchy, and brand awareness.
+- Review 08.14: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 08.15: Apply Contrast Rules with restraint, hierarchy, and brand awareness.
+- Review 08.15: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 08.16: Apply Contrast Rules with restraint, hierarchy, and brand awareness.
+- Review 08.16: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 08.17: Apply Contrast Rules with restraint, hierarchy, and brand awareness.
+- Review 08.17: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 08.18: Apply Contrast Rules with restraint, hierarchy, and brand awareness.
+- Review 08.18: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 08.19: Apply Contrast Rules with restraint, hierarchy, and brand awareness.
+- Review 08.19: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 08.20: Apply Contrast Rules with restraint, hierarchy, and brand awareness.
+- Review 08.20: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 08.21: Apply Contrast Rules with restraint, hierarchy, and brand awareness.
+- Review 08.21: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 08.22: Apply Contrast Rules with restraint, hierarchy, and brand awareness.
+- Review 08.22: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 08.23: Apply Contrast Rules with restraint, hierarchy, and brand awareness.
+- Review 08.23: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 08.24: Apply Contrast Rules with restraint, hierarchy, and brand awareness.
+- Review 08.24: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+
+## Composition Rules
+
+- This section defines composition rules for Music Factory.
+- Every decision in this section must support visual language.
+
+- Rule 09.01: Apply Composition Rules with restraint, hierarchy, and brand awareness.
+- Review 09.01: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 09.02: Apply Composition Rules with restraint, hierarchy, and brand awareness.
+- Review 09.02: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 09.03: Apply Composition Rules with restraint, hierarchy, and brand awareness.
+- Review 09.03: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 09.04: Apply Composition Rules with restraint, hierarchy, and brand awareness.
+- Review 09.04: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 09.05: Apply Composition Rules with restraint, hierarchy, and brand awareness.
+- Review 09.05: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 09.06: Apply Composition Rules with restraint, hierarchy, and brand awareness.
+- Review 09.06: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 09.07: Apply Composition Rules with restraint, hierarchy, and brand awareness.
+- Review 09.07: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 09.08: Apply Composition Rules with restraint, hierarchy, and brand awareness.
+- Review 09.08: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 09.09: Apply Composition Rules with restraint, hierarchy, and brand awareness.
+- Review 09.09: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 09.10: Apply Composition Rules with restraint, hierarchy, and brand awareness.
+- Review 09.10: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 09.11: Apply Composition Rules with restraint, hierarchy, and brand awareness.
+- Review 09.11: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 09.12: Apply Composition Rules with restraint, hierarchy, and brand awareness.
+- Review 09.12: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 09.13: Apply Composition Rules with restraint, hierarchy, and brand awareness.
+- Review 09.13: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 09.14: Apply Composition Rules with restraint, hierarchy, and brand awareness.
+- Review 09.14: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 09.15: Apply Composition Rules with restraint, hierarchy, and brand awareness.
+- Review 09.15: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 09.16: Apply Composition Rules with restraint, hierarchy, and brand awareness.
+- Review 09.16: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 09.17: Apply Composition Rules with restraint, hierarchy, and brand awareness.
+- Review 09.17: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 09.18: Apply Composition Rules with restraint, hierarchy, and brand awareness.
+- Review 09.18: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 09.19: Apply Composition Rules with restraint, hierarchy, and brand awareness.
+- Review 09.19: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 09.20: Apply Composition Rules with restraint, hierarchy, and brand awareness.
+- Review 09.20: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 09.21: Apply Composition Rules with restraint, hierarchy, and brand awareness.
+- Review 09.21: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 09.22: Apply Composition Rules with restraint, hierarchy, and brand awareness.
+- Review 09.22: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 09.23: Apply Composition Rules with restraint, hierarchy, and brand awareness.
+- Review 09.23: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 09.24: Apply Composition Rules with restraint, hierarchy, and brand awareness.
+- Review 09.24: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+
+## Review Checklist
+
+- This section defines review checklist for Music Factory.
+- Every decision in this section must support visual language.
+
+- Rule 10.01: Apply Review Checklist with restraint, hierarchy, and brand awareness.
+- Review 10.01: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 10.02: Apply Review Checklist with restraint, hierarchy, and brand awareness.
+- Review 10.02: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 10.03: Apply Review Checklist with restraint, hierarchy, and brand awareness.
+- Review 10.03: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 10.04: Apply Review Checklist with restraint, hierarchy, and brand awareness.
+- Review 10.04: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 10.05: Apply Review Checklist with restraint, hierarchy, and brand awareness.
+- Review 10.05: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 10.06: Apply Review Checklist with restraint, hierarchy, and brand awareness.
+- Review 10.06: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 10.07: Apply Review Checklist with restraint, hierarchy, and brand awareness.
+- Review 10.07: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 10.08: Apply Review Checklist with restraint, hierarchy, and brand awareness.
+- Review 10.08: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 10.09: Apply Review Checklist with restraint, hierarchy, and brand awareness.
+- Review 10.09: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 10.10: Apply Review Checklist with restraint, hierarchy, and brand awareness.
+- Review 10.10: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 10.11: Apply Review Checklist with restraint, hierarchy, and brand awareness.
+- Review 10.11: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 10.12: Apply Review Checklist with restraint, hierarchy, and brand awareness.
+- Review 10.12: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 10.13: Apply Review Checklist with restraint, hierarchy, and brand awareness.
+- Review 10.13: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 10.14: Apply Review Checklist with restraint, hierarchy, and brand awareness.
+- Review 10.14: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 10.15: Apply Review Checklist with restraint, hierarchy, and brand awareness.
+- Review 10.15: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 10.16: Apply Review Checklist with restraint, hierarchy, and brand awareness.
+- Review 10.16: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 10.17: Apply Review Checklist with restraint, hierarchy, and brand awareness.
+- Review 10.17: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 10.18: Apply Review Checklist with restraint, hierarchy, and brand awareness.
+- Review 10.18: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 10.19: Apply Review Checklist with restraint, hierarchy, and brand awareness.
+- Review 10.19: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 10.20: Apply Review Checklist with restraint, hierarchy, and brand awareness.
+- Review 10.20: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 10.21: Apply Review Checklist with restraint, hierarchy, and brand awareness.
+- Review 10.21: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 10.22: Apply Review Checklist with restraint, hierarchy, and brand awareness.
+- Review 10.22: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 10.23: Apply Review Checklist with restraint, hierarchy, and brand awareness.
+- Review 10.23: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+- Rule 10.24: Apply Review Checklist with restraint, hierarchy, and brand awareness.
+- Review 10.24: Confirm this visual language choice does not create platform, SaaS, or generic AI website behavior.
+
+## Review Checklist
+
+- Checklist 01.01: Does this decision protect Music Factory as a house for voices, albums, worlds, and archives?
+- Checklist 01.02: Does this decision avoid generic music platform behavior?
+- Checklist 01.03: Does this decision avoid SaaS and tech-startup visual language?
+- Checklist 01.04: Does this decision preserve editorial hierarchy?
+- Checklist 01.05: Does this decision preserve whitespace?
+- Checklist 01.06: Does this decision preserve Documentation First?
+- Checklist 01.07: Does this decision avoid hard-coded brand truth in page markup?
+- Checklist 01.08: Does this decision keep the website as the rendering layer?
+- Checklist 01.09: Does this decision respect responsive reading?
+- Checklist 01.10: Does this decision preserve calm motion?
+- Checklist 02.01: Does this decision protect Music Factory as a house for voices, albums, worlds, and archives?
+- Checklist 02.02: Does this decision avoid generic music platform behavior?
+- Checklist 02.03: Does this decision avoid SaaS and tech-startup visual language?
+- Checklist 02.04: Does this decision preserve editorial hierarchy?
+- Checklist 02.05: Does this decision preserve whitespace?
+- Checklist 02.06: Does this decision preserve Documentation First?
+- Checklist 02.07: Does this decision avoid hard-coded brand truth in page markup?
+- Checklist 02.08: Does this decision keep the website as the rendering layer?
+- Checklist 02.09: Does this decision respect responsive reading?
+- Checklist 02.10: Does this decision preserve calm motion?
+- Checklist 03.01: Does this decision protect Music Factory as a house for voices, albums, worlds, and archives?
+- Checklist 03.02: Does this decision avoid generic music platform behavior?
+- Checklist 03.03: Does this decision avoid SaaS and tech-startup visual language?
+- Checklist 03.04: Does this decision preserve editorial hierarchy?
+- Checklist 03.05: Does this decision preserve whitespace?
+- Checklist 03.06: Does this decision preserve Documentation First?
+- Checklist 03.07: Does this decision avoid hard-coded brand truth in page markup?
+- Checklist 03.08: Does this decision keep the website as the rendering layer?
+- Checklist 03.09: Does this decision respect responsive reading?
+- Checklist 03.10: Does this decision preserve calm motion?
+- Checklist 04.01: Does this decision protect Music Factory as a house for voices, albums, worlds, and archives?
+- Checklist 04.02: Does this decision avoid generic music platform behavior?
+- Checklist 04.03: Does this decision avoid SaaS and tech-startup visual language?
+- Checklist 04.04: Does this decision preserve editorial hierarchy?
+- Checklist 04.05: Does this decision preserve whitespace?
+- Checklist 04.06: Does this decision preserve Documentation First?
+- Checklist 04.07: Does this decision avoid hard-coded brand truth in page markup?
+- Checklist 04.08: Does this decision keep the website as the rendering layer?
+- Checklist 04.09: Does this decision respect responsive reading?
+- Checklist 04.10: Does this decision preserve calm motion?
+- Checklist 05.01: Does this decision protect Music Factory as a house for voices, albums, worlds, and archives?
+- Checklist 05.02: Does this decision avoid generic music platform behavior?
+- Checklist 05.03: Does this decision avoid SaaS and tech-startup visual language?
+- Checklist 05.04: Does this decision preserve editorial hierarchy?
+- Checklist 05.05: Does this decision preserve whitespace?
+- Checklist 05.06: Does this decision preserve Documentation First?
+- Checklist 05.07: Does this decision avoid hard-coded brand truth in page markup?
+- Checklist 05.08: Does this decision keep the website as the rendering layer?
+- Checklist 05.09: Does this decision respect responsive reading?
+- Checklist 05.10: Does this decision preserve calm motion?
+- Checklist 06.01: Does this decision protect Music Factory as a house for voices, albums, worlds, and archives?
+- Checklist 06.02: Does this decision avoid generic music platform behavior?
+- Checklist 06.03: Does this decision avoid SaaS and tech-startup visual language?
+- Checklist 06.04: Does this decision preserve editorial hierarchy?
+- Checklist 06.05: Does this decision preserve whitespace?
+- Checklist 06.06: Does this decision preserve Documentation First?
+- Checklist 06.07: Does this decision avoid hard-coded brand truth in page markup?
+- Checklist 06.08: Does this decision keep the website as the rendering layer?
+- Checklist 06.09: Does this decision respect responsive reading?
+- Checklist 06.10: Does this decision preserve calm motion?
+- Checklist 07.01: Does this decision protect Music Factory as a house for voices, albums, worlds, and archives?
+- Checklist 07.02: Does this decision avoid generic music platform behavior?
+- Checklist 07.03: Does this decision avoid SaaS and tech-startup visual language?
+- Checklist 07.04: Does this decision preserve editorial hierarchy?
+- Checklist 07.05: Does this decision preserve whitespace?
+- Checklist 07.06: Does this decision preserve Documentation First?
+- Checklist 07.07: Does this decision avoid hard-coded brand truth in page markup?
+- Checklist 07.08: Does this decision keep the website as the rendering layer?
+- Checklist 07.09: Does this decision respect responsive reading?
+- Checklist 07.10: Does this decision preserve calm motion?
+- Checklist 08.01: Does this decision protect Music Factory as a house for voices, albums, worlds, and archives?
+- Checklist 08.02: Does this decision avoid generic music platform behavior?
+- Checklist 08.03: Does this decision avoid SaaS and tech-startup visual language?
+- Checklist 08.04: Does this decision preserve editorial hierarchy?
+- Checklist 08.05: Does this decision preserve whitespace?
+- Checklist 08.06: Does this decision preserve Documentation First?
+- Checklist 08.07: Does this decision avoid hard-coded brand truth in page markup?
+- Checklist 08.08: Does this decision keep the website as the rendering layer?
+- Checklist 08.09: Does this decision respect responsive reading?
+- Checklist 08.10: Does this decision preserve calm motion?
+- Checklist 09.01: Does this decision protect Music Factory as a house for voices, albums, worlds, and archives?
+- Checklist 09.02: Does this decision avoid generic music platform behavior?
+- Checklist 09.03: Does this decision avoid SaaS and tech-startup visual language?
+- Checklist 09.04: Does this decision preserve editorial hierarchy?
+- Checklist 09.05: Does this decision preserve whitespace?
+- Checklist 09.06: Does this decision preserve Documentation First?
+- Checklist 09.07: Does this decision avoid hard-coded brand truth in page markup?
+- Checklist 09.08: Does this decision keep the website as the rendering layer?
+- Checklist 09.09: Does this decision respect responsive reading?
+- Checklist 09.10: Does this decision preserve calm motion?
+- Checklist 10.01: Does this decision protect Music Factory as a house for voices, albums, worlds, and archives?
+- Checklist 10.02: Does this decision avoid generic music platform behavior?
+- Checklist 10.03: Does this decision avoid SaaS and tech-startup visual language?
+- Checklist 10.04: Does this decision preserve editorial hierarchy?
+- Checklist 10.05: Does this decision preserve whitespace?
+- Checklist 10.06: Does this decision preserve Documentation First?
+- Checklist 10.07: Does this decision avoid hard-coded brand truth in page markup?
+- Checklist 10.08: Does this decision keep the website as the rendering layer?
+- Checklist 10.09: Does this decision respect responsive reading?
+- Checklist 10.10: Does this decision preserve calm motion?
+- Checklist 11.01: Does this decision protect Music Factory as a house for voices, albums, worlds, and archives?
+- Checklist 11.02: Does this decision avoid generic music platform behavior?
+- Checklist 11.03: Does this decision avoid SaaS and tech-startup visual language?
+- Checklist 11.04: Does this decision preserve editorial hierarchy?
+- Checklist 11.05: Does this decision preserve whitespace?
+- Checklist 11.06: Does this decision preserve Documentation First?
+- Checklist 11.07: Does this decision avoid hard-coded brand truth in page markup?
+- Checklist 11.08: Does this decision keep the website as the rendering layer?
+- Checklist 11.09: Does this decision respect responsive reading?
+- Checklist 11.10: Does this decision preserve calm motion?
+- Checklist 12.01: Does this decision protect Music Factory as a house for voices, albums, worlds, and archives?
+- Checklist 12.02: Does this decision avoid generic music platform behavior?
+- Checklist 12.03: Does this decision avoid SaaS and tech-startup visual language?
+- Checklist 12.04: Does this decision preserve editorial hierarchy?
+- Checklist 12.05: Does this decision preserve whitespace?
+- Checklist 12.06: Does this decision preserve Documentation First?
+- Checklist 12.07: Does this decision avoid hard-coded brand truth in page markup?
+- Checklist 12.08: Does this decision keep the website as the rendering layer?
+- Checklist 12.09: Does this decision respect responsive reading?
+- Checklist 12.10: Does this decision preserve calm motion?
+- Checklist 13.01: Does this decision protect Music Factory as a house for voices, albums, worlds, and archives?
+- Checklist 13.02: Does this decision avoid generic music platform behavior?
+- Checklist 13.03: Does this decision avoid SaaS and tech-startup visual language?
+- Checklist 13.04: Does this decision preserve editorial hierarchy?
+- Checklist 13.05: Does this decision preserve whitespace?
+- Checklist 13.06: Does this decision preserve Documentation First?
+- Checklist 13.07: Does this decision avoid hard-coded brand truth in page markup?
+- Checklist 13.08: Does this decision keep the website as the rendering layer?
+- Checklist 13.09: Does this decision respect responsive reading?
+- Checklist 13.10: Does this decision preserve calm motion?
+- Checklist 14.01: Does this decision protect Music Factory as a house for voices, albums, worlds, and archives?
+- Checklist 14.02: Does this decision avoid generic music platform behavior?
+- Checklist 14.03: Does this decision avoid SaaS and tech-startup visual language?
+- Checklist 14.04: Does this decision preserve editorial hierarchy?
+- Checklist 14.05: Does this decision preserve whitespace?
+- Checklist 14.06: Does this decision preserve Documentation First?
+- Checklist 14.07: Does this decision avoid hard-coded brand truth in page markup?
+- Checklist 14.08: Does this decision keep the website as the rendering layer?
+- Checklist 14.09: Does this decision respect responsive reading?
+- Checklist 14.10: Does this decision preserve calm motion?
+- Checklist 15.01: Does this decision protect Music Factory as a house for voices, albums, worlds, and archives?
+- Checklist 15.02: Does this decision avoid generic music platform behavior?
+- Checklist 15.03: Does this decision avoid SaaS and tech-startup visual language?
+- Checklist 15.04: Does this decision preserve editorial hierarchy?
+- Checklist 15.05: Does this decision preserve whitespace?
+- Checklist 15.06: Does this decision preserve Documentation First?
+- Checklist 15.07: Does this decision avoid hard-coded brand truth in page markup?
+- Checklist 15.08: Does this decision keep the website as the rendering layer?
+- Checklist 15.09: Does this decision respect responsive reading?
+- Checklist 15.10: Does this decision preserve calm motion?
+- Checklist 16.01: Does this decision protect Music Factory as a house for voices, albums, worlds, and archives?
+- Checklist 16.02: Does this decision avoid generic music platform behavior?
+- Checklist 16.03: Does this decision avoid SaaS and tech-startup visual language?
+- Checklist 16.04: Does this decision preserve editorial hierarchy?
+- Checklist 16.05: Does this decision preserve whitespace?
+- Checklist 16.06: Does this decision preserve Documentation First?
+- Checklist 16.07: Does this decision avoid hard-coded brand truth in page markup?
+- Checklist 16.08: Does this decision keep the website as the rendering layer?
+- Checklist 16.09: Does this decision respect responsive reading?
+- Checklist 16.10: Does this decision preserve calm motion?
+- Checklist 17.01: Does this decision protect Music Factory as a house for voices, albums, worlds, and archives?
+- Checklist 17.02: Does this decision avoid generic music platform behavior?
+- Checklist 17.03: Does this decision avoid SaaS and tech-startup visual language?
+- Checklist 17.04: Does this decision preserve editorial hierarchy?
+- Checklist 17.05: Does this decision preserve whitespace?
+- Checklist 17.06: Does this decision preserve Documentation First?
+- Checklist 17.07: Does this decision avoid hard-coded brand truth in page markup?
+- Checklist 17.08: Does this decision keep the website as the rendering layer?
+- Checklist 17.09: Does this decision respect responsive reading?
+- Checklist 17.10: Does this decision preserve calm motion?
+- Checklist 18.01: Does this decision protect Music Factory as a house for voices, albums, worlds, and archives?
+- Checklist 18.02: Does this decision avoid generic music platform behavior?
+- Checklist 18.03: Does this decision avoid SaaS and tech-startup visual language?
+- Checklist 18.04: Does this decision preserve editorial hierarchy?
+- Checklist 18.05: Does this decision preserve whitespace?
+- Checklist 18.06: Does this decision preserve Documentation First?
+- Checklist 18.07: Does this decision avoid hard-coded brand truth in page markup?
+- Checklist 18.08: Does this decision keep the website as the rendering layer?
+- Checklist 18.09: Does this decision respect responsive reading?
+- Checklist 18.10: Does this decision preserve calm motion?
+- Checklist 19.01: Does this decision protect Music Factory as a house for voices, albums, worlds, and archives?
+- Checklist 19.02: Does this decision avoid generic music platform behavior?
+- Checklist 19.03: Does this decision avoid SaaS and tech-startup visual language?
+- Checklist 19.04: Does this decision preserve editorial hierarchy?
+- Checklist 19.05: Does this decision preserve whitespace?
+- Checklist 19.06: Does this decision preserve Documentation First?
+- Checklist 19.07: Does this decision avoid hard-coded brand truth in page markup?
+- Checklist 19.08: Does this decision keep the website as the rendering layer?
+- Checklist 19.09: Does this decision respect responsive reading?
+- Checklist 19.10: Does this decision preserve calm motion?
+- Checklist 20.01: Does this decision protect Music Factory as a house for voices, albums, worlds, and archives?
+- Checklist 20.02: Does this decision avoid generic music platform behavior?
+- Checklist 20.03: Does this decision avoid SaaS and tech-startup visual language?
+- Checklist 20.04: Does this decision preserve editorial hierarchy?
+- Checklist 20.05: Does this decision preserve whitespace?
+- Checklist 20.06: Does this decision preserve Documentation First?
+- Checklist 20.07: Does this decision avoid hard-coded brand truth in page markup?
+- Checklist 20.08: Does this decision keep the website as the rendering layer?
+- Checklist 20.09: Does this decision respect responsive reading?
+- Checklist 20.10: Does this decision preserve calm motion?
+- Checklist 21.01: Does this decision protect Music Factory as a house for voices, albums, worlds, and archives?
+- Checklist 21.02: Does this decision avoid generic music platform behavior?
+- Checklist 21.03: Does this decision avoid SaaS and tech-startup visual language?
+- Checklist 21.04: Does this decision preserve editorial hierarchy?
+- Checklist 21.05: Does this decision preserve whitespace?
+- Checklist 21.06: Does this decision preserve Documentation First?
+- Checklist 21.07: Does this decision avoid hard-coded brand truth in page markup?
+- Checklist 21.08: Does this decision keep the website as the rendering layer?
+- Checklist 21.09: Does this decision respect responsive reading?
+- Checklist 21.10: Does this decision preserve calm motion?
+- Checklist 22.01: Does this decision protect Music Factory as a house for voices, albums, worlds, and archives?
+- Checklist 22.02: Does this decision avoid generic music platform behavior?
+- Checklist 22.03: Does this decision avoid SaaS and tech-startup visual language?
+- Checklist 22.04: Does this decision preserve editorial hierarchy?
+- Checklist 22.05: Does this decision preserve whitespace?
+- Checklist 22.06: Does this decision preserve Documentation First?
+- Checklist 22.07: Does this decision avoid hard-coded brand truth in page markup?
+- Checklist 22.08: Does this decision keep the website as the rendering layer?
+- Checklist 22.09: Does this decision respect responsive reading?
+- Checklist 22.10: Does this decision preserve calm motion?
+- Checklist 23.01: Does this decision protect Music Factory as a house for voices, albums, worlds, and archives?
+- Checklist 23.02: Does this decision avoid generic music platform behavior?
+- Checklist 23.03: Does this decision avoid SaaS and tech-startup visual language?
+- Checklist 23.04: Does this decision preserve editorial hierarchy?
+- Checklist 23.05: Does this decision preserve whitespace?
+- Checklist 23.06: Does this decision preserve Documentation First?
+- Checklist 23.07: Does this decision avoid hard-coded brand truth in page markup?
+- Checklist 23.08: Does this decision keep the website as the rendering layer?
+- Checklist 23.09: Does this decision respect responsive reading?
+- Checklist 23.10: Does this decision preserve calm motion?
+- Checklist 24.01: Does this decision protect Music Factory as a house for voices, albums, worlds, and archives?
+- Checklist 24.02: Does this decision avoid generic music platform behavior?
+- Checklist 24.03: Does this decision avoid SaaS and tech-startup visual language?
+- Checklist 24.04: Does this decision preserve editorial hierarchy?
+- Checklist 24.05: Does this decision preserve whitespace?
+- Checklist 24.06: Does this decision preserve Documentation First?
+- Checklist 24.07: Does this decision avoid hard-coded brand truth in page markup?
+- Checklist 24.08: Does this decision keep the website as the rendering layer?
+- Checklist 24.09: Does this decision respect responsive reading?
+- Checklist 24.10: Does this decision preserve calm motion?
+- Checklist 25.01: Does this decision protect Music Factory as a house for voices, albums, worlds, and archives?
+- Checklist 25.02: Does this decision avoid generic music platform behavior?
+- Checklist 25.03: Does this decision avoid SaaS and tech-startup visual language?
+- Checklist 25.04: Does this decision preserve editorial hierarchy?
+- Checklist 25.05: Does this decision preserve whitespace?
+- Checklist 25.06: Does this decision preserve Documentation First?
+- Checklist 25.07: Does this decision avoid hard-coded brand truth in page markup?
+- Checklist 25.08: Does this decision keep the website as the rendering layer?
+- Checklist 25.09: Does this decision respect responsive reading?
+- Checklist 25.10: Does this decision preserve calm motion?
+- Checklist 26.01: Does this decision protect Music Factory as a house for voices, albums, worlds, and archives?
+- Checklist 26.02: Does this decision avoid generic music platform behavior?
+- Checklist 26.03: Does this decision avoid SaaS and tech-startup visual language?
+- Checklist 26.04: Does this decision preserve editorial hierarchy?
+- Checklist 26.05: Does this decision preserve whitespace?
+- Checklist 26.06: Does this decision preserve Documentation First?
+- Checklist 26.07: Does this decision avoid hard-coded brand truth in page markup?
+- Checklist 26.08: Does this decision keep the website as the rendering layer?
+- Checklist 26.09: Does this decision respect responsive reading?
+- Checklist 26.10: Does this decision preserve calm motion?
+- Checklist 27.01: Does this decision protect Music Factory as a house for voices, albums, worlds, and archives?
+- Checklist 27.02: Does this decision avoid generic music platform behavior?
+- Checklist 27.03: Does this decision avoid SaaS and tech-startup visual language?
+- Checklist 27.04: Does this decision preserve editorial hierarchy?
+- Checklist 27.05: Does this decision preserve whitespace?
+- Checklist 27.06: Does this decision preserve Documentation First?
+- Checklist 27.07: Does this decision avoid hard-coded brand truth in page markup?
+- Checklist 27.08: Does this decision keep the website as the rendering layer?
+- Checklist 27.09: Does this decision respect responsive reading?
+- Checklist 27.10: Does this decision preserve calm motion?
+- Checklist 28.01: Does this decision protect Music Factory as a house for voices, albums, worlds, and archives?
+- Checklist 28.02: Does this decision avoid generic music platform behavior?
+- Checklist 28.03: Does this decision avoid SaaS and tech-startup visual language?
+- Checklist 28.04: Does this decision preserve editorial hierarchy?
+- Checklist 28.05: Does this decision preserve whitespace?
+- Checklist 28.06: Does this decision preserve Documentation First?
+- Checklist 28.07: Does this decision avoid hard-coded brand truth in page markup?
+- Checklist 28.08: Does this decision keep the website as the rendering layer?
+- Checklist 28.09: Does this decision respect responsive reading?
+- Checklist 28.10: Does this decision preserve calm motion?
+- Checklist 29.01: Does this decision protect Music Factory as a house for voices, albums, worlds, and archives?
+- Checklist 29.02: Does this decision avoid generic music platform behavior?
+- Checklist 29.03: Does this decision avoid SaaS and tech-startup visual language?
+- Checklist 29.04: Does this decision preserve editorial hierarchy?
+- Checklist 29.05: Does this decision preserve whitespace?
+- Checklist 29.06: Does this decision preserve Documentation First?
+- Checklist 29.07: Does this decision avoid hard-coded brand truth in page markup?
+- Checklist 29.08: Does this decision keep the website as the rendering layer?
+- Checklist 29.09: Does this decision respect responsive reading?
+- Checklist 29.10: Does this decision preserve calm motion?
+- Checklist 30.01: Does this decision protect Music Factory as a house for voices, albums, worlds, and archives?
+- Checklist 30.02: Does this decision avoid generic music platform behavior?
+- Checklist 30.03: Does this decision avoid SaaS and tech-startup visual language?
+- Checklist 30.04: Does this decision preserve editorial hierarchy?
+- Checklist 30.05: Does this decision preserve whitespace?
+- Checklist 30.06: Does this decision preserve Documentation First?
+- Checklist 30.07: Does this decision avoid hard-coded brand truth in page markup?
+- Checklist 30.08: Does this decision keep the website as the rendering layer?
+- Checklist 30.09: Does this decision respect responsive reading?
+- Checklist 30.10: Does this decision preserve calm motion?

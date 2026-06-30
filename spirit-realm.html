@@ -1,0 +1,621 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title></title>
+  <link rel="icon" href="data:," />
+  <style>
+    :root {
+      --font-display: "Didot", "Bodoni 72", "Songti SC", "STSong", Georgia, serif;
+      --font-body: "Inter", "SF Pro Text", "Helvetica Neue", "Microsoft YaHei", system-ui, sans-serif;
+      --font-caption: "SF Pro Text", "Helvetica Neue", "Microsoft YaHei", system-ui, sans-serif;
+      --font-quote: "Times New Roman", "Songti SC", Georgia, serif;
+
+      --space-1: 8px;
+      --space-2: 16px;
+      --space-3: 24px;
+      --space-4: 32px;
+      --space-5: 40px;
+      --space-6: 48px;
+      --space-8: 64px;
+      --space-10: 80px;
+      --space-12: 96px;
+      --space-16: 128px;
+
+      --bg: #f7f4ed;
+      --paper: #fffdf8;
+      --paper-quiet: #eee8dc;
+      --ink: #14120f;
+      --muted: #6f695f;
+      --faint: #9a9287;
+      --line: rgba(20,18,15,.11);
+      --red: #a5372f;
+      --gold: #b49a64;
+      --moss: #7d846a;
+      --stone: #d9d1c3;
+      --shadow-soft: 0 32px 96px rgba(31,28,24,.09);
+      --shadow-card: 0 16px 48px rgba(31,28,24,.1);
+      --motion-slow: 900ms cubic-bezier(.19, 1, .22, 1);
+      --motion: 520ms cubic-bezier(.2, .8, .2, 1);
+      --realm-bg: url("assets/generated/music-map-guanwujie.webp");
+      --spirit-soft: rgba(215, 198, 145, .18);
+      font-family: var(--font-body);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; background: var(--bg); }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 10% 6%, rgba(180,154,100,.12), transparent 28%),
+        linear-gradient(180deg, #faf7ef 0%, var(--bg) 44%, #f2ede3 100%);
+      color: var(--ink);
+      overflow-x: hidden;
+      cursor: default;
+    }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; }
+    .wrap { width: min(1280px, calc(100% - var(--space-4))); margin: 0 auto; }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -2;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(20,18,15,.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(20,18,15,.018) 1px, transparent 1px);
+      background-size: 8px 8px;
+      mask-image: linear-gradient(180deg, rgba(0,0,0,.35), transparent 62%);
+    }
+
+    .cursor-orb {
+      position: fixed;
+      left: 0;
+      top: 0;
+      z-index: 0;
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      pointer-events: none;
+      opacity: .28;
+      transform: translate3d(-50%, -50%, 0);
+      background: radial-gradient(circle, rgba(180,154,100,.22), rgba(165,55,47,.08) 36%, transparent 68%);
+      filter: blur(16px);
+      transition: opacity var(--motion);
+    }
+
+    .realm-nav {
+      position: fixed;
+      top: var(--space-3);
+      left: 50%;
+      z-index: 20;
+      width: min(1180px, calc(100% - var(--space-4)));
+      min-height: 56px;
+      transform: translateX(-50%);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 10px 12px;
+      border: 1px solid rgba(255,255,255,.58);
+      border-radius: 999px;
+      background: rgba(255,253,248,.62);
+      backdrop-filter: blur(22px) saturate(1.08);
+      box-shadow: 0 18px 70px rgba(31,32,35,.08);
+    }
+
+    .brand, .realm-nav-links { display: flex; align-items: center; }
+    .brand { gap: 10px; font: 700 12px/1 var(--font-caption); letter-spacing: .08em; white-space: nowrap; text-transform: uppercase; }
+    .brand-mark {
+      width: 32px;
+      height: 32px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      color: #fff;
+      background: #15120e;
+      box-shadow: 0 10px 28px rgba(20,18,15,.16);
+    }
+    .realm-nav-links { gap: 14px; overflow-x: auto; scrollbar-width: none; }
+    .realm-nav-links::-webkit-scrollbar { display: none; }
+    .realm-nav-links a {
+      color: #5f5a52;
+      font: 700 11px/1 var(--font-caption);
+      letter-spacing: .12em;
+      white-space: nowrap;
+      text-transform: uppercase;
+      opacity: .72;
+      transition: opacity var(--motion), transform var(--motion);
+    }
+    .realm-nav-links a:hover { opacity: 1; transform: translateY(-1px); }
+
+    .realm-hero {
+      min-height: 100vh;
+      display: grid;
+      align-items: end;
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(90deg, rgba(250,247,239,.98), rgba(250,247,239,.84) 42%, rgba(250,247,239,.18)),
+        radial-gradient(circle at 24% 28%, rgba(180,154,100,.14), transparent 30%),
+        var(--realm-bg) center / cover no-repeat;
+      clip-path: inset(0 round 0 0 64px 64px);
+    }
+
+    .realm-hero::before,
+    .realm-hero::after {
+      content: "";
+      position: absolute;
+      pointer-events: none;
+    }
+
+    .realm-hero::before {
+      inset: 0;
+      z-index: 0;
+      background:
+        linear-gradient(180deg, transparent 52%, rgba(247,244,237,.92)),
+        radial-gradient(ellipse at 72% 44%, rgba(255,255,255,.28), transparent 34%);
+    }
+
+    .realm-hero::after {
+      inset: -18%;
+      background:
+        radial-gradient(ellipse at 18% 72%, rgba(255,255,255,.28), transparent 28%),
+        radial-gradient(ellipse at 82% 22%, rgba(201,164,93,.18), transparent 26%);
+      filter: blur(22px);
+      animation: realmBreath 22s ease-in-out infinite alternate;
+    }
+
+    .realm-hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 1120px;
+      padding: 144px 0 96px;
+      animation: fadeMoveBlur .7s var(--motion) both;
+    }
+
+    .eyebrow {
+      margin: 0 0 var(--space-2);
+      color: var(--red);
+      font: 800 11px/1 var(--font-caption);
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+
+    h1, h2, h3, p { margin-top: 0; }
+    .realm-name {
+      max-width: 980px;
+      margin-bottom: var(--space-3);
+      font: 500 clamp(76px, 14vw, 188px)/.78 var(--font-display);
+      letter-spacing: -.035em;
+      text-wrap: balance;
+    }
+    .realm-subtitle {
+      max-width: 680px;
+      margin-bottom: var(--space-3);
+      font: 700 clamp(20px, 2.8vw, 40px)/1.1 var(--font-body);
+      letter-spacing: -.02em;
+    }
+    .world-quote {
+      max-width: 620px;
+      margin: 0;
+      color: #4f4940;
+      font: italic 400 clamp(18px, 2.2vw, 30px)/1.45 var(--font-quote);
+    }
+
+    .section {
+      position: relative;
+      padding: clamp(96px, 12vw, 184px) 0;
+      isolation: isolate;
+    }
+    .section:nth-of-type(even) { background: rgba(255,253,248,.42); }
+    .section-title {
+      margin-bottom: var(--space-4);
+      font: 500 clamp(48px, 8vw, 112px)/.88 var(--font-display);
+      letter-spacing: -.035em;
+      text-wrap: balance;
+    }
+    .section-copy {
+      color: var(--muted);
+      font: 400 17px/1.9 var(--font-body);
+    }
+    .section-copy h2,
+    .section-copy h3 {
+      max-width: 760px;
+      margin: 0 0 var(--space-4);
+      color: var(--ink);
+      font: 500 clamp(42px, 6vw, 92px)/.92 var(--font-display);
+      letter-spacing: -.035em;
+      text-wrap: balance;
+    }
+    .section-copy h3 { font-size: clamp(26px, 3vw, 48px); }
+    .section-copy p {
+      max-width: 620px;
+      margin: 0 0 var(--space-2);
+      color: var(--muted);
+    }
+    .section-copy blockquote {
+      margin: 0 0 var(--space-4);
+      max-width: 720px;
+      color: var(--ink);
+      font: italic 400 clamp(24px, 4vw, 56px)/1.05 var(--font-quote);
+      letter-spacing: -.02em;
+    }
+    .section-copy ul {
+      display: grid;
+      gap: var(--space-2);
+      margin: var(--space-3) 0 0;
+      padding: 0;
+      list-style: none;
+    }
+    .section-copy li {
+      padding: var(--space-2) 0;
+      border-top: 1px solid var(--line);
+      color: var(--ink);
+      font-weight: 700;
+    }
+
+    .world-intro-grid {
+      min-height: 92vh;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-8);
+      align-items: center;
+    }
+
+    .world-visual, .philosophy-panel {
+      min-height: min(62vh, 640px);
+      border-radius: 0;
+      overflow: hidden;
+      background:
+        linear-gradient(140deg, rgba(255,255,255,.2), rgba(255,255,255,.02)),
+        var(--realm-bg) center / cover no-repeat;
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      clip-path: inset(8% 0 0 18%);
+      transform: translateY(var(--parallax-y, 0));
+      transition: clip-path var(--motion-slow), transform var(--motion-slow), filter var(--motion-slow);
+    }
+    .world-visual:hover { clip-path: inset(0 0 0 8%); filter: saturate(1.04) contrast(1.02); }
+
+    #world-introduction .section-copy {
+      display: grid;
+      grid-template-columns: minmax(0, .82fr) minmax(240px, .48fr);
+      gap: var(--space-8);
+      align-items: end;
+    }
+
+    .guardian-section { background: #fffdf8; overflow: hidden; }
+    .guardian-grid {
+      min-height: 92vh;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-8);
+      align-items: end;
+    }
+    .guardian-copy { max-width: 660px; align-self: center; }
+    .guardian-title {
+      margin-bottom: var(--space-2);
+      font: 500 clamp(64px, 9vw, 132px)/.82 var(--font-display);
+      letter-spacing: -.04em;
+    }
+    .guardian-name { color: var(--red); font: 800 12px/1 var(--font-caption); letter-spacing: .16em; text-transform: uppercase; }
+    .guardian-figure {
+      justify-self: center;
+      width: min(38vw, 520px);
+      min-width: 300px;
+      position: relative;
+      display: grid;
+      justify-items: center;
+      transform: translateY(var(--parallax-y, 0));
+    }
+    .guardian-figure img {
+      width: 100%;
+      display: block;
+      object-fit: contain;
+      filter: drop-shadow(0 42px 38px rgba(31,28,24,.18));
+      mask-image: linear-gradient(180deg, #000 76%, transparent 100%);
+    }
+    .guardian-shadow {
+      position: absolute;
+      left: 14%;
+      right: 14%;
+      bottom: 2%;
+      height: 9%;
+      border-radius: 50%;
+      background: rgba(31,28,24,.22);
+      filter: blur(18px);
+    }
+
+    .works-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: var(--space-3);
+      margin-top: var(--space-8);
+    }
+    .work-card {
+      border: 0;
+      padding: 0;
+      background: transparent;
+      text-align: left;
+      cursor: pointer;
+      color: inherit;
+      transition: transform var(--motion), opacity var(--motion);
+    }
+    .cover-frame {
+      position: relative;
+      aspect-ratio: 4 / 5;
+      border-radius: 0;
+      overflow: hidden;
+      background:
+        linear-gradient(145deg, rgba(255,255,255,.26), rgba(255,255,255,0)),
+        var(--paper-quiet);
+      box-shadow: var(--shadow-card);
+      transition: transform var(--motion-slow), box-shadow var(--motion-slow), filter var(--motion-slow), clip-path var(--motion-slow);
+      clip-path: inset(0 0 12% 0);
+    }
+    .cover-frame img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .cover-frame::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 56%, rgba(0,0,0,.34)); }
+    .play-button {
+      position: absolute;
+      right: var(--space-2);
+      bottom: var(--space-2);
+      z-index: 1;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      opacity: 0;
+      transform: translateY(4px);
+      background: rgba(20,18,15,.92);
+      transition: opacity var(--motion), transform var(--motion);
+    }
+    .play-button::before { content: ""; margin-left: 3px; border-left: 12px solid #fff; border-top: 8px solid transparent; border-bottom: 8px solid transparent; }
+    .work-card:hover .cover-frame { transform: translateY(-8px); clip-path: inset(0); box-shadow: 0 28px 90px rgba(31,28,24,.16); }
+    .work-card:hover .play-button { opacity: 1; transform: translateY(0); }
+    .work-title { margin: var(--space-2) 0 4px; font: 600 clamp(18px, 2vw, 28px)/1.05 var(--font-display); letter-spacing: -.02em; }
+    .work-meta { color: var(--faint); font: 700 11px/1.5 var(--font-caption); letter-spacing: .12em; text-transform: uppercase; }
+
+    .philosophy-section { color: #fff; background: #14120f; overflow: hidden; }
+    .philosophy-panel {
+      min-height: 74vh;
+      display: grid;
+      align-items: end;
+      padding: clamp(32px, 7vw, 96px);
+      background:
+        linear-gradient(180deg, rgba(0,0,0,.12), rgba(0,0,0,.78)),
+        var(--realm-bg) center / cover no-repeat;
+      clip-path: inset(0 8% 0 0);
+      transform: translateY(var(--parallax-y, 0));
+    }
+    .philosophy-copy { max-width: 680px; }
+    .philosophy-section .section-copy h2,
+    .philosophy-section .section-copy h3,
+    .philosophy-section .section-copy p { color: #fffdf8; }
+
+    .archive-list { display: grid; border-top: 1px solid var(--line); margin-top: var(--space-6); }
+    .archive-row {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: var(--space-3);
+      align-items: center;
+      padding: var(--space-4) 0;
+      border-bottom: 1px solid var(--line);
+      cursor: pointer;
+      transition: padding var(--motion), color var(--motion), border-color var(--motion);
+    }
+    .archive-row:hover { padding-left: var(--space-2); color: var(--red); border-color: rgba(165,55,47,.3); }
+    .archive-row strong { display: block; margin-bottom: 6px; font: 500 clamp(24px, 3vw, 48px)/1 var(--font-display); letter-spacing: -.025em; }
+    .archive-row span { color: var(--muted); font: 700 11px/1.5 var(--font-caption); letter-spacing: .12em; text-transform: uppercase; }
+
+    .next-realms { background: #fffdf8; }
+    .next-realms .section-copy {
+      display: grid;
+      grid-template-columns: minmax(0, .72fr) minmax(260px, .58fr);
+      gap: var(--space-8);
+      align-items: start;
+    }
+
+    .fade-block {
+      opacity: 0;
+      transform: translateY(40px);
+      filter: blur(12px);
+      transition: opacity 900ms var(--motion-slow), transform 900ms var(--motion-slow), filter 900ms var(--motion-slow);
+    }
+    .fade-block.is-visible { opacity: 1; transform: translateY(0); filter: blur(0); }
+    @keyframes fadeMoveBlur { from { opacity: 0; transform: translateY(24px); filter: blur(10px); } to { opacity: 1; transform: translateY(0); filter: blur(0); } }
+    @keyframes realmBreath { from { opacity: .46; transform: translate3d(-1%, -1%, 0) scale(1); } to { opacity: .64; transform: translate3d(1%, 1%, 0) scale(1.04); } }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: .001ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: .001ms !important;
+      }
+    }
+
+    @media (max-width: 719px) {
+      body { overflow-x: hidden; }
+      .cursor-orb { display: none; }
+      .realm-nav { top: 10px; min-height: 58px; border-radius: 22px; align-items: flex-start; }
+      .brand-mark { width: 32px; height: 32px; }
+      .realm-hero { clip-path: inset(0 round 0 0 32px 32px); }
+      .realm-hero-content { padding: 112px 0 56px; }
+      .realm-name { font-size: clamp(56px, 20vw, 88px); }
+      #world-introduction .section-copy,
+      .next-realms .section-copy { grid-template-columns: 1fr; }
+      .world-visual, .philosophy-panel { clip-path: inset(0); min-height: 360px; }
+      .guardian-grid { min-height: auto; }
+      .guardian-figure { width: min(58vw, 240px); min-width: 0; }
+      .works-grid { grid-template-columns: 1fr; }
+      .archive-row { grid-template-columns: 1fr; }
+    }
+
+    @media (min-width: 720px) {
+      .world-intro-grid { grid-template-columns: minmax(0, .92fr) minmax(0, 1.08fr); }
+      .guardian-grid { grid-template-columns: minmax(0, .92fr) minmax(320px, .72fr); }
+      .works-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    }
+  </style>
+  <link rel="stylesheet" href="assets/visual-system-v3.css" />
+</head>
+<body>
+  <div class="cursor-orb" aria-hidden="true"></div>
+  <nav class="realm-nav" aria-label="Realm navigation">
+    <a class="brand" href="index.html"><span class="brand-mark">♪</span><span data-knowledge-field="hero.name"></span></a>
+    <div class="realm-nav-links">
+      <a href="index.html">Back to Civilization</a>
+      <a href="sound-civilization-map.html">Explore Map</a>
+      <a href="archive/index.html">View Archive</a>
+      <a href="#world-introduction" data-knowledge-nav="world"></a>
+      <a href="#guardian" data-knowledge-nav="guardian"></a>
+      <a href="#music-works" data-knowledge-nav="music"></a>
+      <a href="#archive-preview" data-knowledge-nav="works"></a>
+    </div>
+  </nav>
+
+  <header class="realm-hero" id="realm-hero">
+    <div class="wrap">
+      <div class="realm-hero-content">
+        <p class="eyebrow" data-knowledge-label="hero"></p>
+        <h1 class="realm-name" data-knowledge-field="hero.name"></h1>
+        <p class="realm-subtitle" data-knowledge-field="hero.subtitle"></p>
+        <p class="world-quote" data-knowledge-field="hero.quote"></p>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section" id="world-introduction">
+      <div class="wrap world-intro-grid fade-block">
+        <div>
+          <p class="eyebrow" data-knowledge-label="world"></p>
+          <div class="section-copy" data-knowledge-document="visual"></div>
+        </div>
+        <div class="world-visual" role="img" aria-label="realm visual"></div>
+      </div>
+    </section>
+
+    <section class="section guardian-section" id="guardian">
+      <div class="wrap guardian-grid fade-block">
+        <div class="guardian-copy">
+          <p class="eyebrow" data-knowledge-label="guardian"></p>
+          <h2 class="guardian-title" data-knowledge-field="guardian.name"></h2>
+          <p class="guardian-name" data-knowledge-field="guardian.title"></p>
+          <div class="section-copy" data-knowledge-document="identity"></div>
+        </div>
+        <div class="guardian-figure" aria-label="guardian figure">
+          <img src="assets/optimized/guanwujie-poster.webp" alt="" loading="lazy" decoding="async" />
+          <span class="guardian-shadow" aria-hidden="true"></span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="music-works">
+      <div class="wrap fade-block">
+        <p class="eyebrow" data-knowledge-label="music"></p>
+        <h2 class="section-title" data-knowledge-label="music"></h2>
+        <div class="works-grid" data-knowledge-list="music"></div>
+      </div>
+    </section>
+
+    <section class="section philosophy-section" id="world-philosophy">
+      <div class="wrap fade-block">
+        <div class="philosophy-panel">
+          <div class="philosophy-copy">
+            <p class="eyebrow" data-knowledge-label="albums"></p>
+            <div class="section-copy" data-knowledge-document="albums"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="archive-preview">
+      <div class="wrap fade-block">
+        <p class="eyebrow" data-knowledge-label="works"></p>
+        <h2 class="section-title" data-knowledge-label="works"></h2>
+        <div class="archive-list" data-knowledge-list="works"></div>
+      </div>
+    </section>
+
+    <section class="section next-realms" id="explore-next-realm">
+      <div class="wrap fade-block">
+        <p class="eyebrow" data-knowledge-label="roadmap"></p>
+        <div class="section-copy" data-knowledge-document="roadmap"></div>
+      </div>
+    </section>
+  </main>
+
+  <script type="module">
+    import { createArtistDataLayer, createContentLoader, createRealmRenderer } from "./src/content/index.js";
+
+    const loader = createContentLoader();
+    const artists = createArtistDataLayer({ loader });
+    const renderer = createRealmRenderer(document);
+    const cursorOrb = document.querySelector(".cursor-orb");
+
+    artists.getArtist("guanwujie")
+      .then(artist => {
+        window.musicFactoryKnowledgeState = renderer.renderArtistRealm(artist.artistObject);
+      })
+      .catch(error => {
+        window.musicFactoryKnowledgeState = { status: "empty", error };
+        document.documentElement.setAttribute("data-knowledge-empty", "");
+      });
+
+    if (cursorOrb && matchMedia("(pointer: fine)").matches) {
+      let mouseX = window.innerWidth * .5;
+      let mouseY = window.innerHeight * .5;
+      let orbX = mouseX;
+      let orbY = mouseY;
+
+      window.addEventListener("pointermove", event => {
+        mouseX = event.clientX;
+        mouseY = event.clientY;
+      }, { passive: true });
+
+      const moveOrb = () => {
+        orbX += (mouseX - orbX) * .08;
+        orbY += (mouseY - orbY) * .08;
+        cursorOrb.style.transform = `translate3d(${orbX - 140}px, ${orbY - 140}px, 0)`;
+        requestAnimationFrame(moveOrb);
+      };
+      moveOrb();
+    }
+
+    const parallaxTargets = document.querySelectorAll(".world-visual, .guardian-figure, .philosophy-panel");
+    const updateParallax = () => {
+      const viewportMiddle = window.innerHeight * .5;
+      parallaxTargets.forEach(target => {
+        const rect = target.getBoundingClientRect();
+        const delta = (rect.top + rect.height * .5 - viewportMiddle) * -.045;
+        target.style.setProperty("--parallax-y", `${Math.max(-28, Math.min(28, delta))}px`);
+      });
+    };
+    updateParallax();
+    window.addEventListener("scroll", updateParallax, { passive: true });
+    window.addEventListener("resize", updateParallax, { passive: true });
+
+    const revealBlocks = document.querySelectorAll(".fade-block");
+    if ("IntersectionObserver" in window) {
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.18 });
+      revealBlocks.forEach(block => observer.observe(block));
+    } else {
+      revealBlocks.forEach(block => block.classList.add("is-visible"));
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,293 @@
+# UI Design Specification
+
+> Music Factory UI 设计规范
+
+---
+
+# 品牌关键词
+
+高级克制（Premium）
+
+Human Design（人为设计感）
+
+Editorial（杂志感）
+
+Music Civilization（音乐文明）
+
+Minimal（极简）
+
+International（国际化）
+
+Future Art（未来艺术）
+
+去AI感
+
+---
+
+# 品牌气质
+
+像一家国际唱片公司。
+
+不是互联网产品。
+
+不是科技网站。
+
+不是企业官网。
+
+而是一件持续更新的艺术作品。
+
+---
+
+# 设计原则
+
+大量留白
+
+弱边框
+
+弱阴影
+
+弱渐变
+
+强调内容
+
+强调图片
+
+强调字体
+
+强调节奏
+
+减少装饰
+
+---
+
+# 页面宽度
+
+最大内容宽度：
+
+1440px
+
+标准内容宽度：
+
+1280px
+
+页面左右安全边距：
+
+120px
+
+移动端：
+
+24px
+
+---
+
+# 栅格系统
+
+12 Grid
+
+统一间距
+
+所有 Section 保持统一节奏
+
+---
+
+# 圆角规范
+
+Button
+
+16px
+
+Card
+
+28px
+
+Image
+
+32px
+
+Dialog
+
+32px
+
+Tag
+
+999px
+
+---
+
+# 间距规范
+
+XS
+
+8px
+
+S
+
+16px
+
+M
+
+24px
+
+L
+
+40px
+
+XL
+
+64px
+
+XXL
+
+120px
+
+Section
+
+180px
+
+---
+
+# 色彩规范
+
+Primary
+
+#111111
+
+Background
+
+#FFFFFF
+
+Secondary Background
+
+#F7F7F5
+
+Border
+
+#E8E8E8
+
+Secondary Text
+
+#666666
+
+Accent
+
+#FF6A3D
+
+Success
+
+#18B36B
+
+Warning
+
+#FFB300
+
+---
+
+# 字体规范
+
+中文
+
+思源黑体
+
+英文
+
+Inter
+
+标题
+
+Instrument Serif
+
+数字
+
+Geist
+
+---
+
+# 图片规范
+
+禁止 AI 拼贴感
+
+禁止 HDR
+
+禁止 3D 图标
+
+禁止 科技蓝
+
+真实摄影质感
+
+电影级光影
+
+高留白
+
+高级构图
+
+---
+
+# 图标规范
+
+线性图标
+
+统一描边
+
+统一尺寸
+
+24px
+
+32px
+
+48px
+
+---
+
+# 动效规范
+
+Hover
+
+200ms
+
+Fade
+
+300ms
+
+Scroll
+
+Smooth
+
+Mouse Follow
+
+弱动态
+
+Parallax
+
+低幅度
+
+禁止夸张动画
+
+---
+
+# 响应式
+
+Desktop
+
+1440+
+
+Laptop
+
+1280
+
+Tablet
+
+768
+
+Mobile
+
+390
+
+---
+
+# UI最终目标
+
+让用户感觉：
+
+不像一个网站。
+
+更像一本持续更新的音乐艺术杂志。
