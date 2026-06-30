@@ -3,611 +3,568 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>音乐工厂 | 声音文明地图</title>
+  <title>Music Factory | Cinematic Portal</title>
   <link rel="icon" href="data:," />
   <link rel="preload" as="image" href="assets/generated/music-map-guanwujie.webp" fetchpriority="high" />
   <style>
     :root {
-      --font-display: "Songti SC", "STSong", "Noto Serif SC", Georgia, serif;
-      --font-body: "Microsoft YaHei", "PingFang SC", "Helvetica Neue", Arial, sans-serif;
-      --ink: #14120f;
-      --muted: #6f675c;
-      --paper: #f8f2e8;
-      --panel: #fffaf1;
-      --gold: #a98952;
-      --line: rgba(20, 18, 15, .15);
-      --dark: #0d0b09;
-      --white: #fffaf1;
-      --ease: cubic-bezier(.19, 1, .22, 1);
+      --font-display: "Didot", "Bodoni 72", "Songti SC", "STSong", Georgia, serif;
+      --font-body: "Inter", "SF Pro Text", "Helvetica Neue", "Microsoft YaHei", system-ui, sans-serif;
+      --font-caption: "SF Pro Text", "Helvetica Neue", "Microsoft YaHei", system-ui, sans-serif;
+      --font-quote: "Times New Roman", "Songti SC", Georgia, serif;
+
+      --warm-white: #f7f3ea;
+      --paper: #fffdf8;
+      --charcoal: #14120f;
+      --record-black: #080706;
+      --warm-gray: #80786b;
+      --dark-gold: #a58a56;
+      --soft-gold: #d8c08a;
+      --line: rgba(255, 253, 248, .16);
+
+      --space-1: 8px;
+      --space-2: 16px;
+      --space-3: 24px;
+      --space-4: 32px;
+      --space-5: 40px;
+      --space-6: 48px;
+      --space-8: 64px;
+      --space-10: 80px;
+      --space-12: 96px;
+      --space-16: 128px;
+
+      --motion-fast: 320ms cubic-bezier(.2, .8, .2, 1);
+      --motion-base: 720ms cubic-bezier(.2, .8, .2, 1);
+      --motion-slow: 1600ms cubic-bezier(.19, 1, .22, 1);
+      --motion-cinematic: 8600ms cubic-bezier(.19, 1, .22, 1);
+
+      --spirit: url("assets/generated/music-map-guanwujie.webp");
+      --future: url("assets/generated/music-map-shiliyin.webp");
+      --nature: url("assets/generated/music-map-mengmeng.webp");
+      font-family: var(--font-body);
     }
 
     * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; background: var(--paper); }
+    html { scroll-behavior: smooth; background: var(--record-black); }
     body {
       margin: 0;
-      color: var(--ink);
-      background: linear-gradient(180deg, #0d0b09 0%, #17130f 40%, #f8f2e8 40.2%, #fbf6ee 100%);
-      font-family: var(--font-body);
-      letter-spacing: 0;
+      min-height: 100vh;
+      color: var(--paper);
+      background:
+        radial-gradient(circle at 50% 12%, rgba(216,192,138,.16), transparent 34%),
+        linear-gradient(180deg, #050403 0%, #0d0b09 42%, #f3ecdf 100%);
       overflow-x: hidden;
+      font-family: var(--font-body);
+      animation: pageArrival 900ms cubic-bezier(.19, 1, .22, 1) both;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -2;
+      pointer-events: none;
+      background:
+        radial-gradient(circle, rgba(255,253,248,.12) .48px, transparent .9px),
+        linear-gradient(90deg, rgba(255,253,248,.035) 1px, transparent 1px),
+        linear-gradient(180deg, rgba(255,253,248,.028) 1px, transparent 1px);
+      background-size: 7px 7px, 180px 180px, 180px 180px;
+      opacity: .28;
+      mask-image: linear-gradient(180deg, rgba(0,0,0,.82), transparent 72%);
     }
     a { color: inherit; text-decoration: none; }
-    img { display: block; max-width: 100%; }
-    .wrap { width: min(1180px, calc(100% - 40px)); margin: 0 auto; }
+    h1, h2, h3, p { margin-top: 0; }
+    .wrap { width: min(1240px, calc(100% - var(--space-4))); margin: 0 auto; }
 
-    .topnav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 10;
-      background: rgba(13, 11, 9, .66);
-      backdrop-filter: blur(16px);
-      border-bottom: 1px solid rgba(255, 250, 241, .14);
-      color: rgba(255, 250, 241, .88);
-    }
-    .topnav-inner {
-      min-height: 68px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-    }
-    .brand {
-      font: 700 15px/1 var(--font-body);
-      letter-spacing: .08em;
-    }
-    .navlinks {
-      display: flex;
-      gap: 18px;
-      flex-wrap: wrap;
-      color: rgba(255, 250, 241, .72);
-      font-size: 13px;
-    }
-    .navlinks a:hover { color: var(--white); }
-
-    .hero {
-      min-height: 92svh;
+    .cinematic-entrance {
+      min-height: 100svh;
+      position: relative;
       display: grid;
-      align-items: center;
-      padding: 124px 0 80px;
-      color: var(--white);
+      place-items: center;
+      overflow: hidden;
+      isolation: isolate;
       background:
-        linear-gradient(90deg, rgba(13, 11, 9, .9), rgba(13, 11, 9, .35) 52%, rgba(13, 11, 9, .84)),
-        linear-gradient(180deg, rgba(13, 11, 9, .16), rgba(13, 11, 9, .9)),
-        url("assets/generated/music-map-guanwujie.webp") center / cover no-repeat;
+        linear-gradient(90deg, rgba(5,4,3,.92), rgba(5,4,3,.44) 48%, rgba(5,4,3,.92)),
+        linear-gradient(180deg, rgba(5,4,3,.28), rgba(5,4,3,.86)),
+        var(--spirit) center / cover no-repeat;
     }
-    .hero-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.05fr) minmax(280px, .55fr);
-      gap: clamp(36px, 7vw, 96px);
-      align-items: end;
+    .cinematic-entrance::before {
+      content: "";
+      position: absolute;
+      inset: -8%;
+      z-index: -1;
+      background:
+        radial-gradient(ellipse at 50% 42%, rgba(255,253,248,.24), transparent 20%),
+        radial-gradient(ellipse at 50% 54%, rgba(216,192,138,.26), transparent 35%),
+        radial-gradient(ellipse at 20% 78%, rgba(255,253,248,.08), transparent 28%);
+      animation: breathingLight 9000ms ease-in-out infinite alternate;
+      filter: blur(1px) saturate(.62);
     }
-    .eyebrow {
-      margin: 0 0 18px;
-      color: #d8c08a;
-      font-size: 13px;
-      letter-spacing: .18em;
-      font-weight: 800;
+    .cinematic-entrance::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background:
+        linear-gradient(90deg, rgba(5,4,3,.86), transparent 30%, transparent 70%, rgba(5,4,3,.88)),
+        linear-gradient(180deg, rgba(5,4,3,.62), transparent 32%, rgba(5,4,3,.94));
     }
-    h1 {
-      margin: 0;
-      font-family: var(--font-display);
-      font-weight: 500;
-      font-size: clamp(56px, 10vw, 142px);
-      line-height: .9;
+    .entrance-inner {
+      position: relative;
+      z-index: 1;
+      width: min(920px, calc(100% - var(--space-4)));
+      text-align: center;
+      transform: translateY(var(--cinematic-y, 0)) scale(1.01);
+      animation: softOpeningZoom var(--motion-cinematic) both;
+    }
+    .cinematic-mark {
+      margin: 0 0 var(--space-4);
+      color: rgba(255,253,248,.72);
+      font: 900 11px/1 var(--font-caption);
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      animation: fadeInSlow 1800ms ease 800ms both;
+    }
+    .cinematic-title {
+      margin: 0 0 var(--space-4);
+      font: 500 clamp(72px, 11vw, 164px)/.82 var(--font-display);
       letter-spacing: 0;
+      text-wrap: balance;
+      clip-path: inset(0);
+      text-shadow: 0 18px 60px rgba(0,0,0,.46);
+      animation: titleFloat 6600ms ease-in-out 900ms both;
     }
-    .hero-copy {
-      max-width: 720px;
-      margin: 28px 0 0;
-      color: rgba(255, 250, 241, .84);
-      font-size: clamp(18px, 2vw, 24px);
-      line-height: 1.85;
+    .cinematic-subtitle {
+      max-width: 780px;
+      margin: 0 auto var(--space-8);
+      color: rgba(255,253,248,.88);
+      font: 400 clamp(30px, 4.6vw, 68px)/1.02 var(--font-quote);
+      letter-spacing: 0;
+      text-wrap: balance;
+      opacity: .96;
+      transform: translateY(0);
+      animation: subtitleFloat 7600ms ease-in-out 1800ms both;
     }
-    .hero-panel {
-      border-left: 1px solid rgba(255, 250, 241, .24);
-      padding-left: 30px;
-      color: rgba(255, 250, 241, .78);
+    .enter-civilization {
+      display: inline-block;
+      padding-bottom: 8px;
+      color: var(--paper);
+      border-bottom: 1px solid rgba(255,253,248,.78);
+      font: 900 12px/1 var(--font-caption);
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      opacity: .92;
+      transform: translateY(0);
+      animation: ctaPulse 7200ms ease-in-out 3200ms both;
+      transition: color var(--motion-fast), transform var(--motion-fast), border-color var(--motion-fast);
     }
-    .hero-panel strong {
-      display: block;
-      margin-bottom: 14px;
-      color: var(--white);
-      font-family: var(--font-display);
-      font-size: clamp(28px, 3vw, 44px);
-      font-weight: 500;
-      line-height: 1.12;
+    .enter-civilization:hover { color: var(--soft-gold); border-color: currentColor; transform: translateY(12px); }
+    .entrance-silence {
+      position: absolute;
+      left: 50%;
+      bottom: var(--space-5);
+      z-index: 2;
+      width: 1px;
+      height: 64px;
+      opacity: 0;
+      transform: translateX(-50%);
+      animation: fadeInSlow 2200ms ease 7200ms both;
+      background: linear-gradient(180deg, transparent, rgba(255,253,248,.54), transparent);
     }
-    .hero-actions,
-    .section-actions {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin-top: 34px;
-    }
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 44px;
-      padding: 12px 18px;
-      border: 1px solid currentColor;
-      font-size: 13px;
-      font-weight: 800;
-      transition: transform .55s var(--ease), background .55s var(--ease), color .55s var(--ease);
-    }
-    .btn.primary {
-      background: var(--white);
-      color: var(--ink);
-      border-color: var(--white);
-    }
-    .btn:hover { transform: translateY(-3px); background: rgba(255, 250, 241, .14); }
-    .btn.primary:hover { background: #d8c08a; border-color: #d8c08a; }
 
     .section {
-      padding: clamp(76px, 10vw, 132px) 0;
-      background: var(--paper);
+      position: relative;
+      padding: clamp(112px, 14vw, 208px) 0;
+      color: var(--charcoal);
+      background: var(--warm-white);
+      overflow: hidden;
+      content-visibility: auto;
+      contain-intrinsic-size: 900px;
     }
-    .section.alt { background: #fffaf1; }
     .section.dark {
-      background: var(--dark);
-      color: var(--white);
+      color: var(--paper);
+      background:
+        radial-gradient(circle at 68% 18%, rgba(165,138,86,.18), transparent 30%),
+        linear-gradient(180deg, #0c0a08 0%, #17130f 100%);
     }
-    .section-head {
-      display: grid;
-      grid-template-columns: minmax(0, .8fr) minmax(280px, .5fr);
-      gap: 40px;
-      align-items: end;
-      margin-bottom: 46px;
+    .eyebrow {
+      margin: 0 0 var(--space-3);
+      color: var(--dark-gold);
+      font: 900 11px/1 var(--font-caption);
+      letter-spacing: .18em;
+      text-transform: uppercase;
     }
-    h2 {
-      margin: 0;
-      font-family: var(--font-display);
-      font-weight: 500;
-      font-size: clamp(38px, 6vw, 88px);
-      line-height: 1;
+    .section-title {
+      max-width: 940px;
+      margin: 0 0 var(--space-8);
+      font: 500 clamp(50px, 8vw, 120px)/.86 var(--font-display);
+      letter-spacing: 0;
+      text-wrap: balance;
     }
-    .section-lead {
-      margin: 0;
-      color: var(--muted);
-      font-size: 17px;
-      line-height: 1.8;
-    }
-    .dark .section-lead { color: rgba(255, 250, 241, .68); }
 
-    .artist-row {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1px;
-      background: var(--line);
-      border: 1px solid var(--line);
+    .civilization-emergence {
+      min-height: 1120px;
+      padding-bottom: clamp(160px, 18vw, 260px);
     }
-    .artist-entry {
-      min-height: 420px;
+    .node-field {
+      position: relative;
+      min-height: 680px;
+    }
+    .civilization-node {
+      position: absolute;
+      width: min(420px, 34vw);
+      min-height: 440px;
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
-      padding: 32px;
-      background: var(--panel);
-      position: relative;
+      padding: var(--space-4);
+      color: var(--paper);
       overflow: hidden;
       isolation: isolate;
+      background: #17130f;
+      box-shadow: 0 32px 90px rgba(20,18,15,.18);
+      transform: translate3d(0, var(--float-y, 0), 0);
+      animation: nodeBreath 7600ms ease-in-out infinite alternate;
+      transition: transform var(--motion-slow), clip-path var(--motion-slow), color var(--motion-base);
     }
-    .artist-entry::before {
+    .civilization-node::before {
       content: "";
       position: absolute;
       inset: 0;
       z-index: -2;
-      background: var(--artist-image) center / cover no-repeat;
-      opacity: .28;
-      filter: saturate(.82);
-      transform: scale(1.02);
-      transition: transform 1.2s var(--ease), opacity 1.2s var(--ease);
+      background: var(--node-image) center / cover no-repeat;
+      transform: scale(1.04);
+      transition: transform var(--motion-slow), filter var(--motion-slow);
+      filter: saturate(.86);
     }
-    .artist-entry::after {
+    .civilization-node::after {
       content: "";
       position: absolute;
       inset: 0;
       z-index: -1;
-      background: linear-gradient(180deg, rgba(255, 250, 241, .08), rgba(255, 250, 241, .92));
+      background:
+        radial-gradient(ellipse at 28% 18%, rgba(255,253,248,.18), transparent 28%),
+        linear-gradient(180deg, rgba(5,4,3,.14), rgba(5,4,3,.84));
     }
-    .artist-entry:hover::before { transform: scale(1.08); opacity: .38; }
-    .artist-entry h3 {
-      margin: 0 0 12px;
-      font-family: var(--font-display);
-      font-size: clamp(34px, 4.2vw, 62px);
-      font-weight: 500;
-      line-height: 1;
+    .civilization-node:hover { transform: translate3d(0, calc(var(--float-y, 0) - 10px), 0) scale(1.018); }
+    .civilization-node:hover::before { transform: scale(1.085); filter: saturate(.94); }
+    .node-artists {
+      --node-image: var(--spirit);
+      left: 0;
+      top: 26px;
+      clip-path: inset(0 7% 10% 0);
+      animation-delay: 0ms;
     }
-    .artist-entry p {
-      margin: 0 0 24px;
-      color: var(--muted);
-      line-height: 1.75;
+    .node-map {
+      --node-image: var(--future);
+      right: 3%;
+      top: 156px;
+      clip-path: inset(8% 0 0 12%);
+      animation-delay: 900ms;
     }
-    .artist-actions { display: flex; gap: 14px; flex-wrap: wrap; }
-    .text-link {
-      padding-bottom: 6px;
+    .node-archive {
+      --node-image: var(--nature);
+      left: 27%;
+      top: 430px;
+      clip-path: inset(0 0 8% 8%);
+      animation-delay: 1700ms;
+    }
+    .node-kicker {
+      color: rgba(255,253,248,.66);
+      font: 900 11px/1 var(--font-caption);
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+    .node-title {
+      margin: var(--space-2) 0 var(--space-2);
+      font: 500 clamp(34px, 4.6vw, 64px)/.9 var(--font-display);
+      letter-spacing: 0;
+    }
+    .node-copy {
+      max-width: 320px;
+      margin: 0 0 var(--space-4);
+      color: rgba(255,253,248,.76);
+      font: 400 15px/1.72 var(--font-body);
+      opacity: .78;
+      transform: translateY(10px);
+      transition: opacity var(--motion-base), transform var(--motion-base);
+    }
+    .civilization-node:hover .node-copy { opacity: 1; transform: translateY(0); }
+    .node-link {
+      align-self: flex-start;
+      padding-bottom: 7px;
       border-bottom: 1px solid currentColor;
-      color: var(--gold);
-      font-size: 13px;
-      font-weight: 800;
+      font: 900 11px/1 var(--font-caption);
+      letter-spacing: .16em;
+      text-transform: uppercase;
     }
 
-    .map-strip {
+    .narrative-layer {
+      min-height: 100svh;
       display: grid;
-      grid-template-columns: minmax(0, .75fr) minmax(0, 1fr);
-      gap: 50px;
       align-items: center;
     }
-    .map-window {
-      min-height: 480px;
+    .narrative-lines {
+      max-width: 980px;
+      display: grid;
+      gap: clamp(18px, 3vw, 34px);
+    }
+    .narrative-line {
+      margin: 0;
+      font: 500 clamp(42px, 7.8vw, 118px)/.9 var(--font-display);
+      letter-spacing: 0;
+      text-wrap: balance;
+    }
+    .narrative-line.quiet {
+      color: rgba(255,253,248,.62);
+      font-family: var(--font-quote);
+      font-weight: 400;
+    }
+
+    .entry-flow {
       background:
-        linear-gradient(180deg, rgba(13, 11, 9, .08), rgba(13, 11, 9, .56)),
-        url("assets/generated/music-map-shiliyin.webp") center / cover no-repeat;
-      border: 1px solid rgba(255, 250, 241, .18);
+        linear-gradient(180deg, #f7f3ea 0%, #eee4d4 100%);
     }
-    .map-points {
+    .flow-list {
       display: grid;
-      gap: 18px;
-      color: rgba(255, 250, 241, .72);
-      line-height: 1.8;
+      margin-top: var(--space-8);
+      border-top: 1px solid rgba(20,18,15,.14);
     }
-    .map-point {
-      padding-bottom: 18px;
-      border-bottom: 1px solid rgba(255, 250, 241, .16);
+    .flow-step {
+      display: grid;
+      grid-template-columns: 120px minmax(0, 1fr) auto;
+      gap: var(--space-4);
+      align-items: center;
+      min-height: 168px;
+      padding: var(--space-4) 0;
+      border-bottom: 1px solid rgba(20,18,15,.14);
+      transition: padding var(--motion-base), color var(--motion-base);
     }
-    .map-point strong {
+    .flow-step:hover { padding-left: var(--space-3); color: var(--dark-gold); }
+    .flow-index {
+      color: var(--dark-gold);
+      font: 900 11px/1 var(--font-caption);
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+    .flow-title {
       display: block;
-      margin-bottom: 6px;
-      color: var(--white);
-      font-size: 20px;
+      font: 500 clamp(36px, 6vw, 86px)/.9 var(--font-display);
+      letter-spacing: 0;
+    }
+    .flow-note {
+      display: block;
+      max-width: 540px;
+      margin-top: var(--space-2);
+      color: var(--warm-gray);
+      font: 400 15px/1.72 var(--font-body);
+    }
+    .flow-action {
+      white-space: nowrap;
+      border-bottom: 1px solid currentColor;
+      padding-bottom: 7px;
+      font: 900 11px/1 var(--font-caption);
+      letter-spacing: .16em;
+      text-transform: uppercase;
     }
 
-    .song-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 18px;
-    }
-    .song-card {
-      display: grid;
-      grid-template-rows: auto 1fr;
-      background: var(--panel);
-      border: 1px solid var(--line);
-      overflow: hidden;
-    }
-    .song-cover {
-      aspect-ratio: 1 / .72;
-      background: #e9ddc9 center / cover no-repeat;
-    }
-    .song-body {
-      padding: 22px;
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-    }
-    .song-meta {
-      color: var(--gold);
-      font-size: 12px;
-      font-weight: 800;
-      letter-spacing: .08em;
-    }
-    .song-title {
-      margin: 0;
-      font-family: var(--font-display);
-      font-size: 32px;
-      font-weight: 500;
-      line-height: 1;
-    }
-    .song-intro {
-      margin: 0;
-      color: var(--muted);
-      line-height: 1.7;
-      display: -webkit-box;
-      -webkit-line-clamp: 3;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-    }
-    audio {
-      width: 100%;
-      height: 38px;
-      margin-top: auto;
-    }
-    .song-links {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-    }
-
-    .route-row {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1px;
-      background: rgba(255, 250, 241, .16);
-      border: 1px solid rgba(255, 250, 241, .16);
-    }
-    .route {
-      min-height: 220px;
-      padding: 28px;
-      background: rgba(255, 250, 241, .055);
-    }
-    .route h3 {
-      margin: 0 0 14px;
-      font-family: var(--font-display);
-      font-size: 36px;
-      font-weight: 500;
-    }
-    .route p {
-      margin: 0 0 26px;
-      color: rgba(255, 250, 241, .68);
-      line-height: 1.75;
-    }
-
-    .footer {
-      padding: 46px 0;
-      background: #050403;
-      color: rgba(255, 250, 241, .66);
-      font-size: 13px;
+    .portal-footer {
+      padding: var(--space-10) 0;
+      color: rgba(255,253,248,.72);
+      background: var(--record-black);
     }
     .footer-inner {
       display: flex;
       justify-content: space-between;
-      gap: 18px;
+      gap: var(--space-4);
       flex-wrap: wrap;
+      font: 900 11px/1.6 var(--font-caption);
+      letter-spacing: .16em;
+      text-transform: uppercase;
     }
 
     .reveal {
       opacity: 0;
-      transform: translateY(28px);
-      transition: opacity 900ms var(--ease), transform 900ms var(--ease);
+      transform: translateY(48px);
+      filter: blur(12px);
+      transition: opacity 1200ms var(--motion-slow), transform 1200ms var(--motion-slow), filter 1200ms var(--motion-slow);
     }
-    .reveal.is-visible { opacity: 1; transform: translateY(0); }
+    .reveal.is-visible { opacity: 1; transform: translateY(0); filter: blur(0); }
 
-    @media (max-width: 900px) {
-      .topnav { position: static; background: #0d0b09; }
-      .topnav-inner,
-      .section-head,
-      .hero-grid,
-      .map-strip {
-        grid-template-columns: 1fr;
+    @keyframes fadeInSlow { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes fadeRise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes maskReveal { from { clip-path: inset(0 0 100% 0); filter: blur(8px); } to { clip-path: inset(0); filter: blur(0); } }
+    @keyframes titleFloat { from { opacity: .82; transform: translateY(10px); clip-path: inset(0 0 9% 0); } to { opacity: 1; transform: translateY(0); clip-path: inset(0); } }
+    @keyframes subtitleFloat { from { opacity: .58; transform: translateY(14px); } to { opacity: .96; transform: translateY(0); } }
+    @keyframes ctaPulse { from { opacity: .62; } to { opacity: .96; } }
+    @keyframes breathingLight { from { opacity: .48; transform: scale(.985); } to { opacity: .86; transform: scale(1.035); } }
+    @keyframes softOpeningZoom { from { opacity: .82; transform: translateY(16px) scale(.975); } to { opacity: 1; transform: translateY(0) scale(1.018); } }
+    @keyframes nodeBreath { from { --float-y: -6px; } to { --float-y: 10px; } }
+    @keyframes pageArrival { from { opacity: 0; filter: blur(8px); } to { opacity: 1; filter: blur(0); } }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: .001ms !important;
+        animation-delay: 0ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: .001ms !important;
       }
-      .topnav-inner { align-items: flex-start; flex-direction: column; padding: 18px 0; }
-      .hero { min-height: auto; padding-top: 72px; }
-      .hero-panel { border-left: 0; border-top: 1px solid rgba(255, 250, 241, .2); padding: 24px 0 0; }
-      .artist-row,
-      .song-grid,
-      .route-row {
-        grid-template-columns: 1fr;
-      }
-      .artist-entry { min-height: 340px; }
-      .map-window { min-height: 340px; }
     }
 
-    @media (max-width: 560px) {
-      .wrap { width: min(100% - 28px, 1180px); }
-      .navlinks { gap: 12px; font-size: 12px; }
-      h1 { font-size: clamp(48px, 17vw, 78px); }
-      .hero-copy { font-size: 17px; }
-      .section { padding: 68px 0; }
-      .artist-entry,
-      .route,
-      .song-body { padding: 22px; }
+    @media (max-width: 920px) {
+      .civilization-emergence { min-height: auto; }
+      .node-field { min-height: 0; display: grid; gap: var(--space-4); }
+      .civilization-node {
+        position: relative;
+        inset: auto;
+        width: 100%;
+        min-height: 420px;
+        clip-path: inset(0);
+      }
+      .flow-step { grid-template-columns: 1fr; align-items: start; }
+      .flow-action { justify-self: start; }
+    }
+    @media (max-width: 760px) {
+      .wrap { width: min(100% - 32px, 1240px); }
+      .cinematic-entrance { background-position: 58% center; }
+      .cinematic-entrance::before { animation-duration: 1ms; opacity: .56; transform: none; }
+      body { animation-duration: 520ms; }
+      .entrance-inner { text-align: left; }
+      .cinematic-title { font-size: clamp(58px, 18vw, 88px); }
+      .cinematic-subtitle { max-width: 320px; font-size: clamp(28px, 8vw, 40px); margin-left: 0; margin-right: 0; }
+      .section { padding: 92px 0; }
+      .section-title { font-size: clamp(44px, 14vw, 72px); }
+      .civilization-node { min-height: 360px; padding: var(--space-3); }
+      .narrative-line { font-size: clamp(40px, 13vw, 68px); }
+      .flow-step { min-height: 144px; gap: var(--space-2); }
+      .flow-title { font-size: clamp(36px, 12vw, 60px); }
     }
   </style>
   <link rel="stylesheet" href="assets/visual-system-v3.css" />
 </head>
 <body>
-  <nav class="topnav">
-    <div class="wrap topnav-inner">
-      <a class="brand" href="#top">音乐工厂</a>
-      <div class="navlinks">
-        <a href="sound-civilization-map.html">声音地图</a>
-        <a href="#artists">AI 歌手</a>
-        <a href="#songs">听歌曲</a>
-        <a href="works/index.html">作品库</a>
-        <a href="archive/index.html">档案馆</a>
-      </div>
+  <header class="cinematic-entrance" id="top" data-knowledge-section="homepage-v3.entrance">
+    <div class="entrance-inner">
+      <p class="cinematic-mark">Music Factory</p>
+      <h1 class="cinematic-title">Music Factory</h1>
+      <p class="cinematic-subtitle">A Civilization of Voices</p>
+      <a class="enter-civilization" href="#emergence">Enter Civilization</a>
     </div>
-  </nav>
-
-  <header class="hero" id="top">
-    <div class="wrap hero-grid">
-      <div>
-        <p class="eyebrow">Sound Civilization Map / 声音地图</p>
-        <h1>音乐工厂</h1>
-        <p class="hero-copy">这里是一张由 AI 歌手、歌曲作品、专辑记忆和声音档案组成的地图。你可以先看声音文明地图，也可以直接进入歌手页面听歌。</p>
-        <div class="hero-actions">
-          <a class="btn primary" href="sound-civilization-map.html">进入声音地图</a>
-          <a class="btn" href="#artists">查看三位歌手</a>
-          <a class="btn" href="#songs">试听最新歌曲</a>
-        </div>
-      </div>
-      <aside class="hero-panel">
-        <strong>不是复杂系统，先从声音开始。</strong>
-        <p>观无界、十里音、梦梦分别代表三种声音世界。地图负责理解关系，歌手页面负责认识人物，作品区负责听歌，档案馆负责保存记忆。</p>
-      </aside>
-    </div>
+    <a class="entrance-silence" href="#emergence" aria-label="Enter Music Civilization"></a>
   </header>
 
   <main>
-    <section class="section alt" id="artists">
+    <section class="section civilization-emergence" id="emergence" data-knowledge-section="homepage-v3.civilization-emergence">
       <div class="wrap reveal">
-        <div class="section-head">
-          <div>
-            <p class="eyebrow">AI Singers / 三位歌手入口</p>
-            <h2>先认识声音背后的人。</h2>
-          </div>
-          <p class="section-lead">每位 AI 歌手都不是一个列表项，而是一套人物、风格、作品和记忆。这里保留清晰入口，让你能快速进入个人页面。</p>
-        </div>
-        <div class="artist-row">
-          <article class="artist-entry" style="--artist-image: url('assets/generated/music-map-guanwujie.webp')">
-            <h3>观无界</h3>
-            <p>净土法门与念佛思想的声音世界，作品围绕光、愿、归处与安定展开。</p>
-            <div class="artist-actions">
-              <a class="text-link" href="artists/guanwujie.html">进入歌手页</a>
-              <a class="text-link" href="works/index.html?artist=guanwujie">查看作品</a>
-            </div>
-          </article>
-          <article class="artist-entry" style="--artist-image: url('assets/generated/music-map-shiliyin.webp')">
-            <h3>十里音</h3>
-            <p>东方哲学与当代流行创作体系，代表《无相》《霓虹金》等更完整的作品宇宙。</p>
-            <div class="artist-actions">
-              <a class="text-link" href="artists/shiliyin.html">进入歌手页</a>
-              <a class="text-link" href="works/index.html?artist=shiliyin">查看作品</a>
-            </div>
-          </article>
-          <article class="artist-entry" style="--artist-image: url('assets/generated/music-map-mengmeng.webp')">
-            <h3>梦梦</h3>
-            <p>自然、旅途与山河记忆构成的声音世界，像把风景、故事和人心写成歌。</p>
-            <div class="artist-actions">
-              <a class="text-link" href="artists/mengmeng.html">进入歌手页</a>
-              <a class="text-link" href="works/index.html?artist=mengmeng">查看作品</a>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section dark" id="map">
-      <div class="wrap reveal map-strip">
-        <div>
-          <p class="eyebrow">Sound Map / 声音地图</p>
-          <h2>看见歌手之间的关系。</h2>
-          <p class="section-lead">声音地图不是技术关系图，而是帮助你理解三位歌手如何通过情绪、文化、声音、哲学和叙事互相连接。</p>
-          <div class="section-actions">
-            <a class="btn primary" href="sound-civilization-map.html">打开声音地图</a>
-            <a class="btn" href="archive/index.html">进入档案馆</a>
-          </div>
-        </div>
-        <div>
-          <div class="map-window" aria-hidden="true"></div>
-          <div class="map-points">
-            <div class="map-point"><strong>观无界 ↔ 十里音</strong>信念、哲学与当代表达之间的连接。</div>
-            <div class="map-point"><strong>十里音 ↔ 梦梦</strong>流行声音、人格叙事与旅途记忆之间的连接。</div>
-            <div class="map-point"><strong>梦梦 ↔ 观无界</strong>自然、归处、安定与内心世界之间的连接。</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="songs">
-      <div class="wrap reveal">
-        <div class="section-head">
-          <div>
-            <p class="eyebrow">Latest Songs / 最新歌曲</p>
-            <h2>先听见作品。</h2>
-          </div>
-          <p class="section-lead">这里直接展示可试听歌曲。歌曲数据来自公网预览版作品数据，保留封面、歌手、简介和音频入口。</p>
-        </div>
-        <div class="song-grid" data-song-grid>
-          <article class="song-card">
-            <div class="song-body">
-              <p class="song-meta">加载中</p>
-              <h3 class="song-title">正在读取歌曲</h3>
-              <p class="song-intro">如果歌曲没有出现，请进入歌手页面查看完整作品集。</p>
-            </div>
-          </article>
-        </div>
-        <div class="section-actions">
-          <a class="btn primary" href="works/index.html">查看全部作品</a>
-          <a class="btn" href="albums/index.html">查看专辑</a>
-        </div>
-      </div>
-    </section>
-
-    <section class="section dark">
-      <div class="wrap reveal">
-        <div class="section-head">
-          <div>
-            <p class="eyebrow">Archive / Albums / Works</p>
-            <h2>作品、专辑与档案。</h2>
-          </div>
-          <p class="section-lead">如果你想系统浏览，可以从作品库、专辑和档案馆进入。声音地图负责世界观，作品系统负责听与读。</p>
-        </div>
-        <div class="route-row">
-          <a class="route" href="works/index.html">
-            <h3>作品库</h3>
-            <p>按歌手查看作品，进入单曲详情，并回到声音地图或档案馆。</p>
-            <span class="text-link">Discover Works</span>
+        <p class="eyebrow">Civilization Emergence</p>
+        <h2 class="section-title">Three presences begin to surface.</h2>
+        <div class="node-field" aria-label="Music Factory civilization entry nodes">
+          <a class="civilization-node node-artists" href="spirit-realm.html">
+            <span class="node-kicker">01 / Personality Worlds</span>
+            <span class="node-title">Artists Universe</span>
+            <span class="node-copy">Enter the origin of voices. Each artist is a civilization with identity, worldview, memory, and sound.</span>
+            <span class="node-link">Enter Artists</span>
           </a>
-          <a class="route" href="albums/index.html">
-            <h3>专辑</h3>
-            <p>查看《无相》《净土》等专辑节点，以及作品如何被组织成章节。</p>
-            <span class="text-link">View Albums</span>
+          <a class="civilization-node node-map" href="sound-civilization-map.html">
+            <span class="node-kicker">02 / Living Atlas</span>
+            <span class="node-title">Sound Civilization Map</span>
+            <span class="node-copy">Move through emotional, cultural, philosophical, and narrative connections between voices.</span>
+            <span class="node-link">Explore Sound Map</span>
           </a>
-          <a class="route" href="archive/index.html">
-            <h3>档案馆</h3>
-            <p>查看歌曲、歌手和文明节点留下的时间记录与记忆入口。</p>
-            <span class="text-link">Enter Archive</span>
+          <a class="civilization-node node-archive" href="works/index.html">
+            <span class="node-kicker">03 / Memory and Works</span>
+            <span class="node-title">Archive / Works</span>
+            <span class="node-copy">Follow works as chapters, albums as memory collections, and archive records as traces of time.</span>
+            <span class="node-link">Discover Works</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section dark narrative-layer" id="narrative" data-knowledge-section="homepage-v3.narrative">
+      <div class="wrap reveal">
+        <div class="narrative-lines">
+          <p class="narrative-line quiet">Music Factory is not a platform.</p>
+          <p class="narrative-line">It is a Civilization of Voices.</p>
+          <p class="narrative-line quiet">Voices become worlds.</p>
+          <p class="narrative-line">Memory becomes archive.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section entry-flow" id="entry-flow" data-knowledge-section="homepage-v3.entry-flow">
+      <div class="wrap reveal">
+        <p class="eyebrow">Entry Flow</p>
+        <h2 class="section-title">Begin with a voice. Leave with a world.</h2>
+        <div class="flow-list" aria-label="Music Factory linear entry flow">
+          <a class="flow-step" href="spirit-realm.html">
+            <span class="flow-index">First</span>
+            <span><span class="flow-title">Enter Artists</span><span class="flow-note">Begin at personality worlds, where identity opens the civilization.</span></span>
+            <span class="flow-action">Enter World</span>
+          </a>
+          <a class="flow-step" href="sound-civilization-map.html">
+            <span class="flow-index">Then</span>
+            <span><span class="flow-title">Explore Sound Map</span><span class="flow-note">Move from one voice into the living atlas of connections.</span></span>
+            <span class="flow-action">Explore Map</span>
+          </a>
+          <a class="flow-step" href="works/index.html">
+            <span class="flow-index">Next</span>
+            <span><span class="flow-title">Discover Works</span><span class="flow-note">Read songs as chapters inside the world system.</span></span>
+            <span class="flow-action">Discover Works</span>
+          </a>
+          <a class="flow-step" href="archive/index.html">
+            <span class="flow-index">Return</span>
+            <span><span class="flow-title">Enter Archive</span><span class="flow-note">Let memory preserve the route and return you to civilization.</span></span>
+            <span class="flow-action">Enter Archive</span>
           </a>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="footer">
+  <footer class="portal-footer">
     <div class="wrap footer-inner">
-      <span>音乐工厂 · 声音文明地图</span>
-      <span><a href="#top">返回顶部</a> / <a href="sound-civilization-map.html">声音地图</a> / <a href="archive/index.html">档案馆</a></span>
+      <a href="#top">Back to Civilization</a>
+      <a href="sound-civilization-map.html">Explore Map</a>
+      <a href="works/index.html">Discover Works</a>
+      <a href="archive/index.html">Enter Archive</a>
     </div>
   </footer>
 
-  <script src="songs-data.js"></script>
   <script>
-    const artistHref = {
-      "观无界": "artists/guanwujie.html",
-      "十里音": "artists/shiliyin.html",
-      "梦梦": "artists/mengmeng.html"
+    const entrance = document.querySelector(".cinematic-entrance");
+    const entranceInner = document.querySelector(".entrance-inner");
+
+    const canUsePointerAtmosphere = entrance && entranceInner && matchMedia("(pointer: fine)").matches && !matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (canUsePointerAtmosphere) {
+      entrance.addEventListener("pointermove", event => {
+        const rect = entrance.getBoundingClientRect();
+        const y = ((event.clientY - rect.top) / rect.height - .5) * 2;
+        entranceInner.style.setProperty("--cinematic-y", `${y * 1.2}%`);
+      }, { passive: true });
+      entrance.addEventListener("pointerleave", () => {
+        entranceInner.style.setProperty("--cinematic-y", "0%");
+      }, { passive: true });
+    }
+
+    const setupReveal = () => {
+      const revealBlocks = document.querySelectorAll(".reveal");
+      if ("IntersectionObserver" in window) {
+        const observer = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: .14 });
+        revealBlocks.forEach(block => observer.observe(block));
+      } else {
+        revealBlocks.forEach(block => block.classList.add("is-visible"));
+      }
     };
-
-    const cleanText = value => String(value || "")
-      .replace(/\s+/g, " ")
-      .replace(/公网预览版已隐藏本地路径/g, "")
-      .trim();
-
-    const songGrid = document.querySelector("[data-song-grid]");
-    const songs = Array.isArray(window.MUSIC_FACTORY_SONGS) ? window.MUSIC_FACTORY_SONGS : [];
-    const playableSongs = songs
-      .filter(song => song.audioUrl && song.title && song.artist)
-      .sort((a, b) => String(b.updated || "").localeCompare(String(a.updated || "")))
-      .slice(0, 6);
-
-    if (playableSongs.length) {
-      songGrid.innerHTML = playableSongs.map(song => {
-        const cover = song.cover || "assets/generated/music-map-guanwujie.webp";
-        const href = artistHref[song.artist] || "works/index.html";
-        const intro = cleanText(song.intro || song.fullIntro || song.lyricsPreview).slice(0, 140);
-        return `
-          <article class="song-card">
-            <div class="song-cover" style="background-image: url('${cover.replace(/'/g, "%27")}')"></div>
-            <div class="song-body">
-              <p class="song-meta">${song.artist} / ${song.collection || "作品"}</p>
-              <h3 class="song-title">${song.title}</h3>
-              <p class="song-intro">${intro || "作品介绍正在整理中。"}</p>
-              <audio controls preload="metadata" src="${song.audioUrl}"></audio>
-              <div class="song-links">
-                <a class="text-link" href="${href}">进入歌手页</a>
-                <a class="text-link" href="${song.audioUrl}" target="_blank" rel="noopener noreferrer">打开音频</a>
-              </div>
-            </div>
-          </article>`;
-      }).join("");
-    }
-
-    const revealBlocks = document.querySelectorAll(".reveal");
-    if ("IntersectionObserver" in window) {
-      const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("is-visible");
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: .12 });
-      revealBlocks.forEach(block => observer.observe(block));
-    } else {
-      revealBlocks.forEach(block => block.classList.add("is-visible"));
-    }
+    if ("requestIdleCallback" in window) requestIdleCallback(setupReveal, { timeout: 1200 });
+    else setTimeout(setupReveal, 1);
   </script>
 </body>
 </html>
